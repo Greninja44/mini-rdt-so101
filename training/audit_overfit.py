@@ -1,0 +1,139 @@
+"""Bounded, controlled ten-demo experiments, with exact resumable RNG state.
+
+This runner deliberately cannot train the full dataset. It keeps the original
+2,009,670 trainable parameter TinyRDT and uses independent random streams for
+minibatches, corruption, and evaluation. Diagnostic BC models share its windows.
+"""
+from __future__ import annotations
+import argparse
+from dataclasses import asdict
+import json
+from pathlib import Path
+import random
+import time
+
+import numpy as np
+import torch
+from torch import nn
+
+from data.ml_dataset import make_episode_splits, compute_normalization
+from models.tiny_rdt import TinyRDT, TinyRDTConfig
+from training.diffusion import ActionDiffusion
+from training.trainer import masked_mse, set_seed
+from evaluation.research_audit import load, make_bank, metrics, sample, denoise, save_json, sha256
+
+
+def experiment(args):
+    out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
+    if (out/"last.pt").exists() and not args.resume:
+        raise FileExistsError("Use a new run directory or explicitly resume; previous checkpoints are preserved")
+    torch.set_num_threads(2);set_seed(args.seed)
+    device=torch.device(args.device)
+    if device.type=="cuda":
+        torch.backends.cuda.matmul.allow_tf32=False
+        torch.backends.cudnn.allow_tf32=False
+        torch.backends.cudnn.benchmark=False
+    source,vision_model,_,_,_,_=load(args.encoder_checkpoint,device)
+    splits=make_episode_splits(args.dataset,args.seed);ids=splits.train[:10]
+    stats=compute_normalization(args.dataset,ids)
+    ds,b=make_bank(args.dataset,ids,stats,vision_model,device,args.padding)
+    set_seed(args.seed)  # Encoder extraction does not consume training RNG.
+    config=TinyRDTConfig(pretrained_vision=False)
+    if args.baseline:
+        if args.baseline=="rgb": inputs=torch.cat((b["features"],b["state"]),1)
+        elif args.baseline=="state": inputs=b["state"]
+        else:
+            cube_mean=b["cube"].mean(0);cube_std=b["cube"].std(0,unbiased=False).clamp_min(.01)
+            inputs=torch.cat((b["state"],(b["cube"]-cube_mean)/cube_std),1)
+        model=nn.Sequential(nn.Linear(inputs.shape[1],256),nn.SiLU(),nn.Linear(256,256),nn.SiLU(),nn.Linear(256,96)).to(device)
+        d=None
+    else:
+        model=TinyRDT(config).to(device)
+        model.vision.load_state_dict(vision_model.vision.state_dict())
+        d=ActionDiffusion(schedule=args.schedule,device=device)
+    optimizer=torch.optim.AdamW((p for p in model.parameters() if p.requires_grad),lr=args.learning_rate,weight_decay=1e-4)
+    train_rng=torch.Generator(device=device).manual_seed(args.seed+100)
+    noise_rng=torch.Generator(device=device).manual_seed(args.seed+200)
+    started=time.monotonic();best=float("inf");start_step=0
+    if args.init_checkpoint:
+        initial=torch.load(args.init_checkpoint,map_location=device,weights_only=False)
+        if initial.get("train_episode_ids")!=ids or initial["normalization"]!=asdict(stats):
+            raise ValueError("initial checkpoint dataset/normalization mismatch")
+        if initial["diffusion_config"]["prediction"]!=args.prediction or initial["diffusion_config"]["schedule"]!=args.schedule:
+            raise ValueError("initial checkpoint noise process mismatch")
+        if initial["run_config"].get("padding","masked")!=args.padding:
+            raise ValueError("initial checkpoint padding mismatch")
+        model.load_state_dict(initial["model"])
+    if args.resume:
+        ck=torch.load(args.resume,map_location=device,weights_only=False)
+        for key in ("baseline","schedule","prediction","batch_size","seed","learning_rate","padding"):
+            if ck["run_config"].get(key,"masked" if key=="padding" else None)!=getattr(args,key):raise ValueError(f"resume mismatch: {key}")
+        model.load_state_dict(ck["model"]);optimizer.load_state_dict(ck["optimizer"])
+        train_rng.set_state(ck["train_rng"].cpu());noise_rng.set_state(ck["noise_rng"].cpu())
+        torch.set_rng_state(ck["torch_rng"].cpu())
+        if device.type=="cuda":torch.cuda.set_rng_state_all([x.cpu() for x in ck["cuda_rng"]])
+        start_step=ck["step"]+1;best=ck["best_validation"]
+    config_out=vars(args).copy();config_out.update({"train_episode_ids":ids,"windows":len(ds),"precision":"float32", "encoder_checkpoint_sha256":sha256(args.encoder_checkpoint),"torch":torch.__version__})
+    save_json(out/"config.json",config_out);stats.save(out/"normalization.json");splits.save(out/"splits.json")
+    # Gate registered before training: per-joint units avoid hiding failure in
+    # small-variance wrist channels. All windows and episode starts must pass.
+    save_json(out/"gate_definition.json",{"all_window_mae":.02,"each_arm_joint_mae_rad":.03,"gripper_mae":.03,
+                                          "each_quarter_mae":.025,"episode_start_mae":.025,"sampling_seeds":[4100,4101,4102],
+                                          "selection":"fixed 5000-step comparison; final dense gate evaluated separately"})
+    # Tensor/source hashes support audit continuation without a working .git.
+    manifest={str(p):sha256(p) for folder in ("training","models","data","evaluation") for p in Path(folder).glob("*.py")}
+    data_manifest={str(p):sha256(p) for ep in ids for p in (Path(args.dataset)/"episodes"/f"episode_{ep:06d}").glob("*") if p.is_file()}
+    save_json(out/"provenance.json",{"source":manifest,"data":data_manifest})
+    with (out/"metrics.jsonl").open("a") as log:
+        for step in range(start_step,args.steps):
+            ix=torch.randint(len(ds),(args.batch_size,),device=device,generator=train_rng)
+            model.train();optimizer.zero_grad(set_to_none=True)
+            if args.baseline:
+                prediction=model(inputs[ix]).reshape(-1,16,6)
+                loss=masked_mse(prediction,b["actions"][ix],b["model_mask"][ix])
+            else:
+                t=torch.randint(0,100,(args.batch_size,),device=device,generator=noise_rng)
+                noise=torch.randn(b["actions"][ix].shape,device=device,generator=noise_rng)
+                x,_=d.q_sample(b["actions"][ix],t,noise)
+                target=noise if args.prediction=="epsilon" else b["actions"][ix]
+                prediction=model(None,b["state"][ix],x,t,b["model_mask"][ix],b["features"][ix])
+                loss=masked_mse(prediction,target,b["model_mask"][ix])
+            loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),1.);optimizer.step()
+            if step % args.eval_interval == 0 or step == args.steps-1:
+                model.eval()
+                with torch.no_grad():
+                    if args.baseline:
+                        output=model(inputs).reshape(-1,16,6);teacher=None
+                    else:
+                        output=sample(model,d,args.prediction,b,seed=4100)
+                        _,x0,eps,_,noise=denoise(model,d,args.prediction,b,50)
+                        teacher={"epsilon_mse":float((eps-noise)[b["mask"].bool()].square().mean()),
+                                 **metrics(stats.denormalize_action(x0),b["raw"],b["mask"])}
+                    result=metrics(stats.denormalize_action(output),b["raw"],b["mask"])
+                    row={"step":step,"loss":float(loss),"sampled":result,"teacher_t50":teacher,"elapsed_s":time.monotonic()-started}
+                log.write(json.dumps(row)+"\n");log.flush();print(json.dumps(row),flush=True)
+                improved=result["action_mse"]<best
+                if improved:best=result["action_mse"]
+                payload={"model":model.state_dict(),"optimizer":optimizer.state_dict(),"step":step,"best_validation":best,
+                         "model_config":asdict(config),"normalization":asdict(stats),"splits":asdict(splits),"train_episode_ids":ids,
+                         "diffusion_config":{"timesteps":100,"schedule":args.schedule,"beta_start":1e-4,"beta_end":.02,"prediction":args.prediction,"sampling_steps":10},
+                         "run_config":vars(args),"seed":args.seed,"action_horizon":16,"action_representation":"five absolute MJCF radians + normalized opening",
+                         "train_rng":train_rng.get_state(),"noise_rng":noise_rng.get_state(),"torch_rng":torch.get_rng_state(),
+                         "cuda_rng":torch.cuda.get_rng_state_all() if device.type=="cuda" else [],"elapsed_s":time.monotonic()-started}
+                if args.baseline:
+                    payload.update({"baseline":args.baseline,"input_dim":inputs.shape[1],"policy_parameters":sum(p.numel() for p in model.parameters()),"vision":vision_model.vision.state_dict()})
+                    if args.baseline=="privileged":payload.update(cube_mean=cube_mean,cube_std=cube_std)
+                torch.save(payload,out/"last.pt")
+                if improved:torch.save(payload,out/"best.pt")
+    save_json(out/"result.json",{**row,"best_sampled_mse":best,"device":str(device),"train_episode_ids":ids,
+                                "policy_parameters":sum(p.numel() for p in model.parameters() if p.requires_grad),"peak_vram_bytes":torch.cuda.max_memory_allocated() if device.type=="cuda" else 0})
+
+
+if __name__ == "__main__":
+    p=argparse.ArgumentParser();p.add_argument("--dataset",default="artifacts/pickcube_smoke100_rgb160");p.add_argument("--output",required=True)
+    p.add_argument("--encoder-checkpoint",default="artifacts/tiny_rdt_overfit10/tiny_rdt_best.pt")
+    p.add_argument("--schedule",choices=("linear","cosine"),default="cosine");p.add_argument("--prediction",choices=("epsilon","x0"),default="x0")
+    p.add_argument("--baseline",choices=("rgb","state","privileged"));p.add_argument("--steps",type=int,default=5000);p.add_argument("--seed",type=int,default=17)
+    p.add_argument("--padding",choices=("masked","hold"),default="masked")
+    p.add_argument("--batch-size",type=int,default=8);p.add_argument("--learning-rate",type=float,default=.001);p.add_argument("--device",default="cpu");p.add_argument("--eval-interval",type=int,default=1000);p.add_argument("--resume");p.add_argument("--init-checkpoint")
+    experiment(p.parse_args())

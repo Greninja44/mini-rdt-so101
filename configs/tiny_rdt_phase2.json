@@ -1,0 +1,9 @@
+{
+  "dataset": "artifacts/pickcube_smoke100_rgb160",
+  "split_seed": 17,
+  "action_horizon": 16,
+  "control_frequency_hz": 20,
+  "model": {"hidden_dim": 192, "layers": 4, "heads": 6, "vision_encoder": "MobileNetV3-Small ImageNet frozen"},
+  "diffusion": {"timesteps": 100, "beta_schedule": "linear 0.0001 to 0.02", "prediction": "epsilon", "sampling_steps": 10},
+  "optimizer": {"name": "AdamW", "learning_rate": 0.0003, "gradient_clip_norm": 1.0}
+}

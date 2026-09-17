@@ -1,0 +1,10 @@
+{
+  "control_frequency": 20,
+  "simulation_timestep": 0.002,
+  "camera": {"name": "external_rgb", "width": 160, "height": 120, "fixed": true},
+  "workspace_xy_m": {"x": [0.235, 0.28], "y": [-0.07, 0.07]},
+  "cube_size_m": 0.02,
+  "lift_success_height_m": 0.1,
+  "success_hold_steps": 5,
+  "grasp_contact": "physical MuJoCo convex fingertip contacts enabled while closing"
+}

@@ -1,0 +1,27 @@
+[project]
+name = "mini-rdt-so101"
+version = "0.1.0"
+description = "Phase 1 MuJoCo PickCube environment for SO-101"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "mujoco>=3.3,<4",
+  "numpy>=2.0",
+  "gymnasium>=1.0",
+  "imageio>=2.0",
+  "torch>=2.0",
+  "torchvision>=0.15",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[build-system]
+requires = ["hatchling>=1.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["simulation", "data", "evaluation", "models", "training"]
