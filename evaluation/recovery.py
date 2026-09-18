@@ -68,7 +68,7 @@ def main():
     for i, ep in enumerate(a.episodes):
         root = Path(a.dataset) / "episodes" / f"episode_{ep:06d}"; seed = json.loads((root / "episode.json").read_text())["seed"]
         nq = np.load(root / "joint_pos.npy"); ngc = np.load(Path("artifacts/closed_loop_v2/tinyrdt_ema") / f"ep{ep:03d}_expert_replay.npz")["grasp_center"]
-        sign = 1.0 if i % 2 == 0 else -1.0
+        sign = 1.0 if CLEAN10.index(ep) % 2 == 0 else -1.0  # fixed per seed, independent of --episodes subset
         for jname, j in JOINTS.items():
             for m in a.magnitudes:
                 stem = out / f"ep{ep:03d}_{jname}_{m:.2f}"

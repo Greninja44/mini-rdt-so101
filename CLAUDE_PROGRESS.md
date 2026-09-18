@@ -152,3 +152,15 @@ No per-variant tuning.
 - Compare success counts on identical seeds and conditions, with Fisher exact tests.
 - "Substantial" means a clear gain in both normal (all K) and recovery success, plus closes inside the measured grasp envelope.
 - An offline CLEAN10 regression beyond the gate for B or C is reported as a cost.
+
+### Phase 5 interim (2026-09-18 15:10 UTC)
+- Collection: B has 120 kept / 0 discarded (2972 frames). C has 40 kept / 0 discarded (2100 frames, including policy-visited frames). Bm has 87 B episodes (2080 frames).
+- Offline on CLEAN10 (all pass the gate, but are worse than A's 0.0067 / 0.016 / 0.006):
+  B 0.0109 / 0.023 / 0.019, C 0.0139 / 0.027 / 0.015, Bm 0.0097 / 0.021 / 0.020 (all-window / worst joint / episode start).
+- Normal closed-loop, first look: C 26/40 (K1 7, K2 3, K4 8, K8 8) vs A 28/40. B 18/36 so far.
+- **Confound identified:** 50/50 batches with equal steps give each corrective model half of A's clean-window updates. On-demo precision
+  dropped toward the 0.03 rad grasp tolerance (C worst joint 0.027).
+- **Added follow-up C40k (NOT pre-registered; decided after seeing the offline regression, before any C40k result):**
+  identical to C but 40k steps, so it gets the same number of clean-window updates as A. Evaluated with the same protocol.
+  Interpretation rule: if C40k restores offline precision AND improves closed-loop over A, the combination helps. If precision is
+  restored but closed-loop does not improve, corrective coverage is not the missing ingredient.
