@@ -70,3 +70,32 @@ when the session ended; there are 15 of 50 policy rollouts (episodes 0, 2, 6, 7)
 2. Test H8: collect DART-style data on the same 10 seeds (the expert under injected action noise, labelled by the expert's
    corrective action), retrain the identical 2M config, and repeat E3. Control: closed-loop `bc_rgb`/`bc_privileged` on the
    same scenes, to confirm the failure is not diffusion-specific.
+
+## Phase 3 — why offline accuracy ≠ closed-loop success (started 2026-09-18)
+
+Constraints from the user: no retraining, no 80-episode training, no scaling, no architecture change, no new randomisation.
+
+### Tooling
+- `evaluation/closed_loop.py`: `--policy tinyrdt|bc`. Every rollout is saved as JSON+NPZ on completion (resumable). Each step
+  records the grasp flag, pad contacts and grasp-center position. The control loop is unchanged.
+- `training/policy.py::BCPolicy`: image+state and privileged (state + true cube pose) BC, using the same clamp as TinyRDT.
+  Faithfulness on recorded observations (arm joints) matches the offline error.
+- Balanced sweep: `scripts/run_closed_loop_diagnostics.sh`, covering 3 policies × the same 10 seeds × K ∈ {1,2,4,8}, max 150 steps,
+  2 workers, plus expert replay on all 10 seeds. Output: `artifacts/closed_loop_v2/`.
+- Rendering is llvmpipe (software) with a 4096 shadow map, about 0.75 s/frame. It can't be changed without shifting the image distribution.
+- Determinism check: ep6 K=1/K=2 reproduce the earlier sweep exactly (51 and 49 steps).
+
+### Analysis definitions (fixed BEFORE seeing sweep results; see docstring of `evaluation/closed_loop_analysis.py`)
+Policy phase, failure phase, and onset thresholds of 0.015 rad (reconstruction noise) and 0.03 rad (grasp tolerance, below).
+The time-free onset is when the grasp center is more than 5 mm from the expert's path.
+
+### E4 — grasp sensitivity (physics only, `evaluation/grasp_sensitivity.py`)
+Recorded expert actions are replayed on all 10 seeds. From the first DESCEND step onward, one joint gets a constant offset or
+the gripper-close time is shifted. Result: `artifacts/closed_loop_v2/grasp_sensitivity.json`.
+- Unperturbed: 10/10. Grasp-center offset at close: xy 0.9 mm, z +0.6 mm.
+- ±0.03 rad on pan, elbow and wrist_flex: 10/10 (up to about 7 mm xy). ±0.05 rad: 0–4/10 (pan +0.05 still pinches 10/10
+  but lifts only 1/10, an off-centre grasp).
+- shoulder_lift is asymmetric. −0.02 rad: 9/10. −0.03 rad (+6.6 mm too high): 2/10. +0.05 rad (−10 mm): 9/10. +0.08 rad: 0/10.
+- Close timing: 1–5 steps late 10/10; **1 step early 4/10**, 2–5 steps early 3/10 (closing while still descending).
+- **Tolerance: about ±0.03 rad per joint, about 7 mm xy, grasp center no more than about +5 mm above or 10 mm below its
+  target. Never close early.**
