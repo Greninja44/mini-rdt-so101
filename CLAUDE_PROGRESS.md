@@ -189,3 +189,11 @@ policy tried to close while the expert would keep the gripper open. Per the user
 **6c Expert-prefix control (pre-registered 17:55 UTC, prompted by A's recovery curve; before any 6c result):** the legacy expert drives steps
 0–8 unperturbed (δ=0), then the policy runs at K=4 from step 9 (same code path as the recovery benchmark), on all 10 seeds, for A and S.
 If A's success is ≫ its normal K=4 result (8/10) and ≫ its 28/40 overall, the early approach from the home pose is the dominant failure origin.
+
+### Phase 5 RESULT (2026-09-18 20:30 UTC) → `CORRECTIVE_DATA_REPORT.md`
+- Normal: A 28/40, B 18/40 (p=0.041 worse), C 26/40, Bm 23/40, C40k 28/40. Recovery (80 each): A 63, B 58, C 51, Bm 61, C40k 51.
+- **Corrective coverage does not make the same 2M TinyRDT robust.** DAgger (C40k) cut early closes from 7/40 to 1/40, but lateral misalignment remains.
+- The new mechanism is **scene blending**. Failing lateral close errors point toward the nearest other CLEAN10 cube (median cos 0.92; 59% vs 33% chance).
+  ep7 (neighbours 16–18 mm away) succeeds 2/20 across all variants. ep4/ep8 (5.5 mm apart, inside the envelope) are fine.
+- Bug fixed: recovery filenames collapsed magnitudes (with_suffix ate ".NN"). Orchestrator bug: pgrep on script names matched launcher shells.
+  The fix is to wait on log markers and files.

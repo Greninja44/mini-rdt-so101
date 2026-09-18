@@ -5,12 +5,12 @@ cd "$(dirname "$0")/.."
 export PYTHONWARNINGS=ignore
 PY=.venv/bin/python; S=artifacts/phase6/spatial_clean10
 log() { echo "[$(date -u +%FT%TZ)] $*" | tee -a artifacts/phase6.log; }
-while pgrep -f run_phase5_remaining.sh >/dev/null; do sleep 60; done
+# Wait on log markers / files, not process names (launcher shells can contain script names).
+until grep -q "phase 5 remaining complete" artifacts/corrective_phase.log 2>/dev/null; do sleep 60; done
 log "6a oracle split"
 $PY -m evaluation.oracle_ablation --mode gripper_oracle --output artifacts/phase6/oracle/gripper_oracle >> artifacts/phase6/oracle_gripper.log 2>&1 &
 $PY -m evaluation.oracle_ablation --mode arm_oracle --output artifacts/phase6/oracle/arm_oracle >> artifacts/phase6/oracle_arm.log 2>&1 &
 wait
-while pgrep -f "audit_overfit --output $S" >/dev/null; do sleep 60; done
 if [ ! -f $S/result.json ]; then
   log "spatial training incomplete - retraining"; rm -rf $S
   $PY -m training.audit_overfit --output $S --vision-tokens spatial --schedule cosine --prediction x0 --padding hold --steps 20000 --seed 17 \

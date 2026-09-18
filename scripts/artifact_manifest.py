@@ -14,6 +14,9 @@ GROUPS = {
     "gate-passing TinyRDT (cosine/x0/hold, 20k steps, EMA 0.999)": ["artifacts/research_audit/cosine_x0_hold_ema/*.pt", "artifacts/research_audit/cosine_x0_hold_ema/*.json*", "artifacts/research_audit/cosine_x0_hold_ema/diagnostics_ema_last/diagnostics.json"],
     "diagnostic BC baselines": ["artifacts/research_audit/bc_rgb/best.pt", "artifacts/research_audit/bc_privileged/best.pt", "artifacts/research_audit/bc_state/best.pt", "artifacts/research_audit/bc_*/normalization.json"],
     "offline diagnostic results": ["artifacts/research_audit/*/result.json", "artifacts/research_audit/*/gate_definition.json", "artifacts/research_audit/*/diagnostics/diagnostics.json", "artifacts/research_audit/*.json"],
+    "corrective datasets B (perturb) and C (dagger), per-episode arrays + metadata": ["artifacts/corrective/*/episodes/*/*", "artifacts/corrective/*/discarded.jsonl"],
+    "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model": ["artifacts/corrective_train/*/ema_last.pt", "artifacts/corrective_train/*/*.json", "artifacts/phase6/*/ema_last.pt", "artifacts/phase6/*/*.json"],
+    "Phase 5/6 evaluation results": ["artifacts/closed_loop_v3/*/*.json", "artifacts/recovery/*/*.json", "artifacts/phase5_analysis/*.json", "artifacts/phase6/oracle/*/*.json"],
     "closed-loop results and grasp sensitivity": ["artifacts/closed_loop_v2/*/*.json", "artifacts/closed_loop_v2/*.json", "artifacts/closed_loop_v2/analysis/*.json"],
 }
 
