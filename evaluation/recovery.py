@@ -61,6 +61,7 @@ def main():
     p.add_argument("--magnitudes", type=float, nargs="+", default=[.01, .02, .03, .04])
     p.add_argument("--episodes", type=int, nargs="+", default=CLEAN10)
     p.add_argument("--max-steps", type=int, default=120)
+    p.add_argument("--joints", nargs="+", choices=list(JOINTS), default=list(JOINTS))
     p.add_argument("--dataset", default="artifacts/pickcube_smoke100_rgb160")
     a = p.parse_args()
     out = Path(a.output); out.mkdir(parents=True, exist_ok=True)
@@ -69,7 +70,7 @@ def main():
         root = Path(a.dataset) / "episodes" / f"episode_{ep:06d}"; seed = json.loads((root / "episode.json").read_text())["seed"]
         nq = np.load(root / "joint_pos.npy"); ngc = np.load(Path("artifacts/closed_loop_v2/tinyrdt_ema") / f"ep{ep:03d}_expert_replay.npz")["grasp_center"]
         sign = 1.0 if CLEAN10.index(ep) % 2 == 0 else -1.0  # fixed per seed, independent of --episodes subset
-        for jname, j in JOINTS.items():
+        for jname, j in ((n, JOINTS[n]) for n in a.joints):
             for m in a.magnitudes:
                 stem = out / f"ep{ep:03d}_{jname}_m{round(m * 1000):03d}"  # no dots: with_suffix would eat ".NN"
                 if stem.with_suffix(".json").exists(): continue

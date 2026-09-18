@@ -185,3 +185,7 @@ policy tried to close while the expert would keep the gripper open. Per the user
 - The same 20k steps / EMA / cosine x0 hold config and seed. Then the offline gate, normal closed-loop and the recovery benchmark.
 - Hypothesis: lateral error at close is limited by pooled features' spatial precision (probe: 4.3 mm pooled vs 2.8 mm spatial).
 - Success = more successes than A on identical seeds/K, closes within the 7 mm envelope, and a better recovery curve.
+
+**6c Expert-prefix control (pre-registered 17:55 UTC, prompted by A's recovery curve; before any 6c result):** the legacy expert drives steps
+0–8 unperturbed (δ=0), then the policy runs at K=4 from step 9 (same code path as the recovery benchmark), on all 10 seeds, for A and S.
+If A's success is ≫ its normal K=4 result (8/10) and ≫ its 28/40 overall, the early approach from the home pose is the dominant failure origin.
