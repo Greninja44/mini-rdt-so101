@@ -99,3 +99,56 @@ the gripper-close time is shifted. Result: `artifacts/closed_loop_v2/grasp_sensi
 - Close timing: 1–5 steps late 10/10; **1 step early 4/10**, 2–5 steps early 3/10 (closing while still descending).
 - **Tolerance: about ±0.03 rad per joint, about 7 mm xy, grasp center no more than about +5 mm above or 10 mm below its
   target. Never close early.**
+
+### E5 — closed-loop sweep COMPLETE (2026-09-18) → `CLOSED_LOOP_DIAGNOSTIC_REPORT.md`
+- Expert replay 10/10. TinyRDT 28/40 (K=1 5, K=2 6, K=4 8, K=8 9 of 10; K1 vs K8 Fisher p=0.141). BC image 0/40.
+  BC privileged 2/40. The BCs are not accuracy-matched (offline worst joint about 0.03 rad).
+- All 12 TinyRDT failures are mis-aligned closes (lateral error at close 9.5–37 mm, envelope about 7 mm). The 0.03 rad tolerance is crossed in
+  **approach** (median step 8). The gap between the policy's action and the expert label grows with off-demo distance (0.038 → 0.061 → 0.091 rad).
+- **Decision gate: coverage / compounding supported → proceed.**
+
+### E6 — the data-generating expert (CRITICAL)
+- The current `simulation/expert.py` did NOT generate CLEAN10: run live, it differs at t=1.
+- `simulation/legacy_expert.py` (DLS IK in every phase, approach target cube+0.10 m, joint margin 0.01) reproduces all 10 demos
+  **bit-exactly**.
+- Its IK reads MuJoCo kinematics left stale by mj_step. Exact snapshots therefore need a full `mj_copyData` with no mj_forward on restore.
+  `data/corrective.py::expert_chunk` counterfactual chunks equal the recorded futures bit-exactly on all 10 seeds.
+- Consequence: approach HAS a valid state-feedback corrective oracle (option A, verified exact), and approach is where divergence begins.
+
+## Phase 5 — corrective state coverage (PRE-REGISTERED 2026-09-18, before any collection)
+
+**Hypothesis:** TinyRDT fails closed-loop because it never saw expert corrections from off-trajectory states. Adding expert labels at such states
+(B: expert under controlled perturbations; C: states TinyRDT itself visits) will raise memorised-scene success and recovery with the
+same 2,009,670-parameter model. If B ≈ C ≈ A, the hypothesis is weakened. If C > B, the policy's own state distribution matters beyond
+generic perturbation.
+
+**Label contract:** every corrective sample is (RGB + state of the ACTUAL state s_t) → the 16-step chunk the legacy expert executes FROM s_t,
+computed as a counterfactual from an exact snapshot. There is no slicing of executed futures during perturbed or policy-driven steps.
+
+**Datasets** (CLEAN10 normalisation stats kept fixed for every variant):
+- A CLEAN10: the existing 10 demos, unchanged (hashes in ARTIFACT_MANIFEST.json). Model: the existing `cosine_x0_hold_ema/ema_last.pt`.
+- B +PERTURB: per seed, 12 episodes = t0 ∈ {approach step 10, DESCEND−2, DESCEND, LIFT+1} × joint ∈ {shoulder_pan, shoulder_lift,
+  elbow_flex}. Magnitude is drawn from {0.01, 0.02, 0.03} (p=0.8 total) or 0.04 (p=0.2), sign ±, fixed RNG per seed. The offset is added to the
+  expert command for 3 steps, clipped to joint range ±0.01, then the expert resumes from the actual state. Frames are recorded from t0.
+  Discarded if the expert does not succeed.
+- C +DAGGER: TinyRDT A drives (policy seed 0) on 10 seeds × K ∈ {1,2,4,8}. The legacy expert shadows it (FSM observes the real state) and
+  labels every visited state. Takeover when time-free joint distance to the seed's nominal trajectory > 0.10 rad, or the policy proposes
+  close while the expert would keep it open. After takeover the expert drives to the end. Approach is included (valid oracle, E6). One
+  iteration only. Discarded if the expert fails after takeover.
+- B_m: B subsampled (fixed-seed episode order) to C's corrective frame count, to separate coverage type from data volume.
+
+**Training:** identical config to A (cosine, x0, hold, EMA 0.999, 20k steps, batch 8, lr 1e-3, seed 17, same frozen encoder). Each batch is
+50% CLEAN10 windows and 50% corrective windows. Every variant gets the same 20k gradient steps, so the optimisation budget is equal.
+No per-variant tuning.
+
+**Evaluation:**
+- (i) Normal closed-loop: 10 memorised seeds × K ∈ {1,2,4,8}, same evaluator and analysis as A.
+- (ii) Recovery benchmark, all variants: legacy expert to step 6, then offset δ ∈ {0.01, 0.02, 0.03, 0.04} for 3 steps on shoulder_pan or
+  shoulder_lift (sign + for even seed index, − for odd), then the policy takes over at K=4 (single K, identical for all variants). 80 rollouts per variant.
+  The start point (step 6) is not in B's t0 set.
+- Primary metric: success. Also grasp, lift, drop, onset, joint/EEF error at close, early close, replans.
+
+**Interpretation criteria** (no manufactured threshold):
+- Compare success counts on identical seeds and conditions, with Fisher exact tests.
+- "Substantial" means a clear gain in both normal (all K) and recovery success, plus closes inside the measured grasp envelope.
+- An offline CLEAN10 regression beyond the gate for B or C is reported as a cost.
