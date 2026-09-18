@@ -224,3 +224,8 @@ If A's success is ≫ its normal K=4 result (8/10) and ≫ its 28/40 overall, th
     conditioning ablation.
   - Evaluated with the offline gate, normal (40) and recovery (80).
 - The same stopping rule applies. 80-demo work starts only if memorised scenes become reliable. No scaling.
+
+### 7a RESULT (2026-09-18 ~23:00 UTC): expert-prefix length N, then A at K=4, 10 seeds
+N=0 (normal): 8/10 (ep0, ep7 fail). N=1: 9/10 (ep7). N=2: 7/10 (ep0, ep7, ep8). N=3: 9/10 (ep7). N=5: 10/10. N=9: 10/10.
+Not monotone at n=10 (N=2 dip). ep7 (the most crowded scene) needs ≥5 correct early steps (0.25 s). This supports early scene
+identification as the failure origin, and the effect is concentrated in the first ~5 steps.
