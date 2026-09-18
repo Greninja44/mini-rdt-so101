@@ -23,6 +23,11 @@ COLORS = {"A": "#2a78d6", "B": "#eb6834", "C": "#1baf7a", "Bm": "#eda100", "C40k
 LABELS = {"A": "A CLEAN10", "B": "B +PERTURB", "C": "C +DAGGER", "Bm": "Bm +PERTURB (size-matched to C)", "C40k": "C40k +DAGGER, 40k steps (follow-up)"}
 
 
+def med(values):
+    values = [v for v in values if v is not None]
+    return float(np.median(values)) if values else None
+
+
 def fisher(s1, n1, s2, n2):
     a, b, c, d = s1, n1 - s1, s2, n2 - s2; k = a + c; N = n1 + n2
     p = lambda x: comb(n1, x) * comb(n2, k - x) / comb(N, k)
@@ -72,7 +77,7 @@ def main():
             "total": {"n": len(an), "success": sum(x["success"] for x in an)},
             "grasped": sum(x["grasped"] for x in an), "lifted": sum(x["lifted"] for x in an), "dropped": sum(x["dropped"] for x in an),
             "failure_phases": {ph: sum(x["failure_phase"] == ph for x in an) for ph in ("approach", "descent", "grasp", "lift", "drop", "other")},
-            "onset_0.03rad_median": float(np.median([x["onset_0.03rad"] for x in an if x["onset_0.03rad"] is not None] or [np.nan])),
+            "onset_0.03rad_median": med([x["onset_0.03rad"] for x in an]),
             "onset_0.03rad_never": sum(x["onset_0.03rad"] is None for x in an),
             "close": {"n": len(g), "early_close": sum(x["close_timing_vs_expert_steps"] < 0 for x in g),
                       "xy_mm_median": float(np.median([x["xy_offset_mm"] for x in g])), "xy_mm_p90": float(np.percentile([x["xy_offset_mm"] for x in g], 90)),
@@ -92,8 +97,8 @@ def main():
             s = json.loads(f.read_text()); rows = s["rows"]
             report["recovery"][v] = {"by_magnitude": s["table"], "total": {"n": len(rows), "success": sum(r["success"] for r in rows)},
                                      "by_joint": {j: {"n": len(r := [x for x in rows if x["joint"] == j]), "success": sum(x["success"] for x in r)} for j in ("shoulder_pan", "shoulder_lift")},
-                                     "handover_joint_dist_median_by_magnitude": {m: float(np.median([r["handover"]["joint_dist_rad"] for r in rows if f"{r['magnitude_rad']:.2f}" == m])) for m in s["table"]},
-                                     "handover_path_mm_median_by_magnitude": {m: float(np.median([r["handover"]["grasp_center_path_mm"] for r in rows if f"{r['magnitude_rad']:.2f}" == m])) for m in s["table"]}}
+                                     "handover_joint_dist_median_by_magnitude": {m: med([r["handover"]["joint_dist_rad"] for r in rows if f"{r['magnitude_rad']:.2f}" == m]) for m in s["table"]},
+                                     "handover_path_mm_median_by_magnitude": {m: med([r["handover"]["grasp_center_path_mm"] for r in rows if f"{r['magnitude_rad']:.2f}" == m]) for m in s["table"]}}
     for v in ("B", "C", "Bm", "C40k"):
         if v in report["recovery"] and "A" in report["recovery"]:
             a, b = report["recovery"]["A"]["total"], report["recovery"][v]["total"]
@@ -109,7 +114,7 @@ def main():
         axes[0].plot([1, 2, 4, 8], [r["by_k"][k]["success"] / max(1, r["by_k"][k]["n"]) for k in (1, 2, 4, 8)], marker="o", lw=2, color=COLORS[v], label=LABELS[v])
     axes[0].set(xscale="log", xticks=[1, 2, 4, 8], xticklabels=["1", "2", "4", "8"], xlabel="K (actions executed per replan)", ylabel="success rate (10 memorised seeds)", ylim=(-.05, 1.05))
     for v, r in report["recovery"].items():
-        ms = sorted(r["by_magnitude"]); axes[1].plot([float(m) for m in ms], [r["by_magnitude"][m]["success"] / r["by_magnitude"][m]["n"] for m in ms], marker="o", lw=2, color=COLORS[v], label=LABELS[v])
+        ms = sorted(r["by_magnitude"]); ms = [m for m in ms if r["by_magnitude"][m]["n"]]; axes[1].plot([float(m) for m in ms], [r["by_magnitude"][m]["success"] / r["by_magnitude"][m]["n"] for m in ms], marker="o", lw=2, color=COLORS[v], label=LABELS[v])
     axes[1].set(xlabel="initial perturbation (rad, 3 steps at t=6)", ylabel="recovery success rate (K=4)", ylim=(-.05, 1.05))
     for ax in axes: ax.grid(color="#d9d8d4", lw=.5); ax.spines[["top", "right"]].set_visible(False); ax.legend(frameon=False, fontsize=8)
     fig.tight_layout(); fig.savefig(out / "phase5_success.png", dpi=120); plt.close(fig)
