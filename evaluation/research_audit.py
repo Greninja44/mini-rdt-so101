@@ -80,6 +80,34 @@ def make_bank(dataset_root, ids, stats, model, device, padding="masked"):
     return ds, bank
 
 
+@torch.no_grad()
+def make_corrective_bank(roots, stats, model, device, max_frames=None, order_seed=0):
+    """Corrective samples: actual-state observation -> counterfactual expert chunk.
+
+    Chunks are already hold-padded (label_valid marks the real prefix), which is
+    the 'hold' training convention: the model mask is all ones. With
+    max_frames, whole episodes are taken in a fixed-seed order until the budget
+    is reached (size-matched ablations).
+    """
+    episodes = sorted(p for r in roots for p in (Path(r) / "episodes").glob("episode_*") if p.is_dir() and not p.name.endswith(".tmp"))
+    order = np.random.default_rng(order_seed).permutation(len(episodes)) if max_frames else np.arange(len(episodes))
+    chosen, total = [], 0
+    for i in order:
+        n = len(np.load(episodes[i] / "t.npy"))
+        if max_frames and total + n > max_frames and chosen: break
+        chosen.append(episodes[i]); total += n
+    values = {k: [] for k in ("features", "state", "raw", "mask")}
+    for ep in sorted(chosen):
+        rgb = torch.from_numpy(np.load(ep / "rgb.npy")).permute(0, 3, 1, 2)
+        for lo in range(0, len(rgb), 64): values["features"].append(model.vision(rgb[lo:lo + 64].to(device)))
+        values["state"].append(torch.from_numpy(np.concatenate((np.load(ep / "joint_pos.npy"), np.load(ep / "gripper.npy")), 1)).float())
+        values["raw"].append(torch.from_numpy(np.load(ep / "label_chunk.npy")).float()); values["mask"].append(torch.from_numpy(np.load(ep / "label_valid.npy")).float())
+    bank = {k: torch.cat(v).to(device) for k, v in values.items()}
+    bank["state"] = stats.normalize_state(bank["state"]); bank["actions"] = stats.normalize_action(bank["raw"])
+    bank["model_mask"] = torch.ones_like(bank["mask"])
+    return bank, [str(p) for p in sorted(chosen)]
+
+
 def metrics(pred, target, mask):
     err = (pred-target)[mask.bool()]
     return {"action_mae": float(err.abs().mean()), "action_mse": float(err.square().mean()),

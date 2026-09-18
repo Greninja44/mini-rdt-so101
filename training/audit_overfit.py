@@ -21,7 +21,7 @@ from data.ml_dataset import make_episode_splits, compute_normalization
 from models.tiny_rdt import TinyRDT, TinyRDTConfig
 from training.diffusion import ActionDiffusion
 from training.trainer import masked_mse, set_seed
-from evaluation.research_audit import load, make_bank, metrics, sample, denoise, save_json, sha256
+from evaluation.research_audit import load, make_bank, make_corrective_bank, metrics, sample, denoise, save_json, sha256
 
 
 def experiment(args):
@@ -38,6 +38,12 @@ def experiment(args):
     splits=make_episode_splits(args.dataset,args.seed);ids=splits.train[:10]
     stats=compute_normalization(args.dataset,ids)
     ds,b=make_bank(args.dataset,ids,stats,vision_model,device,args.padding)
+    cb=None;corrective_episodes=[]
+    if args.corrective:
+        if args.baseline or args.padding!="hold": raise ValueError("corrective data uses hold-padded diffusion training")
+        cb,corrective_episodes=make_corrective_bank(args.corrective,stats,vision_model,device,args.corrective_max_frames,args.seed)
+        n_corrective=round(args.batch_size*args.corrective_fraction)
+        if not 0<n_corrective<args.batch_size: raise ValueError("corrective fraction must leave clean and corrective samples in each batch")
     set_seed(args.seed)  # Encoder extraction does not consume training RNG.
     config=TinyRDTConfig(pretrained_vision=False)
     if args.baseline:
@@ -76,7 +82,7 @@ def experiment(args):
         torch.set_rng_state(ck["torch_rng"].cpu())
         if device.type=="cuda":torch.cuda.set_rng_state_all([x.cpu() for x in ck["cuda_rng"]])
         start_step=ck["step"]+1;best=ck["best_validation"]
-    config_out=vars(args).copy();config_out.update({"train_episode_ids":ids,"windows":len(ds),"precision":"float32", "encoder_checkpoint_sha256":sha256(args.encoder_checkpoint),"torch":torch.__version__})
+    config_out=vars(args).copy();config_out.update({"corrective_frames":0 if cb is None else len(cb["state"]),"corrective_episodes":corrective_episodes,"train_episode_ids":ids,"windows":len(ds),"precision":"float32", "encoder_checkpoint_sha256":sha256(args.encoder_checkpoint),"torch":torch.__version__})
     save_json(out/"config.json",config_out);stats.save(out/"normalization.json");splits.save(out/"splits.json")
     # Gate registered before training: per-joint units avoid hiding failure in
     # small-variance wrist channels. All windows and episode starts must pass.
@@ -95,12 +101,17 @@ def experiment(args):
                 prediction=model(inputs[ix]).reshape(-1,16,6)
                 loss=masked_mse(prediction,b["actions"][ix],b["model_mask"][ix])
             else:
+                keys=("actions","state","features","model_mask")
+                if cb is None: batch={k:b[k][ix] for k in keys}
+                else:
+                    ixc=torch.randint(len(cb["state"]),(n_corrective,),device=device,generator=train_rng)
+                    batch={k:torch.cat((b[k][ix[:args.batch_size-n_corrective]],cb[k][ixc])) for k in keys}
                 t=torch.randint(0,100,(args.batch_size,),device=device,generator=noise_rng)
-                noise=torch.randn(b["actions"][ix].shape,device=device,generator=noise_rng)
-                x,_=d.q_sample(b["actions"][ix],t,noise)
-                target=noise if args.prediction=="epsilon" else b["actions"][ix]
-                prediction=model(None,b["state"][ix],x,t,b["model_mask"][ix],b["features"][ix])
-                loss=masked_mse(prediction,target,b["model_mask"][ix])
+                noise=torch.randn(batch["actions"].shape,device=device,generator=noise_rng)
+                x,_=d.q_sample(batch["actions"],t,noise)
+                target=noise if args.prediction=="epsilon" else batch["actions"]
+                prediction=model(None,batch["state"],x,t,batch["model_mask"],batch["features"])
+                loss=masked_mse(prediction,target,batch["model_mask"])
             loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),1.);optimizer.step()
             if ema is not None:
                 with torch.no_grad():
@@ -151,5 +162,8 @@ if __name__ == "__main__":
     p.add_argument("--baseline",choices=("rgb","state","privileged"));p.add_argument("--steps",type=int,default=5000);p.add_argument("--seed",type=int,default=17)
     p.add_argument("--padding",choices=("masked","hold"),default="masked")
     p.add_argument("--batch-size",type=int,default=8);p.add_argument("--learning-rate",type=float,default=.001);p.add_argument("--device",default="cpu");p.add_argument("--eval-interval",type=int,default=1000);p.add_argument("--resume");p.add_argument("--init-checkpoint")
+    p.add_argument("--corrective",nargs="+",help="corrective dataset roots (data/collect_corrective.py)")
+    p.add_argument("--corrective-fraction",type=float,default=.5)
+    p.add_argument("--corrective-max-frames",type=int,help="size-matched ablation: whole episodes up to this many frames")
     p.add_argument("--ema-decay",type=float,default=0.,help="0 disables; EMA weights saved to ema_last.pt")
     experiment(p.parse_args())
