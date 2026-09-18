@@ -6,6 +6,7 @@ minibatches, corruption, and evaluation. Diagnostic BC models share its windows.
 """
 from __future__ import annotations
 import argparse
+import copy
 from dataclasses import asdict
 import json
 from pathlib import Path
@@ -52,6 +53,8 @@ def experiment(args):
         model.vision.load_state_dict(vision_model.vision.state_dict())
         d=ActionDiffusion(schedule=args.schedule,device=device)
     optimizer=torch.optim.AdamW((p for p in model.parameters() if p.requires_grad),lr=args.learning_rate,weight_decay=1e-4)
+    # EMA consumes no RNG, so raw weights follow exactly the non-EMA trajectory.
+    ema=copy.deepcopy(model).eval().requires_grad_(False) if args.ema_decay else None
     train_rng=torch.Generator(device=device).manual_seed(args.seed+100)
     noise_rng=torch.Generator(device=device).manual_seed(args.seed+200)
     started=time.monotonic();best=float("inf");start_step=0
@@ -99,6 +102,11 @@ def experiment(args):
                 prediction=model(None,b["state"][ix],x,t,b["model_mask"][ix],b["features"][ix])
                 loss=masked_mse(prediction,target,b["model_mask"][ix])
             loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),1.);optimizer.step()
+            if ema is not None:
+                with torch.no_grad():
+                    for e,p in zip(ema.state_dict().values(),model.state_dict().values()):
+                        if e.dtype.is_floating_point: e.lerp_(p,1-args.ema_decay)
+                        else: e.copy_(p)
             if step % args.eval_interval == 0 or step == args.steps-1:
                 model.eval()
                 with torch.no_grad():
@@ -125,6 +133,13 @@ def experiment(args):
                     if args.baseline=="privileged":payload.update(cube_mean=cube_mean,cube_std=cube_std)
                 torch.save(payload,out/"last.pt")
                 if improved:torch.save(payload,out/"best.pt")
+                if ema is not None:
+                    ema_payload={k:v for k,v in payload.items() if k!="optimizer"};ema_payload["model"]=ema.state_dict()
+                    ema_payload["ema_decay"]=args.ema_decay
+                    with torch.no_grad():
+                        ema_row=metrics(stats.denormalize_action(sample(ema,d,args.prediction,b,seed=4100)),b["raw"],b["mask"])
+                    log.write(json.dumps({"step":step,"ema_sampled":ema_row})+"\n");log.flush();print(json.dumps({"step":step,"ema_sampled":ema_row}),flush=True)
+                    torch.save(ema_payload,out/"ema_last.pt")
     save_json(out/"result.json",{**row,"best_sampled_mse":best,"device":str(device),"train_episode_ids":ids,
                                 "policy_parameters":sum(p.numel() for p in model.parameters() if p.requires_grad),"peak_vram_bytes":torch.cuda.max_memory_allocated() if device.type=="cuda" else 0})
 
@@ -136,4 +151,5 @@ if __name__ == "__main__":
     p.add_argument("--baseline",choices=("rgb","state","privileged"));p.add_argument("--steps",type=int,default=5000);p.add_argument("--seed",type=int,default=17)
     p.add_argument("--padding",choices=("masked","hold"),default="masked")
     p.add_argument("--batch-size",type=int,default=8);p.add_argument("--learning-rate",type=float,default=.001);p.add_argument("--device",default="cpu");p.add_argument("--eval-interval",type=int,default=1000);p.add_argument("--resume");p.add_argument("--init-checkpoint")
+    p.add_argument("--ema-decay",type=float,default=0.,help="0 disables; EMA weights saved to ema_last.pt")
     experiment(p.parse_args())
