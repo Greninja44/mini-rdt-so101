@@ -21,6 +21,9 @@ class TinyRDTConfig:
     # frozen feature map as 20 tokens (same per-token projection).
     vision_tokens: str = "pooled"
     vision_grid: tuple[int, int] = (4, 5)
+    # Training-only regulariser: probability of replacing the state token by a
+    # learned null embedding (the parameter exists only when > 0).
+    state_dropout: float = 0.0
 
 
 class SinusoidalTimeEmbedding(nn.Module):
@@ -65,6 +68,7 @@ class TinyRDT(nn.Module):
         d = config.hidden_dim; self.vision = FrozenMobileNet(config.pretrained_vision, config.vision_tokens == "spatial")
         self.n_vision = 1 if config.vision_tokens == "pooled" else config.vision_grid[0] * config.vision_grid[1]; self.n_cond = self.n_vision + 2
         self.vision_proj = nn.Linear(self.vision.output_dim, d); self.state_proj = nn.Sequential(nn.Linear(config.state_dim, d), nn.SiLU(), nn.Linear(d, d))
+        if config.state_dropout > 0: self.state_null = nn.Parameter(torch.zeros(d))
         self.time_proj = nn.Sequential(SinusoidalTimeEmbedding(d), nn.Linear(d, d), nn.SiLU(), nn.Linear(d, d))
         self.action_proj = nn.Linear(config.action_dim, d); self.position = nn.Parameter(torch.zeros(1, self.n_cond + config.horizon, d))
         layer = nn.TransformerEncoderLayer(d_model=d, nhead=config.heads, dim_feedforward=d * 4, dropout=config.dropout, batch_first=True, activation="gelu", norm_first=True)
@@ -80,6 +84,7 @@ class TinyRDT(nn.Module):
         timestep: torch.Tensor,
         action_valid_mask: torch.Tensor | None = None,
         vision_features: torch.Tensor | None = None,
+        state_drop: torch.Tensor | None = None,
     ) -> torch.Tensor:
         """Predict epsilon for ``noisy_actions``.
 
@@ -94,7 +99,9 @@ class TinyRDT(nn.Module):
         vision_features = self.vision(rgb) if vision_features is None else vision_features
         if vision_features.ndim == 2: vision_features = vision_features[:, None]
         if vision_features.shape[1] != self.n_vision: raise ValueError("vision feature tokens do not match config.vision_tokens")
-        cond = torch.cat((self.vision_proj(vision_features), self.state_proj(state)[:, None], self.time_proj(timestep)[:, None]), dim=1)
+        state_token = self.state_proj(state)
+        if state_drop is not None: state_token = torch.where(state_drop[:, None], self.state_null.expand_as(state_token), state_token)
+        cond = torch.cat((self.vision_proj(vision_features), state_token[:, None], self.time_proj(timestep)[:, None]), dim=1)
         tokens = torch.cat((cond, self.action_proj(noisy_actions)), dim=1) + self.position[:, :self.n_cond + noisy_actions.shape[1]]
         padding_mask = None
         if action_valid_mask is not None:

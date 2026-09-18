@@ -197,3 +197,30 @@ If A's success is ≫ its normal K=4 result (8/10) and ≫ its 28/40 overall, th
   ep7 (neighbours 16–18 mm away) succeeds 2/20 across all variants. ep4/ep8 (5.5 mm apart, inside the envelope) are fine.
 - Bug fixed: recovery filenames collapsed magnitudes (with_suffix ate ".NN"). Orchestrator bug: pgrep on script names matched launcher shells.
   The fix is to wait on log markers and files.
+
+### Phase 6 RESULT (2026-09-18 22:30 UTC)
+- 6a oracle split (A, 10 seeds × 4 K):
+  - **expert arm + policy gripper 40/40** (vs A 28/40, p=0.0002): the policy's gripper timing is fine given an accurate arm.
+  - policy arm + expert 4 mm gripper rule: 19/40. 19 failures never close because the arm never gets within 4 mm.
+  - **The failure is arm (lateral) placement, not the gripper decision.**
+- 6b spatial tokens S (2,013,318 trainable, CLEAN10):
+  - Offline equal to A (0.0068 / 0.0156 / 0.0053). Uses the image twice as much (wrong-image MAE 0.047 vs 0.024).
+  - Closed-loop 29/40 (p=1.0 vs A); recovery 61/80 vs 63/80. **Spatial visual precision alone is not the fix.**
+- 6c expert prefix (the expert drives steps 0–8, then the policy at K=4): **A 10/10, S 10/10**, including ep0/ep7 (A's normal K=4 is 8/10).
+- **Mechanism (supported):** every episode starts from the identical HOME state (std ~1e-7), so early actions can come only from the image.
+  The model is state-dominant (wrong-state MAE 0.21 vs wrong-image 0.02–0.05). Early motion blends neighbouring scenes. The state then
+  identifies a scene, and the policy locks onto a trajectory offset toward the nearest other cube (the §16 direction statistic).
+  Given a correct 9-step start, the policy completes every seed. Corrective data cannot fix a scene-identification error at the start.
+
+## Phase 7 — early scene identification (PRE-REGISTERED 2026-09-18 22:40 UTC, before any Phase-7 result)
+- **7a prefix-length sweep:** the expert drives the first N ∈ {1, 2, 3, 5} steps unperturbed, then A at K=4, 10 seeds each.
+  This finds how many correct steps disambiguate the scene.
+- **7b state dropout (training-only regulariser):**
+  - During training, with p=0.3 per sample, the state token is replaced by a learned null embedding (+192 params → 2,009,862
+    trainable). At inference the state is always given.
+  - Labels are unchanged (true expert chunks): no perturbed-observation → nominal-action pairs.
+  - Otherwise identical to A (CLEAN10, cosine / x0 / hold, EMA, 20k steps, seed 17).
+  - Prediction if the mechanism is right: more successes than A, concentrated on ep0/ep7 and small K; higher image dependence in the
+    conditioning ablation.
+  - Evaluated with the offline gate, normal (40) and recovery (80).
+- The same stopping rule applies. 80-demo work starts only if memorised scenes become reliable. No scaling.

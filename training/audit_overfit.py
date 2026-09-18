@@ -46,7 +46,7 @@ def experiment(args):
         n_corrective=round(args.batch_size*args.corrective_fraction)
         if not 0<n_corrective<args.batch_size: raise ValueError("corrective fraction must leave clean and corrective samples in each batch")
     set_seed(args.seed)  # Encoder extraction does not consume training RNG.
-    config=TinyRDTConfig(pretrained_vision=False,vision_tokens=args.vision_tokens)
+    config=TinyRDTConfig(pretrained_vision=False,vision_tokens=args.vision_tokens,state_dropout=args.state_dropout)
     if args.baseline:
         if args.baseline=="rgb": inputs=torch.cat((b["features"],b["state"]),1)
         elif args.baseline=="state": inputs=b["state"]
@@ -64,6 +64,7 @@ def experiment(args):
     ema=copy.deepcopy(model).eval().requires_grad_(False) if args.ema_decay else None
     train_rng=torch.Generator(device=device).manual_seed(args.seed+100)
     noise_rng=torch.Generator(device=device).manual_seed(args.seed+200)
+    drop_rng=torch.Generator(device=device).manual_seed(args.seed+300)  # separate stream: other streams stay identical to A
     started=time.monotonic();best=float("inf");start_step=0
     if args.init_checkpoint:
         initial=torch.load(args.init_checkpoint,map_location=device,weights_only=False)
@@ -111,7 +112,8 @@ def experiment(args):
                 noise=torch.randn(batch["actions"].shape,device=device,generator=noise_rng)
                 x,_=d.q_sample(batch["actions"],t,noise)
                 target=noise if args.prediction=="epsilon" else batch["actions"]
-                prediction=model(None,batch["state"],x,t,batch["model_mask"],batch["features"])
+                drop=(torch.rand(args.batch_size,device=device,generator=drop_rng)<args.state_dropout) if args.state_dropout>0 else None
+                prediction=model(None,batch["state"],x,t,batch["model_mask"],batch["features"],drop)
                 loss=masked_mse(prediction,target,batch["model_mask"])
             loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),1.);optimizer.step()
             if ema is not None:
@@ -163,6 +165,7 @@ if __name__ == "__main__":
     p.add_argument("--baseline",choices=("rgb","state","privileged"));p.add_argument("--steps",type=int,default=5000);p.add_argument("--seed",type=int,default=17)
     p.add_argument("--padding",choices=("masked","hold"),default="masked")
     p.add_argument("--batch-size",type=int,default=8);p.add_argument("--learning-rate",type=float,default=.001);p.add_argument("--device",default="cpu");p.add_argument("--eval-interval",type=int,default=1000);p.add_argument("--resume");p.add_argument("--init-checkpoint")
+    p.add_argument("--state-dropout",type=float,default=0.,help="training-only: P(state token -> learned null)")
     p.add_argument("--vision-tokens",choices=("pooled","spatial"),default="pooled")
     p.add_argument("--corrective",nargs="+",help="corrective dataset roots (data/collect_corrective.py)")
     p.add_argument("--corrective-fraction",type=float,default=.5)

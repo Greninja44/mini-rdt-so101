@@ -18,9 +18,11 @@ from evaluation.closed_loop_analysis import ExpertLabeler, analyze_rollout, load
 from evaluation.research_audit import save_json
 
 CLEAN10 = [0, 2, 3, 4, 5, 6, 7, 8, 9, 11]
-VARIANTS = {"A": "artifacts/closed_loop_v2/tinyrdt_ema", "B": "artifacts/closed_loop_v3/B", "C": "artifacts/closed_loop_v3/C", "Bm": "artifacts/closed_loop_v3/Bm", "C40k": "artifacts/closed_loop_v3/C40k"}
-COLORS = {"A": "#2a78d6", "B": "#eb6834", "C": "#1baf7a", "Bm": "#eda100", "C40k": "#4a3aa7"}
-LABELS = {"A": "A CLEAN10", "B": "B +PERTURB", "C": "C +DAGGER", "Bm": "Bm +PERTURB (size-matched to C)", "C40k": "C40k +DAGGER, 40k steps (follow-up)"}
+VARIANTS = {"A": "artifacts/closed_loop_v2/tinyrdt_ema", "B": "artifacts/closed_loop_v3/B", "C": "artifacts/closed_loop_v3/C", "Bm": "artifacts/closed_loop_v3/Bm", "C40k": "artifacts/closed_loop_v3/C40k", "S": "artifacts/closed_loop_v3/S",
+            "gripper_oracle": "artifacts/phase6/oracle/gripper_oracle", "arm_oracle": "artifacts/phase6/oracle/arm_oracle"}
+COLORS = {"A": "#2a78d6", "B": "#eb6834", "C": "#1baf7a", "Bm": "#eda100", "C40k": "#4a3aa7", "S": "#e87ba4", "gripper_oracle": "#52514e", "arm_oracle": "#008300"}
+LABELS = {"A": "A CLEAN10", "B": "B +PERTURB", "C": "C +DAGGER", "Bm": "Bm +PERTURB (size-matched to C)", "C40k": "C40k +DAGGER, 40k steps (follow-up)", "S": "S spatial tokens, CLEAN10",
+          "gripper_oracle": "policy arm + expert gripper", "arm_oracle": "expert arm + policy gripper"}
 
 
 def med(values):
@@ -87,7 +89,7 @@ def main():
             "mean_path_dev_mm_first_30": float(np.mean([np.mean(x["_dev"]["grasp_center_path_mm"][:30]) for x in an])),
             "replans_median": float(np.median([x["replans"] for x in an])),
             "per_episode_success": {ep: sum(x["success"] for x in an if x["episode"] == ep) for ep in CLEAN10}}
-    for v in ("B", "C", "Bm", "C40k"):
+    for v in ("B", "C", "Bm", "C40k", "S", "gripper_oracle", "arm_oracle"):
         if v in report["normal"] and "A" in report["normal"]:
             a, b = report["normal"]["A"]["total"], report["normal"][v]["total"]
             report["tests"][f"normal A vs {v}"] = fisher(a["success"], a["n"], b["success"], b["n"])
@@ -99,7 +101,7 @@ def main():
                                      "by_joint": {j: {"n": len(r := [x for x in rows if x["joint"] == j]), "success": sum(x["success"] for x in r)} for j in ("shoulder_pan", "shoulder_lift")},
                                      "handover_joint_dist_median_by_magnitude": {m: med([r["handover"]["joint_dist_rad"] for r in rows if f"{r['magnitude_rad']:.2f}" == m]) for m in s["table"]},
                                      "handover_path_mm_median_by_magnitude": {m: med([r["handover"]["grasp_center_path_mm"] for r in rows if f"{r['magnitude_rad']:.2f}" == m]) for m in s["table"]}}
-    for v in ("B", "C", "Bm", "C40k"):
+    for v in ("B", "C", "Bm", "C40k", "S"):
         if v in report["recovery"] and "A" in report["recovery"]:
             a, b = report["recovery"]["A"]["total"], report["recovery"][v]["total"]
             report["tests"][f"recovery A vs {v}"] = fisher(a["success"], a["n"], b["success"], b["n"])

@@ -26,13 +26,13 @@ JOINTS = {"shoulder_pan": 0, "shoulder_lift": 1}
 T0, DURATION = 6, 3
 
 
-def one(env, policy, ep, seed, joint, delta, k, max_steps, nominal_q, nominal_gc):
+def one(env, policy, ep, seed, joint, delta, k, max_steps, nominal_q, nominal_gc, t0=T0, duration=DURATION):
     env.config = replace(env.config, render_observations=False)
     obs, info = env.reset(seed=seed); expert = LegacyPickCubeExpert(env); expert.reset()
     lo, hi = env._lo[:5] + LEGACY_JOINT_LIMIT_MARGIN, env._hi[:5] - LEGACY_JOINT_LIMIT_MARGIN
-    for t in range(T0 + DURATION):
+    for t in range(t0 + duration):
         a = expert.action()
-        if t >= T0: a = a.copy(); a[joint] = np.clip(a[joint] + delta, lo[joint], hi[joint])
+        if t >= t0: a = a.copy(); a[joint] = np.clip(a[joint] + delta, lo[joint], hi[joint])
         obs, _, _, _, info = env.step(a); expert.observe(info)
     env.config = replace(env.config, render_observations=True); obs = dict(obs, rgb=env.render())
     handover = {"joint_dist_rad": float(np.linalg.norm(nominal_q - obs["joint_pos"], axis=1).min()),
@@ -61,6 +61,8 @@ def main():
     p.add_argument("--magnitudes", type=float, nargs="+", default=[.01, .02, .03, .04])
     p.add_argument("--episodes", type=int, nargs="+", default=CLEAN10)
     p.add_argument("--max-steps", type=int, default=120)
+    p.add_argument("--t0", type=int, default=T0, help="expert-driven steps before the offset")
+    p.add_argument("--duration", type=int, default=DURATION)
     p.add_argument("--joints", nargs="+", choices=list(JOINTS), default=list(JOINTS))
     p.add_argument("--dataset", default="artifacts/pickcube_smoke100_rgb160")
     a = p.parse_args()
@@ -74,8 +76,8 @@ def main():
             for m in a.magnitudes:
                 stem = out / f"ep{ep:03d}_{jname}_m{round(m * 1000):03d}"  # no dots: with_suffix would eat ".NN"
                 if stem.with_suffix(".json").exists(): continue
-                result, rec = one(env, policy, ep, seed, j, sign * m, a.k, a.max_steps, nq, ngc)
-                result.update({"episode": ep, "seed": seed, "joint": jname, "magnitude_rad": m, "sign": sign, "k": a.k, "t0": T0, "duration_steps": DURATION,
+                result, rec = one(env, policy, ep, seed, j, sign * m, a.k, a.max_steps, nq, ngc, a.t0, a.duration)
+                result.update({"episode": ep, "seed": seed, "joint": jname, "magnitude_rad": m, "sign": sign, "k": a.k, "t0": a.t0, "duration_steps": a.duration,
                                "checkpoint": a.checkpoint})
                 np.savez_compressed(stem.with_suffix(".npz"), **rec)
                 imageio.mimsave(stem.with_suffix(".gif"), [np.kron(f, np.ones((2, 2, 1), dtype=np.uint8)) for f in rec["rgb"]], duration=50, loop=0)
@@ -83,7 +85,7 @@ def main():
                 print(json.dumps(result), flush=True)
     rows = [json.loads(f.read_text()) for f in sorted(out.glob("ep*.json"))]
     table = {f"{m:.2f}": {"n": len(r := [x for x in rows if abs(x["magnitude_rad"] - m) < 1e-9]), "success": sum(x["success"] for x in r)} for m in a.magnitudes}
-    save_json(out / "recovery_summary.json", {"checkpoint": a.checkpoint, "checkpoint_sha256": sha256(a.checkpoint), "k": a.k, "t0": T0, "table": table, "rows": rows})
+    save_json(out / "recovery_summary.json", {"checkpoint": a.checkpoint, "checkpoint_sha256": sha256(a.checkpoint), "k": a.k, "t0": a.t0, "table": table, "rows": rows})
     print(json.dumps(table))
 
 
