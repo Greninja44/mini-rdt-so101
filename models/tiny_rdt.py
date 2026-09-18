@@ -17,6 +17,10 @@ class TinyRDTConfig:
     heads: int = 6
     dropout: float = 0.0
     pretrained_vision: bool = True
+    # "pooled": one global-average token (original). "spatial": the 576x4x5
+    # frozen feature map as 20 tokens (same per-token projection).
+    vision_tokens: str = "pooled"
+    vision_grid: tuple[int, int] = (4, 5)
 
 
 class SinusoidalTimeEmbedding(nn.Module):
@@ -30,8 +34,8 @@ class SinusoidalTimeEmbedding(nn.Module):
 
 class FrozenMobileNet(nn.Module):
     """Small ImageNet MobileNetV3 encoder; only the projection trains."""
-    def __init__(self, pretrained: bool = True):
-        super().__init__()
+    def __init__(self, pretrained: bool = True, spatial: bool = False):
+        super().__init__(); self.spatial = spatial
         weights = MobileNet_V3_Small_Weights.DEFAULT if pretrained else None
         base = mobilenet_v3_small(weights=weights)
         self.features = base.features; self.pool = nn.AdaptiveAvgPool2d(1); self.output_dim = 576
@@ -44,8 +48,9 @@ class FrozenMobileNet(nn.Module):
         x = rgb.float() / 255.0
         mean = x.new_tensor((0.485, .456, .406))[None, :, None, None]
         std = x.new_tensor((.229, .224, .225))[None, :, None, None]
-        with torch.no_grad(): x = self.features((x - mean) / std); x = self.pool(x).flatten(1)
-        return x
+        with torch.no_grad():
+            x = self.features((x - mean) / std)
+            return x.flatten(2).transpose(1, 2) if self.spatial else self.pool(x).flatten(1)
 
 
 class TinyRDT(nn.Module):
@@ -56,10 +61,12 @@ class TinyRDT(nn.Module):
     """
     def __init__(self, config: TinyRDTConfig = TinyRDTConfig()):
         super().__init__(); self.config = config
-        d = config.hidden_dim; self.vision = FrozenMobileNet(config.pretrained_vision)
+        if config.vision_tokens not in ("pooled", "spatial"): raise ValueError(config.vision_tokens)
+        d = config.hidden_dim; self.vision = FrozenMobileNet(config.pretrained_vision, config.vision_tokens == "spatial")
+        self.n_vision = 1 if config.vision_tokens == "pooled" else config.vision_grid[0] * config.vision_grid[1]; self.n_cond = self.n_vision + 2
         self.vision_proj = nn.Linear(self.vision.output_dim, d); self.state_proj = nn.Sequential(nn.Linear(config.state_dim, d), nn.SiLU(), nn.Linear(d, d))
         self.time_proj = nn.Sequential(SinusoidalTimeEmbedding(d), nn.Linear(d, d), nn.SiLU(), nn.Linear(d, d))
-        self.action_proj = nn.Linear(config.action_dim, d); self.position = nn.Parameter(torch.zeros(1, 3 + config.horizon, d))
+        self.action_proj = nn.Linear(config.action_dim, d); self.position = nn.Parameter(torch.zeros(1, self.n_cond + config.horizon, d))
         layer = nn.TransformerEncoderLayer(d_model=d, nhead=config.heads, dim_feedforward=d * 4, dropout=config.dropout, batch_first=True, activation="gelu", norm_first=True)
         self.transformer = nn.TransformerEncoder(layer, num_layers=config.layers, norm=nn.LayerNorm(d))
         self.output = nn.Sequential(nn.LayerNorm(d), nn.Linear(d, config.action_dim))
@@ -85,16 +92,18 @@ class TinyRDT(nn.Module):
         # has no image augmentation.  This is exactly the same feature tensor,
         # not a learned replacement for the vision backbone.
         vision_features = self.vision(rgb) if vision_features is None else vision_features
-        cond = torch.stack((self.vision_proj(vision_features), self.state_proj(state), self.time_proj(timestep)), dim=1)
-        tokens = torch.cat((cond, self.action_proj(noisy_actions)), dim=1) + self.position[:, :3 + noisy_actions.shape[1]]
+        if vision_features.ndim == 2: vision_features = vision_features[:, None]
+        if vision_features.shape[1] != self.n_vision: raise ValueError("vision feature tokens do not match config.vision_tokens")
+        cond = torch.cat((self.vision_proj(vision_features), self.state_proj(state)[:, None], self.time_proj(timestep)[:, None]), dim=1)
+        tokens = torch.cat((cond, self.action_proj(noisy_actions)), dim=1) + self.position[:, :self.n_cond + noisy_actions.shape[1]]
         padding_mask = None
         if action_valid_mask is not None:
             if action_valid_mask.shape != noisy_actions.shape[:2]:
                 raise ValueError("action_valid_mask must have shape [batch, horizon]")
-            condition_valid = torch.ones((noisy_actions.shape[0], 3), dtype=torch.bool, device=noisy_actions.device)
+            condition_valid = torch.ones((noisy_actions.shape[0], self.n_cond), dtype=torch.bool, device=noisy_actions.device)
             # TransformerEncoder expects True where a token is ignored.
             padding_mask = ~torch.cat((condition_valid, action_valid_mask.bool()), dim=1)
-        return self.output(self.transformer(tokens, src_key_padding_mask=padding_mask)[:, 3:])
+        return self.output(self.transformer(tokens, src_key_padding_mask=padding_mask)[:, self.n_cond:])
 
     def parameter_counts(self) -> dict[str, int]:
         total = sum(p.numel() for p in self.parameters()); trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)

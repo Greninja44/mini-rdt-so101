@@ -35,6 +35,7 @@ def experiment(args):
         torch.backends.cudnn.allow_tf32=False
         torch.backends.cudnn.benchmark=False
     source,vision_model,_,_,_,_=load(args.encoder_checkpoint,device)
+    vision_model.vision.spatial=args.vision_tokens=="spatial"  # same frozen weights; token layout only
     splits=make_episode_splits(args.dataset,args.seed);ids=splits.train[:10]
     stats=compute_normalization(args.dataset,ids)
     ds,b=make_bank(args.dataset,ids,stats,vision_model,device,args.padding)
@@ -45,7 +46,7 @@ def experiment(args):
         n_corrective=round(args.batch_size*args.corrective_fraction)
         if not 0<n_corrective<args.batch_size: raise ValueError("corrective fraction must leave clean and corrective samples in each batch")
     set_seed(args.seed)  # Encoder extraction does not consume training RNG.
-    config=TinyRDTConfig(pretrained_vision=False)
+    config=TinyRDTConfig(pretrained_vision=False,vision_tokens=args.vision_tokens)
     if args.baseline:
         if args.baseline=="rgb": inputs=torch.cat((b["features"],b["state"]),1)
         elif args.baseline=="state": inputs=b["state"]
@@ -162,6 +163,7 @@ if __name__ == "__main__":
     p.add_argument("--baseline",choices=("rgb","state","privileged"));p.add_argument("--steps",type=int,default=5000);p.add_argument("--seed",type=int,default=17)
     p.add_argument("--padding",choices=("masked","hold"),default="masked")
     p.add_argument("--batch-size",type=int,default=8);p.add_argument("--learning-rate",type=float,default=.001);p.add_argument("--device",default="cpu");p.add_argument("--eval-interval",type=int,default=1000);p.add_argument("--resume");p.add_argument("--init-checkpoint")
+    p.add_argument("--vision-tokens",choices=("pooled","spatial"),default="pooled")
     p.add_argument("--corrective",nargs="+",help="corrective dataset roots (data/collect_corrective.py)")
     p.add_argument("--corrective-fraction",type=float,default=.5)
     p.add_argument("--corrective-max-frames",type=int,help="size-matched ablation: whole episodes up to this many frames")

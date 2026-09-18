@@ -164,3 +164,24 @@ No per-variant tuning.
   identical to C but 40k steps, so it gets the same number of clean-window updates as A. Evaluated with the same protocol.
   Interpretation rule: if C40k restores offline precision AND improves closed-loop over A, the combination helps. If precision is
   restored but closed-loop does not improve, corrective coverage is not the missing ingredient.
+
+## Phase 6 — isolate the remaining closed-loop failure (PRE-REGISTERED 2026-09-18 16:50 UTC, before any Phase-6 result)
+Context: corrective data (B/C/Bm) did not improve normal closed-loop success (A 28/40, B 18/40 p=0.041 worse, C 26/40, Bm 23/40).
+Every variant fails the same way: lateral misalignment at the close (p90 22–32 mm vs a ≈7 mm envelope). In 25/40 DAgger episodes the
+policy tried to close while the expert would keep the gripper open. Per the user's plan: no scaling. Investigate the remaining cause.
+
+**6a Oracle split (no training; A = ema_last.pt; 10 memorised seeds × K ∈ {1,2,4,8}, 150 steps):**
+- `gripper_oracle`: policy arm + the data-generating expert's gripper rule (close only once the grasp center is within 4 mm of its
+  target, from the shadow FSM on the actual state).
+- `arm_oracle`: expert arm (DLS IK from the actual state) + the policy's gripper command.
+- Interpretation:
+  - gripper_oracle ≫ A → the close decision is the main failure.
+  - gripper_oracle fails by never closing → the arm never gets within 4 mm, so arm precision is the problem.
+  - arm_oracle ≈ expert → the policy's gripper timing is acceptable given an accurate arm.
+
+**6b Spatial vision tokens (single-factor change, CLEAN10 only, otherwise identical to A):**
+- The frozen MobileNet 576×4×5 map is flattened to 20 visual tokens (the same 576→192 projection per token, a learned position embedding)
+  instead of one global-average-pooled token. Trainable parameters go from 2,009,670 to 2,013,318 (+3,648 position embedding).
+- The same 20k steps / EMA / cosine x0 hold config and seed. Then the offline gate, normal closed-loop and the recovery benchmark.
+- Hypothesis: lateral error at close is limited by pooled features' spatial precision (probe: 4.3 mm pooled vs 2.8 mm spatial).
+- Success = more successes than A on identical seeds/K, closes within the 7 mm envelope, and a better recovery curve.
