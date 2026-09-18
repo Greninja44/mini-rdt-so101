@@ -71,7 +71,7 @@ def main():
         sign = 1.0 if CLEAN10.index(ep) % 2 == 0 else -1.0  # fixed per seed, independent of --episodes subset
         for jname, j in JOINTS.items():
             for m in a.magnitudes:
-                stem = out / f"ep{ep:03d}_{jname}_{m:.2f}"
+                stem = out / f"ep{ep:03d}_{jname}_m{round(m * 1000):03d}"  # no dots: with_suffix would eat ".NN"
                 if stem.with_suffix(".json").exists(): continue
                 result, rec = one(env, policy, ep, seed, j, sign * m, a.k, a.max_steps, nq, ngc)
                 result.update({"episode": ep, "seed": seed, "joint": jname, "magnitude_rad": m, "sign": sign, "k": a.k, "t0": T0, "duration_steps": DURATION,
