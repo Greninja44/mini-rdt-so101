@@ -16,7 +16,7 @@ def collect(root: str | Path, episodes: int, seed: int, width: int = 160, height
     results = []
     for index in range(episodes):
         episode_seed = seed + index
-        env = SO101PickCubeEnv(PickCubeConfig(camera_width=width, camera_height=height))
+        env = SO101PickCubeEnv(PickCubeConfig(camera_width=width, camera_height=height, physics="v1"))  # v1 (INVALID) expert collector; physics-v2 uses data/collect_v2.py
         obs, info = env.reset(seed=episode_seed); expert = PickCubeExpert(env); expert.reset()
         recorder = EpisodeRecorder(root, episode_index_offset + index, make_episode_metadata(env, episode_seed, ACTION_REPRESENTATION, expert=expert))
         while not expert.done:

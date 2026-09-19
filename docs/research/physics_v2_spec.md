@@ -94,3 +94,14 @@ Added validity checks:
 - **pad ↔ cube penetration ≤ 1.5 mm** at every step, as an env-level invalid flag (measured ≤ 0.94 mm at full squeeze);
 - **finger-mesh ↔ cube interpenetration ≤ 2.0 mm**, a validation-level check, because links do not collide with the cube
   (measured ≤ 1.32 mm).
+
+## Amendment 2 (2026-09-19, before data collection). Stiffens physics; loosens nothing.
+The regression test "table supports cube under a 20 N downward push" (≈200× the cube's weight) failed: 1.78 mm cube–table penetration,
+over the fixed 1.0 mm tolerance. This is the same mass-normalised softness. The table now uses the grasp-calibrated contact setting
+(solref 0.004, solimp 0.99–0.999):
+- 20 N push → 0.40 mm;
+- resting sink → 0.003 mm;
+- the old invalid trajectory is still held to ≤ 0.14 mm;
+- the cube is stable.
+
+The expert was fully re-validated afterwards.

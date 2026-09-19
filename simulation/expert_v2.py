@@ -19,7 +19,7 @@ import numpy as np
 
 from .pose_ik import PoseIK, rotation_error, top_down_rotation
 
-EXPERT_V2_VERSION = "expert-v2-sidepinch-1"
+EXPERT_V2_VERSION = "expert-v2-sidepinch-3"
 
 
 class State(str, Enum):
@@ -38,10 +38,14 @@ class ExpertV2Config:
     max_linear_step: float = 0.010          # m per control tick
     max_angular_step: float = 0.12          # rad per control tick
     max_joint_step: float = 0.06            # rad per control tick (joint-space approach)
+    descent_step: float = 0.006             # m per tick while descending (servo overshoot grows with speed)
+    final_descent_height: float = 0.030     # below this height above the grasp point, descend slowly...
+    final_descent_step: float = 0.003       # ...at most 3 mm per tick
+    max_lateral_error: float = 0.0025       # ...and stop descending to re-centre if laterally off by more than this
     position_tolerance: float = 0.003
     rotation_tolerance: float = 0.05
     pinch_confirm_steps: int = 3
-    timeouts: tuple = (("PREGRASP", 80), ("DESCEND", 40), ("CLOSE", 30), ("LIFT", 60), ("HOLD", 40))
+    timeouts: tuple = (("PREGRASP", 80), ("DESCEND", 60), ("CLOSE", 30), ("LIFT", 60), ("HOLD", 40))
 
 
 class PickCubeExpertV2:
@@ -117,7 +121,11 @@ class PickCubeExpertV2:
             dq = self.plan["q_pregrasp"] - q; scale = min(1.0, c.max_joint_step / max(np.abs(dq).max(), 1e-12))
             return np.r_[q + scale * dq, opening].astype(np.float32)
         goal_p, goal_R, rot_w = self._goal(); p, R = self._site_pose()
-        dp = goal_p - p; n = np.linalg.norm(dp); p_cmd = p + (dp if n <= c.max_linear_step else dp * c.max_linear_step / n)
+        step = c.descent_step if self.state == State.DESCEND else c.max_linear_step
+        if self.state == State.DESCEND and p[2] - goal_p[2] < c.final_descent_height:
+            step = c.final_descent_step  # slow final descent; never descend while laterally misaligned
+            if np.linalg.norm((goal_p - p)[:2]) > c.max_lateral_error: goal_p = np.array([goal_p[0], goal_p[1], p[2]])
+        dp = goal_p - p; n = np.linalg.norm(dp); p_cmd = p + (dp if n <= step else dp * step / n)
         rv = rotation_error(R, goal_R); ang = np.linalg.norm(rv)
         R_cmd = goal_R if ang <= c.max_angular_step else _rotvec(rv * c.max_angular_step / ang) @ R
         q_cmd, _, _, _ = self.ik.solve(q, p_cmd, R_cmd, rot_weight=0.05 * rot_w)

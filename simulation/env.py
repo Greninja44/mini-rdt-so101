@@ -173,7 +173,8 @@ class SO101PickCubeEnv(_EnvBase):
         # Grasp contacts: MuJoCo soft-contact stiffness is mass-normalised, so the 10 g cube squeezed by the
         # force-limited gripper (±3.35) let the jaw close ~9 mm through it. The stiffest stable setting
         # (timeconst = 2*dt, impedance 0.99-0.999) holds squeeze penetration to ~0.6 mm (evaluation/squeeze_test.py).
-        for g in list(self._grasp_pad_ids) + [self._cube_geom]:
+        # Amendment 2: the table gets the same setting (a 20 N push sank the cube 1.78 mm before, 0.40 mm after).
+        for g in list(self._grasp_pad_ids) + [self._cube_geom, self._table_geom]:
             m.geom_solref[g] = (self.V2_GRASP_TIMECONST, 1.0); m.geom_solimp[g] = self.V2_GRASP_SOLIMP
 
     def contact_diagnostics(self) -> dict[str, Any]:

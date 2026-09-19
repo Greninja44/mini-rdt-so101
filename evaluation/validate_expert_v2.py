@@ -57,6 +57,7 @@ def rollout(env, seed, frames_for=None):
             "max_robot_table_penetration_mm": 1000 * info.get("max_robot_table_penetration", 0.0),
             "max_cube_table_penetration_mm": 1000 * info.get("max_cube_table_penetration", 0.0),
             "max_finger_cube_interpenetration_mm": 1000 * fc, "any_vertical_pad_contact": bool(vertical),
+            "max_pad_cube_penetration_mm": 1000 * info.get("max_pad_cube_penetration", 0.0), "finger_mesh_valid": 1000 * fc <= 2.0,
             "pad_normals_at_first_pinch": pinch_normals, "side_pinch_all_lifted_steps": bool(hold_valid) and all(hold_valid),
             "joint_limit_margin_rad": margin, "grasp_dz_mm": 1000 * (ex.plan.get("grasp_dz") or 0), "cube_xy": env.cube_pose[:2].tolist(),
             "invalid_reason": info.get("invalid_reason")}, frames
@@ -86,6 +87,8 @@ def main():
         ok = [r for r in rows if r["success"]]
         results[name] = {"n": len(rows), "success": len(ok),
                          "all_successes_valid_side_pinch": all(r["side_pinch_all_lifted_steps"] and not r["any_vertical_pad_contact"] for r in ok),
+                         "all_successes_finger_mesh_valid": all(r["finger_mesh_valid"] for r in ok),
+                         "max_pad_cube_penetration_mm": max(r["max_pad_cube_penetration_mm"] for r in rows),
                          "max_robot_table_penetration_mm": max(r["max_robot_table_penetration_mm"] for r in rows),
                          "max_cube_table_penetration_mm": max(r["max_cube_table_penetration_mm"] for r in rows),
                          "max_finger_cube_interpenetration_mm": max(r["max_finger_cube_interpenetration_mm"] for r in rows),

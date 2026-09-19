@@ -9,7 +9,7 @@ def benchmark(episodes: int = 100, seed: int = 0, output: str | Path = "artifact
     started = time.monotonic(); rows = []; failures = []
     # The expert does not consume pixels. Skip expensive WSL software rendering
     # only for this control benchmark; RGB is exercised by environment/record tests.
-    env = SO101PickCubeEnv(PickCubeConfig(render_observations=False))
+    env = SO101PickCubeEnv(PickCubeConfig(render_observations=False, physics="v1"))  # benchmarks the v1 (INVALID) expert
     for index in range(episodes):
         s = seed + index; _, info = env.reset(seed=s); expert = PickCubeExpert(env); expert.reset()
         while not expert.done:
