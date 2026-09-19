@@ -48,7 +48,7 @@ def rollout(env, seed, act, max_steps, recorded_first_rgb=None, start_q=None):
         from data.varied_start import apply_start
         obs, info = apply_start(env, start_q); recorded_first_rgb = None
     rec = {"rgb": [obs["rgb"]], "state": [_state(obs)], "cube": [], "ee": [], "grasp_center": [], "grasped": [], "pad_contacts": [],
-           "executed": [], "chunks": [], "chunk_steps": []}
+           "executed": [], "chunks": [], "chunk_steps": [], "side_pinch": [False], "vertical_pad_contact": [False]}
     _physical(env, rec, False)
     reset_rgb_error = None if recorded_first_rgb is None else int(np.abs(obs["rgb"].astype(int) - recorded_first_rgb.astype(int)).max())
     success = False; step = 0; max_cube_z = float(env.cube_pose[2]); ever_grasped = False
@@ -59,11 +59,16 @@ def rollout(env, seed, act, max_steps, recorded_first_rgb=None, start_q=None):
             rec["executed"].append(np.asarray(a, dtype=np.float32)); rec["rgb"].append(obs["rgb"])
             rec["state"].append(_state(obs)); _physical(env, rec, bool(info["grasped"]))
             step += 1; max_cube_z = max(max_cube_z, float(env.cube_pose[2])); ever_grasped |= bool(info["grasped"])
+            rec["side_pinch"].append(bool(info["contacts"]["side_pinch"])); rec["vertical_pad_contact"].append(bool(info["contacts"]["vertical_pad_contact"]))
             if terminated or truncated or step >= max_steps:
                 success = bool(info["success"]); break
         if success or truncated: break
     return {"success": success, "steps": step, "max_cube_z": max_cube_z, "ever_grasped": ever_grasped,
-            "reset_rgb_max_abs_error_vs_recorded": reset_rgb_error}, {k: np.asarray(v) for k, v in rec.items()}
+            "reset_rgb_max_abs_error_vs_recorded": reset_rgb_error, "physics": env.config.physics,
+            "invalid_reason": info.get("invalid_reason") if step else None, "ever_side_pinch": any(rec["side_pinch"]), "any_vertical_pad_contact": any(rec["vertical_pad_contact"]),
+            "max_robot_table_penetration_mm": 1000 * info.get("max_robot_table_penetration", 0.0) if step else 0.0,
+            "max_cube_table_penetration_mm": 1000 * info.get("max_cube_table_penetration", 0.0) if step else 0.0,
+            "max_pad_cube_penetration_mm": 1000 * info.get("max_pad_cube_penetration", 0.0) if step else 0.0}, {k: np.asarray(v) for k, v in rec.items()}
 
 
 def save_plot(path, rec, expert_actions, title):
@@ -100,6 +105,7 @@ def main():
     p.add_argument("--policy-seed", type=int, default=0)
     p.add_argument("--output", required=True)
     p.add_argument("--skip-replay", action="store_true")
+    p.add_argument("--physics", choices=("v1", "v2"), default="v2", help="v1 only to replay the INVALID historical benchmark")
     p.add_argument("--start-seed", type=int, help="randomised start pose per episode (data/varied_start.py); the control becomes the legacy expert from that start")
     p.add_argument("--no-media", action="store_true")
     a = p.parse_args()
@@ -111,7 +117,8 @@ def main():
         policy = TinyRDTPolicy(a.checkpoint, sampling_steps=a.sampling_steps, seed=a.policy_seed); horizon = policy.model.config.horizon
     else:
         policy = BCPolicy(a.checkpoint); horizon = policy.horizon
-    env = SO101PickCubeEnv()
+    from simulation.env import PickCubeConfig
+    env = SO101PickCubeEnv(PickCubeConfig(physics=a.physics))
     for ep in ids:
         root = Path(a.dataset) / "episodes" / f"episode_{ep:06d}"
         meta = json.loads((root / "episode.json").read_text()); expert = np.load(root / "action.npy"); first_rgb = np.load(root / "rgb.npy")[0]

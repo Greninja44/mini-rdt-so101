@@ -8,7 +8,7 @@ from .expert import PickCubeExpert
 def main() -> None:
     p = argparse.ArgumentParser(); p.add_argument("--seed", type=int, default=0); p.add_argument("--gui", action="store_true"); p.add_argument("--width", type=int, default=160); p.add_argument("--height", type=int, default=120); p.add_argument("--hold", type=float, default=3.0, help="seconds to keep GUI open after completion")
     args = p.parse_args()
-    env = SO101PickCubeEnv(PickCubeConfig(camera_width=args.width, camera_height=args.height), render_mode="rgb_array")
+    env = SO101PickCubeEnv(PickCubeConfig(camera_width=args.width, camera_height=args.height, physics="v1"), render_mode="rgb_array")
     if args.gui:
         import mujoco.viewer
         env._viewer = mujoco.viewer.launch_passive(env.model, env.data)

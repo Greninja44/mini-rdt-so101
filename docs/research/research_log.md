@@ -1,5 +1,11 @@
 # CLAUDE_PROGRESS — MiniRDT-SO101 TinyRDT overfit gate
 
+> ⚠️ **ALL PHYSICS-V1 MANIPULATION RESULTS ARE INVALID** (see TABLE_COLLISION_AUDIT.md). Every closed-loop success rate,
+> grasp-tolerance and grasp-geometry conclusion recorded below, up to the audit entry, used an environment without robot-table
+> collision, where every success was a sandwich grasp through the table. The entries are left unchanged as history. The
+> physics-v2 section at the end supersedes them.
+
+
 Running log for the next agent. Newest entries at the bottom of each section.
 See `docs/research/handoff_audit.md` for the repository state at takeover.
 
@@ -353,3 +359,32 @@ Evaluation per model:
 
 Prediction if the hypothesis holds: higher image reliance, more successes than A (ep0/ep7), better random-start and recovery results.
 If image reliance rises but success does not, visual conditioning is not the bottleneck either.
+
+## TABLE-COLLISION AUDIT (2026-09-19) — physics validity issue, see TABLE_COLLISION_AUDIT.md
+- The robot has NO collision with the table (every robot geom has contype/conaffinity 0; the pads collide with the cube only).
+  Penetration of up to ~100 mm during approach: expert and policy alike.
+- **Every success is a top-bottom sandwich grasp with one pad ~10 mm inside the table.** This covers 10/10 CLEAN10 demos, 28/28 TinyRDT
+  successes, and 10/10 current-expert grasps. The cube is pushed 3–6 mm into the table, and pad-cube normals are 100% vertical.
+- **All previous success rates require re-validation** as physical PickCube results. No physics, expert, criterion, dataset or policy
+  was changed. Recommended fix order: robot-table collision → valid side-pinch expert → stricter success criterion → regenerate the
+  data → re-run the benchmarks.
+- Phase 10 (fine-tuned vision), still running, is subject to the same caveat.
+
+## PHYSICS-V2 (2026-09-19) → PHYSICS_V2_REPORT.md
+- **v1 frozen:** tag `physics-v1-invalid`, `docs/research/physics_v1_freeze.json`. Phase 10 was cancelled (manipulation metric invalid).
+- **Spec pre-registered** (`docs/research/physics_v2_spec.md`) with tolerances measured before any expert evaluation. Amendment 1 (pad
+  placement, grasp-contact stiffness, a pad-cube check) and amendment 2 (table stiffness) only added checks or stiffened contacts.
+- **Bugs found:**
+  - the moving pad sat ~10 mm inside the jaw;
+  - the mass-normalised soft contacts allowed a ~9 mm squeeze into the cube;
+  - the v1 reset silently disabled the v2 pads;
+  - the descent overshoot landed a pad on the cube's top (seed 4079).
+- **Expert v2 (side pinch):** 10/10 and 100/100, zero robot-table penetration. Dataset v2: 100/100, validator 0 errors.
+- **Same 2M TinyRDT on CLEAN10 v2:**
+  - offline gate PASS (0.0050 / 0.010 / 0.0051);
+  - closed loop 49/50 (K=1 9, K=2/4/8/16 10 each); expert replay 10/10;
+  - robot-table 0.00 mm, 0 early closes.
+  - The one failure: ep0 K=1 hovered with a pad on the cube's top and never closed.
+  - Two successes (ep7 K1/K2) tipped the cube before a valid side pinch.
+- **Answer:** MiniRDT learns a genuinely physical side grasp on memorised scenes. **STOPPED** here, per the phase instructions.
+  Next: v2 generalisation (80 demos → held-out cubes), then scaling.

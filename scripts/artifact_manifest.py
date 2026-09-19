@@ -9,6 +9,8 @@ import json
 from pathlib import Path
 
 GROUPS = {
+    "physics-v2 dataset (100 side-pinch demos, contact diagnostics)": ["artifacts/pickcube_physics_v2_rgb160/episodes/*/*", "artifacts/pickcube_physics_v2_rgb160/*.json*"],
+    "physics-v2 TinyRDT, expert validation and closed-loop results": ["artifacts/physics_v2/tinyrdt_clean10/*.pt", "artifacts/physics_v2/tinyrdt_clean10/*.json", "artifacts/physics_v2/tinyrdt_clean10/diagnostics_ema_last/diagnostics.json", "artifacts/physics_v2/expert_validation/validation.json", "artifacts/physics_v2/closed_loop/*.json", "artifacts/physics_v2/*.json"],
     "dataset: 100 PickCube demos (CLEAN10 = train ids [0,2,3,4,5,6,7,8,9,11], split seed 17)": ["artifacts/pickcube_smoke100_rgb160/episodes/*/*", "artifacts/pickcube_smoke100_rgb160/collection_summary*.json"],
     "frozen-encoder source checkpoint (original Phase-2 TinyRDT, supplies MobileNet weights)": ["artifacts/tiny_rdt_overfit10/tiny_rdt_best.pt", "artifacts/tiny_rdt_overfit10/last.pt", "artifacts/tiny_rdt_overfit10/normalization.json", "artifacts/tiny_rdt_overfit10/splits.json"],
     "gate-passing TinyRDT (cosine/x0/hold, 20k steps, EMA 0.999)": ["artifacts/research_audit/cosine_x0_hold_ema/*.pt", "artifacts/research_audit/cosine_x0_hold_ema/*.json*", "artifacts/research_audit/cosine_x0_hold_ema/diagnostics_ema_last/diagnostics.json"],

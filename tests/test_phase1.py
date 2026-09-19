@@ -8,7 +8,7 @@ from simulation.expert import ExpertState, PickCubeExpert
 
 
 def make_env() -> SO101PickCubeEnv:
-    return SO101PickCubeEnv(PickCubeConfig(camera_width=24, camera_height=18, render_observations=False))
+    return SO101PickCubeEnv(PickCubeConfig(camera_width=24, camera_height=18, render_observations=False, physics="v1"))  # v1-era expert tests
 
 
 def run_expert(env: SO101PickCubeEnv, seed: int = 3):
@@ -49,7 +49,7 @@ def test_cube_workspace_and_explicit_pose_validation():
 
 
 def test_rendered_rgb_is_nonblank_uint8():
-    env = SO101PickCubeEnv(PickCubeConfig(camera_width=24, camera_height=18, render_observations=True))
+    env = SO101PickCubeEnv(PickCubeConfig(camera_width=24, camera_height=18, render_observations=True, physics="v1"))
     obs, _ = env.reset(seed=4)
     assert obs["rgb"].dtype == np.uint8 and obs["rgb"].shape == (18, 24, 3)
     assert np.any(obs["rgb"])

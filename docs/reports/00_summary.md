@@ -1,5 +1,12 @@
 # Overnight summary (2026-09-18 → 2026-09-19): why the 2M TinyRDT fails closed-loop, and what helps
 
+> ⚠️ **PHYSICS-V1 / INVALID COLLISION BENCHMARK.** A later audit (`TABLE_COLLISION_AUDIT.md`, 2026-09-19) found that the robot had
+> **no collision with the table**, and that every successful grasp was a sandwich grasp with one pad ~10 mm inside the table. All
+> **manipulation success rates, grasp-tolerance measurements and grasp-geometry conclusions in this document are invalid** as
+> physical results. Offline diffusion and sampler findings remain valid. It is kept unchanged as research history; frozen state is in
+> `docs/research/physics_v1_freeze.json` (git tag `physics-v1-invalid`). The physics-v2 revalidation is `PHYSICS_V2_REPORT.md`.
+
+
 > **Correction (2026-09-19):** statements below that call the model "state-dominant" rest on the wrong-state ablation. Actions are absolute
 > joint targets (≈ current state + a small step), so a wrong state inflates the error regardless of how the scene is identified. That ablation
 > does not measure scene identification. The observational findings are unaffected: the expert prefix, the oracle split, the shared-start

@@ -1,0 +1,4437 @@
+{
+ "collision_config": [
+  {
+   "geom": "table",
+   "body": "world",
+   "type": "mjGEOM_BOX",
+   "group": 0,
+   "contype": 1,
+   "conaffinity": 1
+  },
+  {
+   "geom": "base/geom1",
+   "body": "base",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "base/geom2",
+   "body": "base",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "base/geom3",
+   "body": "base",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "base/geom4",
+   "body": "base",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "shoulder/geom5",
+   "body": "shoulder",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "shoulder/geom6",
+   "body": "shoulder",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "shoulder/geom7",
+   "body": "shoulder",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "shoulder/geom8",
+   "body": "shoulder",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "shoulder/geom9",
+   "body": "shoulder",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "shoulder/geom10",
+   "body": "shoulder",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "upper_arm/geom11",
+   "body": "upper_arm",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "upper_arm/geom12",
+   "body": "upper_arm",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "upper_arm/geom13",
+   "body": "upper_arm",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "upper_arm/geom14",
+   "body": "upper_arm",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "lower_arm/geom15",
+   "body": "lower_arm",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "lower_arm/geom16",
+   "body": "lower_arm",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "lower_arm/geom17",
+   "body": "lower_arm",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "lower_arm/geom18",
+   "body": "lower_arm",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "lower_arm/geom19",
+   "body": "lower_arm",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "lower_arm/geom20",
+   "body": "lower_arm",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "wrist/geom21",
+   "body": "wrist",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "wrist/geom22",
+   "body": "wrist",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "wrist/geom23",
+   "body": "wrist",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "wrist/geom24",
+   "body": "wrist",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "gripper/geom25",
+   "body": "gripper",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "gripper/geom26",
+   "body": "gripper",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "gripper/geom27",
+   "body": "gripper",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "gripper/geom28",
+   "body": "gripper",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "fixed_grasp_pad",
+   "body": "gripper",
+   "type": "mjGEOM_BOX",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "moving_jaw_so101_v1/geom30",
+   "body": "moving_jaw_so101_v1",
+   "type": "mjGEOM_MESH",
+   "group": 2,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "moving_jaw_so101_v1/geom31",
+   "body": "moving_jaw_so101_v1",
+   "type": "mjGEOM_MESH",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "moving_grasp_pad",
+   "body": "moving_jaw_so101_v1",
+   "type": "mjGEOM_BOX",
+   "group": 3,
+   "contype": 0,
+   "conaffinity": 0
+  },
+  {
+   "geom": "cube_geom",
+   "body": "cube",
+   "type": "mjGEOM_BOX",
+   "group": 0,
+   "contype": 1,
+   "conaffinity": 3
+  }
+ ],
+ "table_top_z": 0.0,
+ "readme_rollout": {
+  "max_penetration_mm": 97.49507764593018,
+  "t_max": 9,
+  "first_penetration_t": 6,
+  "steps_penetrating": 26,
+  "max_pad_penetration_mm": 80.78319601498445,
+  "robot_table_contacts_total": 0,
+  "deepest_part_at_max": "gripper[visual]",
+  "success": true,
+  "pinch": {
+   "t_first": 37,
+   "pad_penetration_at_first_pinch_mm": 9.9844291401035,
+   "max_pad_penetration_while_pinched_low_mm": 10.020985107982176,
+   "cube_pushed_into_table_max_mm": 5.559347424730999,
+   "pads_below_cube_bottom_max_mm": 5.046377500577155,
+   "pad_cube_normal_abs_z_median": 0.9641575290123376,
+   "frac_vertical_normals": 1.0
+  },
+  "source": "/home/batman/mini-rdt-so101/artifacts/closed_loop_v2/tinyrdt_ema/ep006_k8.npz",
+  "checkpoint": "/home/batman/mini-rdt-so101/artifacts/research_audit/cosine_x0_hold_ema/ema_last.pt",
+  "seed": 3006,
+  "k": 8,
+  "replay_joint_error_rad": 0.0,
+  "events": {
+   "first_penetration": 6,
+   "max_penetration": 9,
+   "gripper_close_command": 30,
+   "first_pad_cube_contact": 31,
+   "first_pinch": 37,
+   "first_cube_lift_3mm": 43,
+   "success": 51
+  },
+  "success_window": [
+   {
+    "t": 47,
+    "cube_z_mm": 114.73167889134506,
+    "pinched": true,
+    "pad_cube_contacts": 10,
+    "max_abs_normal_z": 0.9950368339395341,
+    "pads_below_cube_bottom_mm": 2.4458435337555984,
+    "penetration_mm": 0.0
+   },
+   {
+    "t": 48,
+    "cube_z_mm": 136.54921507106485,
+    "pinched": true,
+    "pad_cube_contacts": 9,
+    "max_abs_normal_z": 0.978664951983601,
+    "pads_below_cube_bottom_mm": 4.382365401871105,
+    "penetration_mm": 0.0
+   },
+   {
+    "t": 49,
+    "cube_z_mm": 156.55156093469677,
+    "pinched": true,
+    "pad_cube_contacts": 9,
+    "max_abs_normal_z": 0.9518087334142059,
+    "pads_below_cube_bottom_mm": 5.643840212948725,
+    "penetration_mm": 0.0
+   },
+   {
+    "t": 50,
+    "cube_z_mm": 174.85729687911825,
+    "pinched": true,
+    "pad_cube_contacts": 9,
+    "max_abs_normal_z": 0.9197789247023355,
+    "pads_below_cube_bottom_mm": 7.174410216235355,
+    "penetration_mm": 0.0
+   },
+   {
+    "t": 51,
+    "cube_z_mm": 172.42510991167404,
+    "pinched": true,
+    "pad_cube_contacts": 9,
+    "max_abs_normal_z": 0.9254567406437022,
+    "pads_below_cube_bottom_mm": 7.330389673310039,
+    "penetration_mm": 0.0
+   }
+  ],
+  "per_step": [
+   {
+    "eef_z": 0.31512,
+    "grasp_center_z": 0.31971,
+    "cube_z": 0.00951,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.2988126886089392,
+     "moving_grasp_pad": 0.3151475309731066
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460143684438548,
+     "upper_arm[collision]": 0.10460143684438548,
+     "lower_arm[visual]": 0.1628576424456855,
+     "lower_arm[collision]": 0.1628576424456855,
+     "wrist[visual]": 0.19457703670175475,
+     "wrist[collision]": 0.19457703670175475,
+     "gripper[visual]": 0.2302042591853938,
+     "gripper[collision]": 0.2302042591853938,
+     "moving_jaw_so101_v1[visual]": 0.2704743628141913,
+     "moving_jaw_so101_v1[collision]": 0.2704743628141913
+    },
+    "distal_min_z": 0.2302,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4
+   },
+   {
+    "eef_z": 0.3126,
+    "grasp_center_z": 0.3173,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.29635527582589266,
+     "moving_grasp_pad": 0.3140132170270269
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460159240412198,
+     "upper_arm[collision]": 0.10460159240412198,
+     "lower_arm[visual]": 0.1627744368892599,
+     "lower_arm[collision]": 0.1627744368892599,
+     "wrist[visual]": 0.19288989344612834,
+     "wrist[collision]": 0.19288989344612834,
+     "gripper[visual]": 0.22800528599534048,
+     "gripper[collision]": 0.22800528599534048,
+     "moving_jaw_so101_v1[visual]": 0.26846718507233336,
+     "moving_jaw_so101_v1[collision]": 0.26846718507233336
+    },
+    "distal_min_z": 0.22801,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 1,
+    "cmd": 0.99512,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.28346,
+    "grasp_center_z": 0.28871,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.2676144015033017,
+     "moving_grasp_pad": 0.29034334062918987
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460077761012254,
+     "upper_arm[collision]": 0.10460077761012254,
+     "lower_arm[visual]": 0.15668743451959882,
+     "lower_arm[collision]": 0.15668743451959882,
+     "wrist[visual]": 0.16818594149771854,
+     "wrist[collision]": 0.16818594149771854,
+     "gripper[visual]": 0.20065030137829318,
+     "gripper[collision]": 0.20065030137829318,
+     "moving_jaw_so101_v1[visual]": 0.24207267693417583,
+     "moving_jaw_so101_v1[collision]": 0.24207267693417583
+    },
+    "distal_min_z": 0.20065,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 2,
+    "cmd": 0.98662,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.20234,
+    "grasp_center_z": 0.21012,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.18856263853308808,
+     "moving_grasp_pad": 0.2306955750703837
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460243127637142,
+     "upper_arm[collision]": 0.10460243127637142,
+     "lower_arm[visual]": 0.10700462060892298,
+     "lower_arm[collision]": 0.10700462060892298,
+     "wrist[visual]": 0.11031707296706972,
+     "wrist[collision]": 0.11031707296706972,
+     "gripper[visual]": 0.12949639730830703,
+     "gripper[collision]": 0.12949639730830703,
+     "moving_jaw_so101_v1[visual]": 0.17451533743835293,
+     "moving_jaw_so101_v1[collision]": 0.17451533743835293
+    },
+    "distal_min_z": 0.1295,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 3,
+    "cmd": 0.99651,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.13704,
+    "grasp_center_z": 0.14676,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.12536110239316756,
+     "moving_grasp_pad": 0.18315444589959934
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460000552680934,
+     "upper_arm[collision]": 0.10460000552680934,
+     "lower_arm[visual]": 0.06427418500335044,
+     "lower_arm[collision]": 0.06427418500335044,
+     "wrist[visual]": 0.066598860666521,
+     "wrist[collision]": 0.066598860666521,
+     "gripper[visual]": 0.07433782952088527,
+     "gripper[collision]": 0.07433782952088527,
+     "moving_jaw_so101_v1[visual]": 0.12111434214082992,
+     "moving_jaw_so101_v1[collision]": 0.12111434214082992
+    },
+    "distal_min_z": 0.07434,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 4,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.08704,
+    "grasp_center_z": 0.09799,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.07700165106946981,
+     "moving_grasp_pad": 0.1452522578828918
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460047064122438,
+     "upper_arm[collision]": 0.10460047064122438,
+     "lower_arm[visual]": 0.030340807912490216,
+     "lower_arm[collision]": 0.030340807912490216,
+     "wrist[visual]": 0.032511325458846774,
+     "wrist[collision]": 0.032511325458846774,
+     "gripper[visual]": 0.03225941518578525,
+     "gripper[collision]": 0.03225941518578525,
+     "moving_jaw_so101_v1[visual]": 0.07954226791985577,
+     "moving_jaw_so101_v1[collision]": 0.07954226791985577
+    },
+    "distal_min_z": 0.03226,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 5,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.03421,
+    "grasp_center_z": 0.04645,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.02621379239425164,
+     "moving_grasp_pad": 0.10598389794163536
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10036398173482346,
+     "upper_arm[collision]": 0.10036398173482346,
+     "lower_arm[visual]": -0.0030037527875426615,
+     "lower_arm[collision]": -0.0030037527875426615,
+     "wrist[visual]": -0.0011564095822272046,
+     "wrist[collision]": -0.0011564095822272046,
+     "gripper[visual]": -0.010614193614038026,
+     "gripper[collision]": -0.010614193614038026,
+     "moving_jaw_so101_v1[visual]": 0.036500993667838134,
+     "moving_jaw_so101_v1[collision]": 0.036500993667838134
+    },
+    "distal_min_z": -0.01061,
+    "penetration_mm": 10.61419,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 6,
+    "cmd": 0.99408,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.02478,
+    "grasp_center_z": -0.01118,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.030014393457729386,
+     "moving_grasp_pad": 0.06237191176136944
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.08596701090015767,
+     "upper_arm[collision]": 0.08596701090015767,
+     "lower_arm[visual]": -0.03651319734823545,
+     "lower_arm[collision]": -0.03651319734823545,
+     "wrist[visual]": -0.037433523838406056,
+     "wrist[collision]": -0.037433523838406056,
+     "gripper[visual]": -0.05604967541553489,
+     "gripper[collision]": -0.05604967541553489,
+     "moving_jaw_so101_v1[visual]": -0.010336414439806395,
+     "moving_jaw_so101_v1[collision]": -0.010336414439806395
+    },
+    "distal_min_z": -0.05605,
+    "penetration_mm": 56.04968,
+    "pad_penetration_mm": 30.01439,
+    "pads_below_cube_bottom_mm": 29.49611,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 7,
+    "cmd": 0.98866,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.0711,
+    "grasp_center_z": -0.0566,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.07573256290167338,
+     "moving_grasp_pad": 0.027199128371268845
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.07289055327713839,
+     "upper_arm[collision]": 0.07289055327713839,
+     "lower_arm[visual]": -0.060109706890281264,
+     "lower_arm[collision]": -0.060109706890281264,
+     "wrist[visual]": -0.06937438570146263,
+     "wrist[collision]": -0.06937438570146263,
+     "gripper[visual]": -0.09342099937030124,
+     "gripper[collision]": -0.09342099937030124,
+     "moving_jaw_so101_v1[visual]": -0.04674728892761865,
+     "moving_jaw_so101_v1[collision]": -0.04674728892761865
+    },
+    "distal_min_z": -0.09342,
+    "penetration_mm": 93.421,
+    "pad_penetration_mm": 75.73256,
+    "pads_below_cube_bottom_mm": 75.21428,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 8,
+    "cmd": 0.99678,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.07616,
+    "grasp_center_z": -0.06156,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.08078319601498446,
+     "moving_grasp_pad": 0.023475103554985055
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.07286484773449002,
+     "upper_arm[collision]": 0.07286484773449002,
+     "lower_arm[visual]": -0.061600899845208064,
+     "lower_arm[collision]": -0.061600899845208064,
+     "wrist[visual]": -0.07274168350914598,
+     "wrist[collision]": -0.07274168350914598,
+     "gripper[visual]": -0.09749507764593018,
+     "gripper[collision]": -0.09749507764593018,
+     "moving_jaw_so101_v1[visual]": -0.05056337576228111,
+     "moving_jaw_so101_v1[collision]": -0.05056337576228111
+    },
+    "distal_min_z": -0.0975,
+    "penetration_mm": 97.49508,
+    "pad_penetration_mm": 80.7832,
+    "pads_below_cube_bottom_mm": 80.26491,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 9,
+    "cmd": 0.99537,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.06058,
+    "grasp_center_z": -0.04639,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.0650886426756185,
+     "moving_grasp_pad": 0.03369908705202519
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.0786118128941165,
+     "upper_arm[collision]": 0.0786118128941165,
+     "lower_arm[visual]": -0.05632725947575927,
+     "lower_arm[collision]": -0.05632725947575927,
+     "wrist[visual]": -0.06398309338231925,
+     "wrist[collision]": -0.06398309338231925,
+     "gripper[visual]": -0.08573848539079879,
+     "gripper[collision]": -0.08573848539079879,
+     "moving_jaw_so101_v1[visual]": -0.03983227879623566,
+     "moving_jaw_so101_v1[collision]": -0.03983227879623566
+    },
+    "distal_min_z": -0.08574,
+    "penetration_mm": 85.73849,
+    "pad_penetration_mm": 65.08864,
+    "pads_below_cube_bottom_mm": 64.57036,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 10,
+    "cmd": 0.99412,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.04526,
+    "grasp_center_z": -0.0314,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.04977041444116366,
+     "moving_grasp_pad": 0.04489030532725477
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.08589571809651567,
+     "upper_arm[collision]": 0.08589571809651567,
+     "lower_arm[visual]": -0.04854811244636976,
+     "lower_arm[collision]": -0.04854811244636976,
+     "wrist[visual]": -0.053572633645523476,
+     "wrist[collision]": -0.053572633645523476,
+     "gripper[visual]": -0.07332222077022846,
+     "gripper[collision]": -0.07332222077022846,
+     "moving_jaw_so101_v1[visual]": -0.028036408575797717,
+     "moving_jaw_so101_v1[collision]": -0.028036408575797717
+    },
+    "distal_min_z": -0.07332,
+    "penetration_mm": 73.32222,
+    "pad_penetration_mm": 49.77041,
+    "pads_below_cube_bottom_mm": 49.25213,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 11,
+    "cmd": 0.99625,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.02569,
+    "grasp_center_z": -0.01216,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.03097937091219476,
+     "moving_grasp_pad": 0.06048120865508031
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.09752189922017185,
+     "upper_arm[collision]": 0.09752189922017185,
+     "lower_arm[visual]": -0.03636815127010065,
+     "lower_arm[collision]": -0.03636815127010065,
+     "wrist[visual]": -0.03960909577701778,
+     "wrist[collision]": -0.03960909577701778,
+     "gripper[visual]": -0.057719482408195036,
+     "gripper[collision]": -0.057719482408195036,
+     "moving_jaw_so101_v1[visual]": -0.01180287808617865,
+     "moving_jaw_so101_v1[collision]": -0.01180287808617865
+    },
+    "distal_min_z": -0.05772,
+    "penetration_mm": 57.71948,
+    "pad_penetration_mm": 30.97937,
+    "pads_below_cube_bottom_mm": 30.46108,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 12,
+    "cmd": 0.99594,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.02341,
+    "grasp_center_z": -0.00955,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.027894747214906267,
+     "moving_grasp_pad": 0.06670869201514534
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460001740047849,
+     "upper_arm[collision]": 0.10460001740047849,
+     "lower_arm[visual]": -0.027295506738815114,
+     "lower_arm[collision]": -0.027295506738815114,
+     "wrist[visual]": -0.031752172913012425,
+     "wrist[collision]": -0.031752172913012425,
+     "gripper[visual]": -0.05146924996114813,
+     "gripper[collision]": -0.05146924996114813,
+     "moving_jaw_so101_v1[visual]": -0.006155962212056925,
+     "moving_jaw_so101_v1[collision]": -0.006155962212056925
+    },
+    "distal_min_z": -0.05147,
+    "penetration_mm": 51.46925,
+    "pad_penetration_mm": 27.89475,
+    "pads_below_cube_bottom_mm": 27.37646,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 13,
+    "cmd": 0.99765,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.01751,
+    "grasp_center_z": -0.00358,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.021881532221010632,
+     "moving_grasp_pad": 0.07335422491843442
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460010223505177,
+     "upper_arm[collision]": 0.10460010223505177,
+     "lower_arm[visual]": -0.020019146734517417,
+     "lower_arm[collision]": -0.020019146734517417,
+     "wrist[visual]": -0.02493663661146205,
+     "wrist[collision]": -0.02493663661146205,
+     "gripper[visual]": -0.04485028416127701,
+     "gripper[collision]": -0.04485028416127701,
+     "moving_jaw_so101_v1[visual]": 0.0004236086943785189,
+     "moving_jaw_so101_v1[collision]": 0.0004236086943785189
+    },
+    "distal_min_z": -0.04485,
+    "penetration_mm": 44.85028,
+    "pad_penetration_mm": 21.88153,
+    "pads_below_cube_bottom_mm": 21.36325,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 14,
+    "cmd": 0.99943,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00424,
+    "grasp_center_z": 0.00962,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.008696772212772682,
+     "moving_grasp_pad": 0.08587697492841201
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460048306430397,
+     "upper_arm[collision]": 0.10460048306430397,
+     "lower_arm[visual]": -0.008006866591547663,
+     "lower_arm[collision]": -0.008006866591547663,
+     "wrist[visual]": -0.012533457452625043,
+     "wrist[collision]": -0.012533457452625043,
+     "gripper[visual]": -0.03224036122498678,
+     "gripper[collision]": -0.03224036122498678,
+     "moving_jaw_so101_v1[visual]": 0.013079822283352603,
+     "moving_jaw_so101_v1[collision]": 0.013079822283352603
+    },
+    "distal_min_z": -0.03224,
+    "penetration_mm": 32.24036,
+    "pad_penetration_mm": 8.69677,
+    "pads_below_cube_bottom_mm": 8.17849,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 15,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.00409,
+    "grasp_center_z": 0.01813,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.00030102961285214747,
+     "moving_grasp_pad": 0.09648021237991618
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.1046010226872504,
+     "upper_arm[collision]": 0.1046010226872504,
+     "lower_arm[visual]": 0.004255813980700577,
+     "lower_arm[collision]": 0.004255813980700577,
+     "wrist[visual]": -0.001529232500844066,
+     "wrist[collision]": -0.001529232500844066,
+     "gripper[visual]": -0.022228922104021727,
+     "gripper[collision]": -0.022228922104021727,
+     "moving_jaw_so101_v1[visual]": 0.02335568311253916,
+     "moving_jaw_so101_v1[collision]": 0.02335568311253916
+    },
+    "distal_min_z": -0.02223,
+    "penetration_mm": 22.22892,
+    "pad_penetration_mm": 0.30103,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 16,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.01452,
+    "grasp_center_z": 0.02861,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.010120845019372854,
+     "moving_grasp_pad": 0.10753729103136965
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460578414088502,
+     "upper_arm[collision]": 0.10460578414088502,
+     "lower_arm[visual]": 0.015742131738605735,
+     "lower_arm[collision]": 0.015742131738605735,
+     "wrist[visual]": 0.009641110312730173,
+     "wrist[collision]": 0.009641110312730173,
+     "gripper[visual]": -0.011391588736761252,
+     "gripper[collision]": -0.011391588736761252,
+     "moving_jaw_so101_v1[visual]": 0.03433263750185372,
+     "moving_jaw_so101_v1[collision]": 0.03433263750185372
+    },
+    "distal_min_z": -0.01139,
+    "penetration_mm": 11.39159,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 17,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.02676,
+    "grasp_center_z": 0.0408,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.02238508036006586,
+     "moving_grasp_pad": 0.11902450430587894
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460917208212259,
+     "upper_arm[collision]": 0.10460917208212259,
+     "lower_arm[visual]": 0.026636727306368534,
+     "lower_arm[collision]": 0.026636727306368534,
+     "wrist[visual]": 0.020978066034091473,
+     "wrist[collision]": 0.020978066034091473,
+     "gripper[visual]": 0.0003615083642381188,
+     "gripper[collision]": 0.0003615083642381188,
+     "moving_jaw_so101_v1[visual]": 0.04592717733586424,
+     "moving_jaw_so101_v1[collision]": 0.04592717733586424
+    },
+    "distal_min_z": 0.00036,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 18,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.03413,
+    "grasp_center_z": 0.04825,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.029746577455113048,
+     "moving_grasp_pad": 0.1273569550121653
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460727094366479,
+     "upper_arm[collision]": 0.10460727094366479,
+     "lower_arm[visual]": 0.03570409503380814,
+     "lower_arm[collision]": 0.03570409503380814,
+     "wrist[visual]": 0.029489756434140084,
+     "wrist[collision]": 0.029489756434140084,
+     "gripper[visual]": 0.00835993034063796,
+     "gripper[collision]": 0.00835993034063796,
+     "moving_jaw_so101_v1[visual]": 0.05413433877907977,
+     "moving_jaw_so101_v1[collision]": 0.05413433877907977
+    },
+    "distal_min_z": 0.00836,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 19,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.04022,
+    "grasp_center_z": 0.05446,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.03580240007327951,
+     "moving_grasp_pad": 0.13514233952563046
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.1046035556515639,
+     "upper_arm[collision]": 0.1046035556515639,
+     "lower_arm[visual]": 0.04482975145142787,
+     "lower_arm[collision]": 0.04482975145142787,
+     "wrist[visual]": 0.03763458241103565,
+     "wrist[collision]": 0.03763458241103565,
+     "gripper[visual]": 0.015578845684249956,
+     "gripper[collision]": 0.015578845684249956,
+     "moving_jaw_so101_v1[visual]": 0.06171128716760427,
+     "moving_jaw_so101_v1[collision]": 0.06171128716760427
+    },
+    "distal_min_z": 0.01558,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 20,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.04953,
+    "grasp_center_z": 0.06374,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.045120348369019764,
+     "moving_grasp_pad": 0.14402695432800444
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460079917575572,
+     "upper_arm[collision]": 0.10460079917575572,
+     "lower_arm[visual]": 0.05336785159384901,
+     "lower_arm[collision]": 0.05336785159384901,
+     "wrist[visual]": 0.04642063348396856,
+     "wrist[collision]": 0.04642063348396856,
+     "gripper[visual]": 0.0246009062191104,
+     "gripper[collision]": 0.0246009062191104,
+     "moving_jaw_so101_v1[visual]": 0.07064913355696631,
+     "moving_jaw_so101_v1[collision]": 0.07064913355696631
+    },
+    "distal_min_z": 0.0246,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 21,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.05629,
+    "grasp_center_z": 0.07051,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.05188291376517152,
+     "moving_grasp_pad": 0.15091854956304687
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460048034991516,
+     "upper_arm[collision]": 0.10460048034991516,
+     "lower_arm[visual]": 0.060356439941345694,
+     "lower_arm[collision]": 0.060356439941345694,
+     "wrist[visual]": 0.053337729935659245,
+     "wrist[collision]": 0.053337729935659245,
+     "gripper[visual]": 0.03145033600768512,
+     "gripper[collision]": 0.03145033600768512,
+     "moving_jaw_so101_v1[visual]": 0.07752773109599922,
+     "moving_jaw_so101_v1[collision]": 0.07752773109599922
+    },
+    "distal_min_z": 0.03145,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 22,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.05947,
+    "grasp_center_z": 0.07378,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.05505116677684919,
+     "moving_grasp_pad": 0.15526278387432602
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460304914404181,
+     "upper_arm[collision]": 0.10460304914404181,
+     "lower_arm[visual]": 0.06559324039059464,
+     "lower_arm[collision]": 0.06559324039059464,
+     "wrist[visual]": 0.057901640948147814,
+     "wrist[collision]": 0.057901640948147814,
+     "gripper[visual]": 0.03540214212130561,
+     "gripper[collision]": 0.03540214212130561,
+     "moving_jaw_so101_v1[visual]": 0.08171248327310929,
+     "moving_jaw_so101_v1[collision]": 0.08171248327310929
+    },
+    "distal_min_z": 0.0354,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 23,
+    "cmd": 0.99805,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.06498,
+    "grasp_center_z": 0.07934,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.06054981481513771,
+     "moving_grasp_pad": 0.16140869806790248
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460004087398392,
+     "upper_arm[collision]": 0.10460004087398392,
+     "lower_arm[visual]": 0.07226928150344074,
+     "lower_arm[collision]": 0.07226928150344074,
+     "wrist[visual]": 0.06419105880659315,
+     "wrist[collision]": 0.06419105880659315,
+     "gripper[visual]": 0.04134848846659213,
+     "gripper[collision]": 0.04134848846659213,
+     "moving_jaw_so101_v1[visual]": 0.08778895705661571,
+     "moving_jaw_so101_v1[collision]": 0.08778895705661571
+    },
+    "distal_min_z": 0.04135,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 24,
+    "cmd": 0.99761,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.07019,
+    "grasp_center_z": 0.08457,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.06575227421576137,
+     "moving_grasp_pad": 0.16689008540676106
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460350531880211,
+     "upper_arm[collision]": 0.10460350531880211,
+     "lower_arm[visual]": 0.0780478940840339,
+     "lower_arm[collision]": 0.0780478940840339,
+     "wrist[visual]": 0.06978708169772188,
+     "wrist[collision]": 0.06978708169772188,
+     "gripper[visual]": 0.04677452718176063,
+     "gripper[collision]": 0.04677452718176063,
+     "moving_jaw_so101_v1[visual]": 0.09327637929005886,
+     "moving_jaw_so101_v1[collision]": 0.09327637929005886
+    },
+    "distal_min_z": 0.04677,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 25,
+    "cmd": 1.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.075,
+    "grasp_center_z": 0.08931,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.07058340089088293,
+     "moving_grasp_pad": 0.1708088307133952
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.1046015611536112,
+     "upper_arm[collision]": 0.1046015611536112,
+     "lower_arm[visual]": 0.08117115133279014,
+     "lower_arm[collision]": 0.08117115133279014,
+     "wrist[visual]": 0.07346709418613744,
+     "wrist[collision]": 0.07346709418613744,
+     "gripper[visual]": 0.05095427697264546,
+     "gripper[collision]": 0.05095427697264546,
+     "moving_jaw_so101_v1[visual]": 0.09727498607962065,
+     "moving_jaw_so101_v1[collision]": 0.09727498607962065
+    },
+    "distal_min_z": 0.05095,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 26,
+    "cmd": 0.99896,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.0433,
+    "grasp_center_z": 0.05853,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.0386602490402298,
+     "moving_grasp_pad": 0.15232825344433626
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460000914607186,
+     "upper_arm[collision]": 0.10460000914607186,
+     "lower_arm[visual]": 0.0779328344167231,
+     "lower_arm[collision]": 0.0779328344167231,
+     "wrist[visual]": 0.060322009980137495,
+     "wrist[collision]": 0.060322009980137495,
+     "gripper[visual]": 0.03016636433549466,
+     "gripper[collision]": 0.03016636433549466,
+     "moving_jaw_so101_v1[visual]": 0.07854756058951595,
+     "moving_jaw_so101_v1[collision]": 0.07854756058951595
+    },
+    "distal_min_z": 0.03017,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 27,
+    "cmd": 0.99603,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.01865,
+    "grasp_center_z": 0.03422,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.013946506110156558,
+     "moving_grasp_pad": 0.13484687269858928
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460023735853005,
+     "upper_arm[collision]": 0.10460023735853005,
+     "lower_arm[visual]": 0.07413829302559825,
+     "lower_arm[collision]": 0.07413829302559825,
+     "wrist[visual]": 0.04915208086714127,
+     "wrist[collision]": 0.04915208086714127,
+     "gripper[visual]": 0.011716271784138144,
+     "gripper[collision]": 0.011716271784138144,
+     "moving_jaw_so101_v1[visual]": 0.06275313093232036,
+     "moving_jaw_so101_v1[collision]": 0.06275313093232036
+    },
+    "distal_min_z": 0.01172,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 28,
+    "cmd": 0.99523,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.00432,
+    "grasp_center_z": 0.01994,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.0003756475081969652,
+     "moving_grasp_pad": 0.12297905285290718
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460028946215347,
+     "upper_arm[collision]": 0.10460028946215347,
+     "lower_arm[visual]": 0.0696333471826494,
+     "lower_arm[collision]": 0.0696333471826494,
+     "wrist[visual]": 0.04116375998583407,
+     "wrist[collision]": 0.04116375998583407,
+     "gripper[visual]": -0.002734937163272326,
+     "gripper[collision]": -0.002734937163272326,
+     "moving_jaw_so101_v1[visual]": 0.052346166441070506,
+     "moving_jaw_so101_v1[collision]": 0.052346166441070506
+    },
+    "distal_min_z": -0.00273,
+    "penetration_mm": 2.73494,
+    "pad_penetration_mm": 0.37565,
+    "pads_below_cube_bottom_mm": 0.0,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 29,
+    "cmd": 0.99038,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.01213,
+    "grasp_center_z": 0.00343,
+    "cube_z": 0.00948,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.016780584774281664,
+     "moving_grasp_pad": 0.10622295126101303
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.1046063068601439,
+     "upper_arm[collision]": 0.1046063068601439,
+     "lower_arm[visual]": 0.06703286487616111,
+     "lower_arm[collision]": 0.06703286487616111,
+     "wrist[visual]": 0.03396869380984355,
+     "wrist[collision]": 0.03396869380984355,
+     "gripper[visual]": -0.01934384164440244,
+     "gripper[collision]": -0.01934384164440244,
+     "moving_jaw_so101_v1[visual]": 0.04130751940105211,
+     "moving_jaw_so101_v1[collision]": 0.04130751940105211
+    },
+    "distal_min_z": -0.01934,
+    "penetration_mm": 19.34384,
+    "pad_penetration_mm": 16.78058,
+    "pads_below_cube_bottom_mm": 16.2623,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [],
+    "cube_table_contacts": 4,
+    "t": 30,
+    "cmd": 0.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00534,
+    "grasp_center_z": 0.01027,
+    "cube_z": 0.00967,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.010014527144908518,
+     "moving_grasp_pad": 0.10435522757260084
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.1046049592136753,
+     "upper_arm[collision]": 0.1046049592136753,
+     "lower_arm[visual]": 0.06783043406398673,
+     "lower_arm[collision]": 0.06783043406398673,
+     "wrist[visual]": 0.036701419555692935,
+     "wrist[collision]": 0.036701419555692935,
+     "gripper[visual]": -0.012486498412262917,
+     "gripper[collision]": -0.012486498412262917,
+     "moving_jaw_so101_v1[visual]": 0.045778189791283314,
+     "moving_jaw_so101_v1[collision]": 0.045778189791283314
+    },
+    "distal_min_z": -0.01249,
+    "penetration_mm": 12.4865,
+    "pad_penetration_mm": 10.01453,
+    "pads_below_cube_bottom_mm": 9.68188,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -0.21512511934884995,
+      "z": -0.0001048504964873704,
+      "normal_z": 0.8688720972603963,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 31,
+    "cmd": 0.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00504,
+    "grasp_center_z": 0.01057,
+    "cube_z": 0.00963,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.009717518455653933,
+     "moving_grasp_pad": 0.09257360566725042
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460451661479646,
+     "upper_arm[collision]": 0.10460451661479646,
+     "lower_arm[visual]": 0.06787014486926066,
+     "lower_arm[collision]": 0.06787014486926066,
+     "wrist[visual]": 0.03682370037657183,
+     "wrist[collision]": 0.03682370037657183,
+     "gripper[visual]": -0.012185329327358909,
+     "gripper[collision]": -0.012185329327358909,
+     "moving_jaw_so101_v1[visual]": 0.04597512942393972,
+     "moving_jaw_so101_v1[collision]": 0.04597512942393972
+    },
+    "distal_min_z": -0.01219,
+    "penetration_mm": 12.18533,
+    "pad_penetration_mm": 9.71752,
+    "pads_below_cube_bottom_mm": 9.35149,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -0.3771438509592841,
+      "z": 4.425288394239741e-05,
+      "normal_z": 0.8698595933145276,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 32,
+    "cmd": 0.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00558,
+    "grasp_center_z": 0.01002,
+    "cube_z": 0.00957,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.010263029678540186,
+     "moving_grasp_pad": 0.07678903910146641
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460605253587879,
+     "upper_arm[collision]": 0.10460605253587879,
+     "lower_arm[visual]": 0.06756014728452318,
+     "lower_arm[collision]": 0.06756014728452318,
+     "wrist[visual]": 0.036429912389471034,
+     "wrist[collision]": 0.036429912389471034,
+     "gripper[visual]": -0.012732948213802699,
+     "gripper[collision]": -0.012732948213802699,
+     "moving_jaw_so101_v1[visual]": 0.04551198124537021,
+     "moving_jaw_so101_v1[collision]": 0.04551198124537021
+    },
+    "distal_min_z": -0.01273,
+    "penetration_mm": 12.73295,
+    "pad_penetration_mm": 10.26303,
+    "pads_below_cube_bottom_mm": 9.83313,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -0.14813542084055464,
+      "z": -0.00019556549805540375,
+      "normal_z": 0.8690090118125283,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 33,
+    "cmd": 0.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00541,
+    "grasp_center_z": 0.0102,
+    "cube_z": 0.00959,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.01008844309916948,
+     "moving_grasp_pad": 0.05991005786937334
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460461877399113,
+     "upper_arm[collision]": 0.10460461877399113,
+     "lower_arm[visual]": 0.06779574577626087,
+     "lower_arm[collision]": 0.06779574577626087,
+     "wrist[visual]": 0.03663883105308166,
+     "wrist[collision]": 0.03663883105308166,
+     "gripper[visual]": -0.012560079882822622,
+     "gripper[collision]": -0.012560079882822622,
+     "moving_jaw_so101_v1[visual]": 0.04567714599339565,
+     "moving_jaw_so101_v1[collision]": 0.04567714599339565
+    },
+    "distal_min_z": -0.01256,
+    "penetration_mm": 12.56008,
+    "pad_penetration_mm": 10.08844,
+    "pads_below_cube_bottom_mm": 9.67687,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -0.12873502221885766,
+      "z": -0.00016165247476549512,
+      "normal_z": 0.8688105923403181,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 34,
+    "cmd": 0.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00567,
+    "grasp_center_z": 0.00993,
+    "cube_z": 0.00957,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.010354400732600038,
+     "moving_grasp_pad": 0.04004646785841104
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460609500576899,
+     "upper_arm[collision]": 0.10460609500576899,
+     "lower_arm[visual]": 0.06753237984082348,
+     "lower_arm[collision]": 0.06753237984082348,
+     "wrist[visual]": 0.03637742853610965,
+     "wrist[collision]": 0.03637742853610965,
+     "gripper[visual]": -0.012824486450098701,
+     "gripper[collision]": -0.012824486450098701,
+     "moving_jaw_so101_v1[visual]": 0.029143908278281002,
+     "moving_jaw_so101_v1[collision]": 0.029143908278281002
+    },
+    "distal_min_z": -0.01282,
+    "penetration_mm": 12.82449,
+    "pad_penetration_mm": 10.3544,
+    "pads_below_cube_bottom_mm": 9.92911,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -0.02069176328256875,
+      "z": -0.00023833703114848042,
+      "normal_z": 0.8687921055724042,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 35,
+    "cmd": 0.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00559,
+    "grasp_center_z": 0.01002,
+    "cube_z": 0.00951,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.010267430390726834,
+     "moving_grasp_pad": 0.020500290750356157
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.1046048310818489,
+     "upper_arm[collision]": 0.1046048310818489,
+     "lower_arm[visual]": 0.06779854500608198,
+     "lower_arm[collision]": 0.06779854500608198,
+     "wrist[visual]": 0.03658516293580802,
+     "wrist[collision]": 0.03658516293580802,
+     "gripper[visual]": -0.01274135183036252,
+     "gripper[collision]": -0.01274135183036252,
+     "moving_jaw_so101_v1[visual]": 0.009089875881511902,
+     "moving_jaw_so101_v1[collision]": 0.009089875881511902
+    },
+    "distal_min_z": -0.01274,
+    "penetration_mm": 12.74135,
+    "pad_penetration_mm": 10.26743,
+    "pads_below_cube_bottom_mm": 9.7754,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -0.02130539062159757,
+      "z": -0.0004320225120092343,
+      "normal_z": 0.8681024278426563,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 36,
+    "cmd": 0.0,
+    "grasped": false,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00531,
+    "grasp_center_z": 0.0103,
+    "cube_z": 0.00506,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.009984429140103501,
+     "moving_grasp_pad": 0.00471981009258066
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460431040262824,
+     "upper_arm[collision]": 0.10460431040262824,
+     "lower_arm[visual]": 0.06787133895304331,
+     "lower_arm[collision]": 0.06787133895304331,
+     "wrist[visual]": 0.03672607430462379,
+     "wrist[collision]": 0.03672607430462379,
+     "gripper[visual]": -0.012455488864876338,
+     "gripper[collision]": -0.012455488864876338,
+     "moving_jaw_so101_v1[visual]": -0.0064446799629213,
+     "moving_jaw_so101_v1[collision]": -0.0064446799629213
+    },
+    "distal_min_z": -0.01246,
+    "penetration_mm": 12.45549,
+    "pad_penetration_mm": 9.98443,
+    "pads_below_cube_bottom_mm": 5.04638,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -5.346522475278928,
+      "z": -0.0027818283012071886,
+      "normal_z": 0.8689063833879606,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.190043656946526,
+      "z": -0.003540318015200919,
+      "normal_z": 0.8689063833879606,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.334361880152901,
+      "z": 0.01373527477125027,
+      "normal_z": -0.998773182627648,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -6.888047900541723,
+      "z": 0.011681796125271607,
+      "normal_z": -0.998773182627648,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -10.596414836578568,
+      "z": 0.010017977759455267,
+      "normal_z": -0.998773182627648,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -10.684083459665302,
+      "z": 0.01033025663682205,
+      "normal_z": -0.998773182627648,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -5.91759844297953,
+      "z": 0.012479696706760326,
+      "normal_z": -0.998773182627648,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.422151613592738,
+      "z": 0.014047985048173384,
+      "normal_z": -0.998773182627648,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 37,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00493,
+    "grasp_center_z": 0.01068,
+    "cube_z": 0.00529,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.009605219188875929,
+     "moving_grasp_pad": 0.0069310829913281045
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460359693491329,
+     "upper_arm[collision]": 0.10460359693491329,
+     "lower_arm[visual]": 0.06799399891645407,
+     "lower_arm[collision]": 0.06799399891645407,
+     "wrist[visual]": 0.03693300068700919,
+     "wrist[collision]": 0.03693300068700919,
+     "gripper[visual]": -0.012072520037189852,
+     "gripper[collision]": -0.012072520037189852,
+     "moving_jaw_so101_v1[visual]": -0.004305570656632909,
+     "moving_jaw_so101_v1[collision]": -0.004305570656632909
+    },
+    "distal_min_z": -0.01207,
+    "penetration_mm": 12.07252,
+    "pad_penetration_mm": 9.60522,
+    "pads_below_cube_bottom_mm": 4.89556,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.202060955335296,
+      "z": -0.0013562952678407522,
+      "normal_z": 0.8698784289202984,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.363316628038385,
+      "z": -0.002345317427622612,
+      "normal_z": 0.8698784289202984,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.0846852562004945,
+      "z": 0.015007402963291451,
+      "normal_z": -0.9928900122501767,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -4.431043445266673,
+      "z": 0.012719176201571132,
+      "normal_z": -0.9928900122501767,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -7.473586354726915,
+      "z": 0.0106493218660487,
+      "normal_z": -0.9928900122501767,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -7.547299674900722,
+      "z": 0.010953009106500756,
+      "normal_z": -0.9928900122501767,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.7810911936017337,
+      "z": 0.013528327871026459,
+      "normal_z": -0.9928900122501767,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.1587040126309778,
+      "z": 0.0153123485528954,
+      "normal_z": -0.9928900122501767,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 38,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00519,
+    "grasp_center_z": 0.01042,
+    "cube_z": 0.00467,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.009865555857478347,
+     "moving_grasp_pad": 0.006082111403264551
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.1046047240890246,
+     "upper_arm[collision]": 0.1046047240890246,
+     "lower_arm[visual]": 0.06784869940691222,
+     "lower_arm[collision]": 0.06784869940691222,
+     "wrist[visual]": 0.03676141198067319,
+     "wrist[collision]": 0.03676141198067319,
+     "gripper[visual]": -0.01233463163935964,
+     "gripper[collision]": -0.01233463163935964,
+     "moving_jaw_so101_v1[visual]": -0.005132128324772937,
+     "moving_jaw_so101_v1[collision]": -0.005132128324772937
+    },
+    "distal_min_z": -0.01233,
+    "penetration_mm": 12.33463,
+    "pad_penetration_mm": 9.86556,
+    "pads_below_cube_bottom_mm": 4.53559,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.218587330007661,
+      "z": -0.0013220384292616575,
+      "normal_z": 0.8693789630448273,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.4474499563547196,
+      "z": -0.002360756698247976,
+      "normal_z": 0.8693789630448273,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.5412886909680479,
+      "z": 0.014482654858392268,
+      "normal_z": -0.9854622818974462,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -4.875809923210827,
+      "z": 0.011854903086546055,
+      "normal_z": -0.9854622818974462,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -7.508161616048893,
+      "z": 0.009789177234720677,
+      "normal_z": -0.9854622818974462,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -7.539238002977469,
+      "z": 0.010072189293911326,
+      "normal_z": -0.9854622818974462,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -4.235024553371273,
+      "z": 0.01267605717839346,
+      "normal_z": -0.9854622818974462,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.5723549689729768,
+      "z": 0.01476557485580932,
+      "normal_z": -0.9854622818974462,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 39,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00534,
+    "grasp_center_z": 0.01027,
+    "cube_z": 0.00444,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.010020985107982175,
+     "moving_grasp_pad": 0.005881161886791395
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460537084285752,
+     "upper_arm[collision]": 0.10460537084285752,
+     "lower_arm[visual]": 0.0677806427819086,
+     "lower_arm[collision]": 0.0677806427819086,
+     "wrist[visual]": 0.036671120081798785,
+     "wrist[collision]": 0.036671120081798785,
+     "gripper[visual]": -0.012491329161910952,
+     "gripper[collision]": -0.012491329161910952,
+     "moving_jaw_so101_v1[visual]": -0.005329988082737325,
+     "moving_jaw_so101_v1[collision]": -0.005329988082737325
+    },
+    "distal_min_z": -0.01249,
+    "penetration_mm": 12.49133,
+    "pad_penetration_mm": 10.02099,
+    "pads_below_cube_bottom_mm": 4.46164,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.9894577012027495,
+      "z": -0.0010641729521224316,
+      "normal_z": 0.8690117853973041,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.2916443065962047,
+      "z": -0.002154038166516053,
+      "normal_z": 0.8690117853973041,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.7478054752654564,
+      "z": 0.01438891144302279,
+      "normal_z": -0.9763359138413438,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -4.858731238378304,
+      "z": 0.011562408585131552,
+      "normal_z": -0.9763359138413438,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -7.228138546322383,
+      "z": 0.009417292015175969,
+      "normal_z": -0.9763359138413438,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -7.230115896864384,
+      "z": 0.009686093462136242,
+      "normal_z": -0.9763359138413438,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -4.250887239605359,
+      "z": 0.012392939897979217,
+      "normal_z": -0.9763359138413438,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.749779713458534,
+      "z": 0.014657289796618421,
+      "normal_z": -0.9763359138413438,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 40,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": -0.00306,
+    "grasp_center_z": 0.01255,
+    "cube_z": 0.00608,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.007747765862904326,
+     "moving_grasp_pad": 0.008229566628244527
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460221095480056,
+     "upper_arm[collision]": 0.10460221095480056,
+     "lower_arm[visual]": 0.06847005742719751,
+     "lower_arm[collision]": 0.06847005742719751,
+     "wrist[visual]": 0.03790634645800571,
+     "wrist[collision]": 0.03790634645800571,
+     "gripper[visual]": -0.010196413246979907,
+     "gripper[collision]": -0.010196413246979907,
+     "moving_jaw_so101_v1[visual]": -0.003005710194737006,
+     "moving_jaw_so101_v1[collision]": -0.003005710194737006
+    },
+    "distal_min_z": -0.0102,
+    "penetration_mm": 10.19641,
+    "pad_penetration_mm": 7.74777,
+    "pads_below_cube_bottom_mm": 3.82885,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -0.7146955147067505,
+      "z": -0.0042267124423850675,
+      "normal_z": 0.8747949819736635,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.258037091276238,
+      "z": 0.0013081720415530403,
+      "normal_z": 0.8747949819736635,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.614103263784766,
+      "z": 0.0001715807197863262,
+      "normal_z": 0.8747949819736635,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -0.6416031711104384,
+      "z": -0.0044716195717803345,
+      "normal_z": 0.8747949819736635,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.40621318593527,
+      "z": 0.016452563442756845,
+      "normal_z": -0.9641575290123376,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -4.110573173815104,
+      "z": 0.013506749026055984,
+      "normal_z": -0.9641575290123376,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -6.2057731563308,
+      "z": 0.011229284748281212,
+      "normal_z": -0.9641575290123376,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -6.137320788863557,
+      "z": 0.011463060907173464,
+      "normal_z": -0.9641575290123376,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.495879719912777,
+      "z": 0.014340338790537376,
+      "normal_z": -0.9641575290123376,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.3378227606154036,
+      "z": 0.01668612805896879,
+      "normal_z": -0.9641575290123376,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 4,
+    "t": 41,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.0025,
+    "grasp_center_z": 0.01812,
+    "cube_z": 0.01059,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": -0.002191949048207547,
+     "moving_grasp_pad": 0.013982032554740849
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460033389568252,
+     "upper_arm[collision]": 0.10460033389568252,
+     "lower_arm[visual]": 0.0697588749549502,
+     "lower_arm[collision]": 0.0697588749549502,
+     "wrist[visual]": 0.04062088297447994,
+     "wrist[collision]": 0.04062088297447994,
+     "gripper[visual]": -0.004580394088469102,
+     "gripper[collision]": -0.004580394088469102,
+     "moving_jaw_so101_v1[visual]": 0.0026913815467563967,
+     "moving_jaw_so101_v1[collision]": 0.0026913815467563967
+    },
+    "distal_min_z": -0.00458,
+    "penetration_mm": 4.58039,
+    "pad_penetration_mm": 2.19195,
+    "pads_below_cube_bottom_mm": 2.78581,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -1.8210410729571258,
+      "z": 0.0008953738374167779,
+      "normal_z": 0.8898446195635733,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.635786204785337,
+      "z": 0.00647612945797131,
+      "normal_z": 0.8898446195635733,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.025688884976263,
+      "z": 0.005392772071329564,
+      "normal_z": 0.8898446195635733,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -1.6534723621111276,
+      "z": 0.0006894117054291539,
+      "normal_z": 0.8898446195635733,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.9424410535737956,
+      "z": 0.0216766939607028,
+      "normal_z": -0.9589175522534858,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.4691107111446144,
+      "z": 0.01856404293837008,
+      "normal_z": -0.9589175522534858,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -5.1701614413900705,
+      "z": 0.016468452179747853,
+      "normal_z": -0.9589175522534858,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -5.011105558085871,
+      "z": 0.016663140438111575,
+      "normal_z": -0.9589175522534858,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.830749976371632,
+      "z": 0.019349160753484543,
+      "normal_z": -0.9589175522534858,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.7842840007919984,
+      "z": 0.021870282028709925,
+      "normal_z": -0.9589175522534858,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 2,
+    "t": 42,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.01449,
+    "grasp_center_z": 0.03008,
+    "cube_z": 0.02232,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.009785046818227902,
+     "moving_grasp_pad": 0.026284347264199617
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460386802948553,
+     "upper_arm[collision]": 0.10460386802948553,
+     "lower_arm[visual]": 0.07325621120634739,
+     "lower_arm[collision]": 0.07325621120634739,
+     "wrist[visual]": 0.047134624427407706,
+     "wrist[collision]": 0.047134624427407706,
+     "gripper[visual]": 0.0075070899606567085,
+     "gripper[collision]": 0.0075070899606567085,
+     "moving_jaw_so101_v1[visual]": 0.01491629551892306,
+     "moving_jaw_so101_v1[collision]": 0.01491629551892306
+    },
+    "distal_min_z": 0.00751,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 2.53256,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -2.517582234230444,
+      "z": 0.012637095679056853,
+      "normal_z": 0.9156672645401145,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.767083501873043,
+      "z": 0.017579231211192294,
+      "normal_z": 0.9156672645401145,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.272140745719905,
+      "z": 0.016566931155804664,
+      "normal_z": 0.9156672645401145,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -2.3823849380310924,
+      "z": 0.012415153400184379,
+      "normal_z": 0.9156672645401145,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.6113353869542648,
+      "z": 0.033233822507745765,
+      "normal_z": -0.9655730105390778,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.151965921783082,
+      "z": 0.030045408751813413,
+      "normal_z": -0.9655730105390778,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -4.437543672377615,
+      "z": 0.028433227460336594,
+      "normal_z": -0.9655730105390778,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -4.30790775440369,
+      "z": 0.028645916202122347,
+      "normal_z": -0.9655730105390778,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.59890092037139,
+      "z": 0.03079066760297022,
+      "normal_z": -0.9655730105390778,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.4836731036464996,
+      "z": 0.033443273181869015,
+      "normal_z": -0.9655730105390778,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 43,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.03674,
+    "grasp_center_z": 0.05211,
+    "cube_z": 0.04517,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.032073670272182005,
+     "moving_grasp_pad": 0.04903836618629406
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460006437532979,
+     "upper_arm[collision]": 0.10460006437532979,
+     "lower_arm[visual]": 0.07840295971002201,
+     "lower_arm[collision]": 0.07840295971002201,
+     "wrist[visual]": 0.05833690579430899,
+     "wrist[collision]": 0.05833690579430899,
+     "gripper[visual]": 0.026491057298239674,
+     "gripper[collision]": 0.026491057298239674,
+     "moving_jaw_so101_v1[visual]": 0.03762919329775692,
+     "moving_jaw_so101_v1[collision]": 0.03762919329775692
+    },
+    "distal_min_z": 0.02649,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 3.09991,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.0655051632512462,
+      "z": 0.03478264716613823,
+      "normal_z": 0.9565738195464776,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.3100636013480695,
+      "z": 0.03859099753089872,
+      "normal_z": 0.9565738195464776,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.004579608011564,
+      "z": 0.037750085879533546,
+      "normal_z": 0.9565738195464776,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -2.957236668949446,
+      "z": 0.034545215186514114,
+      "normal_z": 0.9565738195464776,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.8410801562807558,
+      "z": 0.05488245659877203,
+      "normal_z": -0.9773234010130908,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.134898045663205,
+      "z": 0.05191307321012237,
+      "normal_z": -0.9773234010130908,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.8860795038181712,
+      "z": 0.050942323697800364,
+      "normal_z": -0.9773234010130908,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.7808273132331958,
+      "z": 0.051173006906813874,
+      "normal_z": -0.9773234010130908,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.703529621626728,
+      "z": 0.05256758573754576,
+      "normal_z": -0.9773234010130908,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.7388290140231882,
+      "z": 0.055106562353627826,
+      "normal_z": -0.9773234010130908,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 44,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.07399,
+    "grasp_center_z": 0.0884,
+    "cube_z": 0.08053,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.06956037329290447,
+     "moving_grasp_pad": 0.08676367497134746
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460783991331533,
+     "upper_arm[collision]": 0.10460783991331533,
+     "lower_arm[visual]": 0.08246407819389323,
+     "lower_arm[collision]": 0.08246407819389323,
+     "wrist[visual]": 0.07400562309277492,
+     "wrist[collision]": 0.07400562309277492,
+     "gripper[visual]": 0.05081850366439539,
+     "gripper[collision]": 0.05081850366439539,
+     "moving_jaw_so101_v1[visual]": 0.0756641303135628,
+     "moving_jaw_so101_v1[collision]": 0.0756641303135628
+    },
+    "distal_min_z": 0.05082,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.9712,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.6750407567818106,
+      "z": 0.07207222120392422,
+      "normal_z": 0.9969933487685608,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.1938492058585854,
+      "z": 0.07286530741814924,
+      "normal_z": 0.9969933487685608,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.045185794782409,
+      "z": 0.07246338061559827,
+      "normal_z": 0.9969933487685608,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.615029997423756,
+      "z": 0.07180581493126681,
+      "normal_z": 0.9969933487685608,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.0480124608845933,
+      "z": 0.0899252184824831,
+      "normal_z": -0.999164224296652,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.0726687477988697,
+      "z": 0.08854448244164448,
+      "normal_z": -0.999164224296652,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.280315360233374,
+      "z": 0.08840419220131103,
+      "normal_z": -0.999164224296652,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.2211368283612387,
+      "z": 0.0886670410490464,
+      "normal_z": -0.999164224296652,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.7505757212003896,
+      "z": 0.08898794523622779,
+      "normal_z": -0.999164224296652,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.7060997731843184,
+      "z": 0.0903692344310785,
+      "normal_z": -0.999164224296652,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.72970645499262,
+      "z": 0.09026438240254939,
+      "normal_z": -0.999164224296652,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 45,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.08895,
+    "grasp_center_z": 0.10278,
+    "cube_z": 0.09507,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.08448485780090197,
+     "moving_grasp_pad": 0.10173546087319636
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460883371230162,
+     "upper_arm[collision]": 0.10460883371230162,
+     "lower_arm[visual]": 0.08469391762792383,
+     "lower_arm[collision]": 0.08469391762792383,
+     "wrist[visual]": 0.08027442202380666,
+     "wrist[collision]": 0.08027442202380666,
+     "gripper[visual]": 0.06066843582662604,
+     "gripper[collision]": 0.06066843582662604,
+     "moving_jaw_so101_v1[visual]": 0.0908862780352339,
+     "moving_jaw_so101_v1[collision]": 0.0908862780352339
+    },
+    "distal_min_z": 0.06067,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 0.58699,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.9563986188529356,
+      "z": 0.08703536519371431,
+      "normal_z": 0.9998551039013243,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.051597352045663,
+      "z": 0.08683740796375375,
+      "normal_z": 0.9998551039013243,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.9822954616285213,
+      "z": 0.08660527560021845,
+      "normal_z": 0.9998551039013243,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.9034679441337046,
+      "z": 0.08676919035501199,
+      "normal_z": 0.9998551039013243,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.2371922881142317,
+      "z": 0.10400324401246472,
+      "normal_z": -0.9998020978562807,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.968415078180221,
+      "z": 0.1032882491932008,
+      "normal_z": -0.9998020978562807,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.0437293322392764,
+      "z": 0.10325775145556344,
+      "normal_z": -0.9998020978562807,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.991322645727629,
+      "z": 0.10352130091489278,
+      "normal_z": -0.9998020978562807,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.6913012802934575,
+      "z": 0.10364520970536437,
+      "normal_z": -0.9998020978562807,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.8282697571836996,
+      "z": 0.10439962528461663,
+      "normal_z": -0.9998020978562807,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.8354552651765768,
+      "z": 0.10436348988143467,
+      "normal_z": -0.9998020978562807,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 46,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": false
+   },
+   {
+    "eef_z": 0.10873,
+    "grasp_center_z": 0.12167,
+    "cube_z": 0.11473,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.10228583535758946,
+     "moving_grasp_pad": 0.12140208619934557
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460633006829152,
+     "upper_arm[collision]": 0.10460633006829152,
+     "lower_arm[visual]": 0.08685643721733699,
+     "lower_arm[collision]": 0.08685643721733699,
+     "wrist[visual]": 0.08546716327143686,
+     "wrist[collision]": 0.08546716327143686,
+     "gripper[visual]": 0.07061222586060908,
+     "gripper[collision]": 0.07061222586060908,
+     "moving_jaw_so101_v1[visual]": 0.11098736608561985,
+     "moving_jaw_so101_v1[collision]": 0.11098736608561985
+    },
+    "distal_min_z": 0.07061,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 2.44584,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.314650770499521,
+      "z": 0.10656807086965475,
+      "normal_z": 0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.3932518893092345,
+      "z": 0.10681587211610315,
+      "normal_z": 0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.088170643958173,
+      "z": 0.10525336266038596,
+      "normal_z": 0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.062567039534846,
+      "z": 0.10527699441291771,
+      "normal_z": 0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.2445041393990297,
+      "z": 0.12253528872216363,
+      "normal_z": -0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.694781343110239,
+      "z": 0.12274295054902044,
+      "normal_z": -0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.695234319692689,
+      "z": 0.12274302004413788,
+      "normal_z": -0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.617224631123453,
+      "z": 0.12298895672233334,
+      "normal_z": -0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.426110927111514,
+      "z": 0.1229615915946109,
+      "normal_z": -0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -0.8154066911987133,
+      "z": 0.12271447930590056,
+      "normal_z": -0.9950368339395341,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 47,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": true
+   },
+   {
+    "eef_z": 0.13066,
+    "grasp_center_z": 0.14246,
+    "cube_z": 0.13655,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.12216684966919374,
+     "moving_grasp_pad": 0.14223741509233614
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460180657221396,
+     "upper_arm[collision]": 0.10460180657221396,
+     "lower_arm[visual]": 0.08876378413393764,
+     "lower_arm[collision]": 0.08876378413393764,
+     "wrist[visual]": 0.08836262326888546,
+     "wrist[collision]": 0.08836262326888546,
+     "gripper[visual]": 0.08239969040833679,
+     "gripper[collision]": 0.08239969040833679,
+     "moving_jaw_so101_v1[visual]": 0.1298118536416709,
+     "moving_jaw_so101_v1[collision]": 0.1298118536416709
+    },
+    "distal_min_z": 0.0824,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 4.38237,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.894117099561645,
+      "z": 0.128969159588405,
+      "normal_z": 0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.220635166715983,
+      "z": 0.12908791683281615,
+      "normal_z": 0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.7311028010095337,
+      "z": 0.12605135740404316,
+      "normal_z": 0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.4931730372246736,
+      "z": 0.12648211162551307,
+      "normal_z": 0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.9108858585574628,
+      "z": 0.1433819552604516,
+      "normal_z": -0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.149489130177324,
+      "z": 0.14457430929245813,
+      "normal_z": -0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.8255064789682045,
+      "z": 0.14469214438571937,
+      "normal_z": -0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.6474455518392577,
+      "z": 0.14452073222391607,
+      "normal_z": -0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.2758577183051132,
+      "z": 0.14317458805560576,
+      "normal_z": -0.978664951983601,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 48,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": true
+   },
+   {
+    "eef_z": 0.15117,
+    "grasp_center_z": 0.16178,
+    "cube_z": 0.15655,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.14090772072174804,
+     "moving_grasp_pad": 0.16100262148319702
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460445527928507,
+     "upper_arm[collision]": 0.10460445527928507,
+     "lower_arm[visual]": 0.0914740345182679,
+     "lower_arm[collision]": 0.0914740345182679,
+     "wrist[visual]": 0.09184633046466772,
+     "wrist[collision]": 0.09184633046466772,
+     "gripper[visual]": 0.09420369936809125,
+     "gripper[collision]": 0.09420369936809125,
+     "moving_jaw_so101_v1[visual]": 0.1415616870525525,
+     "moving_jaw_so101_v1[collision]": 0.1415616870525525
+    },
+    "distal_min_z": 0.0942,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 5.64384,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.796492585599628,
+      "z": 0.14978324394528866,
+      "normal_z": 0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.3062154743180105,
+      "z": 0.14980723384047737,
+      "normal_z": 0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.744142210952538,
+      "z": 0.1455202292741639,
+      "normal_z": 0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.340175813604315,
+      "z": 0.1463028576456163,
+      "normal_z": 0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.147947971272647,
+      "z": 0.16267812641796683,
+      "normal_z": -0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.261903519569426,
+      "z": 0.1646625030692512,
+      "normal_z": -0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.7562712842785393,
+      "z": 0.16468630043954224,
+      "normal_z": -0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.5959042696008288,
+      "z": 0.16440062606048,
+      "normal_z": -0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.3515701418728696,
+      "z": 0.16213133218225506,
+      "normal_z": -0.9518087334142059,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 49,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": true
+   },
+   {
+    "eef_z": 0.1694,
+    "grasp_center_z": 0.17885,
+    "cube_z": 0.17486,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.15768288666288288,
+     "moving_grasp_pad": 0.17759766506087657
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10461127711458056,
+     "upper_arm[collision]": 0.10461127711458056,
+     "lower_arm[visual]": 0.09463458471558751,
+     "lower_arm[collision]": 0.09463458471558751,
+     "wrist[visual]": 0.09555697787812859,
+     "wrist[collision]": 0.09555697787812859,
+     "gripper[visual]": 0.10530757423345061,
+     "gripper[collision]": 0.10530757423345061,
+     "moving_jaw_so101_v1[visual]": 0.1520705042729036,
+     "moving_jaw_so101_v1[collision]": 0.1520705042729036
+    },
+    "distal_min_z": 0.10531,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 7.17441,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.8404817145242283,
+      "z": 0.16823211043934913,
+      "normal_z": 0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.440775972042898,
+      "z": 0.1682117429120318,
+      "normal_z": 0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.8111925726052687,
+      "z": 0.1628873441211498,
+      "normal_z": 0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.332166955222736,
+      "z": 0.16393328284600744,
+      "normal_z": 0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.2112034863479963,
+      "z": 0.1797177673933829,
+      "normal_z": -0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.2325791482699144,
+      "z": 0.18232614970721586,
+      "normal_z": -0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.6371992047191775,
+      "z": 0.18230594891883153,
+      "normal_z": -0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.493068622725947,
+      "z": 0.18193786920539273,
+      "normal_z": -0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.3412224695731698,
+      "z": 0.178913381231639,
+      "normal_z": -0.9197789247023355,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 50,
+    "cmd": 0.0,
+    "grasped": true,
+    "success": false,
+    "elevated": true
+   },
+   {
+    "eef_z": 0.1666,
+    "grasp_center_z": 0.17623,
+    "cube_z": 0.17243,
+    "table_z": 0.0,
+    "pad_min_z": {
+     "fixed_grasp_pad": 0.155094720238364,
+     "moving_grasp_pad": 0.1752249608438315
+    },
+    "mesh_min_z": {
+     "upper_arm[visual]": 0.10460727928006318,
+     "upper_arm[collision]": 0.10460727928006318,
+     "lower_arm[visual]": 0.09407214129737831,
+     "lower_arm[collision]": 0.09407214129737831,
+     "wrist[visual]": 0.09491711737441529,
+     "wrist[collision]": 0.09491711737441529,
+     "gripper[visual]": 0.103549013611527,
+     "gripper[collision]": 0.103549013611527,
+     "moving_jaw_so101_v1[visual]": 0.150434565924924,
+     "moving_jaw_so101_v1[collision]": 0.150434565924924
+    },
+    "distal_min_z": 0.10355,
+    "penetration_mm": 0.0,
+    "pad_penetration_mm": 0.0,
+    "pads_below_cube_bottom_mm": 7.33039,
+    "robot_table_contacts": 0,
+    "pad_cube_contacts": [
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.458327539930343,
+      "z": 0.16556925049891846,
+      "normal_z": 0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -4.092803334688223,
+      "z": 0.1655335141345538,
+      "normal_z": 0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -3.467003306423204,
+      "z": 0.16044986901451508,
+      "normal_z": 0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "fixed_grasp_pad<->cube_geom",
+      "dist_mm": -2.954465408282215,
+      "z": 0.16147615981334154,
+      "normal_z": 0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.421181229625987,
+      "z": 0.1774368789803808,
+      "normal_z": -0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -3.4022772429433097,
+      "z": 0.1799039426413894,
+      "normal_z": -0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.773015310183901,
+      "z": 0.1798684999438181,
+      "normal_z": -0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -2.6391108197333857,
+      "z": 0.1795317837631873,
+      "normal_z": -0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     },
+     {
+      "pair": "moving_grasp_pad<->cube_geom",
+      "dist_mm": -1.5261308115915782,
+      "z": 0.1766485390141617,
+      "normal_z": -0.9254567406437022,
+      "robot_table": false,
+      "pad_cube": true
+     }
+    ],
+    "cube_table_contacts": 0,
+    "t": 51,
+    "cmd": 0.0015,
+    "grasped": true,
+    "success": true,
+    "elevated": true
+   }
+  ]
+ },
+ "expert_demos": [
+  {
+   "episode": 0,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 85.3892952036091,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 25,
+   "max_pad_penetration_mm": 65.9747888294486,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 36,
+    "pad_penetration_at_first_pinch_mm": 9.666073589365027,
+    "max_pad_penetration_while_pinched_low_mm": 9.865528919507065,
+    "cube_pushed_into_table_max_mm": 5.15743885722202,
+    "pads_below_cube_bottom_max_mm": 5.7161199648747925,
+    "pad_cube_normal_abs_z_median": 0.9676798362070107,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 2,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 94.06733904112316,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 27,
+   "max_pad_penetration_mm": 76.30165305730391,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 38,
+    "pad_penetration_at_first_pinch_mm": 9.653424836606993,
+    "max_pad_penetration_while_pinched_low_mm": 9.814639325399707,
+    "cube_pushed_into_table_max_mm": 3.4969230889843725,
+    "pads_below_cube_bottom_max_mm": 6.654293874301885,
+    "pad_cube_normal_abs_z_median": 0.7803677060323181,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 3,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 91.70540505069076,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 27,
+   "max_pad_penetration_mm": 73.34288278918132,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 36,
+    "pad_penetration_at_first_pinch_mm": 9.694153937181829,
+    "max_pad_penetration_while_pinched_low_mm": 9.782023893554308,
+    "cube_pushed_into_table_max_mm": 5.588600797318524,
+    "pads_below_cube_bottom_max_mm": 6.7167247963739145,
+    "pad_cube_normal_abs_z_median": 0.9598598682431992,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 4,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 68.55300168694022,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 45.47753479916112,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 33,
+    "pad_penetration_at_first_pinch_mm": 9.492557032147658,
+    "max_pad_penetration_while_pinched_low_mm": 9.78836589687972,
+    "cube_pushed_into_table_max_mm": 5.2110735844029,
+    "pads_below_cube_bottom_max_mm": 5.620794209127998,
+    "pad_cube_normal_abs_z_median": 0.971878283406461,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 5,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 88.45972765047338,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 25,
+   "max_pad_penetration_mm": 69.29747613835869,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 36,
+    "pad_penetration_at_first_pinch_mm": 9.696486333062845,
+    "max_pad_penetration_while_pinched_low_mm": 9.779173605994277,
+    "cube_pushed_into_table_max_mm": 5.644229921839207,
+    "pads_below_cube_bottom_max_mm": 6.9251219754507405,
+    "pad_cube_normal_abs_z_median": 0.9613059848630853,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 6,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 96.02812789799475,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 78.77162913809389,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 37,
+    "pad_penetration_at_first_pinch_mm": 9.617729469232842,
+    "max_pad_penetration_while_pinched_low_mm": 9.797121662641763,
+    "cube_pushed_into_table_max_mm": 5.258177968252348,
+    "pads_below_cube_bottom_max_mm": 5.567846659014538,
+    "pad_cube_normal_abs_z_median": 0.9633692366602105,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 7,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 81.732014803119,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 61.544053884149214,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 35,
+    "pad_penetration_at_first_pinch_mm": 9.748546953239464,
+    "max_pad_penetration_while_pinched_low_mm": 9.82117378717863,
+    "cube_pushed_into_table_max_mm": 5.5142493317368855,
+    "pads_below_cube_bottom_max_mm": 7.166335861689774,
+    "pad_cube_normal_abs_z_median": 0.9652786662396633,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 8,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 70.49988681148703,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 47.89685733543777,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 33,
+    "pad_penetration_at_first_pinch_mm": 9.730453317866615,
+    "max_pad_penetration_while_pinched_low_mm": 9.80536095358685,
+    "cube_pushed_into_table_max_mm": 5.330402281643049,
+    "pads_below_cube_bottom_max_mm": 7.29893328560646,
+    "pad_cube_normal_abs_z_median": 0.970882880052079,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 9,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 75.45354599223289,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 53.92722961032327,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 34,
+    "pad_penetration_at_first_pinch_mm": 9.600345143895128,
+    "max_pad_penetration_while_pinched_low_mm": 9.884487146621657,
+    "cube_pushed_into_table_max_mm": 5.075819407795117,
+    "pads_below_cube_bottom_max_mm": 5.355369372773439,
+    "pad_cube_normal_abs_z_median": 0.9727224869549927,
+    "frac_vertical_normals": 1.0
+   }
+  },
+  {
+   "episode": 11,
+   "replay_joint_error_rad": 0.0,
+   "max_penetration_mm": 76.14477145909662,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 25,
+   "max_pad_penetration_mm": 54.74650894617572,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 34,
+    "pad_penetration_at_first_pinch_mm": 9.65710092284419,
+    "max_pad_penetration_while_pinched_low_mm": 9.87808109507297,
+    "cube_pushed_into_table_max_mm": 3.793521762208918,
+    "pads_below_cube_bottom_max_mm": 6.298268242890692,
+    "pad_cube_normal_abs_z_median": 0.8612333832471084,
+    "frac_vertical_normals": 1.0
+   }
+  }
+ ],
+ "tinyrdt_rollouts": [
+  {
+   "max_penetration_mm": 72.68481090120461,
+   "t_max": 12,
+   "first_penetration_t": 10,
+   "steps_penetrating": 27,
+   "max_pad_penetration_mm": 49.680989862039986,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 0,
+   "k": 1,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 76.5247926022112,
+   "t_max": 9,
+   "first_penetration_t": 7,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 55.10416641303543,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 0,
+   "k": 2,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 75.31076136491224,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 53.38440152760008,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": {
+    "t_first": 35,
+    "pad_penetration_at_first_pinch_mm": 9.500153373537442,
+    "max_pad_penetration_while_pinched_low_mm": 9.723002189708366,
+    "cube_pushed_into_table_max_mm": 1.847576898831988,
+    "pads_below_cube_bottom_max_mm": 9.698355566304791,
+    "pad_cube_normal_abs_z_median": 0.12340340724245226,
+    "frac_vertical_normals": 0.4444444444444444
+   },
+   "episode": 0,
+   "k": 4,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 9.698355566304791,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.7465752067465847
+  },
+  {
+   "max_penetration_mm": 82.38004117646817,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 61.72312592239307,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 35,
+    "pad_penetration_at_first_pinch_mm": 9.820118658099101,
+    "max_pad_penetration_while_pinched_low_mm": 9.927573223375537,
+    "cube_pushed_into_table_max_mm": 5.959694229205411,
+    "pads_below_cube_bottom_max_mm": 7.284693024545221,
+    "pad_cube_normal_abs_z_median": 0.9525857836266581,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 0,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 7.284693024545221,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9992523050427768
+  },
+  {
+   "max_penetration_mm": 99.11612576277388,
+   "t_max": 13,
+   "first_penetration_t": 11,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 83.00727496899374,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 43,
+    "pad_penetration_at_first_pinch_mm": 10.266939481133976,
+    "max_pad_penetration_while_pinched_low_mm": 10.266939481133976,
+    "cube_pushed_into_table_max_mm": 4.2598084511339716,
+    "pads_below_cube_bottom_max_mm": 6.403963690176525,
+    "pad_cube_normal_abs_z_median": 0.8156503679016114,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 2,
+   "k": 1,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 6.403963690176525,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9997498577581916
+  },
+  {
+   "max_penetration_mm": 98.18857256933126,
+   "t_max": 9,
+   "first_penetration_t": 7,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 82.08309637333367,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 39,
+    "pad_penetration_at_first_pinch_mm": 10.06617531719925,
+    "max_pad_penetration_while_pinched_low_mm": 10.06617531719925,
+    "cube_pushed_into_table_max_mm": 3.761281081020626,
+    "pads_below_cube_bottom_max_mm": 6.372497024180526,
+    "pad_cube_normal_abs_z_median": 0.8121627182462932,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 2,
+   "k": 2,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 6.372497024180526,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9996877294128116
+  },
+  {
+   "max_penetration_mm": 96.48159710085473,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 29,
+   "max_pad_penetration_mm": 79.35293973542937,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 39,
+    "pad_penetration_at_first_pinch_mm": 10.11755644068094,
+    "max_pad_penetration_while_pinched_low_mm": 10.45628274994273,
+    "cube_pushed_into_table_max_mm": 4.149964327524726,
+    "pads_below_cube_bottom_max_mm": 6.673500401457488,
+    "pad_cube_normal_abs_z_median": 0.7983896951425944,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 2,
+   "k": 4,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 6.673500401457488,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998806456584005
+  },
+  {
+   "max_penetration_mm": 95.92444115966642,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 78.85161511219847,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 38,
+    "pad_penetration_at_first_pinch_mm": 9.74230009447365,
+    "max_pad_penetration_while_pinched_low_mm": 10.179943856806599,
+    "cube_pushed_into_table_max_mm": 4.614820191312047,
+    "pads_below_cube_bottom_max_mm": 5.902636527859618,
+    "pad_cube_normal_abs_z_median": 0.9529750500723217,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 2,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 7.608459066478224,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9994731879066919
+  },
+  {
+   "max_penetration_mm": 81.29404496290127,
+   "t_max": 13,
+   "first_penetration_t": 10,
+   "steps_penetrating": 34,
+   "max_pad_penetration_mm": 61.13826489642403,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 3,
+   "k": 1,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 89.00777590720206,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 70.12524582810799,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 37,
+    "pad_penetration_at_first_pinch_mm": 10.39949490238859,
+    "max_pad_penetration_while_pinched_low_mm": 10.39949490238859,
+    "cube_pushed_into_table_max_mm": 4.138340749688089,
+    "pads_below_cube_bottom_max_mm": 6.592597025468814,
+    "pad_cube_normal_abs_z_median": 0.8492341139284068,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 3,
+   "k": 2,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 6.592597025468814,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9997221699714072
+  },
+  {
+   "max_penetration_mm": 87.91618207206459,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 68.94526962594426,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 37,
+    "pad_penetration_at_first_pinch_mm": 10.036379110936908,
+    "max_pad_penetration_while_pinched_low_mm": 10.036379110936908,
+    "cube_pushed_into_table_max_mm": 4.330791194056558,
+    "pads_below_cube_bottom_max_mm": 8.300028389396894,
+    "pad_cube_normal_abs_z_median": 0.9519439819168944,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 3,
+   "k": 4,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 8.300028389396894,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9979996312599959
+  },
+  {
+   "max_penetration_mm": 90.73343211827897,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 72.34347702067062,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 37,
+    "pad_penetration_at_first_pinch_mm": 9.37271146734607,
+    "max_pad_penetration_while_pinched_low_mm": 9.624202722160593,
+    "cube_pushed_into_table_max_mm": 4.354131894942587,
+    "pads_below_cube_bottom_max_mm": 6.218552534697613,
+    "pad_cube_normal_abs_z_median": 0.9482767863103236,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 3,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 7.329493137489679,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9991344806328929
+  },
+  {
+   "max_penetration_mm": 69.49664076197064,
+   "t_max": 12,
+   "first_penetration_t": 9,
+   "steps_penetrating": 35,
+   "max_pad_penetration_mm": 46.56872129708189,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 36,
+    "pad_penetration_at_first_pinch_mm": 9.394291145471609,
+    "max_pad_penetration_while_pinched_low_mm": 9.394291145471609,
+    "cube_pushed_into_table_max_mm": 4.062434831821201,
+    "pads_below_cube_bottom_max_mm": 5.573429983751167,
+    "pad_cube_normal_abs_z_median": 0.9856143950697097,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 4,
+   "k": 1,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 9.663763094626104,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998439390811691
+  },
+  {
+   "max_penetration_mm": 75.0505935260405,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 52.89569047992287,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 33,
+    "pad_penetration_at_first_pinch_mm": 9.517895058026788,
+    "max_pad_penetration_while_pinched_low_mm": 9.517895058026788,
+    "cube_pushed_into_table_max_mm": 4.190687462297476,
+    "pads_below_cube_bottom_max_mm": 5.330960340123708,
+    "pad_cube_normal_abs_z_median": 0.9818959950060678,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 4,
+   "k": 2,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 10.194559569323497,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998232976076341
+  },
+  {
+   "max_penetration_mm": 62.79555509831258,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 38.1338421794562,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 34,
+    "pad_penetration_at_first_pinch_mm": 8.63808009402392,
+    "max_pad_penetration_while_pinched_low_mm": 8.953308659688506,
+    "cube_pushed_into_table_max_mm": 3.975528326425103,
+    "pads_below_cube_bottom_max_mm": 5.26447331403386,
+    "pad_cube_normal_abs_z_median": 0.987719220607804,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 4,
+   "k": 4,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 9.087799399398715,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9993539511690738
+  },
+  {
+   "max_penetration_mm": 65.2659821636934,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 40.839142910024975,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 33,
+    "pad_penetration_at_first_pinch_mm": 9.184896447038492,
+    "max_pad_penetration_while_pinched_low_mm": 9.184896447038492,
+    "cube_pushed_into_table_max_mm": 3.9601188434259416,
+    "pads_below_cube_bottom_max_mm": 5.22477760361255,
+    "pad_cube_normal_abs_z_median": 0.9757878734249468,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 4,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 8.262088517809934,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998213935814338
+  },
+  {
+   "max_penetration_mm": 66.56820860562613,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 29,
+   "max_pad_penetration_mm": 42.580769863289134,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 5,
+   "k": 1,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 89.67941661503839,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 70.90863784987657,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 37,
+    "pad_penetration_at_first_pinch_mm": 10.364405365741982,
+    "max_pad_penetration_while_pinched_low_mm": 10.364405365741982,
+    "cube_pushed_into_table_max_mm": 5.826686892958871,
+    "pads_below_cube_bottom_max_mm": 4.903633795887655,
+    "pad_cube_normal_abs_z_median": 0.9697345500949061,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 5,
+   "k": 2,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 8.26295250751924,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9997148940852042
+  },
+  {
+   "max_penetration_mm": 87.04517625504882,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 67.97783119508767,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 38,
+    "pad_penetration_at_first_pinch_mm": 10.162281266582694,
+    "max_pad_penetration_while_pinched_low_mm": 10.162281266582694,
+    "cube_pushed_into_table_max_mm": 5.121687331586816,
+    "pads_below_cube_bottom_max_mm": 5.210038763314841,
+    "pad_cube_normal_abs_z_median": 0.9711646774475777,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 5,
+   "k": 4,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 8.379659171443176,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.997809429920996
+  },
+  {
+   "max_penetration_mm": 90.07647912934122,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 71.87672353300569,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 36,
+    "pad_penetration_at_first_pinch_mm": 9.486932054966205,
+    "max_pad_penetration_while_pinched_low_mm": 9.75310427114379,
+    "cube_pushed_into_table_max_mm": 4.316167584430365,
+    "pads_below_cube_bottom_max_mm": 5.436936686713426,
+    "pad_cube_normal_abs_z_median": 0.9900906427284853,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 5,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 11.15696546286607,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998141193666974
+  },
+  {
+   "max_penetration_mm": 97.2216647269711,
+   "t_max": 11,
+   "first_penetration_t": 8,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 80.24829827889222,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 38,
+    "pad_penetration_at_first_pinch_mm": 9.951434407054983,
+    "max_pad_penetration_while_pinched_low_mm": 9.951434407054983,
+    "cube_pushed_into_table_max_mm": 4.609429928244983,
+    "pads_below_cube_bottom_max_mm": 5.34200447881,
+    "pad_cube_normal_abs_z_median": 0.976297638688041,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 6,
+   "k": 1,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 6.395573902488961,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998133680092787
+  },
+  {
+   "max_penetration_mm": 100.2512626469907,
+   "t_max": 9,
+   "first_penetration_t": 7,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 84.65934919224631,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 38,
+    "pad_penetration_at_first_pinch_mm": 9.519396474655641,
+    "max_pad_penetration_while_pinched_low_mm": 9.519396474655641,
+    "cube_pushed_into_table_max_mm": 5.07842188827421,
+    "pads_below_cube_bottom_max_mm": 4.44097458638143,
+    "pad_cube_normal_abs_z_median": 0.9785909757967094,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 6,
+   "k": 2,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 6.778563205838251,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9997836831191149
+  },
+  {
+   "max_penetration_mm": 96.50872764439322,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 28,
+   "max_pad_penetration_mm": 79.25963660842253,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 37,
+    "pad_penetration_at_first_pinch_mm": 9.842893283883683,
+    "max_pad_penetration_while_pinched_low_mm": 10.198169087720963,
+    "cube_pushed_into_table_max_mm": 5.745154350976,
+    "pads_below_cube_bottom_max_mm": 7.376464604879521,
+    "pad_cube_normal_abs_z_median": 0.90799482770177,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 6,
+   "k": 4,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 7.376464604879521,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9996053387599141
+  },
+  {
+   "max_penetration_mm": 97.49507764593018,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 80.78319601498445,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 37,
+    "pad_penetration_at_first_pinch_mm": 9.9844291401035,
+    "max_pad_penetration_while_pinched_low_mm": 10.020985107982176,
+    "cube_pushed_into_table_max_mm": 5.559347424730999,
+    "pads_below_cube_bottom_max_mm": 5.046377500577155,
+    "pad_cube_normal_abs_z_median": 0.9641575290123376,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 6,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 7.330389673310039,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998551039013243
+  },
+  {
+   "max_penetration_mm": 79.25720660779172,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 39,
+   "max_pad_penetration_mm": 58.085506411056336,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 7,
+   "k": 1,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 71.69741509378781,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 48.12258429068541,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 7,
+   "k": 2,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 90.03233006573755,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 71.85935543753708,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 7,
+   "k": 4,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 87.10147737866411,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 68.07210986066633,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 7,
+   "k": 8,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 66.8022786382037,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 25,
+   "max_pad_penetration_mm": 42.498791016280656,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 32,
+    "pad_penetration_at_first_pinch_mm": 9.104897109439795,
+    "max_pad_penetration_while_pinched_low_mm": 9.104897109439795,
+    "cube_pushed_into_table_max_mm": 3.973050076016279,
+    "pads_below_cube_bottom_max_mm": 5.131847033423516,
+    "pad_cube_normal_abs_z_median": 0.981631856380054,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 8,
+   "k": 1,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 7.417500249964043,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998518977312283
+  },
+  {
+   "max_penetration_mm": 88.0439073025354,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 69.05400268000578,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 8,
+   "k": 2,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 62.90011811026855,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 37.862226413634595,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 34,
+    "pad_penetration_at_first_pinch_mm": 8.224491401822542,
+    "max_pad_penetration_while_pinched_low_mm": 8.742291177704914,
+    "cube_pushed_into_table_max_mm": 3.9352899462322157,
+    "pads_below_cube_bottom_max_mm": 5.101940664259478,
+    "pad_cube_normal_abs_z_median": 0.994031362826897,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 8,
+   "k": 4,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 9.207121649140726,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9996170135233724
+  },
+  {
+   "max_penetration_mm": 69.47180771248674,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 46.29150618332232,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 33,
+    "pad_penetration_at_first_pinch_mm": 9.019378398126214,
+    "max_pad_penetration_while_pinched_low_mm": 9.019378398126214,
+    "cube_pushed_into_table_max_mm": 4.070243615554848,
+    "pads_below_cube_bottom_max_mm": 5.427901984081258,
+    "pad_cube_normal_abs_z_median": 0.9712857253364539,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 8,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 6.361162995346725,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.999488005757911
+  },
+  {
+   "max_penetration_mm": 73.62149138504388,
+   "t_max": 15,
+   "first_penetration_t": 14,
+   "steps_penetrating": 29,
+   "max_pad_penetration_mm": 51.8814983362896,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 40,
+    "pad_penetration_at_first_pinch_mm": 8.27799568754754,
+    "max_pad_penetration_while_pinched_low_mm": 8.27799568754754,
+    "cube_pushed_into_table_max_mm": 3.349386496110272,
+    "pads_below_cube_bottom_max_mm": 5.130695206905603,
+    "pad_cube_normal_abs_z_median": 0.970235462191757,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 9,
+   "k": 1,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 8.143475180758502,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9998876548798827
+  },
+  {
+   "max_penetration_mm": 81.01667416352814,
+   "t_max": 8,
+   "first_penetration_t": 5,
+   "steps_penetrating": 26,
+   "max_pad_penetration_mm": 60.69491672757012,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 33,
+    "pad_penetration_at_first_pinch_mm": 8.47090057055788,
+    "max_pad_penetration_while_pinched_low_mm": 9.574286906053315,
+    "cube_pushed_into_table_max_mm": 4.388292829318092,
+    "pads_below_cube_bottom_max_mm": 5.858869327021906,
+    "pad_cube_normal_abs_z_median": 0.9946622443736737,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 9,
+   "k": 2,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 10.564325952060944,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9999111305139619
+  },
+  {
+   "max_penetration_mm": 72.70788011891894,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 50.29671303969906,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 35,
+    "pad_penetration_at_first_pinch_mm": 9.166696354839397,
+    "max_pad_penetration_while_pinched_low_mm": 9.482537931212535,
+    "cube_pushed_into_table_max_mm": 4.384258700986595,
+    "pads_below_cube_bottom_max_mm": 5.272272819889687,
+    "pad_cube_normal_abs_z_median": 0.9948716158526482,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 9,
+   "k": 4,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 9.718363046669815,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9996475733949072
+  },
+  {
+   "max_penetration_mm": 70.17863954808048,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 46.261868984062914,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 34,
+    "pad_penetration_at_first_pinch_mm": 9.005835191818424,
+    "max_pad_penetration_while_pinched_low_mm": 9.825248329249897,
+    "cube_pushed_into_table_max_mm": 4.598915707369519,
+    "pads_below_cube_bottom_max_mm": 5.372994122632093,
+    "pad_cube_normal_abs_z_median": 0.9831580484859377,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 9,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 9.101922654189826,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9996839328565994
+  },
+  {
+   "max_penetration_mm": 95.70115002425112,
+   "t_max": 14,
+   "first_penetration_t": 12,
+   "steps_penetrating": 25,
+   "max_pad_penetration_mm": 78.33060358484622,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 11,
+   "k": 1,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 84.78921596361735,
+   "t_max": 9,
+   "first_penetration_t": 6,
+   "steps_penetrating": 23,
+   "max_pad_penetration_mm": 64.79019102482063,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": false,
+   "pinch": null,
+   "episode": 11,
+   "k": 2,
+   "recorded_success": false,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 0.0,
+   "max_abs_pad_cube_normal_z_while_lifted": null
+  },
+  {
+   "max_penetration_mm": 80.80488363873872,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 60.50237352083372,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 35,
+    "pad_penetration_at_first_pinch_mm": 9.211342133272169,
+    "max_pad_penetration_while_pinched_low_mm": 9.546225029904525,
+    "cube_pushed_into_table_max_mm": 4.151419204251605,
+    "pads_below_cube_bottom_max_mm": 6.469835088849263,
+    "pad_cube_normal_abs_z_median": 0.9852208131509433,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 11,
+   "k": 4,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 8.689427553069812,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9997368137108423
+  },
+  {
+   "max_penetration_mm": 75.78606241038469,
+   "t_max": 8,
+   "first_penetration_t": 6,
+   "steps_penetrating": 24,
+   "max_pad_penetration_mm": 54.21589099585272,
+   "robot_table_contacts_total": 0,
+   "deepest_part_at_max": "gripper[visual]",
+   "success": true,
+   "pinch": {
+    "t_first": 34,
+    "pad_penetration_at_first_pinch_mm": 8.218447976048832,
+    "max_pad_penetration_while_pinched_low_mm": 9.254103156993152,
+    "cube_pushed_into_table_max_mm": 4.293095281561624,
+    "pads_below_cube_bottom_max_mm": 5.4157941770680535,
+    "pad_cube_normal_abs_z_median": 0.9882832455016605,
+    "frac_vertical_normals": 1.0
+   },
+   "episode": 11,
+   "k": 8,
+   "recorded_success": true,
+   "replay_joint_error_rad": 0.0,
+   "pads_below_cube_bottom_max_mm_while_pinched": 9.46361281630298,
+   "max_abs_pad_cube_normal_z_while_lifted": 0.9988773246303834
+  }
+ ]
+}

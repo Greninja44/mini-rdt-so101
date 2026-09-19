@@ -2,82 +2,86 @@
 
 # MiniRDT-SO101
 
-**A small vision-conditioned Diffusion Transformer policy for the SO-101 robot arm, and a careful study of why accurate offline
-action prediction does not automatically transfer to closed-loop manipulation.**
+**A small vision-conditioned Diffusion Transformer policy for the SO-101 robot arm, trained and evaluated on a physically validated
+MuJoCo pick task, built and audited one stage at a time.**
 
 ![python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)
 ![pytorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
 ![mujoco](https://img.shields.io/badge/MuJoCo-3.x-1f6feb)
 ![params](https://img.shields.io/badge/TinyRDT-2.0M_params-6f42c1)
+![physics](https://img.shields.io/badge/benchmark-physics--v2-1baf7a)
 ![status](https://img.shields.io/badge/status-research_preview-orange)
 
-<img src="docs/assets/rollout_success.gif" width="420" alt="TinyRDT picking up a cube in closed loop"/>
+<img src="docs/assets/rollout_success.gif" width="640" alt="TinyRDT performing a side grasp in closed loop"/>
 
-<em>TinyRDT (2.0M trainable parameters) controlling the simulated SO-101 closed loop from a 160×120 camera image and joint state.</em>
+<em>TinyRDT (2.0M trainable parameters) picking the cube with a genuine side pinch, closed loop from a 160×120 camera image and joint state.
+Left: task camera. Right: side view at table height. The fingers never enter the table.</em>
 
 </div>
+
+> [!NOTE]
+> **Benchmark version change.** A collision audit ([`TABLE_COLLISION_AUDIT.md`](TABLE_COLLISION_AUDIT.md)) found that the original
+> simulator (**physics-v1**) had no robot–table collision, and that every "successful" grasp was a sandwich grasp with one jaw inside the
+> table. All v1 manipulation results are **invalid** and kept only as history (tag `physics-v1-invalid`). Results below use
+> **physics-v2**: table collision, calibrated contacts, a validated side-pinch expert and a stricter success criterion
+> ([`PHYSICS_V2_REPORT.md`](PHYSICS_V2_REPORT.md)).
 
 ---
 
 ## Overview
 
-MiniRDT-SO101 is a scaled-down, RDT-inspired robot foundation-model pipeline, built stage by stage and validated at each step
-before scaling:
+MiniRDT-SO101 is a scaled-down, RDT-inspired robot-policy pipeline, built stage by stage and validated at each step before scaling:
 
 <p align="center"><img src="docs/assets/pipeline.png" width="92%" alt="MiniRDT pipeline"/></p>
 
-- **Simulation:** SO-101 (official CAD-derived MJCF) in MuJoCo; a PickCube task with randomised cube positions; a deterministic
-  state-machine expert; a transparent, LeRobot-convertible episode format.
+- **Simulation (physics-v2):**
+  - SO-101 (official CAD-derived MJCF) in MuJoCo, with robot and fingertip collision against the table.
+  - Contacts calibrated so that the table and the grasped cube resist the arm's actuator forces.
+  - PickCube with randomised cube positions.
+- **Expert:** a state-feedback, top-down **side-pinch** expert: 6-D pose IK, a table-clearance-checked grasp height, and a slow
+  re-centring final descent. Validated **100/100** on random cubes with zero table penetration.
 - **Policy:** TinyRDT, a 4-layer Transformer (d=192, 6 heads) over visual, proprioceptive and diffusion-time tokens plus 16 noisy
   action tokens. It predicts a 16-step (0.8 s) chunk of absolute joint targets.
 - **Diffusion:** cosine noise schedule, x0-prediction, hold-last-action padding, EMA weights, deterministic DDIM (10 steps).
 - **Control:** receding horizon: observe, predict 16 actions, execute K of them, re-observe.
-- **Evaluation:** deterministic closed-loop benchmarks with expert-replay controls, a perturbation recovery benchmark, oracle
-  ablations, and physical grasp-tolerance measurements.
+- **Success (v2)** requires all of:
+  - a valid opposing side pinch (contact normals within 30° of horizontal, no top/underside contact) in each of 5 hold steps;
+  - the cube lifted above 10 cm;
+  - no invalid robot/cube/pad penetration at any point.
 
-<p align="center"><img src="docs/assets/rollout_strip.png" width="100%" alt="Rollout keyframes"/></p>
+<p align="center"><img src="docs/assets/rollout_strip.png" width="100%" alt="Side-view keyframes of a TinyRDT side grasp"/></p>
 
 ## Highlights
 
 | | |
 |---|---|
-| **Diffusion fix** | Found and fixed a terminal-SNR / ε-parameterisation failure. Sampled error on 10 memorised demos dropped **15×** (MAE 0.102 → 0.0067 rad); DDIM-5…100 and DDPM now agree (0.0045 vs 0.0046 rad). |
-| **Reconstructed expert** | Discovered that the dataset was produced by an earlier expert version, and reconstructed it **bit-exactly** (`simulation/legacy_expert.py`). This enables exact counterfactual expert labels from any simulator state. |
-| **Failure isolation** | Closed-loop failures are **early arm placement**, not the gripper or the sampler: the policy's gripper paired with the expert's arm succeeds 40/40, and 5–9 correct steps at the start make the unchanged policy succeed on every cube. |
-| **Negative results, reported** | Corrective data (DAgger / perturbations), spatial visual tokens, state dropout, image-only input, 80-demo density and varied start poses were each tested with pre-registered protocols. None makes the 2M policy fully reliable. |
-| **Practical lever** | Executing longer action chunks (K ≥ 8) is best in every model: ~91% on memorised cubes and 75% on held-out cubes (vs ~50% at K=1). |
+| **Physical validity first** | Found that the v1 simulator let the gripper pass ~100 mm through the table, and that every v1 success depended on it. Rebuilt the benchmark as a versioned physics-v2 with pre-registered tolerances and adversarial regression tests. |
+| **Genuine side grasp, learned** | The same 2.0M TinyRDT trained on 10 physics-v2 demos succeeds **49/50** closed loop on the memorised cubes (**10/10 at every K ≥ 2**). Every success is a valid side pinch with **0.00 mm** robot–table penetration. |
+| **Diffusion fix** | Found and fixed a terminal-SNR / ε-parameterisation failure: sampled error dropped **15×**; DDIM-5…100 and DDPM agree. |
+| **Model bugs found** | A fingertip collision pad sat ~10 mm inside the jaw, and mass-normalised soft contacts let the gripper squeeze ~9 mm into the 10 g cube. Both were measured, fixed and regression-tested. |
+| **Honest history** | Every experiment was pre-registered in [`docs/research/research_log.md`](docs/research/research_log.md), including the invalidated v1 results and the corrections. |
 
-## Results
+## Results (physics-v2)
 
 <table>
 <tr>
-<td width="50%"><img src="docs/assets/diffusion_fix.png" alt="diffusion fix"/></td>
-<td width="50%"><img src="docs/assets/k_sweep.png" alt="success vs K"/></td>
+<td width="50%"><img src="docs/assets/k_sweep_v2.png" alt="physics-v2 closed-loop success vs K"/></td>
+<td width="50%"><img src="docs/assets/physics_fix.png" alt="v1 vs v2 penetration"/></td>
 </tr>
 <tr>
-<td><img src="docs/assets/failure_isolation.png" alt="failure isolation"/></td>
-<td><img src="docs/assets/grasp_tolerance.png" alt="grasp tolerance"/></td>
+<td colspan="2" align="center"><img src="docs/assets/diffusion_fix.png" width="60%" alt="diffusion fix"/></td>
 </tr>
 </table>
 
-Closed-loop PickCube on the 10 memorised cubes, all models ≈2.0M trainable parameters (successes out of 10 per K):
+| | result |
+|---|---|
+| expert validation | 10/10 on the CLEAN10 cubes; **100/100** on random cubes. Robot–table 0.00 mm, cube–table ≤ 0.25 mm, pad–cube ≤ 0.96 mm |
+| dataset v2 | 100/100 successful episodes (5,408 frames), per-step contact diagnostics, validator: 0 errors |
+| TinyRDT offline (10 demos) | all-window MAE 0.0050, worst joint 0.010 rad, episode start 0.0051; pre-registered gate **passes** |
+| TinyRDT closed loop (10 memorised cubes) | K=1 9/10 · K=2 10/10 · K=4 10/10 · K=8 10/10 · K=16 10/10 (**49/50**); expert replay 10/10 |
 
-| model | K=1 | K=2 | K=4 | K=8 | K=16 | recovery (80) |
-|---|---|---|---|---|---|---|
-| TinyRDT, 10 demos | 5 | 6 | 8 | 9 | 9 | 63 |
-| + DAgger corrective data | 7 | 5 | 7 | 9 | 9 | 51 |
-| + spatial visual tokens | 7 | 5 | 7 | **10** | **10** | 61 |
-| trained on 80 demos, **held-out** cubes | 3 | 5 | 5 | 7 | 8 | – |
-
-<details>
-<summary><b>Why does it fail?</b> An annotated failure: the policy follows a path offset toward a neighbouring cube.</summary>
-<p align="center"><img src="docs/assets/failure_annotated.gif" width="80%" alt="annotated failure"/></p>
-
-All demonstrations start from the same home pose, so the 10 memorised trajectories overlap for about 6 steps (within 0.008 rad),
-while the policy's tracking error there is 0.01–0.05 rad. Small early errors therefore land the arm nearer a *neighbouring* scene's
-path. Failing grasps are offset toward the nearest other cube (median cosine 0.92). The measured grasp envelope is only about 7 mm
-laterally. Details: [`docs/reports/03_failure_isolation.md`](docs/reports/03_failure_isolation.md).
-</details>
+**Not yet tested under physics-v2:** held-out cube positions (generalisation) and model scaling. The previous (v1) ablations are
+archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
 
 ## Installation
 
@@ -90,31 +94,39 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q
 Headless rendering uses `MUJOCO_GL=egl`, selected automatically. On machines without GPU EGL (e.g. WSL) rendering falls back to
 software at about 0.75 s/frame, which dominates closed-loop evaluation time.
 
-## Quick start
+## Quick start (physics-v2)
 
 ```bash
-# 1. Watch the expert (GUI if a display is available)
-.venv/bin/python -m simulation.demo --seed 3000 --gui
+# 1. Validate the side-pinch expert (10 fixed + 100 random cubes; task + side-camera frames)
+.venv/bin/python -m evaluation.validate_expert_v2
 
-# 2. Collect and validate demonstrations (120x160 RGB, 20 Hz)
-.venv/bin/python -m data.collect --output artifacts/pickcube_smoke100_rgb160 --episodes 100 --seed 3000 --width 160 --height 120 --workers 4
-.venv/bin/python -m data.validate artifacts/pickcube_smoke100_rgb160
+# 2. Collect and validate the physics-v2 dataset (160x120 RGB, 20 Hz, per-step contact diagnostics)
+.venv/bin/python -m data.collect_v2 --start 0 --count 100
+.venv/bin/python -m data.validate_v2 artifacts/pickcube_physics_v2_rgb160
 
 # 3. Train TinyRDT on the 10-demo subset (validated recipe: configs/tinyrdt_clean10.json)
-.venv/bin/python -m training.audit_overfit --output artifacts/tinyrdt_clean10 --schedule cosine --prediction x0 --padding hold \
-    --steps 20000 --seed 17 --batch-size 8 --learning-rate 0.001 --device cuda --eval-interval 2000 --ema-decay 0.999
+.venv/bin/python -m training.audit_overfit --dataset artifacts/pickcube_physics_v2_rgb160 --output artifacts/physics_v2/tinyrdt_clean10 \
+    --schedule cosine --prediction x0 --padding hold --steps 20000 --seed 17 --batch-size 8 --learning-rate 0.001 --device cuda \
+    --eval-interval 2000 --ema-decay 0.999
 
 # 4. Offline gate (sampler comparison, timestep errors, conditioning ablations)
-.venv/bin/python -m evaluation.research_audit --checkpoint artifacts/tinyrdt_clean10/ema_last.pt --output artifacts/tinyrdt_clean10/diag --device cuda
+.venv/bin/python -m evaluation.research_audit --checkpoint artifacts/physics_v2/tinyrdt_clean10/ema_last.pt \
+    --dataset artifacts/pickcube_physics_v2_rgb160 --output artifacts/physics_v2/tinyrdt_clean10/diag --device cuda
 
-# 5. Closed-loop evaluation in MuJoCo (receding horizon; GIF + trajectory plot per rollout)
-.venv/bin/python -m evaluation.closed_loop --checkpoint artifacts/tinyrdt_clean10/ema_last.pt --k 8 --max-steps 150 --output artifacts/eval_k8
+# 5. Closed-loop evaluation (receding horizon; GIF + plot + v2 validity fields per rollout), then summarise
+.venv/bin/python -m evaluation.closed_loop --checkpoint artifacts/physics_v2/tinyrdt_clean10/ema_last.pt \
+    --dataset artifacts/pickcube_physics_v2_rgb160 --k 8 --max-steps 150 --output artifacts/physics_v2/closed_loop
+.venv/bin/python -m evaluation.v2_closed_loop_summary --rollouts artifacts/physics_v2/closed_loop
 ```
+
+Steps 3–5 are automated and resumable in `scripts/experiments/run_physics_v2.sh`. `PickCubeConfig(physics="v1")` reproduces the
+invalid historical benchmark bit-exactly.
 
 **Also available:**
 - `evaluation.recovery`: perturbation-recovery benchmark.
 - `evaluation.oracle_ablation`: arm / gripper oracle split.
-- `evaluation.grasp_sensitivity`: physical grasp tolerance.
+- `evaluation.table_collision_audit`: numeric robot/pad/cube penetration audit of recorded rollouts.
+- `evaluation.squeeze_test`: grasp-contact stiffness calibration.
 - `data.collect_corrective`: DAgger and perturbation data with counterfactual expert labels.
 - `evaluation.annotate`: annotated rollout GIFs.
 - `scripts/make_readme_assets.py`: regenerates every figure in this README.
@@ -140,20 +152,23 @@ size and sha256 for backup and verification.
 
 | report | question |
 |---|---|
-| [`00_summary`](docs/reports/00_summary.md) | all variants in one table, and decisions pending |
-| [`01_closed_loop_diagnostics`](docs/reports/01_closed_loop_diagnostics.md) | why offline accuracy did not transfer to closed loop |
-| [`02_corrective_data`](docs/reports/02_corrective_data.md) | does DAgger / perturbation data make the same 2M model robust? (no) |
-| [`03_failure_isolation`](docs/reports/03_failure_isolation.md) | oracle split, expert-prefix and mechanism |
+| [`PHYSICS_V2_REPORT`](PHYSICS_V2_REPORT.md) | **physics-v2: can MiniRDT learn a genuinely physical side grasp? (yes, on memorised scenes)** |
+| [`TABLE_COLLISION_AUDIT`](TABLE_COLLISION_AUDIT.md) | the audit that invalidated physics-v1 |
+| [`physics_v2_spec`](docs/research/physics_v2_spec.md) | pre-registered validity spec, tolerances and amendments |
+| [`00_summary`](docs/reports/00_summary.md) | *(physics-v1, invalid)* all v1 variants in one table |
+| [`01_closed_loop_diagnostics`](docs/reports/01_closed_loop_diagnostics.md) | *(physics-v1, invalid)* why offline accuracy did not transfer to closed loop |
+| [`02_corrective_data`](docs/reports/02_corrective_data.md) | *(physics-v1, invalid)* does DAgger / perturbation data make the same 2M model robust? (no) |
+| [`03_failure_isolation`](docs/reports/03_failure_isolation.md) | *(physics-v1, invalid)* oracle split, expert-prefix and mechanism |
 | [`research_log`](docs/research/research_log.md) | every experiment pre-registered before its result, including corrections |
 | [`diffusion.md`](docs/diffusion.md) | equations, schedule and parameterisation choices |
 
 ## Roadmap
 
-- [x] SO-101 MuJoCo PickCube, expert, 100-demo dataset
+- [x] SO-101 MuJoCo PickCube, expert, dataset
 - [x] TinyRDT with a correct diffusion formulation; 10-demo offline overfit gate passes
-- [x] Closed-loop evaluation, recovery benchmark, failure isolation
-- [ ] Stronger visual conditioning (fine-tuned encoder), in progress
-- [ ] Reliable closed loop on memorised cubes, then an 80-demo held-out generalisation benchmark
+- [x] Collision audit; physics-v2 benchmark (table collision, calibrated contacts, validated side-pinch expert, stricter success)
+- [x] Reliable closed loop on memorised cubes under physics-v2 (49/50)
+- [ ] Physics-v2 generalisation: 80 training demos → held-out cube positions, fixed K
 - [ ] Controlled capacity scaling: 2M → 5M → 10M → 20M → 40M (fixed data, seeds, recipe)
 - [ ] Rotations, sizes and shapes; multiple objects and tasks; language conditioning
 - [ ] External SO-100/101 datasets, sim-to-real on a physical SO-101
