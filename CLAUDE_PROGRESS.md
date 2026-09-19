@@ -268,3 +268,15 @@ Evaluation:
 - (ii) The 10 validation seeds × K ∈ {1,2,4,8}: held-out, a first generalisation look, with expert replay as the control. The test split stays untouched.
 
 Prediction if density is the issue: (i) ≫ 28/40, especially ep0/ep7. If (i) ≈ 28/40, sparsity is not the explanation.
+
+### Phase 8 RESULT (2026-09-19 03:28 UTC): density diagnostic (2M TinyRDT trained on 80 training episodes, 40k steps)
+- Offline on its training windows: 0.0083 / 0.0174 / 0.0088. Still state-dominant (wrong-state 0.23 vs wrong-image 0.029).
+- Memorised CLEAN10 seeds: **22/40** (K=1 4, K=2 5, K=4 4, K=8 9) vs A 28/40. ep7 2/4 (A 0), ep0 2/4 (A 1); other seeds got worse.
+- Held-out validation seeds [10,29,41,49,68,72,79,89,90,96]: **20/40** (K=1 3, K=2 5, K=4 5, K=8 7). Expert replay 10/10. The test split is untouched.
+- Density helps the crowded seeds but does not fix closed-loop reliability. Held-out ≈ memorised, so the limit is closed-loop control, not memorisation.
+
+## 8b — K=16 (full-chunk open-loop execution) (PRE-REGISTERED 03:30 UTC, before any K=16 result)
+K=8 is the best K in every model: pooled over the 7 CLEAN10-trained variants, K=8 59/70 vs K=1 35/70 (same seeds, not independent).
+K=16 is untested. Evaluated uniformly (not per-model selection): A, S, C40k and D80 on the 10 memorised seeds, plus D80 on the 10 validation seeds
+(50 rollouts). If K=16 ≥ K=8 across models, open-loop chunk execution (fewer replans from a misleading state) is the practical lever in
+this regime.
