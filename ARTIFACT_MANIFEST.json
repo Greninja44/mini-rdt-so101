@@ -18073,6 +18073,396 @@
    "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
   },
   {
+   "path": "artifacts/phase7/imageonly/ema_last.pt",
+   "bytes": 11916109,
+   "sha256": "3e35b8115b1cc997ab313e46ea6e07662225d8425b73903034c9bf3e4558c773",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/statedrop_p03/ema_last.pt",
+   "bytes": 11916109,
+   "sha256": "030f18fa30fa1439efcb2e9a3a6cef1d96b1acac84c7002ece23dd0752598554",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/imageonly/config.json",
+   "bytes": 908,
+   "sha256": "bb8ec01b4a60a71e734583f6e38f6345545e33674e263ad224e1ba2a773f05d7",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/imageonly/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/imageonly/normalization.json",
+   "bytes": 680,
+   "sha256": "492e53d833848a456717889dcbc2f532106ef966342ceb6534fc6ddc473632a9",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/imageonly/provenance.json",
+   "bytes": 18198,
+   "sha256": "57e201a27383d76da8725446ec7bb813a93c83327bdc2d2bfd2d7850650e792b",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/imageonly/result.json",
+   "bytes": 1567,
+   "sha256": "b3f549bac90b378354ceb16da830c6efe5ea201133c992ef1575e15b769db1ef",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/imageonly/splits.json",
+   "bytes": 862,
+   "sha256": "8a92c9e07eb0f5870c109ebb37ea9a97aa368c520b2db1b26586ec9117b6a63b",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep000_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "5d61cefc480480a4c70fa31c0517082d30acd2007b7e5300ec3dfa8ecb547f13",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "be25fc48a844812b4d1dafe2615cf30db29ecf0bec983a60abb12d89fa080feb",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep003_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "66a82b867204af1d51bc216a1a2386c53d1570dfcedc67c5a2017ceb9c87c10f",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep004_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "0b5467f374e81ce51ec4004c96fae325918fd552bb2d5c266c80cbb92852f77d",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "ddeb7dce4ac8238b738d72703192e1ec6a1b0765a57b43ee275cc0729f0dc278",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep006_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "32bd4380eeed6314793dbe547ea7f4ca2aa8e256f15c5b014ca5540fd14a141c",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep007_shoulder_pan_m000.json",
+   "bytes": 426,
+   "sha256": "3bdb58b2a28410b97c8bb0276ccfba5dda63124c70e7377a0e2b5bbf48cd1a6c",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep008_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "b11f1a1228c7c9fc8fd66bd89adf9a9e91c8bfa52edd4c5712478a42279b561f",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep009_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "8d7facb86f9c1fc79a392b0176417cdbb84566c703a2bc333204abc2d44931a1",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep011_shoulder_pan_m000.json",
+   "bytes": 424,
+   "sha256": "b3c9b01be023b83a505ace58d8907a17e615125a0327ea03c7c8f49b27f6cb2f",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/recovery_summary.json",
+   "bytes": 5318,
+   "sha256": "fc1e3d418a52b57c4161e779f0092486463ddf4234e604d480c20cec079c52e7",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep000_shoulder_pan_m000.json",
+   "bytes": 426,
+   "sha256": "45d2b5f5f0125917ae338e07e9c4941d31b60550f8202283c4a3c534f70ae4b3",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "8a76176f139f3b5b34cf634b01ba6fe999dc0ce0c2e08fdf531cd7532190dd70",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep003_shoulder_pan_m000.json",
+   "bytes": 421,
+   "sha256": "6c480fbb91b8950861735c3d32cfcb301220af6bef647780420e9b98ac3f60fd",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep004_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "01894e84ae484c8ad4e6d4511fb097ea4b985ae53212fc58dd4c5f4f6bcaafe1",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "60bfc8806d262f86b2c2b45e0d68495eaf0492118a722787df3509186757b09a",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep006_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "993aee14cc8c551402fe49747a3462c4904979fa2f1eb1c99c4045608b331faa",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep007_shoulder_pan_m000.json",
+   "bytes": 426,
+   "sha256": "4ce343f975fca36b4ded01abfc52f2f9cc359d26a536db8f2131dbd020dab53d",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep008_shoulder_pan_m000.json",
+   "bytes": 427,
+   "sha256": "c0e606fa279dc9c002141ec992b4476a3314bf7963164badc6f85c845136dd98",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep009_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "2d573b39f73d21cad1e489e9908c0b4e3e67c11c73b5e37d050921810a9e05bb",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep011_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "4f7a144d16b7386171350fe3b6c28fa66b11053ffe361be96e4e55f51af52aec",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/recovery_summary.json",
+   "bytes": 5323,
+   "sha256": "d74079b6c13caaa748c2733bf2658ae31163df761abf7cdbe9d8d780d5e6c7dd",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep000_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "4999633c4d43ead98f2eaf7511d62c6c47978e00cfcc16845993bd2052deeda2",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "032a98a6642ebec2f0786c37575565cb743c7e85aeb25d0bf556eba2a5fbdaf5",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep003_shoulder_pan_m000.json",
+   "bytes": 420,
+   "sha256": "6194c6761fa23f29cf0c6e08ef702c23eb478002c7176a45737f758e0cdd89bf",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep004_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "528066dca883f9d29f52cf01aa5f77aa8f2cf08f9c5163b8901475b35b91bce7",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "e0aa66eaa3fa4802ce846571d82dca917f5982a4fc78ef42c46aca504eebcbc3",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep006_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "82760a5d755891f3bc715d869ba3a12ffb97a318b0b05a5504a3d821c6fb8c56",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep007_shoulder_pan_m000.json",
+   "bytes": 425,
+   "sha256": "46075f350b2929eae0405e22d60cdccb80cbea9873e07295beb03d2292343068",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep008_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "409cfd18c966bb4de547590247c4e680d811d49e89774db990f588fc0f305a2b",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep009_shoulder_pan_m000.json",
+   "bytes": 421,
+   "sha256": "50fe9282cca849b5ad09ba9b21fff4f70d3a39838ea3cc9610236abd68f127d5",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep011_shoulder_pan_m000.json",
+   "bytes": 424,
+   "sha256": "8ea41b2744a1f80428e2b917e04615a26ac7d3ac43d53f463c26bdc61c60beb7",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/recovery_summary.json",
+   "bytes": 5312,
+   "sha256": "9d4b05f939682fa00a7349f37d72c24e3d432110dc6c0a561b374346ebf2f2bb",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep000_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "95c3d3b8a8dec545858f078feb279a729189d8c700c79fee53e98ee5850e2ab7",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "c4b8991da27c32c2b424c7622994e269c268ebebcf1e15f388d70b1b482aae84",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep003_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "4774768c8860a5e18ce0e5075540659d332d5142543427d4c09496cd2df538fd",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep004_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "5eed421dc5b4c8d5355a1e48748aa0ea7fa85e3c9047d81bf30ed7a8f52d8bbe",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "9ed628467c2d1e8f008993480f77ecfbd3079b3ee53f5e6ff0d78c46ceec5239",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep006_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "a96e99ee64c2ae643e0cd508b8070af54c2bb19f81961b65dc83adf484333b80",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep007_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "e7fc407f3512e771245386d39d4bf93c39b0e3dfbf2b27773d15130db2f89322",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep008_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "7526058cdc061b7ece926f2bf7e1698cd0ea888138f920198883533ed9c99e38",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep009_shoulder_pan_m000.json",
+   "bytes": 421,
+   "sha256": "dd07ce70dfc4361e0ac19cb29c99ce9aa2ce4f1394628d3b55eb53bba63d955a",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep011_shoulder_pan_m000.json",
+   "bytes": 424,
+   "sha256": "9393c6d9b38802f93dc6cc44f6a486520d400d7f926c40a7d2b1c80894d588e8",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/recovery_summary.json",
+   "bytes": 5314,
+   "sha256": "3fd4fd92617fbfc9040391a116eb60a7aba9bbd236b641fbf650331540b41988",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/statedrop_p03/config.json",
+   "bytes": 912,
+   "sha256": "35947445e3ad631203a3d01121e15f1583e75c5907d4ac4eac833d5fc0122a3e",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/statedrop_p03/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/statedrop_p03/normalization.json",
+   "bytes": 680,
+   "sha256": "492e53d833848a456717889dcbc2f532106ef966342ceb6534fc6ddc473632a9",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/statedrop_p03/provenance.json",
+   "bytes": 18198,
+   "sha256": "f34f24342689c8fe709ad29ac173b1a60c9e2877378b399eeb379984d5c4e3de",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/statedrop_p03/result.json",
+   "bytes": 1575,
+   "sha256": "6b37bcc180891ea247b0f8e74d0d3b25cf0a2fea6877211414ef5eff00c85d76",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase7/statedrop_p03/splits.json",
+   "bytes": 862,
+   "sha256": "8a92c9e07eb0f5870c109ebb37ea9a97aa368c520b2db1b26586ec9117b6a63b",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase8/train80/ema_last.pt",
+   "bytes": 11915214,
+   "sha256": "12d027abae1fbef4afb65021e4e3388fda19df59793c222962fe9b6af908caba",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase8/train80/config.json",
+   "bytes": 1491,
+   "sha256": "2dc84cb8edd7c321810022351fa20fd5fe91d4f43d3f5c2e127c89eff44d4439",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase8/train80/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase8/train80/normalization.json",
+   "bytes": 687,
+   "sha256": "725cfa1cad651d384dc9fbe6b62fd04154e67df024be167bb1595b2c01b61652",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase8/train80/provenance.json",
+   "bytes": 121588,
+   "sha256": "56ef7c797e21b17d3c9616b2652f10d305eed6a8dda4e541010ab39e695d9921",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase8/train80/result.json",
+   "bytes": 2135,
+   "sha256": "30f4640417ce869fe52ec531ae51bcd4b69925db481512831c2a752353114bd4",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
+   "path": "artifacts/phase8/train80/splits.json",
+   "bytes": 862,
+   "sha256": "8a92c9e07eb0f5870c109ebb37ea9a97aa368c520b2db1b26586ec9117b6a63b",
+   "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
+  },
+  {
    "path": "artifacts/closed_loop_v3/B/closed_loop_summary.json",
    "bytes": 28535,
    "sha256": "6eaaf227f042da83d426bfd49c9e7cab86a21bb9df2105e94027f5a3412f42ad",
@@ -19054,6 +19444,1626 @@
    "path": "artifacts/closed_loop_v3/C40k/ep011_k8.json",
    "bytes": 589,
    "sha256": "84bb4972176734e8d85c602527cf52f547fae92546c16ecaeb4aed60a5946aa0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/closed_loop_summary.json",
+   "bytes": 28526,
+   "sha256": "fcaa58266170c32dfb3fdf6ce2417d54eb5dc1bf63f56efacdfbfc17f3587e29",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep000_k1.json",
+   "bytes": 587,
+   "sha256": "0c9b0b31f53087cb7a01771a29658a0924a1d309175b07b2fd9842f5d3f4d247",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep000_k2.json",
+   "bytes": 588,
+   "sha256": "4ff796a3db028fe0ab0c4862a96e3cd786a7614fbe6569bdd55c118b4ef8cdbb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep000_k4.json",
+   "bytes": 587,
+   "sha256": "a3d9b45fda4175d7151ae14f797f0a3270a1639dd4e691997c8a724a6d212ec6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep000_k8.json",
+   "bytes": 585,
+   "sha256": "1ab5ac6117356ff1c8260fde312d71459be5392837312bb6e7d774bc8ba694c9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep002_k1.json",
+   "bytes": 584,
+   "sha256": "a7fcee7e675117ed8dbc2e663759fab91257e489c0f046f31d63be183f3f2901",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep002_k2.json",
+   "bytes": 587,
+   "sha256": "c4a3a117393d36108b88fa15b102ce364868266568ec6fe3167cbbcfdaa1965a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep002_k4.json",
+   "bytes": 591,
+   "sha256": "c7daab6910e235a8752fb59ad45005269f862e8fe250af4c584fbe94135b52aa",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep002_k8.json",
+   "bytes": 589,
+   "sha256": "65929984f7e4cc5e6751e2dd2d8e08a722e13bc70dd8524cf10fba22ccd35b70",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep003_k1.json",
+   "bytes": 588,
+   "sha256": "dcf594cd28a6ec5884bf616644a26545a9e6c52b6446c09e6b61fd865b1b431c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep003_k2.json",
+   "bytes": 588,
+   "sha256": "ce714bdaf05b9f75f0c3e8905dfdfd19b1518362d9a32be93a1f22adcbf2d7f6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep003_k4.json",
+   "bytes": 586,
+   "sha256": "c8a64cedbea46a9fd1e8b652b4debfdfecebf4f800e3dbc0bbd986aac3f8842d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep003_k8.json",
+   "bytes": 584,
+   "sha256": "83836edc4a9cb26cf9f3153052927ced52ab24cfaebc09dfd1034c22d2513c13",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep004_k1.json",
+   "bytes": 585,
+   "sha256": "1277f91f99a654875e3fbc24ca60cd5e49cfc4b5bcee7c1abf37326c1ca921ef",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep004_k2.json",
+   "bytes": 589,
+   "sha256": "a38ab771f6cb5e7aa0a2024085ab2743988a5739b3903270d5258ac12ca18bc4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep004_k4.json",
+   "bytes": 586,
+   "sha256": "84479d225d5bd74556ab75843a3dfe26bbf1032cebe86ff10ed2960b881e2a00",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep004_k8.json",
+   "bytes": 584,
+   "sha256": "4607694bdbba45fa61ae56ada188d489a1a322fc0e7d78c0fdb4ca92a223e145",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep005_k1.json",
+   "bytes": 587,
+   "sha256": "f07a5a8acdcb48aa39987bdac930bfcf05dce9e350b1e253a0e15f1232b967fa",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep005_k2.json",
+   "bytes": 584,
+   "sha256": "f0e8ee43415317f1501d28e198f3807c879c64d3303b35cd3167cd2ea7e4783d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep005_k4.json",
+   "bytes": 584,
+   "sha256": "30d0cf972a514791b18e65a43b346b2fb858fb10c0ce6179c8bdb7192f435937",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep005_k8.json",
+   "bytes": 585,
+   "sha256": "b5d335ffaebe3491dc7ff18893e3bd75bf0f72751e8993954b7ce03dd9a875cf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep006_k1.json",
+   "bytes": 585,
+   "sha256": "0acf980d7e528c7647481d0f05243c62f8545a4dc0e26fc5e00378d3177f2073",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep006_k2.json",
+   "bytes": 590,
+   "sha256": "d5705c770cfc8f47e46ac2ee2acfd77bb2fd5140da64f54947348cac2ba02824",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep006_k4.json",
+   "bytes": 588,
+   "sha256": "6813e9cdafa3729ac411fc61e092a88dcb30ad941b687bf12e217dd6d6164383",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep006_k8.json",
+   "bytes": 587,
+   "sha256": "7e885a320f2608a503294df9afe3337ff88f9a21e903f53196e01a834caddc0c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep007_k1.json",
+   "bytes": 585,
+   "sha256": "721ef6588f59489fc3d12bd16c3ae84cb17c793210ae54e6989d5d44c6f5d73f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep007_k2.json",
+   "bytes": 587,
+   "sha256": "ae9fa53c479156f1c3848d7147bfc12f96790bcafb55a86260ce5521fc7aa0e4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep007_k4.json",
+   "bytes": 589,
+   "sha256": "97093620a1924a10d95f60513046be37ecb73e7c0637105881f4450e57eb395a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep007_k8.json",
+   "bytes": 587,
+   "sha256": "a69f5099c3bc32c4e9fdab422e9a4e75c4c6838802f1b5ccc0f57a2a36ddbe30",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep008_k1.json",
+   "bytes": 585,
+   "sha256": "103a4c07266eea7350d61276d2ee419a38a682207972d798be38d6bec5b8141d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep008_k2.json",
+   "bytes": 589,
+   "sha256": "ab5b53d86eb4733b96d8e506b927f3e893e7857b518e454fe295373468dfc143",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep008_k4.json",
+   "bytes": 588,
+   "sha256": "d92438333c4ef9845c476ef785290f20b02ab99e237bf7abbacfe1d1725bbd69",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep008_k8.json",
+   "bytes": 585,
+   "sha256": "0d0042de18b306e09e910399e4b3a0f7241df89ee64f091b56c79bd08173c0a9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep009_k1.json",
+   "bytes": 582,
+   "sha256": "1ea8870723c665c15a480cf27763a7b4a9cde4942e0bdc61cf6a129914c4a16c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep009_k2.json",
+   "bytes": 588,
+   "sha256": "0918ac23307b8a9cb71d2e572e31119bd478d0bc9beb14e72f0e1be299b14843",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep009_k4.json",
+   "bytes": 585,
+   "sha256": "a30a840d6e8b900a215169f1efb4644230eba5c347121b936c688901539c616c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep009_k8.json",
+   "bytes": 591,
+   "sha256": "4893aefd0af9240c92bb1c126606a8711bf5809f475523398f72dea8b3b57d53",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep011_k1.json",
+   "bytes": 586,
+   "sha256": "9b72b6ac457390cedee4fe439ad5125d524b35b4132ca9b23e0054da696369cf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep011_k2.json",
+   "bytes": 591,
+   "sha256": "d08ae406f91b69dd70be6b7a2b1b76a03fdee82441165b5880854448f695527a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep011_k4.json",
+   "bytes": 588,
+   "sha256": "a92600f87dd212ca8bfbe23c3c7f3f28d48f66202e3fb9d6839e375a3aae40f8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_memorised/ep011_k8.json",
+   "bytes": 589,
+   "sha256": "6487540d23a79108cc0abca780046c00715e9620c5539d5eea04882e352dd1be",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/closed_loop_summary.json",
+   "bytes": 31389,
+   "sha256": "635d5ed5d37f1852c602ce3c00de40645cf520949b0fe5c42c57c59530e65d70",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep010_expert_replay.json",
+   "bytes": 225,
+   "sha256": "85a9d58d290ebc82337a701a00ab9fd8450e51147e18ba5395524ba4d9375281",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep010_k1.json",
+   "bytes": 587,
+   "sha256": "9114fc2402fa515286776e987357c006a1181403580493de66bee568d52ff8f3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep010_k2.json",
+   "bytes": 591,
+   "sha256": "a8c15a9e6ffe8d29e23e81ca6bf0698a6c902ae02974a964bcf2d712d3726880",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep010_k4.json",
+   "bytes": 589,
+   "sha256": "50cd1b3b1396d75180774eb4827f75d3bd9238b2da7ed9b75105292e1825562a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep010_k8.json",
+   "bytes": 589,
+   "sha256": "fccd2bc6f498211020b86228f7d9d7c61d961ed6fb8063df94c47cdce8057a4e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep029_expert_replay.json",
+   "bytes": 224,
+   "sha256": "cf333999605a7744a2904be7a4f1893409b6da1103e91e7eb131b075039a0361",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep029_k1.json",
+   "bytes": 586,
+   "sha256": "0625012e3e3c819e2ccf57da488c27a45f63e28c13277d81f774d0ba2b30359d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep029_k2.json",
+   "bytes": 591,
+   "sha256": "0c8f7f2d56a9c37ddac8b55bd247a260ca00e1b37b8471fbf5667344cc013ba7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep029_k4.json",
+   "bytes": 589,
+   "sha256": "160814aac3ab022ad403efae035a9ae188d13154294c7c38b400e7211b8b7f5a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep029_k8.json",
+   "bytes": 590,
+   "sha256": "3123e811bc1e12c1e862658be675ec1424662c6089f8571242fe843374a32bc1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep041_expert_replay.json",
+   "bytes": 225,
+   "sha256": "5376f0b5bdf1a9854df2a20c4866f2763195f148a11244df7bb10d5fdf85153b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep041_k1.json",
+   "bytes": 589,
+   "sha256": "b99908e96da6020172b9b530c7eed91868670db9828f3db242757b8779433559",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep041_k2.json",
+   "bytes": 587,
+   "sha256": "26cab57acd653e31545321cadf687988e959fb780c9552969221adc06c10f55f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep041_k4.json",
+   "bytes": 591,
+   "sha256": "140adf69eebd3922be0c64ac80d1c0023a6677f5fe59297af40b0365b8794f09",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep041_k8.json",
+   "bytes": 591,
+   "sha256": "eb2e96177c2595d7af6c2839a9f70572c927aa6f873e433937e709ec6991d85a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep049_expert_replay.json",
+   "bytes": 225,
+   "sha256": "582b77dfba78d0befe3b787f585d848516414983018ae0a9f55b75fc2fcae018",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep049_k1.json",
+   "bytes": 585,
+   "sha256": "17da229f005d01a7e21a37a540c199d2aebbe8e9192ab188b644c6d164318c0d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep049_k2.json",
+   "bytes": 589,
+   "sha256": "562f4b1502e1307e20664375f9e25d56f97bb59fc903299f3dec921ea92f6b91",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep049_k4.json",
+   "bytes": 591,
+   "sha256": "68301e61f8b9fee748cfe23db97bf5a64124d5ddfdfea5c136aec860d90c0b3e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep049_k8.json",
+   "bytes": 587,
+   "sha256": "419daa5b7bf70d35ac2d470d80b8a5f370a4680913a29512d645f719c2870223",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep068_expert_replay.json",
+   "bytes": 225,
+   "sha256": "90809e7243b16c653027e08f9060ba30024d36a1c726e4f8b264738345b6c061",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep068_k1.json",
+   "bytes": 585,
+   "sha256": "f52973f8cdd7acb0df627e5cf2b44f9b6f34cab56c5d411574ae822d24d23c4d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep068_k2.json",
+   "bytes": 587,
+   "sha256": "9761131c8964a127924c76409336dbc663d32a00fe9f3e0a7a2deaa4c79fea14",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep068_k4.json",
+   "bytes": 588,
+   "sha256": "0e4a285b304fb8eb9906a87b0c97668b6220ca8601ef3c0ef578006e8610b15b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep068_k8.json",
+   "bytes": 586,
+   "sha256": "571d9d69860e4d9d889cd58800680a040d46d1d4902cdddc6f2c8a7bea285f06",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep072_expert_replay.json",
+   "bytes": 225,
+   "sha256": "b320f8729ecc6e370c9c0964d4b69d2b368e6ca1906e21bf8e638175641171da",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep072_k1.json",
+   "bytes": 592,
+   "sha256": "499975107f683d617083e0e6f43ffbaf42d8464080043abefe29b25b168af9bd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep072_k2.json",
+   "bytes": 590,
+   "sha256": "99fda8631bfca34acd0f0feb22e2a1e86c7209f8c7a4e06ac6ff49e0727b747a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep072_k4.json",
+   "bytes": 591,
+   "sha256": "f80d1b03b6a4320db621b0cedbcb4855ee603946798489f376e525b1d58e1e17",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep072_k8.json",
+   "bytes": 589,
+   "sha256": "d1e11f74fa71d26abc06e914485372fc5815a74a59b0ea4d52b3faaf9157c246",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep079_expert_replay.json",
+   "bytes": 225,
+   "sha256": "d326b12dbad32760689fcaabef142ae762a6fa46c69e4191b0c53bd2159ce4dd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep079_k1.json",
+   "bytes": 587,
+   "sha256": "4aac9a7aa231c9d64f56436478bdae4d4f45911086c9ea99a6d1ea7f0e91856b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep079_k2.json",
+   "bytes": 591,
+   "sha256": "a937c8db373d2e9ca7432bee48d366e85cd31bddfe80d8a59999568dc5334fe0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep079_k4.json",
+   "bytes": 588,
+   "sha256": "96867a0d6b3558d4fdc1678873ab0439063df5d911d816ab4322db680d27bede",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep079_k8.json",
+   "bytes": 588,
+   "sha256": "3da673977668adf1256f2875a2208e403bdf03d44f4a0a3f68431ce5c3abf775",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep089_expert_replay.json",
+   "bytes": 225,
+   "sha256": "d34b4b4440ad35db9ad60e35c78ba87b90cea9f296a6f15d9332ede2c11d0db9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep089_k1.json",
+   "bytes": 583,
+   "sha256": "192b254eb3ec4d6cd13a29ef5018bc853de5922be20071c6e162037a0bda985b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep089_k2.json",
+   "bytes": 587,
+   "sha256": "79a77733fb51d830a8996d84763404bafe446b6e0770742dfe5661844ed8f9ba",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep089_k4.json",
+   "bytes": 588,
+   "sha256": "4926c044f2623b3287b244422d4fa3e46b36a6a060d43d630e94914053493346",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep089_k8.json",
+   "bytes": 585,
+   "sha256": "303be732c221b3596b03d26cfecb1e7b36dcbe28106670cab124bc38fd3241c1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep090_expert_replay.json",
+   "bytes": 225,
+   "sha256": "01c4965ef120fddfbed04118521c7c22c23bf6d5eca22b37f55754cfa9d4e1cb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep090_k1.json",
+   "bytes": 587,
+   "sha256": "01bb1319c856a6161d087ac6ef4d806354541e69497ea8d699b00f19f9dd432d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep090_k2.json",
+   "bytes": 585,
+   "sha256": "0d995e61c7f22f1698c0b53b4e72620b5fcb98738d914a9baa24bb29a6172652",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep090_k4.json",
+   "bytes": 589,
+   "sha256": "8e88d062574f43da204f87710d06402ad4b057f8bbe6574a1dbe0e7181d36b35",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep090_k8.json",
+   "bytes": 584,
+   "sha256": "8bb456ede9f7b9eb5a0ab86926afcc7160ba9bbd8e7f640d0a3f9752ee8bf2ad",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep096_expert_replay.json",
+   "bytes": 224,
+   "sha256": "53bc283ad45be59ee66ae5421702abc5a397d4fbb0982bf155a9f76ce92a9148",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep096_k1.json",
+   "bytes": 584,
+   "sha256": "2c68cdf520420144673265083a7be6fbb74d7f9fb65fdb4d1a910eb4f6232c3a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep096_k2.json",
+   "bytes": 588,
+   "sha256": "39730096c78099886aac08ba67be235b29a42ad171e5ae20c93060ad85d3e0bc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep096_k4.json",
+   "bytes": 588,
+   "sha256": "b4f5aa5c22ffec8bdc10994af1887a955e67025b9eb2f8183088c189db12427c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/D80_validation/ep096_k8.json",
+   "bytes": 590,
+   "sha256": "9121115aea3796b0fe5ec4ed62456b7d8213da7754baef7d501b16dd64c01f49",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/closed_loop_summary.json",
+   "bytes": 28455,
+   "sha256": "b3bf2b61164346d1af4bddc8afab3211e5de8a8f2e9069b3580d55560318e3af",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep000_k1.json",
+   "bytes": 580,
+   "sha256": "8c2aaa86e14623467db43041372f59e32679a92fe440565d71b8962925b002d9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep000_k2.json",
+   "bytes": 582,
+   "sha256": "17e9f967578fc243a028af95bf7efd48c9db82f48a40cd971c7052b98c155d6b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep000_k4.json",
+   "bytes": 580,
+   "sha256": "850e0b2b43dccbaf884ece57f98c75f51ffe9b95229a6e5590f3066413f33128",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep000_k8.json",
+   "bytes": 589,
+   "sha256": "2ccd165d7b8dfeda67c9a63e17cb02476984f3ea2cf837a9174c0992574fb4f7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep002_k1.json",
+   "bytes": 589,
+   "sha256": "b4057f4acb7266ba53feb9e844a986720a42a45ed2d8a212a60e8d8f2241555e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep002_k2.json",
+   "bytes": 586,
+   "sha256": "143b21f51dd09dfcdb49eaea23ee2698b7b42147c43ba120b12007d70a44ddfd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep002_k4.json",
+   "bytes": 588,
+   "sha256": "233529c5464b486c2229132d49c378b58bef5d5be824836c145ac793976ac08f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep002_k8.json",
+   "bytes": 589,
+   "sha256": "d49c65600726e9379ec6722033ffdbbaa9ecd3c314834bdc751055ab0d764c65",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep003_k1.json",
+   "bytes": 587,
+   "sha256": "8de439ec1bc7a6e63e54af561d98b69b71409a49fe376c17aabf011ebad237ae",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep003_k2.json",
+   "bytes": 582,
+   "sha256": "f893db6e56ab81e4867044735652422a73307545926b8cb94f34b2bb01f6ac06",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep003_k4.json",
+   "bytes": 589,
+   "sha256": "7367779c2d165d8a5bca1584b6e421b2be48c46c972a9731bc4b8e19fe9da5b8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep003_k8.json",
+   "bytes": 590,
+   "sha256": "83107b4d2b4914d9b82771e5f9d17c37246f9ce4bb0809819d69181800381b11",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep004_k1.json",
+   "bytes": 587,
+   "sha256": "a6315c4e05a63585aa57b194e5cfa5ed329dc3dd3809bfea0ca612946921e6f3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep004_k2.json",
+   "bytes": 586,
+   "sha256": "f2ec44149cd3929a8aab43c06c550e32f53d6f0f469c103b3ca7c11156217ffa",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep004_k4.json",
+   "bytes": 584,
+   "sha256": "57cc37c5c7874499406afd71733f04d50ac03c2ea3b6203a97d6db1e046e29ca",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep004_k8.json",
+   "bytes": 587,
+   "sha256": "b40e1a2c656af3c59966eee1a0fb6113425330a482752f106fed8f1827a6a3e9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep005_k1.json",
+   "bytes": 587,
+   "sha256": "479eefbf4bf4b954641bfabd2df2ef4e3f2596bc99bd74c58e9f328f7a947164",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep005_k2.json",
+   "bytes": 583,
+   "sha256": "09d8feff2597bac076498cdebbe3ecf975d1db260d25164759560f48bddc2a9b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep005_k4.json",
+   "bytes": 585,
+   "sha256": "a03994ff408ad2acd09d7c8347d4088ea0a0389e7d4b07f2f3e736e8c1871f41",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep005_k8.json",
+   "bytes": 581,
+   "sha256": "abea1c3292b8849a1c409ba82f376445764331d9aa70bc3ad71c68105f411b07",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep006_k1.json",
+   "bytes": 587,
+   "sha256": "be9d188e8ca29629cfd074bbb44ea1dfa79d6c1260b566b596c3f8395809caeb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep006_k2.json",
+   "bytes": 584,
+   "sha256": "d8fdd3e3ab1947df4a95271b860beff84e2d3135c9b7fbc7ede807e5ec340412",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep006_k4.json",
+   "bytes": 585,
+   "sha256": "9fc2e0eb8883c01b8a019deb301407cd8ff729a75a7f1ffd6a167950d06df068",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep006_k8.json",
+   "bytes": 584,
+   "sha256": "249f2138830f669afcb2e8865e4df89a22e9fa3bd9c766e9df76192d818e2b09",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep007_k1.json",
+   "bytes": 583,
+   "sha256": "9a902c971ddaaa5c9c787a8ca988b2e37408f630ddde3a613f357708460bd48c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep007_k2.json",
+   "bytes": 585,
+   "sha256": "07cc6a449de0a85adf173cdd9a26329d2ccd84d3245e0e0bd8715759902bd0d9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep007_k4.json",
+   "bytes": 588,
+   "sha256": "4f73885b825378bba25c0b94b7eaf5a2f7f2df7428c7a8f6b8103c86906f25e2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep007_k8.json",
+   "bytes": 587,
+   "sha256": "52e187bfe22958799b253bc1ffabb086cfdbd2a24be4891b7530a6ed3a33ada1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep008_k1.json",
+   "bytes": 583,
+   "sha256": "1d031f48b607d359848b80dbc06e9a80fd7ea3d8a4612523fe63de83752a435f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep008_k2.json",
+   "bytes": 582,
+   "sha256": "8f87a3125c992f5a5f1bf8103e762402047e7dc3f20f8221ff6b18cb3d2fce86",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep008_k4.json",
+   "bytes": 585,
+   "sha256": "90f7dd956dfb66e195e73a580780c1a625e5b7e2fbf35d57b4ae689ad6a8b61b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep008_k8.json",
+   "bytes": 582,
+   "sha256": "c77afda9fa7cc42c07e375f3406c9b28ede8d1868b3d05c9a0a977848e0f3a28",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep009_k1.json",
+   "bytes": 581,
+   "sha256": "841eea293054789d4b79ce18c1f7ab2e774324a6d564d20773da0e8db60caf8d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep009_k2.json",
+   "bytes": 586,
+   "sha256": "1d042e5b3484e827e5b78db10b43e714704f749e135b13bb0111c5cfcab4978c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep009_k4.json",
+   "bytes": 586,
+   "sha256": "05889e70608fc1f4ee804d76a4f94209fe44bdf580cc3fce6ecc62988dceb03c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep009_k8.json",
+   "bytes": 583,
+   "sha256": "b2bdcab53a951b6949dde76f0948d3a3d255c55226e926c3a529ae80ae5ec764",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep011_k1.json",
+   "bytes": 588,
+   "sha256": "26a685cc98feef2c6b95e0439562695fe54ca4d7c73bcadb05af6dc1419c8f03",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep011_k2.json",
+   "bytes": 585,
+   "sha256": "b840fc316cb3bde761e52293dde18970d5a0bcb0f927b12a8da2f37027aa6b8a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep011_k4.json",
+   "bytes": 589,
+   "sha256": "a8d782dfba841cc25334b738a78aac9893bacd843d9305619237d47decdc5b4c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/IO/ep011_k8.json",
+   "bytes": 590,
+   "sha256": "8c09493e51635ea122d059f063ff9ec5bb365ebb71c0cb849102956a04f18d50",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/closed_loop_summary.json",
+   "bytes": 7386,
+   "sha256": "dc25623faf25cde43ef27ab62b789e7ffed63ed45d0770699adedef0032375d5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep000_k16.json",
+   "bytes": 588,
+   "sha256": "3c1227f761a8ebabd17adca8184cf9405667991d9e0cd30a8e8f440d8e9a3707",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep002_k16.json",
+   "bytes": 591,
+   "sha256": "507974697c80ec65bcba58f3d0147d77568c64858b8ad1878b6a75711b214225",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep003_k16.json",
+   "bytes": 590,
+   "sha256": "35424a50032938acde0413e8979fde85672a1ffdf7bc5f8ff8abdeff2217b4a8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep004_k16.json",
+   "bytes": 588,
+   "sha256": "597f6de500375292208a15f5bed99343180c7875a9584cb5ac2f2a7901bee3c5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep005_k16.json",
+   "bytes": 589,
+   "sha256": "4a65911a4b4c799e172125f9843444834326cb48b4f843c09653d41e92f2cffc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep006_k16.json",
+   "bytes": 591,
+   "sha256": "f4092e709d809e103a3aa929d0154168c071c3453eaa8165455f8c5a82fd9a75",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep007_k16.json",
+   "bytes": 588,
+   "sha256": "e8605358c7a9b2f0cc13e8bc4ce7cc3f08d713832ae68607ab451b7b9bcdacbe",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep008_k16.json",
+   "bytes": 587,
+   "sha256": "2b4737bed451ea92d2f90c256afccbce08affc37803b21ca76a2db4da775a943",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep009_k16.json",
+   "bytes": 589,
+   "sha256": "536b5a2ef26b8e55ae706545e50885a20ae1e00c50847e3596065defeb7402f5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_A/ep011_k16.json",
+   "bytes": 588,
+   "sha256": "553a1fbcd3a2225662fed8e830e5c964743834c5b17c1237ed98b27d653f968d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/closed_loop_summary.json",
+   "bytes": 7380,
+   "sha256": "32865f35ef68765ec0144e3f899dacde00de53f2a92c03771d6ef8c19a5e167f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep000_k16.json",
+   "bytes": 590,
+   "sha256": "c821b2b9cbad33b6b72800b69dda331489e4da5a1bd09ccd912cf8fcf2b4267a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep002_k16.json",
+   "bytes": 590,
+   "sha256": "347a814b44603bc0ffac008085caa59a12958ccb9477e891a3a5c2a789047885",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep003_k16.json",
+   "bytes": 590,
+   "sha256": "fda9040e6d12346312b76ed10fef965be22bb0f09329a3789096191ee4b1ae01",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep004_k16.json",
+   "bytes": 590,
+   "sha256": "932482c3682fc274c6d7bdb1dc1845c38e87bbd83ce4657a6b3dab4c9b5668f6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep005_k16.json",
+   "bytes": 587,
+   "sha256": "90addbdd69476d69c6c4926c4dceff7ceeabd458dbdedd7e37edcd2361f2685f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep006_k16.json",
+   "bytes": 588,
+   "sha256": "25499f3945b9df28a425f9f2a4dbf0c07637611a94280bec13a6310f46ec18e7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep007_k16.json",
+   "bytes": 591,
+   "sha256": "9573c1a6b037aeae17c92cf58be790bb6c0848983fb9a8c5d32c62d1e7e8a2d1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep008_k16.json",
+   "bytes": 588,
+   "sha256": "4e079529dee85cfaa956ffeec3daed34687e70483060603e52c86922d19b257d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep009_k16.json",
+   "bytes": 589,
+   "sha256": "542fbf83dec288ce3c6f6fd2a7e566c74f6e18778619c107bb21f9b07df512c1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_C40k/ep011_k16.json",
+   "bytes": 592,
+   "sha256": "8af96ff43322451e1aad111ea92877e9d63d1ba0b7f3b58dab81112454484c4f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/closed_loop_summary.json",
+   "bytes": 7348,
+   "sha256": "8157d6c438c027ad35b6819d1c0ceeb9c8eb7035240123405f66c09cc6866936",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep000_k16.json",
+   "bytes": 587,
+   "sha256": "ebde41bc0c206c691fdd1faa15a09cbfa2a8a0bea51784c47fc46e99c180f312",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep002_k16.json",
+   "bytes": 587,
+   "sha256": "d9b0249880e6fd85d68f89023c19931565a6f143ba3eb25451cffe661bb2f955",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep003_k16.json",
+   "bytes": 589,
+   "sha256": "8d1bcfe5a65d659b314c8ad1fea51ffc87be9bcbebd356ac14c0bce4037928df",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep004_k16.json",
+   "bytes": 590,
+   "sha256": "5406a327efb8467b828f1bc7432470b3dac9b65d952dde017c037fe731564347",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep005_k16.json",
+   "bytes": 588,
+   "sha256": "bc9d3632657b0116820f6abd51b302c1be7e738a6a9ca8f6e35a70fcbe5b55a9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep006_k16.json",
+   "bytes": 587,
+   "sha256": "31844bc8a01f7c888a90f373adb42a2f4318d39f1a69a285cd0a18677e7cabe6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep007_k16.json",
+   "bytes": 586,
+   "sha256": "6dd34c1f29709bce4e07fbd664714944c9724c64c29b2939716277f81031d908",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep008_k16.json",
+   "bytes": 587,
+   "sha256": "39e7d975f24124aeedef6e37a485e2d3e49a15fb1513e86804c2ef75561de8e0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep009_k16.json",
+   "bytes": 591,
+   "sha256": "7bf810e3ebbeb723d746a0dd383e61e2b0921026b5454b599e926b0f279eb826",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_memorised/ep011_k16.json",
+   "bytes": 591,
+   "sha256": "cdb5444e65c23b8ad81668cfb1727e54689a9eecb34ef1f5dab6eb75708aca00",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/closed_loop_summary.json",
+   "bytes": 7364,
+   "sha256": "12636c801337e5ebc362051860fb9a011fd5337c29eb5dddcc07ae3fc25b0ace",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep010_k16.json",
+   "bytes": 589,
+   "sha256": "9cc77936d80a3d096e08048181a8448bd4ed9b21ef00c0bc7a206a22e67558f7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep029_k16.json",
+   "bytes": 592,
+   "sha256": "2fb54bc5d8609e3a432e59e81c97aeffebe35dd1862d8eeec38d5289e1bca434",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep041_k16.json",
+   "bytes": 591,
+   "sha256": "1db75810f76ebd0805ab7750186851ccf90b97dd21cb745ab301a9174ce1f6b8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep049_k16.json",
+   "bytes": 590,
+   "sha256": "01748a5bd2e75a346be33900861d5f329f41e2c8fcdcb23059a574284f845f82",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep068_k16.json",
+   "bytes": 587,
+   "sha256": "1c25b279c463fcba13d81e8591ff4bae9913999449eb0db053f126e609bba7d5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep072_k16.json",
+   "bytes": 590,
+   "sha256": "fa52735ed34383256fea56a20d6cfd19450a1a878d3d3642656ec5f4fedd1346",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep079_k16.json",
+   "bytes": 592,
+   "sha256": "13e7c26c89cf674a3f8a62746a4a69fed2bfdd55c373c4288605cc86c434e75d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep089_k16.json",
+   "bytes": 591,
+   "sha256": "b29bf52e62861f18ba07d9b53b521ddf6017d4fe085d5ae2248e00db51c5dca5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep090_k16.json",
+   "bytes": 588,
+   "sha256": "cb8c05569ba6bea529e70778600af893ee7b843b26c46814dc51001794c4275f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_D80_validation/ep096_k16.json",
+   "bytes": 589,
+   "sha256": "ce1911c2d1398920010df2ae77d9c939120e6b95529d43bed15061d8d0287086",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/closed_loop_summary.json",
+   "bytes": 7368,
+   "sha256": "550b63d6543dbd2099fc9836072f0893a4300a527a0cf3411c305624ace1a264",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep000_k16.json",
+   "bytes": 588,
+   "sha256": "261e5fc6c115b11b58f0508e68cec2cf961aef4f3b78255ae2278bd94f5af2e0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep002_k16.json",
+   "bytes": 592,
+   "sha256": "8b3dd563b64608fcbfecc0f069ad61cd581461d5a3a114af2fe7f7adb4be647a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep003_k16.json",
+   "bytes": 589,
+   "sha256": "a2eca33ccd34c09b9f2ca532d87ad249719f8f4071f0613b6d78092fdddc8723",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep004_k16.json",
+   "bytes": 589,
+   "sha256": "6570ab26609975e6e019becfd519a97bae21376d2409d538c8ef1c12ec1d7fd6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep005_k16.json",
+   "bytes": 587,
+   "sha256": "1b143058b2b5b1a33a76b47aaba6462f2e3673577ae862820c9f6c6b006fe030",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep006_k16.json",
+   "bytes": 591,
+   "sha256": "f284898b026a5bf6a698cdfcd18aa74f556094292e71e8876cbef14499a255d7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep007_k16.json",
+   "bytes": 586,
+   "sha256": "0975f93c2cfedd8d1b9df8c122e5aaaff0ebc0bbb2a3400594750cae00ed0648",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep008_k16.json",
+   "bytes": 591,
+   "sha256": "a36f674ed38274c3877c60c464871b08619590dd82eba85d0ca1fb7589fc4a60",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep009_k16.json",
+   "bytes": 590,
+   "sha256": "cad8888173e8a96393455dd3ccc2f646a5de6c7ab23f2c0821101f27bd94f976",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/K16_S/ep011_k16.json",
+   "bytes": 592,
+   "sha256": "fcb8827377925fed3228b4003caf8d5d237f3c9a9c638dfc96fedae440368367",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/closed_loop_summary.json",
+   "bytes": 28584,
+   "sha256": "04c62f45f4f7ad266155fca20a2a66d096ddf7d3bfdffcb1f48c2a38ceec4728",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep000_k1.json",
+   "bytes": 587,
+   "sha256": "4683e8f85cb231fdb5e2144d286d8effd604f0aeb29051caf7a0a139aedb0cde",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep000_k2.json",
+   "bytes": 587,
+   "sha256": "f17f7e3d6ecd55d7b32048c01b2ef51ce89420f57ed6c23213c6aef13819b1b5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep000_k4.json",
+   "bytes": 587,
+   "sha256": "35f81061fea65482e6a8f93d686d01b31beb391713f8cdebfedd41c9302b790e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep000_k8.json",
+   "bytes": 586,
+   "sha256": "80af034fa13fdac1d4e9f4690a62fc42cc6beb26e8ca7ee5222ef8f94bd5af4b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep002_k1.json",
+   "bytes": 588,
+   "sha256": "5d0b19627c0b8d50f711af49d9c7599c9fed538e0775567995268661327fdacd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep002_k2.json",
+   "bytes": 588,
+   "sha256": "5b406464a31e20930d8dff4bc3c779b9024b733ff3b88dd63faedb2fb5287f18",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep002_k4.json",
+   "bytes": 590,
+   "sha256": "6dd79b3d0fbb3d0c1f9858bde76733a1e88624930cc3be4ecc4f880af1cdb8d1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep002_k8.json",
+   "bytes": 590,
+   "sha256": "5bd7cab4a87b863b0a0f9bf143c0da12232f81a1175c7dbd60ec069458063bcf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep003_k1.json",
+   "bytes": 585,
+   "sha256": "5e0cae0291c5031c44de62c32d54bbef92195bcf8d7165ff3e1c7d785ea13d48",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep003_k2.json",
+   "bytes": 586,
+   "sha256": "a0b870337476685f782d46ff64f0bad3cda757a34c451a463daa4faae41be1ca",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep003_k4.json",
+   "bytes": 586,
+   "sha256": "f896bea539571d2709fc55eb32b84ebfb3a27cd93e5dda0f6362505e3eab18e5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep003_k8.json",
+   "bytes": 589,
+   "sha256": "13186e0c8627319130fa4bcc1a9dd2db98f30712e8297d0358b514e5bb1a53c3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep004_k1.json",
+   "bytes": 588,
+   "sha256": "746f84c27f06ed4bfdd4bf0b28fb60bd18edaf5b9b0d12771d2482e123a2c7c6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep004_k2.json",
+   "bytes": 590,
+   "sha256": "db1fffb6398a8c1cbf448b89ce41e233c3fdbd80fdba450fadd9ff4aaed9f2ad",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep004_k4.json",
+   "bytes": 586,
+   "sha256": "a3fed4dc8480626124e09414c5501e0d2c965b3221c89969c0fb54ba8a9d4225",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep004_k8.json",
+   "bytes": 589,
+   "sha256": "0b93fb809afd902eb06223faf5136ef16e51631925a2cdaa3bf2a47c449e4a3e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep005_k1.json",
+   "bytes": 588,
+   "sha256": "c37f8fa641fe99565bc1624b2f641f8c90dae831f09ff68080b0970fe7464ba0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep005_k2.json",
+   "bytes": 590,
+   "sha256": "48f00e8802562e97f36985a8bf0af1f4900e31db487e94a89f30f102c6bf4ab8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep005_k4.json",
+   "bytes": 588,
+   "sha256": "494bc04a6164f8f27cb4c97fa857518da13d2e09e6f1c3fe29e10ba6bef80526",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep005_k8.json",
+   "bytes": 587,
+   "sha256": "1fa339ec8f874960b10ce4102c1dddb623d90255ee6f48c1c092e14cab3161c8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep006_k1.json",
+   "bytes": 586,
+   "sha256": "77c588a017dca086c0a93718b2a91c870892484c425e7fec0db7e672000677e8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep006_k2.json",
+   "bytes": 588,
+   "sha256": "b26500f21bebb04b0a2dab9905ca79a4b7c3f28b443fb97d160455b7a884da39",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep006_k4.json",
+   "bytes": 593,
+   "sha256": "c2011959338298333184430ff5b33fd7466345e471fd5a09e2db478d7ccbafce",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep006_k8.json",
+   "bytes": 590,
+   "sha256": "ab428318520142add6806aec1ad06a8b8084a44fef9f326899eb22cd95fbb33f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep007_k1.json",
+   "bytes": 586,
+   "sha256": "b779a64ff78914394ed7725e00de0cd35efdc18dfe41007793305909977282a4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep007_k2.json",
+   "bytes": 588,
+   "sha256": "5ee8083de0d8465fcdd5de2f22c04fcf2a4c8bdb6f0a60f2c15c1c354bf3a81b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep007_k4.json",
+   "bytes": 587,
+   "sha256": "54a4663a640df378acd9b543a91bf5a39867667cf0b885f93d4a7efbc4ec9275",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep007_k8.json",
+   "bytes": 586,
+   "sha256": "30589e1437607b1fce3bcf1240c0026e2efbcaabca6ad28f2025c2b5ca16b287",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep008_k1.json",
+   "bytes": 584,
+   "sha256": "0f3803df82131cc2c28084f60636d5ccc17e0d04e07e3138d8ed000eb78f9c37",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep008_k2.json",
+   "bytes": 585,
+   "sha256": "4a5f8bace8c0537c364f4f8520065f76a265f938fe48f3ec66e4ba4331e248a2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep008_k4.json",
+   "bytes": 585,
+   "sha256": "7b4f6e32af8c6db4d8fabd1fdd35de38405d14e2bd62ed1aa7bb4b8c46fc0a70",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep008_k8.json",
+   "bytes": 589,
+   "sha256": "8a3c7d833220b7a9ed9a15f9a12da23ad0f372f36c4b3a84193b4af1f8169e33",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep009_k1.json",
+   "bytes": 586,
+   "sha256": "809f505eefcd753f335a96c5d3d21afa34b67f0acee0cf1b62ebe4d3a4b2dffe",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep009_k2.json",
+   "bytes": 587,
+   "sha256": "be0bce022a83c6b245ebcc17ed31faab7c731842a0449cac49e62cec9221c439",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep009_k4.json",
+   "bytes": 584,
+   "sha256": "7178f0b6a75a20c7521c6a1fa3cf8b14f60eb8137ad96187c2ec6aaaaa2b827c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep009_k8.json",
+   "bytes": 588,
+   "sha256": "3c47c7262bc7e9adc0f06cc86df7ccda62ac1ec1420054fff22c0c9917b680dd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep011_k1.json",
+   "bytes": 591,
+   "sha256": "72e4d39d456a44f8090655370153f788820fcd1927e061456a07fda3416d5207",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep011_k2.json",
+   "bytes": 590,
+   "sha256": "9c8117cb7c98360d99b5153aaee06b594615bb43a8b9f037e0bea68af837a01d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep011_k4.json",
+   "bytes": 592,
+   "sha256": "39eb07e0b78dab05883060bf86edacf921138481a0bcb5250aa3778ee3877b25",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/S/ep011_k8.json",
+   "bytes": 591,
+   "sha256": "016f646394bf5bfca57db51118590f3bd7f1b21d4bad070be5bfc4bbacce236c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/closed_loop_summary.json",
+   "bytes": 28512,
+   "sha256": "f6ae58fcd2170c4af7d4aab82d990774ddf2aecb4a240af7cd43d1a33ab57ee1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep000_k1.json",
+   "bytes": 587,
+   "sha256": "d53615c6d28958d028f8a4860a8fd413a32bc815f71df57cfe52700aae2df23c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep000_k2.json",
+   "bytes": 588,
+   "sha256": "d0b3f468ed8f4a499dcf08fad5982acca47951c4253a73af3d61420286c5d888",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep000_k4.json",
+   "bytes": 586,
+   "sha256": "79685776dcc5d9859179d4fc4335fb146d46283b02768b72dd7554ffeb2da25c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep000_k8.json",
+   "bytes": 589,
+   "sha256": "d7f00c2cceb425c99f35f53e7cf9c275ed01fadad1cfcbc4c4e770e14b997bc8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep002_k1.json",
+   "bytes": 582,
+   "sha256": "f35832ce6b241fa00a75df2eda0d613d4c7fc00eb88a52a02288e327fbbc5895",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep002_k2.json",
+   "bytes": 585,
+   "sha256": "3b111363afe5468f68eeee25388bd8e101da44317a8978283813f46ef21f7881",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep002_k4.json",
+   "bytes": 587,
+   "sha256": "e10bc392761cd9a1eed19b2294c3d219158d1d69b4d1fd2fd419f3458aec7e4d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep002_k8.json",
+   "bytes": 586,
+   "sha256": "cbc4201191abfddb43e750876ef3d6f83f5f2c4e5ba919d00f92af3ee4879c39",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep003_k1.json",
+   "bytes": 584,
+   "sha256": "5f5f9769e3d400f27c437e295d13d0bedb2be525ebec69b7648f183a20e2b803",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep003_k2.json",
+   "bytes": 586,
+   "sha256": "43aa0b39407dbd69b0401b94fc5024bd0c21e61920b698f4979be4ae4ef349ba",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep003_k4.json",
+   "bytes": 584,
+   "sha256": "be1c94304147d87f78cfb0465458f2cc435947ab6354abec965f96e1cc9fe636",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep003_k8.json",
+   "bytes": 585,
+   "sha256": "1ae7fc2bd99bf402195b74cedbe6a7d09b3372bedc09db50ee39ae89228a6071",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep004_k1.json",
+   "bytes": 584,
+   "sha256": "8b1f4dc8f19739fba1ac3d10e914a588c812ff7fa8d205fbbd100a535eb2bc5a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep004_k2.json",
+   "bytes": 588,
+   "sha256": "42f7c98d25fafb5662bd56a1baaa8873d89c5ecbb5251819f0c70dfdef7c9c36",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep004_k4.json",
+   "bytes": 587,
+   "sha256": "8260a7f8572ae12f125f69b379be955e02e67e3119cb8c72549d017d21557d87",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep004_k8.json",
+   "bytes": 588,
+   "sha256": "1bd7e87f59cfcafb3c2871c95cac67c3b5dc1965609fe0052c17588638bd4aa7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep005_k1.json",
+   "bytes": 582,
+   "sha256": "1bbd05547b4dff6a439747d33976827674809ee650f175dcd1644e6457ee714a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep005_k2.json",
+   "bytes": 585,
+   "sha256": "c09ca90eff969e7d1cc4183d4838141497368d232efa137a21c4d02709f33b6f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep005_k4.json",
+   "bytes": 584,
+   "sha256": "90c25e005c8c8eeb3cd4a3f65a6216a11339882b5ff15fff4124c418e0c2eab2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep005_k8.json",
+   "bytes": 588,
+   "sha256": "1ba761a46968ddda86fe2aca953ce95c9ad221c603f208fd06f9cb6e6c5519a4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep006_k1.json",
+   "bytes": 587,
+   "sha256": "e7eb0abc86469277fb68e9943d5250bc3022b60ee5198fc058e6520e349f68e7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep006_k2.json",
+   "bytes": 587,
+   "sha256": "9329d14e0162abd6b16f3a220a2464c4da5c1724dddf9149d6b19e37d7677059",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep006_k4.json",
+   "bytes": 585,
+   "sha256": "1836787caeaf5f8fa7792d17c038e1040c125eb9b41b5c532a05cc38d7e2fbfa",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep006_k8.json",
+   "bytes": 588,
+   "sha256": "5d6a48da053cb78572c793e145a0fcf5e7bea0601984fc8e1caa65fd6693ae66",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep007_k1.json",
+   "bytes": 585,
+   "sha256": "401ac59de932de0956107338b97e9455735ae6ebf36719ed399753cf3634e9ab",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep007_k2.json",
+   "bytes": 585,
+   "sha256": "93f1e038db0bb86be30ae6249f36ee75879c776d2afebaf0088772d9c5b786e6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep007_k4.json",
+   "bytes": 587,
+   "sha256": "0da15cfa8c48ed8edf71462a07ae4c966d7cc99b0e145f44819c2eaa87429bf4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep007_k8.json",
+   "bytes": 588,
+   "sha256": "c61f23a0b2bd803cb2fa61f8e77fa8f007e622cfcfc3e94eb08700ec03a5b68b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep008_k1.json",
+   "bytes": 586,
+   "sha256": "8544a00353f758b1fa4c8ac46a752d1ead025c1c6f4d1b542440089f5cd6095c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep008_k2.json",
+   "bytes": 585,
+   "sha256": "1f8d136dd34fbce1052d859e83b60babcdb50f4ee7076c2a879b9aad2b34ee09",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep008_k4.json",
+   "bytes": 586,
+   "sha256": "719e2e1bcfd3b39ced0467f1b94522883a712520ae2d7e7e30a7c95a88d1054f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep008_k8.json",
+   "bytes": 584,
+   "sha256": "2e7fcf4df618f76f9da092f9d7b501399b59dd88fc0f9b169fa01db89f698cb8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep009_k1.json",
+   "bytes": 589,
+   "sha256": "611f605b1ee5038cb78fd4436a5f6fa168e87d567aa89d44f81eaa289f13d68b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep009_k2.json",
+   "bytes": 588,
+   "sha256": "01b64e4d529c7e9e48acbdc903a71ec35bc3a65cf09a4e62a70b4936f7c51c8a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep009_k4.json",
+   "bytes": 586,
+   "sha256": "8d98f21832cf8c5703b596f4d0fdaf7fdb98fa01f75c232b394e2e07453b6784",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep009_k8.json",
+   "bytes": 589,
+   "sha256": "af21cb34b2e0e4638954f1ac3d3723f04ec8e9db2672531e37f7ccee61763763",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep011_k1.json",
+   "bytes": 587,
+   "sha256": "c4a13eab1693ab0473340c69bccf946eb5b701b4d89f9ca68ed6f3f8c7a7794f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep011_k2.json",
+   "bytes": 592,
+   "sha256": "451a5f1955dc95f99e03737c3d5ced1d63fc122ec1930d3512905365daf2c2ec",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep011_k4.json",
+   "bytes": 588,
+   "sha256": "f53cdd16cc24568b1f85b4916df2b28529f5a9d8bf22df0016c244fd239d8126",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/SD/ep011_k8.json",
+   "bytes": 587,
+   "sha256": "4e2703d0149a4d582a382838c19b55ce13ce143d11ba74930b1e98bd6e6d91fe",
    "purpose": "Phase 5/6 evaluation results"
   },
   {
@@ -21487,9 +23497,1467 @@
    "purpose": "Phase 5/6 evaluation results"
   },
   {
+   "path": "artifacts/recovery/IO/ep000_shoulder_lift_m010.json",
+   "bytes": 437,
+   "sha256": "c15eeeadfc80cdaaf58e24db2a5916d1e36ec68f7249875bf0c50371ec213319",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep000_shoulder_lift_m020.json",
+   "bytes": 441,
+   "sha256": "f5e3ef58f7fde7e6974122042494de3e9068bf93fe7b99fb67e1bc951be1f1d4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep000_shoulder_lift_m030.json",
+   "bytes": 436,
+   "sha256": "7e0508564157eea14ba32610b9b9bd1fb932dec5c5df5524fbd593fa06014671",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep000_shoulder_lift_m040.json",
+   "bytes": 435,
+   "sha256": "ce4a7e43d41e48c3d5fac8e944ea02efb0893a3c6f69251c34789629f6b415e7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep000_shoulder_pan_m010.json",
+   "bytes": 441,
+   "sha256": "154db4f3a16f62ecabe12b08ea6186269ea703fff1c79b1e765465d00108340d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep000_shoulder_pan_m020.json",
+   "bytes": 441,
+   "sha256": "9c865f2e15230ad6f86a83cc64b7dfcd4e582fbe899c84d232f0030ad09fb5b1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep000_shoulder_pan_m030.json",
+   "bytes": 440,
+   "sha256": "d813913f4cdacaa670125ce3fa5cda13228b3b81ecb9bf898a08b593f27bfdb9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep000_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "6a241730a2a72b60fd36e784473b0f012d9ec7e47f5881c8d5ef10162500ed86",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep002_shoulder_lift_m010.json",
+   "bytes": 439,
+   "sha256": "8ca9440df1c14411bb78cdec4feb43508253b9041f9d94d449906f30009a4286",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep002_shoulder_lift_m020.json",
+   "bytes": 443,
+   "sha256": "383b4ccb93d48174a06025088183a0667d0e0a7d99bfa7599dbd76e3ed967483",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep002_shoulder_lift_m030.json",
+   "bytes": 440,
+   "sha256": "30589072e09b5803b704f9ee41ef84ff5fe744347253543bd603587307d2bda3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep002_shoulder_lift_m040.json",
+   "bytes": 442,
+   "sha256": "0e72d12285b3fd4a40eb98ea3f1774af442808df6887e1043b49036f820db8ff",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep002_shoulder_pan_m010.json",
+   "bytes": 441,
+   "sha256": "66496f85eca404527e0d1d5b5e876b8df0c2e4062471e4882ab1e6e01e37a217",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep002_shoulder_pan_m020.json",
+   "bytes": 435,
+   "sha256": "de7bf05063c0e4dfd08e699d4d84ccf79f6f13f7663c03db88ba0326697a4cb6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep002_shoulder_pan_m030.json",
+   "bytes": 437,
+   "sha256": "fa33622029c8716358cbbdbd50103672544b9199f6c8031a896b7be71807a59c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep002_shoulder_pan_m040.json",
+   "bytes": 441,
+   "sha256": "2e652f9c5640848605d0bafbeb552ebd58c75817e591691d64d3263ec83e760d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep003_shoulder_lift_m010.json",
+   "bytes": 441,
+   "sha256": "0bcf5e7f8591a78eee2eca2cbe75f152ac3d5b0e3d0167860de08fc71b564c85",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep003_shoulder_lift_m020.json",
+   "bytes": 442,
+   "sha256": "299f52bcf4b14a2a7b7d1dec9fa6ab6f7520613d9dc055de4292635ace19f876",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep003_shoulder_lift_m030.json",
+   "bytes": 437,
+   "sha256": "e4a2404f1187584d1dfe1184d0e1fc4e04ac9593392c4c7b86317d9f411051ec",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep003_shoulder_lift_m040.json",
+   "bytes": 441,
+   "sha256": "cdb0ab317305678834c70a711d24de46b2a08847c91d4129756ac32e77e30ef1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep003_shoulder_pan_m010.json",
+   "bytes": 439,
+   "sha256": "34f178a3ab74afb54405fe024f088908a03fbd6f8df4ce860ff3b2d8b6bd3a7a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep003_shoulder_pan_m020.json",
+   "bytes": 441,
+   "sha256": "c64e6ed67de0df8e805f60927b9242bf5052e865a1211b0a7b39c73c86ba44d3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep003_shoulder_pan_m030.json",
+   "bytes": 436,
+   "sha256": "3c132375a4ca0971f4db7a9636007b8c9d7ffbd41b4f923c1208d81539f4dbb9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep003_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "ce620f7e220554b9a910c9d786492ea687dff56884e15333c1e17575e3e7170d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep004_shoulder_lift_m010.json",
+   "bytes": 437,
+   "sha256": "1513d96ab82182d45ad94465a87fc958cb5f0e995245b5bbc5229856d039d2ca",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep004_shoulder_lift_m020.json",
+   "bytes": 438,
+   "sha256": "8f00b669e0fb20234219f837134ab1726c00b69282ef794ae74281591580541d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep004_shoulder_lift_m030.json",
+   "bytes": 437,
+   "sha256": "78a8a18efb9aae64c61e43d09694a8af1344c7c69017b390a3ba1c72479b32fc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep004_shoulder_lift_m040.json",
+   "bytes": 437,
+   "sha256": "7184e665ae12a53389fd4ed5fb345571c73972ecbbf8d7945804934638889ece",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep004_shoulder_pan_m010.json",
+   "bytes": 437,
+   "sha256": "3576664e01a1f7d9fb2a1c46a49832acfd30d79f6fb49b8bcbdfe27d74db6f76",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep004_shoulder_pan_m020.json",
+   "bytes": 437,
+   "sha256": "310c7351bebf2dd3b1306745a0eb4d64424295de7396173a4c2d5ee713678bea",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep004_shoulder_pan_m030.json",
+   "bytes": 437,
+   "sha256": "ab6deda8e0411eaf8914a999f6c24adcf52595e617874d06faf5687b90af9f06",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep004_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "f6ff43efd71d9917ae91975f81212bfaf7e2b9418c1ec075b4df818c41e5a83e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep005_shoulder_lift_m010.json",
+   "bytes": 436,
+   "sha256": "e60a54fb28944319ec8534041259413c80ad4e94b4a487fa05288c96ffdadb21",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep005_shoulder_lift_m020.json",
+   "bytes": 441,
+   "sha256": "62d9d6034c0fac3f6efd978453f70d10f77bc1129d96504a4411662741fb2885",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep005_shoulder_lift_m030.json",
+   "bytes": 442,
+   "sha256": "d4e5fe28f0d98b4223e84a1d3e708104d3f4e0cb11110ceb529659067ffcd73e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep005_shoulder_lift_m040.json",
+   "bytes": 441,
+   "sha256": "a9f9fe05c84624a537f46d012ffd8006fb04b76fdbdceb6aa3ec3113aaa02b14",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep005_shoulder_pan_m010.json",
+   "bytes": 437,
+   "sha256": "ddbf071d285244f9f98144bbe5a34635c5d33812efa45afc9f5b08b14183cfbf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep005_shoulder_pan_m020.json",
+   "bytes": 440,
+   "sha256": "eadd5efe079757731708e13e93a3343fe228e9703419780cf963bb8829ea3b58",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep005_shoulder_pan_m030.json",
+   "bytes": 439,
+   "sha256": "8b6a28e4b5215ca968eb6052258693aba3033e0b5a9c399a47b187adff45fff6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep005_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "48d3fa97fe13ebf1ab2c96c8cf6ea6f8497a10e1cf828e23a2b4479608fb3a35",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep006_shoulder_lift_m010.json",
+   "bytes": 444,
+   "sha256": "b1cc1501ef42095f565154ac1f63b39cd6bed63fa12a376bb147b870aa18493b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep006_shoulder_lift_m020.json",
+   "bytes": 443,
+   "sha256": "596fb52ac835b31330458b575c86a3c4e3834bec59cbb9f72cb7ebc7f49fbe5b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep006_shoulder_lift_m030.json",
+   "bytes": 440,
+   "sha256": "3f889c93aae4918c3ba81debbacf30525839e2668a61304ddf85017c32d403fb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep006_shoulder_lift_m040.json",
+   "bytes": 443,
+   "sha256": "7b8dcba7b585bc25b4a121039c609c2e7825eaf4e821b6c1f0f34b318fe25afd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep006_shoulder_pan_m010.json",
+   "bytes": 437,
+   "sha256": "aec42ba6c0628546c8ab3078cbfc7515488dfce0de61d65c6b9ff3acbc78e8d4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep006_shoulder_pan_m020.json",
+   "bytes": 438,
+   "sha256": "72cf659206aaddf286f2c26ae824512020176196d40b6b939474192a5e88385a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep006_shoulder_pan_m030.json",
+   "bytes": 437,
+   "sha256": "50ffc078894a0da707f460f81300aad2e4e70e51f5112e77c8e6f5a8d9115327",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep006_shoulder_pan_m040.json",
+   "bytes": 441,
+   "sha256": "a5f4c6007e76c2d19635a7fdf81d027f29454f73c4b5a1f8f2759b26121f47c0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep007_shoulder_lift_m010.json",
+   "bytes": 438,
+   "sha256": "ca128a289f63e704f041e31f1308fc03c93b1d8bfe49c914a04935c4f6dd1a89",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep007_shoulder_lift_m020.json",
+   "bytes": 438,
+   "sha256": "15f6fc150903b4e3fd7da05cff78ef043ddc5c9f5fc498264b2a69a51cf66a99",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep007_shoulder_lift_m030.json",
+   "bytes": 441,
+   "sha256": "f928e1531e04d709fcd3bd8993d82513b4fcc8b4bb835d9d8505db5851f84f93",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep007_shoulder_lift_m040.json",
+   "bytes": 440,
+   "sha256": "8742b50b3aeba595e6d07adceb68581186af0b768ae33f314ed896575aa43d13",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep007_shoulder_pan_m010.json",
+   "bytes": 441,
+   "sha256": "757d35c19067c95ede5692efeea690dee6227feb4652375380c7d06e05c307b6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep007_shoulder_pan_m020.json",
+   "bytes": 441,
+   "sha256": "31a7c582fcb6eca62e077c25883ac5a36108c461dc99dff1be46e53f4bd9fa60",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep007_shoulder_pan_m030.json",
+   "bytes": 437,
+   "sha256": "0c56cc2d0601159fa66756df935c306f5d0a7111c1bd8e3fd2fa129469cf1b18",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep007_shoulder_pan_m040.json",
+   "bytes": 437,
+   "sha256": "16abbae3400b4054b740cd626a7b93c08a1014db152b38bba6905dad656a6a40",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep008_shoulder_lift_m010.json",
+   "bytes": 438,
+   "sha256": "8279ce907b4c39b5442ff3027197c2e15bfb3669cad5bf3b4d78177f1681ee8e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep008_shoulder_lift_m020.json",
+   "bytes": 437,
+   "sha256": "5025d1683c0a195b1657130a65e459f7f77761a98c100c36173576a20a4831dd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep008_shoulder_lift_m030.json",
+   "bytes": 438,
+   "sha256": "5d02881501da5ba1c99d1cf426bdb5724424312939012aa655e3b604efeaa173",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep008_shoulder_lift_m040.json",
+   "bytes": 438,
+   "sha256": "7b077d28d4f3238d97c13f8f354f5863fda2f5f83793cac47f10ae0ce51f5a35",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep008_shoulder_pan_m010.json",
+   "bytes": 438,
+   "sha256": "db99f8f7a3b18c60c775623e039f4cba939b11b0b5ee4296dd4988910d7418b9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep008_shoulder_pan_m020.json",
+   "bytes": 437,
+   "sha256": "0b0b0d5e809c3372ededbd78d5e3b7653a5e4c7a73c4afa1a394e6ff1bc3ee70",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep008_shoulder_pan_m030.json",
+   "bytes": 437,
+   "sha256": "d8f5aa0ba2e403ecb9a67e79e054f62b89759132ca164e629f5e0739849e0279",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep008_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "2b20e371b3b0e10d544abe0bcc0573bd350c40836c1ec92cb38ceaab5ae45d67",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep009_shoulder_lift_m010.json",
+   "bytes": 438,
+   "sha256": "19b58635c8eda8b206de6a5fb97d004844fe80b320210cbfb832eba9c96067f6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep009_shoulder_lift_m020.json",
+   "bytes": 437,
+   "sha256": "ecd92f277785d9f84283a7ceb80f8d99119f44439110a6a2fc3b1a744447f7ed",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep009_shoulder_lift_m030.json",
+   "bytes": 442,
+   "sha256": "ef0c200c8b4728040692b91d8b1d51978ad3560080987d26b109422bc944ac9c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep009_shoulder_lift_m040.json",
+   "bytes": 441,
+   "sha256": "64effaf5297197e583e810f42c6be526c06012c8d5ccf54607e06ea4ef685e35",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep009_shoulder_pan_m010.json",
+   "bytes": 436,
+   "sha256": "8085c2edf3dbdc29c06fd5b256d985f77ae1f0442107962a96ab4cc333d66866",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep009_shoulder_pan_m020.json",
+   "bytes": 437,
+   "sha256": "1e6286ff252d1dca5f140f2c53b766697b814b93170ff7758ebfdcf549408deb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep009_shoulder_pan_m030.json",
+   "bytes": 437,
+   "sha256": "4884ed49528b08e09ceef65e8d4df91a2c239496af903eb208a1bc5b102e21f5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep009_shoulder_pan_m040.json",
+   "bytes": 436,
+   "sha256": "05f20829457a75ff303e89de902a6218dacd45ee50125fe847e6e6e1f53c5f3d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep011_shoulder_lift_m010.json",
+   "bytes": 442,
+   "sha256": "8ca88706fc0897b5d8c3e59f196b448ebc492e59af2496b8149e241151075a72",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep011_shoulder_lift_m020.json",
+   "bytes": 440,
+   "sha256": "40122b832e87feca4dd1b4444675f3141b49e91566ecf72c80966d71e4817999",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep011_shoulder_lift_m030.json",
+   "bytes": 440,
+   "sha256": "16b17511f162d8f7103f5ca5de069e17f7ada549caab5ee017329f8084af6bef",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep011_shoulder_lift_m040.json",
+   "bytes": 443,
+   "sha256": "6c20989390dda097e2eddafb07f3a2aba91d8717ca5c251d323549bae8f6205c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep011_shoulder_pan_m010.json",
+   "bytes": 439,
+   "sha256": "b3b100b39908b128be1c77bb6624e02cb0a50eff81580cf020a108269e9b07e2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep011_shoulder_pan_m020.json",
+   "bytes": 441,
+   "sha256": "b1248149fb9f275abbffeec554e818b81eee93b09eb12bfbd7da541ba90d0574",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep011_shoulder_pan_m030.json",
+   "bytes": 443,
+   "sha256": "f3ecdb1f23f097933c1321de05c2d04144a3d8d212d5b602eb405c6e393aa557",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/ep011_shoulder_pan_m040.json",
+   "bytes": 438,
+   "sha256": "998075cd59032899a799ea8ab5b5a684ea9a40818fe84313bf4f2f73d24641ce",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/IO/recovery_summary.json",
+   "bytes": 42040,
+   "sha256": "c48bbb0f4f6f595a73cad1519391d8346e7dde160c5595199c9a44a4a5ab8605",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep000_shoulder_lift_m010.json",
+   "bytes": 444,
+   "sha256": "dfd4dbb2b45302e8f2d39710ab1a06d355aca4ba590c2772997042c421c5b5c5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep000_shoulder_lift_m020.json",
+   "bytes": 443,
+   "sha256": "d673aeb6191a7ef2e20e91c9dbd4e170dbeadd3f71e25af12ba9d0952c5b64bd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep000_shoulder_lift_m030.json",
+   "bytes": 442,
+   "sha256": "133b0376dce4041dfcf6dc1ebc5ca50c39d77df29222a64d70e4be0703ddbd56",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep000_shoulder_lift_m040.json",
+   "bytes": 445,
+   "sha256": "5a2c72b672b8dca2acd38fe29a08642ff845dba1f917f3356201b3c95dd6a077",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep000_shoulder_pan_m010.json",
+   "bytes": 443,
+   "sha256": "b77bccdcb3fb5a64af612442a28cc2ed8f1a790955011abf80becc06179ca382",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep000_shoulder_pan_m020.json",
+   "bytes": 447,
+   "sha256": "68c63a02b637c7d70418eb73c243fe41e0c73cfd249f71905c79678151fc1547",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep000_shoulder_pan_m030.json",
+   "bytes": 448,
+   "sha256": "888ea5be844b6235d2b35ab0e395361bad39c45c1eb10436c99c9ac22d01c479",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep000_shoulder_pan_m040.json",
+   "bytes": 447,
+   "sha256": "5bb69591d58d265b7e36723e4dacc4fd5b04d964890e1a9c630183f813619534",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep002_shoulder_lift_m010.json",
+   "bytes": 443,
+   "sha256": "c82b31c94ffe2f255d46870beb77fc5820404663a297969caf89e3dbe9469f1c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep002_shoulder_lift_m020.json",
+   "bytes": 444,
+   "sha256": "e0020666c110f16e7d0769ac9842fd2b6b383a8217796eb6bb93cee6b2e3abed",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep002_shoulder_lift_m030.json",
+   "bytes": 447,
+   "sha256": "c2b5f105c01407750e5e0797c9005d0814f527715b2c23e737f37a9faadf01f0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep002_shoulder_lift_m040.json",
+   "bytes": 446,
+   "sha256": "cdc060f010329af33ded8a5c3bd5a61e746eb1e1be7f633d346a3245b55fdbf2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep002_shoulder_pan_m010.json",
+   "bytes": 443,
+   "sha256": "5cc68313eeab47da32dd46207d174d2f658ef4c7e5d91625301f29231e8f9224",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep002_shoulder_pan_m020.json",
+   "bytes": 444,
+   "sha256": "02aa502585837446461167dc4719dd8150784351faa6b8c47ce73b85fc7ad087",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep002_shoulder_pan_m030.json",
+   "bytes": 443,
+   "sha256": "ae6da96facb604fb2494022cbf7d95fcf78428c38360c5615b1c0e29159b6985",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep002_shoulder_pan_m040.json",
+   "bytes": 444,
+   "sha256": "7cbf8d2dd669124a86b81db22163e21c406f9446b9322bedde44feaf2f096430",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep003_shoulder_lift_m010.json",
+   "bytes": 444,
+   "sha256": "363fad33d1150b899e41ca26a324ddbbddeebd052234226f0e27aad2c5e3ec7f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep003_shoulder_lift_m020.json",
+   "bytes": 444,
+   "sha256": "b2cfef3b23b295f2619869e01f291237da25a43124accaf2fd79cbc64fab45e3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep003_shoulder_lift_m030.json",
+   "bytes": 443,
+   "sha256": "57fbc3d932999b4d21dc545def9317d7277092a411ac39eb28ee2236da859117",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep003_shoulder_lift_m040.json",
+   "bytes": 444,
+   "sha256": "85450922056e9e0b539d0fbab5e12802dfe82e8ba0f5b9fa3da65c4423c918f0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep003_shoulder_pan_m010.json",
+   "bytes": 443,
+   "sha256": "71162e63be0586471b0f5e95f74e4ab03531b03d3e0feba85c892e1078658e52",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep003_shoulder_pan_m020.json",
+   "bytes": 443,
+   "sha256": "fe44b23fb5a0e778dd3f161141c4d63b93a5b7ead0d5906e54c91d8b6b591b18",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep003_shoulder_pan_m030.json",
+   "bytes": 440,
+   "sha256": "3573d81d255cdd35f8fc44162648f752333c2de2d959684ec503d50dde198ae7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep003_shoulder_pan_m040.json",
+   "bytes": 442,
+   "sha256": "12dd76ebafc4670b72373766b918a5568449230ef0d6a4e0a23911e5247c9821",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep004_shoulder_lift_m010.json",
+   "bytes": 442,
+   "sha256": "f28df6cd8757afb69459bf6e29064e2ab39f68645708785522ffd1924e108a1b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep004_shoulder_lift_m020.json",
+   "bytes": 443,
+   "sha256": "5c3e007c44c58607f00cf5cf263ef0e3b7fca036e0d8a9424bbda820995bde28",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep004_shoulder_lift_m030.json",
+   "bytes": 443,
+   "sha256": "039d7594f49c57f810072522b72f04d094cd8c6b57d27621a8a30766b0af24d2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep004_shoulder_lift_m040.json",
+   "bytes": 443,
+   "sha256": "01b6fc0bbe4951bcb6d5d34815d9824936d6082b657363d049b5f45e72649875",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep004_shoulder_pan_m010.json",
+   "bytes": 443,
+   "sha256": "2806f15b4581dbc245b239d1b070ee2102811528340c4c1e59c1282de448fa0e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep004_shoulder_pan_m020.json",
+   "bytes": 443,
+   "sha256": "25e42ecc117b88970e7482ac0c9c8107e2e6c4b47a5bfafb02b4f95f7793bd82",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep004_shoulder_pan_m030.json",
+   "bytes": 442,
+   "sha256": "4ec0aeddf9a1dfd523f25a482ad0bed2b91c8c20036df2125873af9433e4477d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep004_shoulder_pan_m040.json",
+   "bytes": 443,
+   "sha256": "672d362275d63e27b02718e250c3442049bbfa9b6337db077e1572e2e7be9bf0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep005_shoulder_lift_m010.json",
+   "bytes": 443,
+   "sha256": "71644dab3d522f279b973cc1995579ce7ec8b24288fae77ee8a90276ad46972c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep005_shoulder_lift_m020.json",
+   "bytes": 444,
+   "sha256": "e48412c87057a81a15579936134ec842d8b2b108e3a75f16e5095215cc09fa34",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep005_shoulder_lift_m030.json",
+   "bytes": 444,
+   "sha256": "aa25b6ec31d5ab6fe2ed07f8c9d1cf998df383e679e44fc9db51cff6e49bc7ac",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep005_shoulder_lift_m040.json",
+   "bytes": 442,
+   "sha256": "032c5e4bbc60a7ae32e242895d6e3b820e171b7cdee5df68c51cd7e155e69b1f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep005_shoulder_pan_m010.json",
+   "bytes": 442,
+   "sha256": "eaa76b0fa4abd64cd0d4f117c34b33adfe76c60bb1c6dd6690330a82c6641657",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep005_shoulder_pan_m020.json",
+   "bytes": 442,
+   "sha256": "1116b7602369a568411b25b2bfd437cdaa87dca979e09a918a9ae8a4435e90b0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep005_shoulder_pan_m030.json",
+   "bytes": 443,
+   "sha256": "cf171596c8c1a2abf697bd4959f0d616bdc67a5d4f11dea7d0bcff2e8b021de8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep005_shoulder_pan_m040.json",
+   "bytes": 442,
+   "sha256": "4dc06908efda6f9737161775bc2ccc86b7fced495a1200d06ce3abbaac1377ac",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep006_shoulder_lift_m010.json",
+   "bytes": 446,
+   "sha256": "7243250a302d714b0f3098572c4c9c831cccc3519f465f640f1bf78c3087b135",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep006_shoulder_lift_m020.json",
+   "bytes": 444,
+   "sha256": "ea4a9b1aed12c43dede12748424a480cf01fca9c8d627a62102e2b42f1f7b233",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep006_shoulder_lift_m030.json",
+   "bytes": 442,
+   "sha256": "df5376674f76c41d1f8fc3508163c3eb161254960b359fb3a8000940d37f4faf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep006_shoulder_lift_m040.json",
+   "bytes": 444,
+   "sha256": "fb2d0a535f69f75d214f6b00615e45d166c9bb3ceeae1759c28c1d05bd9e8bae",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep006_shoulder_pan_m010.json",
+   "bytes": 443,
+   "sha256": "f155eb723e2695c4e76ed83129aa3662712733aa0f9cb674e2b0830e023f8b31",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep006_shoulder_pan_m020.json",
+   "bytes": 443,
+   "sha256": "13f396baa52c74ee15ffce326109bfcdf0a2cf94a4b13d9d875e6ff9675f6c10",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep006_shoulder_pan_m030.json",
+   "bytes": 441,
+   "sha256": "8de84cd4b7ea4e0cf7fb3d9c964859787137ff5968c5d5910e7aa82126e180e5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep006_shoulder_pan_m040.json",
+   "bytes": 446,
+   "sha256": "59967ac24a032fc69b096c6de0b43b120fc1d84d9a8dcdfb61b88353651fff7e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep007_shoulder_lift_m010.json",
+   "bytes": 448,
+   "sha256": "0087a074daa97ceea30ff1183b5d85873112e60ee319ee3e25111f09ae6ad88a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep007_shoulder_lift_m020.json",
+   "bytes": 448,
+   "sha256": "9cbbf1e08decd825e8fdce08870f14044a60aca2751bd245215bdece283f679e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep007_shoulder_lift_m030.json",
+   "bytes": 447,
+   "sha256": "eab4a643c33ca7eb466a8e249c930e0a3ef623402719eda50a63db9abea8ab9f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep007_shoulder_lift_m040.json",
+   "bytes": 446,
+   "sha256": "152e927e028faec3c59a609f6e8ee23e9ee70180af9abba8951cd29e9d01b500",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep007_shoulder_pan_m010.json",
+   "bytes": 447,
+   "sha256": "c4136f4a99c4459e567309d20ffa60ec25481b73618d8e848672ad18af4b525c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep007_shoulder_pan_m020.json",
+   "bytes": 447,
+   "sha256": "de6cb6baa32771f2ccafaad8b0510adaf68878bc5fa645644b279dc1353e5bca",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep007_shoulder_pan_m030.json",
+   "bytes": 447,
+   "sha256": "170bdefdce9217b053493dc3505af724c22fb7020e7af522e0fed0a7039be896",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep007_shoulder_pan_m040.json",
+   "bytes": 447,
+   "sha256": "c18ff4c0827053a3b16fa58fa1ab67530896ebf7c58fdec9be6b77274c1732e7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep008_shoulder_lift_m010.json",
+   "bytes": 443,
+   "sha256": "e03bf0895be8d4569f1642913c0f42d9e7bca18b46fe664f1d105d7ef5a9dc02",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep008_shoulder_lift_m020.json",
+   "bytes": 444,
+   "sha256": "a7fac2217529b6af23caffe7c740b8374e032437050b96b478c4ab6835802473",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep008_shoulder_lift_m030.json",
+   "bytes": 445,
+   "sha256": "a7271bf05f04668164d3456b09cea6cffc2f596441153cd7591abe14b23485a0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep008_shoulder_lift_m040.json",
+   "bytes": 443,
+   "sha256": "92c208395dd3d0ba0ca4a20008287818df6eba8f52efb5db6b3d30d9e074c937",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep008_shoulder_pan_m010.json",
+   "bytes": 443,
+   "sha256": "5b20fd87b17b41038e1d8d474fc86c31d55e9bb75ab622a9e00512faf8259758",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep008_shoulder_pan_m020.json",
+   "bytes": 443,
+   "sha256": "5f9e24c5cad28b9fe89c9f704294b0f6d391ed286e7b6e7a5a58df29884477cb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep008_shoulder_pan_m030.json",
+   "bytes": 443,
+   "sha256": "73221d76e349372a1a8fe9d3421ecfd261f4832ca38953799b0ce88e26e43822",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep008_shoulder_pan_m040.json",
+   "bytes": 442,
+   "sha256": "058277cb66d368ed252a9cadb1c2cb5a4208ea0d78aed08ad40e22aaca0f9bcc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep009_shoulder_lift_m010.json",
+   "bytes": 444,
+   "sha256": "ace8b4859a5ba91e844dfcde643301192f2275509d6e84061bf6133ef36897b9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep009_shoulder_lift_m020.json",
+   "bytes": 442,
+   "sha256": "64c1607702561d93aae25ea3996dc9e323e59db573a7f0ca609abdaf84d0e71f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep009_shoulder_lift_m030.json",
+   "bytes": 444,
+   "sha256": "fe014411b78e72fca9614f33ad9a99824b8861312d80373495d33aceeabbc6a0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep009_shoulder_lift_m040.json",
+   "bytes": 442,
+   "sha256": "0ebcbb33c813087f3b3408d4c2fa5d7a4d7f84beaed3460b2c6fcb2cc62b7aef",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep009_shoulder_pan_m010.json",
+   "bytes": 443,
+   "sha256": "881b515b4614b00de8678c19511627be99892b59fc6a958cfb786b9806a8841f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep009_shoulder_pan_m020.json",
+   "bytes": 442,
+   "sha256": "9d8611fcdb5074b010f5cdae8300bd1e8342c4ff526108c976a97bf508896796",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep009_shoulder_pan_m030.json",
+   "bytes": 445,
+   "sha256": "06fd93a5c02b2be196508da4506fd6dce21a94d9994db6580a204ecf0194b18d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep009_shoulder_pan_m040.json",
+   "bytes": 447,
+   "sha256": "5ff78141c316535b78ac6ad49cf5fb69f9e26a7f5a2bfbccfdccda18de6a0bca",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep011_shoulder_lift_m010.json",
+   "bytes": 445,
+   "sha256": "8372cef8e4dc6a31fe7237e26af39563d1218da590d4773bce613dd29c73bcf6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep011_shoulder_lift_m020.json",
+   "bytes": 446,
+   "sha256": "1928c639c526698060a670b3478884294408cab21035dc9ac89c42b3b157e041",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep011_shoulder_lift_m030.json",
+   "bytes": 445,
+   "sha256": "bb08be7e15794fc1e083c31bdcdff8ae4d0453fdd4b0b5f956a9a726b967738b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep011_shoulder_lift_m040.json",
+   "bytes": 445,
+   "sha256": "2d936f02cc76456fb01a3a4a2540c0a0ddce9f2b05f26570d2e36518f3240158",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep011_shoulder_pan_m010.json",
+   "bytes": 445,
+   "sha256": "3a601deae7a7dc3ac2d8e99a0e49db15995f9322b4efa374a436fc667c9cb4d6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep011_shoulder_pan_m020.json",
+   "bytes": 445,
+   "sha256": "3f49f6a4289e53c82426d4a2095ed73f86d3a12f5dfe790fe5520f12d4435fb0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep011_shoulder_pan_m030.json",
+   "bytes": 445,
+   "sha256": "d9fe01d4b3e18dfdb981824af5f94e849438df09060ceee1fc696e22a9666d8f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/ep011_shoulder_pan_m040.json",
+   "bytes": 447,
+   "sha256": "7ea45ffe130c81b89fb87aa410f8856f2e273025f892190bbb7425c8515048d2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/S/recovery_summary.json",
+   "bytes": 42440,
+   "sha256": "53b9f0a47ca92110ff18bfa4cddde40bf720ce208be830ad33dc971635bad775",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep000_shoulder_lift_m010.json",
+   "bytes": 442,
+   "sha256": "882e9fc74d131786cede70e8e6c26daf7d8291af9f06f826cd60ea3b1abff6df",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep000_shoulder_lift_m020.json",
+   "bytes": 445,
+   "sha256": "4e4817928783eb9fff7af0096682c17adff64f4ead08231630eef71ba5d6c5ab",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep000_shoulder_lift_m030.json",
+   "bytes": 443,
+   "sha256": "27c1c797adad6716d6bef2eddf3ab2045450ebab2680b4562f7a5e70b45c6641",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep000_shoulder_lift_m040.json",
+   "bytes": 444,
+   "sha256": "c03b8a3c65af0f9bd1003d437f7fcade43b97476ccdfd76cabd4d22a81e6a0ff",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep000_shoulder_pan_m010.json",
+   "bytes": 445,
+   "sha256": "fe406df237a8e2eaacd9b1cf224ad5ea1a35341e9746cb1003ea286fa89869d6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep000_shoulder_pan_m020.json",
+   "bytes": 445,
+   "sha256": "2b1d1d1ebe38fe2f3da467693057ed35c6bc87549425a9403cfa6302ddf39bc5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep000_shoulder_pan_m030.json",
+   "bytes": 446,
+   "sha256": "d40dd881fac8dafefb770def58501ac3da7148b43a927a253409f9f064fa0f5e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep000_shoulder_pan_m040.json",
+   "bytes": 444,
+   "sha256": "d9e20e4376e42708e454d2e084ee3aeaf4d3bf47746b661abe4c3293055a20e1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep002_shoulder_lift_m010.json",
+   "bytes": 441,
+   "sha256": "7854e3bb152d424ec3f20059d4ed804d1bf907296ac33be44037e9cb23083109",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep002_shoulder_lift_m020.json",
+   "bytes": 443,
+   "sha256": "b02145ae0a397cde61a85073488b35dee89fced443578b6143a764a5bbc8af93",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep002_shoulder_lift_m030.json",
+   "bytes": 443,
+   "sha256": "5e7830e5fbc3325281b7bec013410b0f36ad776ad77c7e7442980a3c4f3b7754",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep002_shoulder_lift_m040.json",
+   "bytes": 442,
+   "sha256": "002d4c0f57d877e1e25284bec44e346d7c0b5fa501c75c410c097576fb62ff1c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep002_shoulder_pan_m010.json",
+   "bytes": 441,
+   "sha256": "a4d511fcf6444c2d8c45f948c2023da21e78acfd91d196ace7649a7bc7a3b5ae",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep002_shoulder_pan_m020.json",
+   "bytes": 440,
+   "sha256": "b5cc8434d80443119e33212f06c2029eca9ec44b992a6d39ffa5d75759bf3777",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep002_shoulder_pan_m030.json",
+   "bytes": 445,
+   "sha256": "e7dc6fad86efc261d08f8b4a7588604f0132c4f3de5183ea5035ff70e17bc772",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep002_shoulder_pan_m040.json",
+   "bytes": 446,
+   "sha256": "29c35a0eb3e777028cce5b5723d6383d634527be3b0eb6919bd50d0eee3d6e52",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep003_shoulder_lift_m010.json",
+   "bytes": 442,
+   "sha256": "247cfad25ba6117e3dd22e3d19e810830b4189a85690aadfc1474f245b841c39",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep003_shoulder_lift_m020.json",
+   "bytes": 442,
+   "sha256": "2230ed3ac583ac6c82cb2b414151033283cdd8876f50a60711ef864d095760a8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep003_shoulder_lift_m030.json",
+   "bytes": 440,
+   "sha256": "16c2b8d3599692d8cf69be415f5619cac3b0998c4def2989cb34169fc595e523",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep003_shoulder_lift_m040.json",
+   "bytes": 442,
+   "sha256": "8297136610832ca4879ebfb19b280b6b1462349cf6872f5de9776d196ab37ab2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep003_shoulder_pan_m010.json",
+   "bytes": 440,
+   "sha256": "bee17e2a9ae808cc22df50188595d2a0cc4f8c03d1de30ce264b921a04dc8a13",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep003_shoulder_pan_m020.json",
+   "bytes": 439,
+   "sha256": "d2388b711c3cfa980524b8fbeb99c864e4c30041b74dbcdbe112a585f34db086",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep003_shoulder_pan_m030.json",
+   "bytes": 439,
+   "sha256": "35a4f0660e27d31246743a0200c987be5f927c277ef8b2590ab4b587c84af2ce",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep003_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "3c6a0e315b66f30245d3096fde3386e779cf7e0e455c6b33d9d17a16d27b9461",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep004_shoulder_lift_m010.json",
+   "bytes": 441,
+   "sha256": "a9d4646af93b6d94957fe9d3a55371f782315d430b6c2ae8c4c642351050d554",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep004_shoulder_lift_m020.json",
+   "bytes": 441,
+   "sha256": "2e6d5af1d319690f75e425ac030c63f2c3719a7bdc2593971619e3926c7cbdd2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep004_shoulder_lift_m030.json",
+   "bytes": 442,
+   "sha256": "283b48dd93c1d42db4077d0c431dc534b93acc7dd40d4c059e1b245dc82fc4ca",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep004_shoulder_lift_m040.json",
+   "bytes": 440,
+   "sha256": "1130a1ce8be7a84ba884ffb748997fe95da0d5843d2d10f16505b6999c25b221",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep004_shoulder_pan_m010.json",
+   "bytes": 440,
+   "sha256": "6245f08b1555fef6a9794820d560e01493f1fa5bdef32f6af21fa138f54ef327",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep004_shoulder_pan_m020.json",
+   "bytes": 440,
+   "sha256": "5c3db773d6967ad546a7c69ec04ca233a99ca5a00ea7365d0e33d5b6c5395f5b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep004_shoulder_pan_m030.json",
+   "bytes": 441,
+   "sha256": "bea490f406c604892ae0de6e67062b96ecb1f70d6af1519d6f955aa71c4ce4cd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep004_shoulder_pan_m040.json",
+   "bytes": 441,
+   "sha256": "a3a64aaa3bdbbac7b5084eadf320037f5157ccab1baf4ae12db9a66b14f76c2e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep005_shoulder_lift_m010.json",
+   "bytes": 441,
+   "sha256": "116d5b5157a7274c8145c66a55d8fe82b56e64c6df764fb332e226ffe119120a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep005_shoulder_lift_m020.json",
+   "bytes": 443,
+   "sha256": "c7202bb416395ccdf501fae2d06820cd3a339db47a4c71d4c1ea213bde84df53",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep005_shoulder_lift_m030.json",
+   "bytes": 441,
+   "sha256": "e854b67334485693c3aab2f5386dd22f8e76e14d9d5fb79488a7dc26265973ac",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep005_shoulder_lift_m040.json",
+   "bytes": 441,
+   "sha256": "6359c7f51dc703729305b98d00d086a97c2971a0359ef3a46319b63039f1f5ef",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep005_shoulder_pan_m010.json",
+   "bytes": 440,
+   "sha256": "5e6977245e38c28ab8c23fcd9a237abd97a0f36aca4560bfce56385ef8c59d26",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep005_shoulder_pan_m020.json",
+   "bytes": 441,
+   "sha256": "fe3371f643c89cc571d3076e8a9c619e92c45ef29c42fc2b7cef8b2c7beb0774",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep005_shoulder_pan_m030.json",
+   "bytes": 441,
+   "sha256": "4a424bf48ed5d967835f97f9b3df1e1f4b64ffbfc27b1585bb48117ea4d4f7cb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep005_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "2a0512c503d00a211725312355a71821c43215d91f33b88d60a6b3a2a38627d7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep006_shoulder_lift_m010.json",
+   "bytes": 444,
+   "sha256": "9e51944b20a61877ed8e5f0f13f18a027fbf3e828295b7f979eefbed8d4350cd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep006_shoulder_lift_m020.json",
+   "bytes": 442,
+   "sha256": "0fb42ef4e9d950433a9cfcf71d7c2e827854a0c916c6538dfa2434541d8100e4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep006_shoulder_lift_m030.json",
+   "bytes": 439,
+   "sha256": "f73e9b978642f3e374e3bbe00cabbee53abcec817709df6b8cd2f30312460ddd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep006_shoulder_lift_m040.json",
+   "bytes": 443,
+   "sha256": "2acc75db6d9fbf6fcc9348bf54619c3242bb9183f9f5028ec9ad8e87bce8b330",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep006_shoulder_pan_m010.json",
+   "bytes": 441,
+   "sha256": "23c428c7436d8960931bb676354f656d4320d29cb28c4dcedfddad3c29d518e0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep006_shoulder_pan_m020.json",
+   "bytes": 442,
+   "sha256": "b9b4122a26392bdc70b89a8a99d28aa0fb71324a37fc55f5af8e282349bd0e08",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep006_shoulder_pan_m030.json",
+   "bytes": 439,
+   "sha256": "ec9942661df179011795e2c970f8ca481cc584894d4b399d4b2065fca400aff8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep006_shoulder_pan_m040.json",
+   "bytes": 445,
+   "sha256": "195b8fa02cfb3101ac3ad6174b0d08e3f95af4ee75a16043e3c25664e095f221",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep007_shoulder_lift_m010.json",
+   "bytes": 447,
+   "sha256": "caf30ca69faae8e3f78178f7193ac3df2d380b3a4fd40bd6154119914cea0ec5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep007_shoulder_lift_m020.json",
+   "bytes": 446,
+   "sha256": "157e61b935c3dace4d46fed0f403a25dec4c8ac95e4cbe63324e33f1710debdf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep007_shoulder_lift_m030.json",
+   "bytes": 445,
+   "sha256": "229e0887f9a21d6c59ac23f943d0520783ba129ae528d57bbf8aeae80977b449",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep007_shoulder_lift_m040.json",
+   "bytes": 443,
+   "sha256": "78f6ca3547f9bab12722d8b516ed64db780037d7567337e86a99021251d1c8e0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep007_shoulder_pan_m010.json",
+   "bytes": 445,
+   "sha256": "2abcb59e96e2629af92ca84f07db3baa88332aede363898c56a00e2d1f838741",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep007_shoulder_pan_m020.json",
+   "bytes": 445,
+   "sha256": "54d177add99d1eef06d0fd5d3eae75afc72d9110d468db906309e62b0793a75e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep007_shoulder_pan_m030.json",
+   "bytes": 445,
+   "sha256": "95ccaf239531be78639921d1162a550614864f55729e36a9c08767f268a48501",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep007_shoulder_pan_m040.json",
+   "bytes": 445,
+   "sha256": "944f198592e937215a85b45ab51d16ee1e3a2e12b6c15819d46dc6a5dcb44e3e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep008_shoulder_lift_m010.json",
+   "bytes": 441,
+   "sha256": "2c2f29acbc0ebc297d6dadcf4de8a44bbdbc0a3dfce8b2d18380d95b6530c25e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep008_shoulder_lift_m020.json",
+   "bytes": 442,
+   "sha256": "49c2fb8b6a58692fe0b2ac913c8eebf27f06a32804c8f0b89f9885906b1c7095",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep008_shoulder_lift_m030.json",
+   "bytes": 441,
+   "sha256": "2e1f358b09c947ad6615d58e024aa524cd7133a077707f343b0a6c4d102a9162",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep008_shoulder_lift_m040.json",
+   "bytes": 440,
+   "sha256": "e8fef93f1f05c2837b2d2bad9f04e33c42a33d988af65d81b8dc8c7368e16215",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep008_shoulder_pan_m010.json",
+   "bytes": 441,
+   "sha256": "092fd8b13b783efc4af1ab0517b1adc8bd74986aa6b8897a69fe0848a1b689bd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep008_shoulder_pan_m020.json",
+   "bytes": 441,
+   "sha256": "0d94437e206a61bc1bc0fa25c09047c53ff8f06dd9db26b9321e88b3141f0021",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep008_shoulder_pan_m030.json",
+   "bytes": 441,
+   "sha256": "f9e5ebd901b24d26c71f6d3797f78e42f08994ff15f9d0f0e7a52e2eecc9cab8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep008_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "9b30254a3664cab19d04632357d17b3502be6a4f6bf3a92d823aaf04713e902c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep009_shoulder_lift_m010.json",
+   "bytes": 441,
+   "sha256": "b39d1007977fd23d63a286d2c067aba8767dddd045ada76fbc9db76d0b1a4e70",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep009_shoulder_lift_m020.json",
+   "bytes": 441,
+   "sha256": "49650bde1c588cc6cedc53315a29eb97d4a3325653fe35549b477e25011635f4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep009_shoulder_lift_m030.json",
+   "bytes": 442,
+   "sha256": "cf4aa91a1a6c85087c20a334c08b1213bbe4e0dfda283b77c3cc65d614e90781",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep009_shoulder_lift_m040.json",
+   "bytes": 441,
+   "sha256": "b971fddc3764d11a2591528e0c2e4f8a3b37e0e46cacbb88dd43f5f16c80e4ce",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep009_shoulder_pan_m010.json",
+   "bytes": 440,
+   "sha256": "fec26d8213b0c308a8255b824c234e346bec3b489540eca017c6dc4639fa5897",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep009_shoulder_pan_m020.json",
+   "bytes": 441,
+   "sha256": "b594e62390e1a33543d2635abafb6189f16d40e2a865d4ce9905a54e7f6a6b20",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep009_shoulder_pan_m030.json",
+   "bytes": 441,
+   "sha256": "3eb8e6fe328d52876300797e4e9f0a98552142027a361f9b3a3c337de706842d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep009_shoulder_pan_m040.json",
+   "bytes": 444,
+   "sha256": "c2a3809d593889d7d8364bad09d3f32e9bdbee760f215088437e335cc36d38f5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep011_shoulder_lift_m010.json",
+   "bytes": 444,
+   "sha256": "dbb187204324642c107bf550bc91e0424f697fec2debe937f21344f6a8b5e63c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep011_shoulder_lift_m020.json",
+   "bytes": 444,
+   "sha256": "317ee82c63531a0628b28f17119872563ee48cecea1e2f1403fe007c3f9a082c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep011_shoulder_lift_m030.json",
+   "bytes": 442,
+   "sha256": "333a05f98e2b99c6e70254181a202ae75192e127d69158c83cb18768c9bc5c61",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep011_shoulder_lift_m040.json",
+   "bytes": 446,
+   "sha256": "01c7ad1855e12fa1e123c421fada512b8f0d44f95f9c0173f0a06f03a9a26a0e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep011_shoulder_pan_m010.json",
+   "bytes": 443,
+   "sha256": "f0fc086ad0aff6bed740723b2c74062decd131f5607fdf636324feda16f70bac",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep011_shoulder_pan_m020.json",
+   "bytes": 442,
+   "sha256": "b31a3db7d9797bc0a3db49819e9ae4262e140a06fc6e8f3bbb933d6a0a947864",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep011_shoulder_pan_m030.json",
+   "bytes": 442,
+   "sha256": "6554fc8ca02f7e7172882bcd3dbcaef82a74ae37e79eb86b72fecf05c0d6cd33",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/ep011_shoulder_pan_m040.json",
+   "bytes": 440,
+   "sha256": "2cfb57842643983e55698dce552d5aea4b201eeae640fe2e3d7679b41dc8a646",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery/SD/recovery_summary.json",
+   "bytes": 42284,
+   "sha256": "61456c0ae62b97beff1813a9c08a651b329248e074bded55ab71d16d9e1d0b47",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
    "path": "artifacts/phase5_analysis/phase5.json",
-   "bytes": 13455,
-   "sha256": "0a612e9176540c243bf63d6da90a3fb109c72655fc3fc16028bba15dc3abddb4",
+   "bytes": 23006,
+   "sha256": "6323924a2e499b73487da7c237e36b59a7458b8e5b32b083761d53626eec82da",
    "purpose": "Phase 5/6 evaluation results"
   },
   {
@@ -21511,9 +24979,927 @@
    "purpose": "Phase 5/6 evaluation results"
   },
   {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep000_k8.json",
+   "bytes": 377,
+   "sha256": "d77e02d39d228ff748182398fdc6d4a0c86122a6cc9431b34f7633c011eeca7d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep002_k1.json",
+   "bytes": 378,
+   "sha256": "a9f58877f1eacef85bba8d8431be31921dc5774f947318aa5d7d2e549b8659f2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep002_k2.json",
+   "bytes": 377,
+   "sha256": "0b0db8acb64624202760081a550b170daca77e561c1c1219abcfe5cecbc30b51",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep002_k4.json",
+   "bytes": 378,
+   "sha256": "39d9630335b2c8ff39db04755b4886916a5474f53d5c8cdbe86bd9cc0ac96118",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep002_k8.json",
+   "bytes": 377,
+   "sha256": "6aee2c56d1c251945cfaf02ec372d7a7e53fbc6555f1d4272b6ec1a1bf972393",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep003_k1.json",
+   "bytes": 378,
+   "sha256": "8cbe14420c0aec17d87d0fec64686613d962d9ab6ff010f79f0044e183ec69e5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep003_k2.json",
+   "bytes": 377,
+   "sha256": "054a2247f56af3aaf4190c9f68120847463aa25cf69d307441e43152c5bf0f70",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep003_k4.json",
+   "bytes": 378,
+   "sha256": "7553630a0d30f8705b7b17cf68f3d2b2870db76c5a6c1f915ad7c2a7ac835244",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep003_k8.json",
+   "bytes": 377,
+   "sha256": "6bcf0eb367aa61a685975291e17272b9ef7cd41ebf8c1525f1d4bd1daa72788a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep004_k1.json",
+   "bytes": 378,
+   "sha256": "9b73fc8d14ef42e89e42b093c90b4a3181400e1116d7709333c66c87269bac39",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep004_k2.json",
+   "bytes": 378,
+   "sha256": "00c8360f16ab494324502786662af03b19c8950c7536fe6c6a515e11acdb0d6a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep004_k4.json",
+   "bytes": 377,
+   "sha256": "ed9a280b43048169360517ba4b263516b07054575a7276e77fd79e5b188a42fa",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep004_k8.json",
+   "bytes": 377,
+   "sha256": "74d1499100338014670d3e1fd10eea2e5566f7245dbe7d5ee0d0b47314d1ff19",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep005_k1.json",
+   "bytes": 378,
+   "sha256": "0c197fac7ec56772e3ae0879a3c5857b4ef255cafd6926ab6508ebf314a8a037",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep005_k2.json",
+   "bytes": 377,
+   "sha256": "6530ed754b3db5ee8db991b870d28035f55d2503ad71e6ead400c3d231ec0303",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep005_k4.json",
+   "bytes": 378,
+   "sha256": "8946e1eae26928c154506505976e729b61da38eb5f3fa706eed5d546fd0fc2a4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep005_k8.json",
+   "bytes": 376,
+   "sha256": "8381ceb9eb066671c9fb904182d5578e64aedb466dfe85816bebaf579bed8ae8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep006_k1.json",
+   "bytes": 378,
+   "sha256": "2f059af68f8454081ac98e9efbf86f5c70ab6574b74b721c33c3b4d1562ebfeb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep006_k2.json",
+   "bytes": 378,
+   "sha256": "8a13529dbefe1d065c9b25b0cc2b9e6a8c18c2992d2c22b5fbd794c3375f2362",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep006_k4.json",
+   "bytes": 377,
+   "sha256": "1a6789517e5bb63d1b2ff548d84277df4a713348770ee4f7c258feb51700f890",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep006_k8.json",
+   "bytes": 377,
+   "sha256": "7e793c3d8f53f11c5d7b1112443da389be2de0f00edf8849dfeed9c9885599e4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep007_k1.json",
+   "bytes": 378,
+   "sha256": "861795df5988119c3938d4b0962cb2f95cc5761cfc98bba39e2ab847f1403a8a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep007_k2.json",
+   "bytes": 376,
+   "sha256": "b2f0b23c89096dda6161d5cff47a32669b085b331ddaa8471ee8711a10904d05",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep007_k4.json",
+   "bytes": 378,
+   "sha256": "7b3381a55fc9995b01466753ecef66a0669e7c671171c1758d42dd2b788162d5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep007_k8.json",
+   "bytes": 376,
+   "sha256": "957dfc08a46a98046e02ebc7538eeefff3fa24360179c447f7e7ae6767d83535",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep008_k1.json",
+   "bytes": 378,
+   "sha256": "fd45c2fde220a2c8197d2497646d1bf39222083b62345ebc727f7445399f466a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep008_k2.json",
+   "bytes": 378,
+   "sha256": "963f6a5b7d22ec4b9f849c3206b86b35a36d967e704b6ce744556db318b40233",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep008_k4.json",
+   "bytes": 378,
+   "sha256": "c304a183e507e4cf0145ccfe4ff478536437f554d0a288fc21f624260ddd98cb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep008_k8.json",
+   "bytes": 377,
+   "sha256": "e2347106680c332619614f6b677cbd145f5bb8eaf48710f6a98caca32198326b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep009_k1.json",
+   "bytes": 378,
+   "sha256": "8b4e9a55ce3ea054cae404de6a767ed56fd7efd3482b1245791fd5ab5eba65b7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep009_k2.json",
+   "bytes": 378,
+   "sha256": "6b3715ad903546199617ab0d7537dfed14666a5b882829ec6c5ef5cdcd7ae7dd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep009_k4.json",
+   "bytes": 378,
+   "sha256": "56dd1ff1417297af051fcf6e6cd7ee8b8f57364174fe58fd10d722af1d4c5582",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep009_k8.json",
+   "bytes": 377,
+   "sha256": "68915d40c2075ba3509c10c6fe334112decfd08be341a226f1c4d75b89e06fa0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep011_k1.json",
+   "bytes": 379,
+   "sha256": "68f43a1bbfb30713b7108f9bc65f3ff29be3507032ddbed328b31c680f81e43d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep011_k2.json",
+   "bytes": 379,
+   "sha256": "29430aab82a8a6db3a95f116d74305d6596a4be4b28c2fec3ce5bb46125af648",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep011_k4.json",
+   "bytes": 379,
+   "sha256": "ad207be405763f4fe22da1a5d16cbf35d17f1b30c1c7757d6b7e29c32bb585a2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/arm_oracle/ep011_k8.json",
+   "bytes": 378,
+   "sha256": "a4e32eaa2b88e88acc3a74332ee3477ea7539c9b37e3b21ddfa0bd45c6626c4d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
    "path": "artifacts/phase6/oracle/gripper_oracle/ep000_k1.json",
    "bytes": 388,
    "sha256": "c675ff57df5d6961cf0e2f40195d06e563b226d0a193e12d8225e90e365b4799",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep000_k2.json",
+   "bytes": 387,
+   "sha256": "71e9325e1a892408426f13f02fe7c141ec78be00982ca72c31a2ae00988d73ab",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep000_k4.json",
+   "bytes": 387,
+   "sha256": "0ec424327de9e86c31973ea4134060742eedf68e007a2b29f542c5b31cb6bb6e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep000_k8.json",
+   "bytes": 387,
+   "sha256": "a947832407303cadb6b2c67aa42e84f90bab91e2f741401dda715699ed3976a8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep002_k1.json",
+   "bytes": 388,
+   "sha256": "bc24b529645799c2116514c2cd3248ea3f7d6f70712f0cc1056cdf0110220a6d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep002_k2.json",
+   "bytes": 381,
+   "sha256": "f1dff8e8d7c626ede11b0715a13bc49fba58a54295e4944a97878187814d1fef",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep002_k4.json",
+   "bytes": 382,
+   "sha256": "81fdaf44a1ea1f607fbf6529183a9488ccd493f20ca976b07b28d126d2ff01b3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep002_k8.json",
+   "bytes": 381,
+   "sha256": "a3bdede9cd00b04a8cb81701cc138facb909b009448f19353a497909170ce5b0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep003_k1.json",
+   "bytes": 388,
+   "sha256": "cdfabe566d68a4c1cd02661d457001e1b95cf73a58131cb7ed2a4e3afb0ebda4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep003_k2.json",
+   "bytes": 387,
+   "sha256": "bca034cba3741c9254524efde614c321b1dec2a1f725eabef34c9345f5e306f1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep003_k4.json",
+   "bytes": 387,
+   "sha256": "359a1ce15bfb5492fdd55b80c32cfdb3fbddae94ca7aa278eaf1358a72df796a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep003_k8.json",
+   "bytes": 387,
+   "sha256": "e062272e392f35766b55ff210e922a8b6559af77a2634e043ae4d7371c8ca77f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep004_k1.json",
+   "bytes": 382,
+   "sha256": "16c3254e8d8827810a62dd7e2eab3363b4d947b45950d51f2b396600ef233e6e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep004_k2.json",
+   "bytes": 387,
+   "sha256": "7c60c8b586025d200242d40de2f914d768fd72c62de63ec867fd277d5bb58652",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep004_k4.json",
+   "bytes": 382,
+   "sha256": "3a637859bf99bd45f40e3f0f3f95f99832497091c5b04cfd96f58e3cce24719f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep004_k8.json",
+   "bytes": 381,
+   "sha256": "e597c32f31fe6d0b7e5e7ac9c3d6ed95fc493eae7e686e11fe7174a97d759670",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep005_k1.json",
+   "bytes": 388,
+   "sha256": "2d6f3eabd504a20db936aaaf19a8dd715d0ebfea4d471536ad3bc4d79bcdf745",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep005_k2.json",
+   "bytes": 387,
+   "sha256": "e6e1a531ac0f767be8a221bf1770613ff6192994ac68874e6201c3cacc85106e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep005_k4.json",
+   "bytes": 382,
+   "sha256": "81f4d90e273fcf68d7e51bc094c23ec4dcb7277a8072efa7c014d696a3c98cdf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep005_k8.json",
+   "bytes": 381,
+   "sha256": "3553fa8342f2ff43e71ea9e1cd6e666a7d5f505d950c950901da6fd0aa7c8a31",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep006_k1.json",
+   "bytes": 382,
+   "sha256": "a2bcf6bd550f73c0e0117a0092e69e05807ac1f06d29caf0bfad1075e2648239",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep006_k2.json",
+   "bytes": 380,
+   "sha256": "b127fe838b72eeab34b634fab04d0ddcdd25bb0882bd5fb5af93f7d58ff7bb4f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep006_k4.json",
+   "bytes": 382,
+   "sha256": "123ef6b67ff874066b3916aacbc8f9bfc85d1b54e10dae1e9b1a56e9992b1e31",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep006_k8.json",
+   "bytes": 379,
+   "sha256": "437b02870f10e3faaf48e0fc3bba80f6d903cd5ad1985e70fb5ba2a43c747bbf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep007_k1.json",
+   "bytes": 388,
+   "sha256": "9617562e8b09206914e58cbd984a0c41eaba5773d1d670319b2a5e983a927d9a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep007_k2.json",
+   "bytes": 387,
+   "sha256": "44edf967559497e7c1af6b90fadfc03d908c2287d6a10b91e94e959c2b2eb522",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep007_k4.json",
+   "bytes": 387,
+   "sha256": "d8b8315a32420c0f8d14f6e14c0e815618c54aa4b4da57b0458203881673c31c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep007_k8.json",
+   "bytes": 387,
+   "sha256": "63b32a78a52734af4651573f294523e386829d5d324de04b94c0905e0f6c6128",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep008_k1.json",
+   "bytes": 382,
+   "sha256": "a1ef883b5804855f4518535fb64d2c4258ffbc041cd0d78f3976aa52c9daa30b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep008_k2.json",
+   "bytes": 387,
+   "sha256": "04d3cfa7b995af552d2a6333696221596dca9d7853e7aaf102f809fe897209a9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep008_k4.json",
+   "bytes": 387,
+   "sha256": "6fe7a6606eb6ccd3c09933b9ff159d1e802c21aadb6a1ce1a1eb2aae2440f11c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep008_k8.json",
+   "bytes": 381,
+   "sha256": "8c75b210e419880216978c6c3b002e1d69141f9c540b89e2fbbfcb6c6ed20456",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep009_k1.json",
+   "bytes": 382,
+   "sha256": "9c59a1f785f18fa496c9d630e6d5d1cb639cf87dba31cdcc6d71338103af47ed",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep009_k2.json",
+   "bytes": 387,
+   "sha256": "6e127bdf41b90eaf1899be34aca93cf515a8fe95ec0b388c4e6f84a90308c39a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep009_k4.json",
+   "bytes": 382,
+   "sha256": "6e427a8a1dc1086dc185cc2f492d46106822d921cc5c647e7ec7031b177d4284",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep009_k8.json",
+   "bytes": 381,
+   "sha256": "94ce79cbf42fe7005c1071dd1635dac6282c9f8e5422fd6d7d30bce17cb49c1a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep011_k1.json",
+   "bytes": 389,
+   "sha256": "bcd144001058f82a44ae2770018a8b679c59d8839fac095847c00a39ae57b934",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep011_k2.json",
+   "bytes": 388,
+   "sha256": "fb6a21ede75b16dfe114456f3e24133db0973bf6427aae85f89b33af485a86a8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep011_k4.json",
+   "bytes": 383,
+   "sha256": "9bbe7f9f19ed6c4483e6e45f2f9b714fcb9d9a4e2452b6b91f86d105bf25535e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase6/oracle/gripper_oracle/ep011_k8.json",
+   "bytes": 382,
+   "sha256": "8b32239af1ce38678b12d4c8c0ac88ab8860285e24c1f74ea98957e2d92d58cf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep000_shoulder_pan_m000.json",
+   "bytes": 421,
+   "sha256": "7d6c5377895698983ef32e93b331d6cac42791e80a58289345425d015a495a5b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "58a0d3dfb858d142f4129aeb212d6d90ec6460bbb9c955c1d64ebc5491605123",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep003_shoulder_pan_m000.json",
+   "bytes": 421,
+   "sha256": "8d373179dcfb82185a1cdb33c744f9767652727f57e8b670bbc2e72eac81d4ec",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep004_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "8059379f7179c04be5bc9da9363db4e30acd847337a5471024b3485c8253be12",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "226c52634560118c3bf199928bb5069ccd84824a555c1063f76f4373e0a22205",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep006_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "b097d4b7bfffe9a2703197ee90f3f88a39a3eb1af37cfba9b16b7659047e6ca8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep007_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "ebfa08ce693e73f014aff9489ad0fcdeea620b2bb734816976515006508c4a38",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep008_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "075b6d712dbd5155b307ba69452f4d8e4314bc274d23bf342ecf7bcbccbf890b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep009_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "a8f08f3a2b8d73e9e29579a584b01bcf7213b72dd9070deb78a01298971e290f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/ep011_shoulder_pan_m000.json",
+   "bytes": 424,
+   "sha256": "0f11bfb3873b192b92642262bf7d2f25323673e660af65e4024a20c06f892b9c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/A/recovery_summary.json",
+   "bytes": 5312,
+   "sha256": "8dc135941522b2e884e5974603e1f312cc029c4249e52c5f75ad531162ab5d64",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep000_shoulder_pan_m000.json",
+   "bytes": 407,
+   "sha256": "cca2143cf4b347a27dd281a2d4c246654554851979d62b1b6c54d13df2598e8e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep002_shoulder_pan_m000.json",
+   "bytes": 406,
+   "sha256": "0de79a33de766979c1c4118bec2a9d32a9def8acaabb8638f2903f35bba45b7e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep003_shoulder_pan_m000.json",
+   "bytes": 407,
+   "sha256": "3822a42b17502ec9a69a68315289f853da2122f1adb441e5e533500a2ef00784",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep004_shoulder_pan_m000.json",
+   "bytes": 405,
+   "sha256": "581cd6b186b6f3d9dcd54dad778068230f88ef14e2d36521860a269a14aa9bbc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep005_shoulder_pan_m000.json",
+   "bytes": 406,
+   "sha256": "cf0345c285a252023d1f139500ba5565124be1d65a5f6b1e05fa02096e74ecbd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep006_shoulder_pan_m000.json",
+   "bytes": 406,
+   "sha256": "b42a4fde5ff090fbd3c6ff930e2968ca3befe9e0c27f1649c7d1d3693a248562",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep007_shoulder_pan_m000.json",
+   "bytes": 407,
+   "sha256": "97ac6638042e805b5be41418b5ffe52b6fa8626bfb1b01c83c7df7f6fd68d9b0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep008_shoulder_pan_m000.json",
+   "bytes": 405,
+   "sha256": "2e271f7c2cd4343b36ea13a2a5c009cb660e5c0beb1a83283cc9c9545782abfe",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep009_shoulder_pan_m000.json",
+   "bytes": 404,
+   "sha256": "bdfe9a7c35a3acb34ce34ae2f470a110eb1f7c17e2e8809bc4666684ca84be98",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/ep011_shoulder_pan_m000.json",
+   "bytes": 407,
+   "sha256": "cb3e480528ee7b3e1317b08c153ad9277660d569a853bc49ae5d8dbcd02cd502",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/IO/recovery_summary.json",
+   "bytes": 5131,
+   "sha256": "342eaf1d124e71c759dda5bc854d3aeea8e1efe9cf8d581593bb7fdd9417e0f6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep000_shoulder_pan_m000.json",
+   "bytes": 411,
+   "sha256": "b4cc7ea7a115e8e3ab814687dedf953938fc62fce227bfed39acfb11fcaa3e65",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep002_shoulder_pan_m000.json",
+   "bytes": 412,
+   "sha256": "9360ff28b92d25f274d451f52cad06fdbbf7016b59542df28025807eb59bf8f9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep003_shoulder_pan_m000.json",
+   "bytes": 410,
+   "sha256": "4e67eb6165014bb5c35c71abb48986a74a3388b8489edf61bb0768b222829a33",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep004_shoulder_pan_m000.json",
+   "bytes": 412,
+   "sha256": "f58704dc0e483187594fa3c302f30f5ab896f237a4a34f6d67c5dbe44a842572",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep005_shoulder_pan_m000.json",
+   "bytes": 410,
+   "sha256": "055d82f7ff16b8879ab33dc91899cf8a08912ad30a7db7fefe119334e28bf0bb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep006_shoulder_pan_m000.json",
+   "bytes": 412,
+   "sha256": "5e49ab3563844f814a06c400b3a0dc7efc78e23324a02950a58680e1d4ed11df",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep007_shoulder_pan_m000.json",
+   "bytes": 411,
+   "sha256": "ae407f3545bde3f365f0ca51db1934ddd0aaa54ab531ccd993dfcdf3c6ddefb0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep008_shoulder_pan_m000.json",
+   "bytes": 411,
+   "sha256": "1f7f45c37fef8a1f75f6933c92130dae28e04b5a40eaff48a55828a4dee4a198",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep009_shoulder_pan_m000.json",
+   "bytes": 411,
+   "sha256": "30b96bf51fc88b38fd5107e145709d48bf7524290f93a6989597852d8a06042f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/ep011_shoulder_pan_m000.json",
+   "bytes": 412,
+   "sha256": "145105d82dbd9b717a9a5c3785c4dfa17bb38fb06dd9ef9bf566eb9ac1dfadaa",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/recovery_prefix/S/recovery_summary.json",
+   "bytes": 5190,
+   "sha256": "4fb1f93e8182a3df114d870bd4d6d551e558fd89f2dc3dbd5a2405d60a4a7986",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep000_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "5d61cefc480480a4c70fa31c0517082d30acd2007b7e5300ec3dfa8ecb547f13",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "be25fc48a844812b4d1dafe2615cf30db29ecf0bec983a60abb12d89fa080feb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep003_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "66a82b867204af1d51bc216a1a2386c53d1570dfcedc67c5a2017ceb9c87c10f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep004_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "0b5467f374e81ce51ec4004c96fae325918fd552bb2d5c266c80cbb92852f77d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "ddeb7dce4ac8238b738d72703192e1ec6a1b0765a57b43ee275cc0729f0dc278",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep006_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "32bd4380eeed6314793dbe547ea7f4ca2aa8e256f15c5b014ca5540fd14a141c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep007_shoulder_pan_m000.json",
+   "bytes": 426,
+   "sha256": "3bdb58b2a28410b97c8bb0276ccfba5dda63124c70e7377a0e2b5bbf48cd1a6c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep008_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "b11f1a1228c7c9fc8fd66bd89adf9a9e91c8bfa52edd4c5712478a42279b561f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep009_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "8d7facb86f9c1fc79a392b0176417cdbb84566c703a2bc333204abc2d44931a1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/ep011_shoulder_pan_m000.json",
+   "bytes": 424,
+   "sha256": "b3c9b01be023b83a505ace58d8907a17e615125a0327ea03c7c8f49b27f6cb2f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_1/recovery_summary.json",
+   "bytes": 5318,
+   "sha256": "fc1e3d418a52b57c4161e779f0092486463ddf4234e604d480c20cec079c52e7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep000_shoulder_pan_m000.json",
+   "bytes": 426,
+   "sha256": "45d2b5f5f0125917ae338e07e9c4941d31b60550f8202283c4a3c534f70ae4b3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "8a76176f139f3b5b34cf634b01ba6fe999dc0ce0c2e08fdf531cd7532190dd70",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep003_shoulder_pan_m000.json",
+   "bytes": 421,
+   "sha256": "6c480fbb91b8950861735c3d32cfcb301220af6bef647780420e9b98ac3f60fd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep004_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "01894e84ae484c8ad4e6d4511fb097ea4b985ae53212fc58dd4c5f4f6bcaafe1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "60bfc8806d262f86b2c2b45e0d68495eaf0492118a722787df3509186757b09a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep006_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "993aee14cc8c551402fe49747a3462c4904979fa2f1eb1c99c4045608b331faa",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep007_shoulder_pan_m000.json",
+   "bytes": 426,
+   "sha256": "4ce343f975fca36b4ded01abfc52f2f9cc359d26a536db8f2131dbd020dab53d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep008_shoulder_pan_m000.json",
+   "bytes": 427,
+   "sha256": "c0e606fa279dc9c002141ec992b4476a3314bf7963164badc6f85c845136dd98",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep009_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "2d573b39f73d21cad1e489e9908c0b4e3e67c11c73b5e37d050921810a9e05bb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/ep011_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "4f7a144d16b7386171350fe3b6c28fa66b11053ffe361be96e4e55f51af52aec",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_2/recovery_summary.json",
+   "bytes": 5323,
+   "sha256": "d74079b6c13caaa748c2733bf2658ae31163df761abf7cdbe9d8d780d5e6c7dd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep000_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "4999633c4d43ead98f2eaf7511d62c6c47978e00cfcc16845993bd2052deeda2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "032a98a6642ebec2f0786c37575565cb743c7e85aeb25d0bf556eba2a5fbdaf5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep003_shoulder_pan_m000.json",
+   "bytes": 420,
+   "sha256": "6194c6761fa23f29cf0c6e08ef702c23eb478002c7176a45737f758e0cdd89bf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep004_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "528066dca883f9d29f52cf01aa5f77aa8f2cf08f9c5163b8901475b35b91bce7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "e0aa66eaa3fa4802ce846571d82dca917f5982a4fc78ef42c46aca504eebcbc3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep006_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "82760a5d755891f3bc715d869ba3a12ffb97a318b0b05a5504a3d821c6fb8c56",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep007_shoulder_pan_m000.json",
+   "bytes": 425,
+   "sha256": "46075f350b2929eae0405e22d60cdccb80cbea9873e07295beb03d2292343068",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep008_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "409cfd18c966bb4de547590247c4e680d811d49e89774db990f588fc0f305a2b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep009_shoulder_pan_m000.json",
+   "bytes": 421,
+   "sha256": "50fe9282cca849b5ad09ba9b21fff4f70d3a39838ea3cc9610236abd68f127d5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/ep011_shoulder_pan_m000.json",
+   "bytes": 424,
+   "sha256": "8ea41b2744a1f80428e2b917e04615a26ac7d3ac43d53f463c26bdc61c60beb7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_3/recovery_summary.json",
+   "bytes": 5312,
+   "sha256": "9d4b05f939682fa00a7349f37d72c24e3d432110dc6c0a561b374346ebf2f2bb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep000_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "95c3d3b8a8dec545858f078feb279a729189d8c700c79fee53e98ee5850e2ab7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep002_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "c4b8991da27c32c2b424c7622994e269c268ebebcf1e15f388d70b1b482aae84",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep003_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "4774768c8860a5e18ce0e5075540659d332d5142543427d4c09496cd2df538fd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep004_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "5eed421dc5b4c8d5355a1e48748aa0ea7fa85e3c9047d81bf30ed7a8f52d8bbe",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep005_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "9ed628467c2d1e8f008993480f77ecfbd3079b3ee53f5e6ff0d78c46ceec5239",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep006_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "a96e99ee64c2ae643e0cd508b8070af54c2bb19f81961b65dc83adf484333b80",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep007_shoulder_pan_m000.json",
+   "bytes": 422,
+   "sha256": "e7fc407f3512e771245386d39d4bf93c39b0e3dfbf2b27773d15130db2f89322",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep008_shoulder_pan_m000.json",
+   "bytes": 423,
+   "sha256": "7526058cdc061b7ece926f2bf7e1698cd0ea888138f920198883533ed9c99e38",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep009_shoulder_pan_m000.json",
+   "bytes": 421,
+   "sha256": "dd07ce70dfc4361e0ac19cb29c99ce9aa2ce4f1394628d3b55eb53bba63d955a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/ep011_shoulder_pan_m000.json",
+   "bytes": 424,
+   "sha256": "9393c6d9b38802f93dc6cc44f6a486520d400d7f926c40a7d2b1c80894d588e8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/phase7/prefix_5/recovery_summary.json",
+   "bytes": 5314,
+   "sha256": "3fd4fd92617fbfc9040391a116eb60a7aba9bbd236b641fbf650331540b41988",
    "purpose": "Phase 5/6 evaluation results"
   },
   {
@@ -22353,12 +26739,12 @@
    "bytes": 295750286
   },
   "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model": {
-   "files": 35,
-   "bytes": 59718471
+   "files": 100,
+   "bytes": 95676144
   },
   "Phase 5/6 evaluation results": {
-   "files": 574,
-   "bytes": 612943
+   "files": 1240,
+   "bytes": 1281853
   },
   "closed-loop results and grasp sensitivity": {
    "files": 135,

@@ -280,3 +280,8 @@ K=8 is the best K in every model: pooled over the 7 CLEAN10-trained variants, K=
 K=16 is untested. Evaluated uniformly (not per-model selection): A, S, C40k and D80 on the 10 memorised seeds, plus D80 on the 10 validation seeds
 (50 rollouts). If K=16 ≥ K=8 across models, open-loop chunk execution (fewer replans from a misleading state) is the practical lever in
 this regime.
+
+### 8b RESULT (2026-09-19 ~04:10 UTC): K=16
+A 9/10 (ep7 fails), S 10/10, C40k 9/10 (ep7), D80 memorised 8/10, D80 validation 8/10 (49, 89 fail). This is a plateau with K=8.
+Memorised K≥8 pooled over A/S/C40k/D80: 73/80. Held-out D80 at K≥8: 15/20.
+→ See `OVERNIGHT_SUMMARY.md`. STOPPED for the user's decision (80-demo held-out benchmark at fixed K=8, or a varied-start-pose experiment).
