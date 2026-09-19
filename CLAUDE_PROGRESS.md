@@ -333,3 +333,23 @@ Evaluation:
 - Current best-supported limitation: **weak visual conditioning.** With frozen, pooled ImageNet features at 160×120, the policy's
   motion is only weakly scene-specific, which fits the neighbour-directed misses. Changing the vision encoder (fine-tuning or a trainable
   CNN) is an architecture/parameter-count decision, so it is left for the user.
+
+## Phase 10 — stronger vision pathway (user approved "start"; PRE-REGISTERED 2026-09-19 08:55 UTC, before any result)
+Hypothesis: weak visual conditioning (frozen, pooled ImageNet features) limits scene-specific motion. Swapping the image changes
+predictions by only ~0.01–0.04 rad in every frozen variant.
+
+Changes, otherwise A's exact config (CLEAN10, cosine / x0 / hold, EMA 0.999, 20k steps, batch 8, seed 17):
+- **V1:** MobileNetV3-S weights fine-tuned (lr 1e-4; head lr 1e-3; BatchNorm running stats frozen). Pooled token.
+  Trainable 2,936,678 (+927,008, the encoder; the total parameter count is unchanged).
+- **V2:** the same, with spatial tokens (20). Trainable 2,940,326.
+
+The frozen path is verified unchanged (step-2000 MSE 0.003564 reproduced).
+
+Evaluation per model:
+- Offline gate plus conditioning ablation (the key check: does wrong-image MAE rise substantially?).
+- Normal HOME, 10 seeds × K ∈ {1,2,4,8} (A 28/40).
+- Unseen random starts (seed 777), K ∈ {4,8} (A 2/20).
+- Recovery benchmark (A 63/80).
+
+Prediction if the hypothesis holds: higher image reliance, more successes than A (ep0/ep7), better random-start and recovery results.
+If image reliance rises but success does not, visual conditioning is not the bottleneck either.

@@ -24,6 +24,8 @@ class TinyRDTConfig:
     # Training-only regulariser: probability of replacing the state token by a
     # learned null embedding (the parameter exists only when > 0).
     state_dropout: float = 0.0
+    # Phase 10: fine-tune the MobileNet weights (BatchNorm statistics stay frozen).
+    train_vision: bool = False
 
 
 class SinusoidalTimeEmbedding(nn.Module):
@@ -37,12 +39,12 @@ class SinusoidalTimeEmbedding(nn.Module):
 
 class FrozenMobileNet(nn.Module):
     """Small ImageNet MobileNetV3 encoder; only the projection trains."""
-    def __init__(self, pretrained: bool = True, spatial: bool = False):
-        super().__init__(); self.spatial = spatial
+    def __init__(self, pretrained: bool = True, spatial: bool = False, trainable: bool = False):
+        super().__init__(); self.spatial = spatial; self.trainable = trainable
         weights = MobileNet_V3_Small_Weights.DEFAULT if pretrained else None
         base = mobilenet_v3_small(weights=weights)
         self.features = base.features; self.pool = nn.AdaptiveAvgPool2d(1); self.output_dim = 576
-        self.features.requires_grad_(False); self.pool.requires_grad_(False)
+        self.features.requires_grad_(trainable); self.pool.requires_grad_(False)
         self.features.eval()
     def train(self, mode: bool = True):
         super().train(mode); self.features.eval(); return self
@@ -51,7 +53,7 @@ class FrozenMobileNet(nn.Module):
         x = rgb.float() / 255.0
         mean = x.new_tensor((0.485, .456, .406))[None, :, None, None]
         std = x.new_tensor((.229, .224, .225))[None, :, None, None]
-        with torch.no_grad():
+        with torch.set_grad_enabled(self.trainable and torch.is_grad_enabled()):
             x = self.features((x - mean) / std)
             return x.flatten(2).transpose(1, 2) if self.spatial else self.pool(x).flatten(1)
 
@@ -65,7 +67,7 @@ class TinyRDT(nn.Module):
     def __init__(self, config: TinyRDTConfig = TinyRDTConfig()):
         super().__init__(); self.config = config
         if config.vision_tokens not in ("pooled", "spatial"): raise ValueError(config.vision_tokens)
-        d = config.hidden_dim; self.vision = FrozenMobileNet(config.pretrained_vision, config.vision_tokens == "spatial")
+        d = config.hidden_dim; self.vision = FrozenMobileNet(config.pretrained_vision, config.vision_tokens == "spatial", config.train_vision)
         self.n_vision = 1 if config.vision_tokens == "pooled" else config.vision_grid[0] * config.vision_grid[1]; self.n_cond = self.n_vision + 2
         self.vision_proj = nn.Linear(self.vision.output_dim, d); self.state_proj = nn.Sequential(nn.Linear(config.state_dim, d), nn.SiLU(), nn.Linear(d, d))
         if config.state_dropout > 0: self.state_null = nn.Parameter(torch.zeros(d))

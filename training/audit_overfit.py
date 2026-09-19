@@ -46,7 +46,8 @@ def experiment(args):
         n_corrective=round(args.batch_size*args.corrective_fraction)
         if not 0<n_corrective<args.batch_size: raise ValueError("corrective fraction must leave clean and corrective samples in each batch")
     set_seed(args.seed)  # Encoder extraction does not consume training RNG.
-    config=TinyRDTConfig(pretrained_vision=False,vision_tokens=args.vision_tokens,state_dropout=args.state_dropout)
+    config=TinyRDTConfig(pretrained_vision=False,vision_tokens=args.vision_tokens,state_dropout=args.state_dropout,train_vision=args.train_vision)
+    if args.train_vision and (args.corrective or args.baseline): raise ValueError("train-vision supports CLEAN diffusion training only")
     if args.baseline:
         if args.baseline=="rgb": inputs=torch.cat((b["features"],b["state"]),1)
         elif args.baseline=="state": inputs=b["state"]
@@ -59,7 +60,13 @@ def experiment(args):
         model=TinyRDT(config).to(device)
         model.vision.load_state_dict(vision_model.vision.state_dict())
         d=ActionDiffusion(schedule=args.schedule,device=device)
-    optimizer=torch.optim.AdamW((p for p in model.parameters() if p.requires_grad),lr=args.learning_rate,weight_decay=1e-4)
+    if args.train_vision:
+        vision_params=list(model.vision.parameters()); ids_v={id(p) for p in vision_params}
+        groups=[{"params":[p for p in model.parameters() if p.requires_grad and id(p) not in ids_v],"lr":args.learning_rate},
+                {"params":[p for p in vision_params if p.requires_grad],"lr":args.vision_learning_rate}]
+        optimizer=torch.optim.AdamW(groups,weight_decay=1e-4)
+    else:
+        optimizer=torch.optim.AdamW((p for p in model.parameters() if p.requires_grad),lr=args.learning_rate,weight_decay=1e-4)
     # EMA consumes no RNG, so raw weights follow exactly the non-EMA trajectory.
     ema=copy.deepcopy(model).eval().requires_grad_(False) if args.ema_decay else None
     train_rng=torch.Generator(device=device).manual_seed(args.seed+100)
@@ -108,6 +115,7 @@ def experiment(args):
                 else:
                     ixc=torch.randint(len(cb["state"]),(n_corrective,),device=device,generator=train_rng)
                     batch={k:torch.cat((b[k][ix[:args.batch_size-n_corrective]],cb[k][ixc])) for k in keys}
+                if args.train_vision: batch["features"]=model.vision(b["rgb"][ix])  # live encoder, gradients flow
                 t=torch.randint(0,100,(args.batch_size,),device=device,generator=noise_rng)
                 noise=torch.randn(batch["actions"].shape,device=device,generator=noise_rng)
                 x,_=d.q_sample(batch["actions"],t,noise)
@@ -123,6 +131,8 @@ def experiment(args):
                         else: e.copy_(p)
             if step % args.eval_interval == 0 or step == args.steps-1:
                 model.eval()
+                if args.train_vision:  # cached features are stale once the encoder trains
+                    with torch.no_grad(): b["features"]=torch.cat([model.vision(b["rgb"][i:i+64]) for i in range(0,len(b["rgb"]),64)])
                 with torch.no_grad():
                     if args.baseline:
                         output=model(inputs).reshape(-1,16,6);teacher=None
@@ -151,7 +161,9 @@ def experiment(args):
                     ema_payload={k:v for k,v in payload.items() if k!="optimizer"};ema_payload["model"]=ema.state_dict()
                     ema_payload["ema_decay"]=args.ema_decay
                     with torch.no_grad():
-                        ema_row=metrics(stats.denormalize_action(sample(ema,d,args.prediction,b,seed=4100)),b["raw"],b["mask"])
+                        eb=b
+                        if args.train_vision: eb={**b,"features":torch.cat([ema.vision(b["rgb"][i:i+64]) for i in range(0,len(b["rgb"]),64)])}
+                        ema_row=metrics(stats.denormalize_action(sample(ema,d,args.prediction,eb,seed=4100)),b["raw"],b["mask"])
                     log.write(json.dumps({"step":step,"ema_sampled":ema_row})+"\n");log.flush();print(json.dumps({"step":step,"ema_sampled":ema_row}),flush=True)
                     torch.save(ema_payload,out/"ema_last.pt")
     save_json(out/"result.json",{**row,"best_sampled_mse":best,"device":str(device),"train_episode_ids":ids,
@@ -167,6 +179,8 @@ if __name__ == "__main__":
     p.add_argument("--batch-size",type=int,default=8);p.add_argument("--learning-rate",type=float,default=.001);p.add_argument("--device",default="cpu");p.add_argument("--eval-interval",type=int,default=1000);p.add_argument("--resume");p.add_argument("--init-checkpoint")
     p.add_argument("--train-all",action="store_true",help="train on every successful episode of --dataset (a training-only dataset such as varied_start10)")
     p.add_argument("--train-episodes",type=int,default=10,help="first N episodes of the seed-17 TRAINING split (validation/test never used)")
+    p.add_argument("--train-vision",action="store_true",help="fine-tune MobileNet weights (BN stats frozen)")
+    p.add_argument("--vision-learning-rate",type=float,default=1e-4)
     p.add_argument("--state-dropout",type=float,default=0.,help="training-only: P(state token -> learned null)")
     p.add_argument("--vision-tokens",choices=("pooled","spatial"),default="pooled")
     p.add_argument("--corrective",nargs="+",help="corrective dataset roots (data/collect_corrective.py)")
