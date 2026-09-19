@@ -152,6 +152,9 @@ class PickCubeExpertV2:
     @property
     def done(self) -> bool: return self.state in (State.SUCCESS, State.FAILED)
 
+    @property
+    def config(self) -> ExpertV2Config: return self.cfg
+
     def _transition(self, state):
         if state != self.state: self.state = state; self.steps_in_state = 0; self.transitions.append(state.value)
 
