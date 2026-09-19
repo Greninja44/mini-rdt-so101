@@ -1,5 +1,12 @@
 # Corrective-data report: does corrective state coverage make the same ~2M TinyRDT robust closed-loop?
 
+> ⚠️ **PHYSICS-V1 / INVALID COLLISION BENCHMARK.** A later audit (`TABLE_COLLISION_AUDIT.md`, 2026-09-19) found that the robot had
+> **no collision with the table**, and that every successful grasp was a sandwich grasp with one pad ~10 mm inside the table. All
+> **manipulation success rates, grasp-tolerance measurements and grasp-geometry conclusions in this document are invalid** as
+> physical results. Offline diffusion and sampler findings remain valid. It is kept unchanged as research history; frozen state is in
+> `docs/research/physics_v1_freeze.json` (git tag `physics-v1-invalid`). The physics-v2 revalidation is `PHYSICS_V2_REPORT.md`.
+
+
 **Answer: No.** Expert-corrective labels from states the policy actually visits (DAgger), and from controlled perturbations, did not improve
 closed-loop success or recovery on the 10 memorised scenes. The model stayed at 2,009,670 trainable parameters throughout.
 

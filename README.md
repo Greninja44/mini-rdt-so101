@@ -17,6 +17,12 @@ action prediction does not automatically transfer to closed-loop manipulation.**
 
 </div>
 
+> [!WARNING]
+> **Research preview: manipulation benchmarks are being revalidated.** A collision audit
+> ([`TABLE_COLLISION_AUDIT.md`](TABLE_COLLISION_AUDIT.md)) found that the original simulator had no robot-table collision, and that its
+> grasps went through the table. All manipulation success rates and rollout media below come from that invalid **physics-v1**
+> environment. A physically valid **physics-v2** environment (side grasp, table collision) is in progress.
+
 ---
 
 ## Overview

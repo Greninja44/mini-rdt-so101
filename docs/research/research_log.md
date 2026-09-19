@@ -1,5 +1,11 @@
 # CLAUDE_PROGRESS — MiniRDT-SO101 TinyRDT overfit gate
 
+> ⚠️ **ALL PHYSICS-V1 MANIPULATION RESULTS ARE INVALID** (see TABLE_COLLISION_AUDIT.md). Every closed-loop success rate,
+> grasp-tolerance and grasp-geometry conclusion recorded below, up to the audit entry, used an environment without robot-table
+> collision, where every success was a sandwich grasp through the table. The entries are left unchanged as history. The
+> physics-v2 section at the end supersedes them.
+
+
 Running log for the next agent. Newest entries at the bottom of each section.
 See `docs/research/handoff_audit.md` for the repository state at takeover.
 

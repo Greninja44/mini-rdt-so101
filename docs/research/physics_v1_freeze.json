@@ -1,0 +1,60 @@
+{
+ "label": "physics-v1-invalid",
+ "git_commit": "3f323f73fe7b2b7c4a299478cc3cbc6a91aa7889",
+ "reason": "TABLE_COLLISION_AUDIT.md: no robot-table collision; every success is a sandwich grasp with a pad ~10 mm inside the table",
+ "environment_sources_sha256": {
+  "simulation/env.py": "b15eb7ec246745d1b0f65f4ce2237ee482240179d0c99313e18d1c6aad6bcba7",
+  "simulation/scene.py": "981e55edc0803fe2b9af348cc396495deb1fe516177984da5ec1011e30a184d1",
+  "simulation/controllers.py": "d84ff70789cc06aeb394c04a56adbdb0fbd722a372151142e4a74487ecee2696",
+  "simulation/expert.py": "b8ff2071068d77ed5f1dd94b226a474f9ee621184ee03f349bffc15fc7517f8f",
+  "simulation/legacy_expert.py": "9f2be54ad183fe630b22bd865412775f94cd0008bf0861fea9f2bdfe8daa6291",
+  "simulation/assets/so101_new_calib.xml": "b5bf9d5f36efdc1a18772b31b3142ee6a339b2c8542a30dfd077344b25ed5592"
+ },
+ "dataset_pickcube_smoke100_rgb160": {
+  "files": 1007,
+  "aggregate_sha256": "1bd75ce1114d0132e72fdaad797f0406c92fb89d64cf6656ab761cf323a9def6"
+ },
+ "corrective_datasets": {
+  "files": 1920,
+  "aggregate_sha256": "c9603df05ee30b0098b92f1a59b254c27104dd611e1f878120620a526e3f2380"
+ },
+ "checkpoints_sha256": {
+  "A_tinyrdt_clean10_ema": "604d59aec7a31cb2d64e95ca24e09c6e8d3bf931cc48d3314d5f4e06af57489c",
+  "C40k_dagger": "3aae00e2ea3aacde9a9f5e8d3b8539f6c321286e682ac310879d5f465598f671",
+  "S_spatial": "f6e35c4c632c6c89961a2595b7d4605f0c4628a03174e53ced65936df7f4526d",
+  "D80": "12d027abae1fbef4afb65021e4e3388fda19df59793c222962fe9b6af908caba",
+  "VS60k": "520effdefcf6f7a745e24adb2a6420f70b454587c2244a4e1aab7564fed9c873",
+  "V1_finetuned_vision": "02ee45836adb1558304b3ececf7c08c19959926c0b11987cbaf14eaa63f1dbbf",
+  "V2_finetuned_vision_spatial": "cddcab3d5b39a73eeb3cd0947ef529433bc75fb6a683f1ba8019371455505e9b"
+ },
+ "old_manipulation_results_INVALID": {
+  "expert_benchmark": "100/100 (physics-v1)",
+  "clean10_expert_demos": "10/10 (all sandwich grasps)",
+  "tinyrdt_A_closed_loop": "28/40 (K=1 5, K=2 6, K=4 8, K=8 9), K=16 9/10",
+  "tinyrdt_A_recovery": "63/80",
+  "bc_image_state": "0/40",
+  "bc_privileged": "2/40",
+  "B_perturb": "18/40",
+  "C_dagger": "26/40",
+  "Bm": "23/40",
+  "C40k": "28/40",
+  "S_spatial": "29/40",
+  "SD_state_dropout": "27/40",
+  "IO_image_only": "18/40",
+  "D80_memorised": "22/40",
+  "D80_heldout": "20/40",
+  "VS60k_home": "24/40",
+  "oracle_arm_expert_gripper_policy": "40/40",
+  "oracle_gripper_expert": "19/40",
+  "grasp_tolerance_envelope": "\u00b10.03 rad / ~7 mm (measured on sandwich grasps)",
+  "phase10": "cancelled (V1 evaluated partially)"
+ },
+ "still_valid": [
+  "diffusion mathematics and oracle tests",
+  "terminal-SNR diagnosis",
+  "cosine + x0 offline result",
+  "offline overfit gate numbers",
+  "evaluation / collection tooling",
+  "bit-exact legacy-expert reconstruction (as a record of what generated v1 data)"
+ ]
+}
