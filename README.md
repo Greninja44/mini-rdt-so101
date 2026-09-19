@@ -1,6 +1,65 @@
-# MiniRDT-SO101 — Phase 1
+# MiniRDT-SO101
 
-This repository deliberately contains **no model or training implementation**. Phase 1 is a repeatable MuJoCo PickCube layer for validating observations, actions, expert demonstrations, and dataset integrity before any diffusion-policy work begins.
+A small RDT-inspired, vision-conditioned **Diffusion Transformer (TinyRDT, ~2M trainable parameters)** for the SO-101 arm. It is
+trained and evaluated closed-loop on a MuJoCo PickCube task. The project is staged deliberately: understand and fix closed-loop
+behaviour at small scale before scaling toward a ~40M MiniRDT.
+
+```
+RGB (frozen or fine-tuned MobileNetV3-Small) + joint state → TinyRDT (cosine DDPM, x0-prediction, H=16 action chunk)
+  → DDIM-10 sampling → receding-horizon execution (execute K of 16 actions, replan) → SO-101 in MuJoCo
+```
+
+## Status (2026-09-19)
+
+| stage | result |
+|---|---|
+| Simulator, expert, 100-demo dataset | done (Phase 1, below) |
+| Offline overfit gate on 10 demos | **passes**: all-window MAE 0.0067, worst joint 0.016 rad (fixed: terminal-SNR/ε-param, cosine+x0, hold padding, EMA) |
+| Closed-loop on the 10 memorised cubes | **not yet reliable**: 28/40 over K ∈ {1,2,4,8}; ~90% at K ≥ 8 |
+| Corrective data (DAgger / perturbation) | does not improve robustness (`CORRECTIVE_DATA_REPORT.md`) |
+| Failure mechanism | arm placement in the first ~5–9 steps. The 10 demo paths overlap from the shared home pose, and misses point toward a neighbouring cube. The gripper is fine: expert arm + policy gripper 40/40 (`PHASE6_REPORT.md`) |
+| Spatial tokens, state dropout, image-only, 80-demo density, varied start poses | none fixes it (`OVERNIGHT_SUMMARY.md`) |
+| Phase 10: fine-tuned vision encoder | running. V1 offline 2× more precise (worst joint 0.0085 rad) |
+
+The scaling phase (2M → 40M) has **not** started: closed-loop must be reliable first.
+
+## Reports (read in this order)
+1. `CLAUDE_HANDOFF_AUDIT.md`: repository state at takeover.
+2. `CLOSED_LOOP_DIAGNOSTIC_REPORT.md`: why offline accuracy did not transfer closed-loop, with grasp tolerance measurements.
+3. `CORRECTIVE_DATA_REPORT.md`: CLEAN vs PERTURB vs DAGGER ablation.
+4. `PHASE6_REPORT.md`: oracle split and the expert-prefix finding.
+5. `OVERNIGHT_SUMMARY.md`: all variants in one table, and the decisions pending.
+6. `CLAUDE_PROGRESS.md`: the full pre-registered experiment log, including corrections.
+
+Large artifacts (dataset, checkpoints, rollouts) are gitignored. `ARTIFACT_MANIFEST.json` lists every file with its sha256.
+
+## Code map
+- `simulation/`: MuJoCo scene, env, controllers, current expert. `legacy_expert.py` is the bit-exact expert that generated the dataset.
+- `data/`: dataset format and collection. `corrective.py` / `collect_corrective.py` produce counterfactual expert-label data;
+  `varied_start.py` / `collect_varied_start.py` produce varied-start data.
+- `models/tiny_rdt.py`: TinyRDT, with options for pooled or spatial vision tokens, state dropout, and frozen or trainable vision.
+- `training/`: `diffusion.py` (DDPM/DDIM, cosine schedule, x0/ε), `audit_overfit.py` (the controlled training runner), `policy.py`
+  (inference policies).
+- `evaluation/`: `closed_loop.py` (receding-horizon MuJoCo evaluator), `recovery.py` (perturbation recovery benchmark),
+  `oracle_ablation.py`, `grasp_sensitivity.py`, `closed_loop_analysis.py`, `phase5_analysis.py`, `annotate.py` (annotated GIFs),
+  `research_audit.py` / `gate_check.py` (offline gate).
+- `scripts/run_*.sh`: resumable experiment pipelines, one per phase.
+
+## Reproduce the core result
+```bash
+# train the gate-passing TinyRDT on the 10-demo subset
+.venv/bin/python -m training.audit_overfit --output artifacts/research_audit/cosine_x0_hold_ema --schedule cosine --prediction x0 \
+  --padding hold --steps 20000 --seed 17 --batch-size 8 --learning-rate 0.001 --device cuda --eval-interval 2000 --ema-decay 0.999
+# offline gate
+.venv/bin/python -m evaluation.research_audit --checkpoint artifacts/research_audit/cosine_x0_hold_ema/ema_last.pt --output /tmp/diag --device cuda
+.venv/bin/python -m evaluation.gate_check --diagnostics /tmp/diag/diagnostics.json --gate artifacts/research_audit/cosine_x0_hold_ema/gate_definition.json
+# closed-loop on the memorised cubes (software rendering is ~1 s/step)
+.venv/bin/python -m evaluation.closed_loop --checkpoint artifacts/research_audit/cosine_x0_hold_ema/ema_last.pt --k 1 2 4 8 --max-steps 150 --output artifacts/closed_loop_demo
+```
+
+---
+
+# Phase 1: simulator and dataset
 
 ## Quick start
 
@@ -81,6 +140,11 @@ The simple intermediate format is chosen over direct `LeRobotDataset` integratio
 - No local SO-101/LeRobot asset source was present. The downloaded official CAD-derived source above was selected rather than manually reconstructing geometry.
 - Current LeRobot source confirms STS3215 follower motor IDs 1–6 in the listed order, position control, body joints represented in degrees or calibrated ranges, and the gripper as `RANGE_0_100`. Its current kinematic processor also documents partial/soft orientation handling for the five-DOF SO-101.
 
-## Limitations and next step
+## Phase 1 limitations
 
-The camera is rendered for every stored demonstration. In this WSL sandbox, software EGL rendering is slow, so the separate 100-episode *control benchmark* deliberately disables rendering; it measures expert/contact robustness only and is not a data-quality claim. There is no language, neural network, diffusion policy, training or large-scale data collection. The next recommended phase is to visually inspect the approved smoke-test episodes and then, only with approval, begin the requested tiny-policy overfit experiment.
+The camera is rendered for every stored demonstration. Under WSL, EGL rendering is software (llvmpipe, about 0.75 s/frame), so the
+100-episode *control benchmark* disables rendering; it measures expert/contact robustness only.
+
+**Note:** the 100-episode dataset was generated by an earlier version of the expert (state-feedback DLS IK in every phase, approach
+target 0.10 m, joint margin 0.01), not the current `simulation/expert.py`. That expert is reconstructed bit-exactly in
+`simulation/legacy_expert.py`, and all corrective-data labels use it.
