@@ -81,7 +81,7 @@ def main():
             with failed.open("a") as f: f.write(json.dumps({"index": index, "seed": seed, "failure": ex.failure_category, "invalid_reason": info.get("invalid_reason"),
                                                             "expert_state": ex.state.value, "cube_xy": rows[index]["cube_xy"] if rows else None}) + "\n")
         shutil.rmtree(tmp, ignore_errors=True)
-        print(json.dumps({"index": index, "seed": seed, "success": ok, "steps": info["step"], "max_cube_table_mm": 1000 * info["max_cube_table_penetration"]}), flush=True)
+        print(json.dumps({"index": index, "seed": seed, "success": ok, "steps": info.get("step", 0), "max_cube_table_mm": 1000 * info.get("max_cube_table_penetration", 0.0)}), flush=True)
     (out / "collection_summary.json").write_text(json.dumps({"physics_version": "v2", "expert_version": EXPERT_V2_VERSION, "model_fingerprint": fp,
         "episodes": len(list((out / "episodes").glob("episode_*"))), "failed": len(failed.read_text().splitlines()) if failed.exists() else 0,
         "seed_base": a.seed_base, "positions": a.positions, "split": a.split, "workspace_margin_m": a.workspace_margin, "success_definition": SUCCESS_DEFINITION}, indent=1) + "\n")
