@@ -353,3 +353,13 @@ Evaluation per model:
 
 Prediction if the hypothesis holds: higher image reliance, more successes than A (ep0/ep7), better random-start and recovery results.
 If image reliance rises but success does not, visual conditioning is not the bottleneck either.
+
+## TABLE-COLLISION AUDIT (2026-09-19) — physics validity issue, see TABLE_COLLISION_AUDIT.md
+- The robot has NO collision with the table (every robot geom has contype/conaffinity 0; the pads collide with the cube only).
+  Penetration of up to ~100 mm during approach: expert and policy alike.
+- **Every success is a top-bottom sandwich grasp with one pad ~10 mm inside the table.** This covers 10/10 CLEAN10 demos, 28/28 TinyRDT
+  successes, and 10/10 current-expert grasps. The cube is pushed 3–6 mm into the table, and pad-cube normals are 100% vertical.
+- **All previous success rates require re-validation** as physical PickCube results. No physics, expert, criterion, dataset or policy
+  was changed. Recommended fix order: robot-table collision → valid side-pinch expert → stricter success criterion → regenerate the
+  data → re-run the benchmarks.
+- Phase 10 (fine-tuned vision), still running, is subject to the same caveat.
