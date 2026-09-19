@@ -229,3 +229,20 @@ If A's success is ≫ its normal K=4 result (8/10) and ≫ its 28/40 overall, th
 N=0 (normal): 8/10 (ep0, ep7 fail). N=1: 9/10 (ep7). N=2: 7/10 (ep0, ep7, ep8). N=3: 9/10 (ep7). N=5: 10/10. N=9: 10/10.
 Not monotone at n=10 (N=2 dip). ep7 (the most crowded scene) needs ≥5 correct early steps (0.25 s). This supports early scene
 identification as the failure origin, and the effect is concentrated in the first ~5 steps.
+
+### 7b RESULT (2026-09-19 00:02 UTC): state dropout p=0.3
+- Offline passes (0.0088 / 0.019 / 0.012). Image reliance ×5 (wrong-image MAE 0.13 vs A 0.024). Wrong-state MAE is still 0.17.
+- Closed-loop 27/40 (p=1.0 vs A); recovery 60/80; early closes 15/40. **Falsified as a fix.** ep0/ep7 still fail.
+- Mechanism refined:
+  - For the first 6 steps the 10 demo trajectories are within 0.000–0.008 rad of each other (shared HOME start). TinyRDT's own tracking error
+    there is 0.01–0.05 rad, 5–10× larger.
+  - The closed-loop state is nearest to a *neighbour's* demo at t=4–6 (ep7 → ep3/ep5), and the policy follows the neighbour (ep5/ep3/ep4 by t=15–20).
+  - The trajectories only separate by ≥0.04 rad at t≈8. The state input actively misleads during the shared start. Dropout that keeps state
+    at inference cannot remove this.
+
+## 7c — image-only TinyRDT (PRE-REGISTERED 2026-09-19 00:12 UTC, before any 7c result)
+- `--state-dropout 1.0`: the state token is ALWAYS the learned null, in training and at inference. The arm pose is available only through
+  the image. Parameters 2,009,862 (state_proj unused). Otherwise identical to A.
+- Prediction if state-based lock-on is the mechanism: ep0/ep7 improve and the per-seed pattern changes. Arm precision may degrade
+  (frozen pooled features).
+- Evaluated with the offline gate, normal (40), recovery (80) and an expert prefix (N=9).

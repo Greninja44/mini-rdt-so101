@@ -100,6 +100,7 @@ class TinyRDT(nn.Module):
         if vision_features.ndim == 2: vision_features = vision_features[:, None]
         if vision_features.shape[1] != self.n_vision: raise ValueError("vision feature tokens do not match config.vision_tokens")
         state_token = self.state_proj(state)
+        if self.config.state_dropout >= 1: state_drop = torch.ones(state.shape[0], dtype=torch.bool, device=state.device)  # image-only policy
         if state_drop is not None: state_token = torch.where(state_drop[:, None], self.state_null.expand_as(state_token), state_token)
         cond = torch.cat((self.vision_proj(vision_features), state_token[:, None], self.time_proj(timestep)[:, None]), dim=1)
         tokens = torch.cat((cond, self.action_proj(noisy_actions)), dim=1) + self.position[:, :self.n_cond + noisy_actions.shape[1]]
