@@ -42,8 +42,11 @@ def _physical(env, rec, grasped):
     rec["pad_contacts"].append(_pad_contacts(env))
 
 
-def rollout(env, seed, act, max_steps, recorded_first_rgb=None):
+def rollout(env, seed, act, max_steps, recorded_first_rgb=None, start_q=None):
     obs, info = env.reset(seed=seed)
+    if start_q is not None:
+        from data.varied_start import apply_start
+        obs, info = apply_start(env, start_q); recorded_first_rgb = None
     rec = {"rgb": [obs["rgb"]], "state": [_state(obs)], "cube": [], "ee": [], "grasp_center": [], "grasped": [], "pad_contacts": [],
            "executed": [], "chunks": [], "chunk_steps": []}
     _physical(env, rec, False)
@@ -97,6 +100,7 @@ def main():
     p.add_argument("--policy-seed", type=int, default=0)
     p.add_argument("--output", required=True)
     p.add_argument("--skip-replay", action="store_true")
+    p.add_argument("--start-seed", type=int, help="randomised start pose per episode (data/varied_start.py); the control becomes the legacy expert from that start")
     p.add_argument("--no-media", action="store_true")
     a = p.parse_args()
     torch.set_num_threads(2)
@@ -111,7 +115,29 @@ def main():
     for ep in ids:
         root = Path(a.dataset) / "episodes" / f"episode_{ep:06d}"
         meta = json.loads((root / "episode.json").read_text()); expert = np.load(root / "action.npy"); first_rgb = np.load(root / "rgb.npy")[0]
-        if not a.skip_replay:
+        start_q = None
+        if a.start_seed is not None:
+            from data.varied_start import start_for
+            start_q = start_for(env, a.start_seed, ep, 0)
+        if a.start_seed is not None and not a.skip_replay:
+            from simulation.expert import ExpertState
+            from simulation.legacy_expert import LegacyPickCubeExpert
+            from dataclasses import replace
+            from data.varied_start import apply_start
+            stem = out / f"ep{ep:03d}_expert_from_start"
+            if stem.with_suffix(".json").exists(): control = json.loads(stem.with_suffix(".json").read_text())
+            else:  # physics-only control: the data-generating expert from the same start
+                saved = env.config; env.config = replace(saved, render_observations=False)
+                env.reset(seed=meta["seed"]); apply_start(env, start_q)
+                e = LegacyPickCubeExpert(env); e.reset(); e._transition(ExpertState.MOVE_ABOVE_OBJECT); steps = 0
+                while not e.done and steps < a.max_steps:
+                    _, _, _, _, info = env.step(e.action()); e.observe(info); steps += 1
+                env.config = saved
+                control = {"episode": ep, "seed": meta["seed"], "mode": "expert_from_start", "success": e.state.value == "SUCCESS",
+                           "steps": steps, "failure": e.failure_category, "start_q": start_q.tolist()}
+                save_json(stem.with_suffix(".json"), control)
+            print(json.dumps(control), flush=True)
+        elif not a.skip_replay:
             # Control: exact open-loop replay of the recorded expert actions.
             stem = out / f"ep{ep:03d}_expert_replay"
             replay, rec = _run_one(stem, lambda: rollout(env, meta["seed"], lambda obs, step, rec: expert[step:step + 1] if step < len(expert) else expert[-1:], a.max_steps, first_rgb))
@@ -132,14 +158,14 @@ def main():
                 rec["chunks"].append(chunk); rec["chunk_steps"].append(step)
                 return chunk[:k]
             def run():
-                policy.reset(); return rollout(env, meta["seed"], act, a.max_steps, first_rgb)
+                policy.reset(); return rollout(env, meta["seed"], act, a.max_steps, first_rgb, start_q)
             result, rec = _run_one(stem, run)
             if rec is not None:
                 n = min(len(expert), len(rec["executed"]))
                 result.update({"episode": ep, "seed": meta["seed"], "mode": f"policy_k{k}", "k": k, "policy": a.policy, "expert_length": len(expert),
                                "replans": len(rec["chunks"]), "mean_inference_ms": 1000 * float(np.mean(latency)),
                                "executed_vs_expert_mae_first_n": np.abs(rec["executed"][:n] - expert[:n]).mean(0).tolist(),
-                               "cube_initial_xy": rec["cube"][0][:2].tolist()})
+                               "cube_initial_xy": rec["cube"][0][:2].tolist(), "start_q": None if start_q is None else start_q.tolist()})
                 np.savez_compressed(stem.with_suffix(".npz"), **{k2: v for k2, v in rec.items()}, expert_actions=expert)
                 if not a.no_media:
                     imageio.mimsave(stem.with_suffix(".gif"), [np.kron(f, np.ones((2, 2, 1), dtype=np.uint8)) for f in rec["rgb"]], duration=50, loop=0)

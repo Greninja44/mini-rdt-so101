@@ -17,7 +17,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from data.ml_dataset import make_episode_splits, compute_normalization
+from data.ml_dataset import episode_ids, make_episode_splits, compute_normalization
 from models.tiny_rdt import TinyRDT, TinyRDTConfig
 from training.diffusion import ActionDiffusion
 from training.trainer import masked_mse, set_seed
@@ -36,7 +36,7 @@ def experiment(args):
         torch.backends.cudnn.benchmark=False
     source,vision_model,_,_,_,_=load(args.encoder_checkpoint,device)
     vision_model.vision.spatial=args.vision_tokens=="spatial"  # same frozen weights; token layout only
-    splits=make_episode_splits(args.dataset,args.seed);ids=splits.train[:args.train_episodes]
+    splits=make_episode_splits(args.dataset,args.seed);ids=episode_ids(args.dataset) if args.train_all else splits.train[:args.train_episodes]
     stats=compute_normalization(args.dataset,ids)
     ds,b=make_bank(args.dataset,ids,stats,vision_model,device,args.padding)
     cb=None;corrective_episodes=[]
@@ -165,6 +165,7 @@ if __name__ == "__main__":
     p.add_argument("--baseline",choices=("rgb","state","privileged"));p.add_argument("--steps",type=int,default=5000);p.add_argument("--seed",type=int,default=17)
     p.add_argument("--padding",choices=("masked","hold"),default="masked")
     p.add_argument("--batch-size",type=int,default=8);p.add_argument("--learning-rate",type=float,default=.001);p.add_argument("--device",default="cpu");p.add_argument("--eval-interval",type=int,default=1000);p.add_argument("--resume");p.add_argument("--init-checkpoint")
+    p.add_argument("--train-all",action="store_true",help="train on every successful episode of --dataset (a training-only dataset such as varied_start10)")
     p.add_argument("--train-episodes",type=int,default=10,help="first N episodes of the seed-17 TRAINING split (validation/test never used)")
     p.add_argument("--state-dropout",type=float,default=0.,help="training-only: P(state token -> learned null)")
     p.add_argument("--vision-tokens",choices=("pooled","spatial"),default="pooled")

@@ -285,3 +285,21 @@ this regime.
 A 9/10 (ep7 fails), S 10/10, C40k 9/10 (ep7), D80 memorised 8/10, D80 validation 8/10 (49, 89 fail). This is a plateau with K=8.
 Memorised K≥8 pooled over A/S/C40k/D80: 73/80. Held-out D80 at K≥8: 15/20.
 → See `OVERNIGHT_SUMMARY.md`. STOPPED for the user's decision (80-demo held-out benchmark at fixed K=8, or a varied-start-pose experiment).
+
+## Phase 9 — varied start poses (user chose "start" on option B; PRE-REGISTERED 2026-09-19 05:30 UTC, before any result)
+Hypothesis: in CLEAN10 the identical HOME start makes the trajectory a deterministic function of the scene, so the robot state acts as a
+scene identifier (causal confusion). Near the shared start that identifier is wrong, and small errors put the arm on a neighbour's path.
+Decorrelating start state from scene should force image-based scene identification.
+
+Data VS10 (`data/collect_varied_start.py`):
+- CLEAN10 (the 10 originals, symlinked, unchanged) plus 4 demos per CLEAN10 seed from random start poses (home ± U(0.15) rad on
+  pan / lift / elbow / wrist_flex; start seed 9000).
+- Each is a complete legacy-expert rollout from its own start, starting in MOVE_ABOVE (true expert labels, no corrupted pairs).
+- A physics check gave 38/40 expert successes; failures are logged and discarded.
+
+Training: the same TinyRDT (2,009,670) and A's config; all VS10 episodes (normalisation from them); 20k steps (A's budget).
+
+Evaluation:
+- (i) Standard HOME start, 10 seeds × K ∈ {1,2,4,8}: compared with A's 28/40. Prediction: > A, with ep0/ep7 improved and K=1 improved.
+- (ii) Unseen random starts (start seed 777) at K ∈ {4,8} for VS and A, with the legacy expert from the same start as the control.
+  Prediction: VS ≫ A.
