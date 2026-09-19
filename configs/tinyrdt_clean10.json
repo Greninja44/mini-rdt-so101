@@ -1,0 +1,11 @@
+{
+  "description": "Validated TinyRDT recipe that passes the 10-demo offline overfit gate (docs/reports/01_closed_loop_diagnostics.md). Pass as CLI flags to training/audit_overfit.py.",
+  "dataset": "artifacts/pickcube_smoke100_rgb160",
+  "train_subset": "first 10 episodes of the seed-17 training split (CLEAN10 = [0,2,3,4,5,6,7,8,9,11])",
+  "model": {"hidden_dim": 192, "layers": 4, "heads": 6, "horizon": 16, "action_dim": 6, "state_dim": 6,
+            "vision": "MobileNetV3-Small ImageNet, frozen, global-average pooled", "trainable_parameters": 2009670},
+  "diffusion": {"timesteps": 100, "schedule": "cosine", "prediction": "x0", "padding": "hold", "sampler": "DDIM, 10 steps, eta=0"},
+  "optimizer": {"name": "AdamW", "learning_rate": 0.001, "weight_decay": 0.0001, "grad_clip": 1.0, "batch_size": 8, "steps": 20000, "ema_decay": 0.999},
+  "seed": 17,
+  "cli": "python -m training.audit_overfit --output artifacts/research_audit/cosine_x0_hold_ema --schedule cosine --prediction x0 --padding hold --steps 20000 --seed 17 --batch-size 8 --learning-rate 0.001 --device cuda --eval-interval 2000 --ema-decay 0.999"
+}

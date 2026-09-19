@@ -8,7 +8,7 @@ phase, by state-feedback DLS IK steps with:
 All other behavior (targets, 4 mm geometric close condition, transitions) is
 the current PickCubeExpert. Unlike the current approach, every phase here is
 recomputed from the ACTUAL arm configuration, so it is a valid corrective
-oracle for off-trajectory states in approach too. See CLAUDE_PROGRESS.md.
+oracle for off-trajectory states in approach too. See docs/research/research_log.md.
 """
 from __future__ import annotations
 from dataclasses import replace

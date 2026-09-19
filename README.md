@@ -1,88 +1,185 @@
+<div align="center">
+
 # MiniRDT-SO101
 
-A small RDT-inspired, vision-conditioned **Diffusion Transformer (TinyRDT, ~2M trainable parameters)** for the SO-101 arm. It is
-trained and evaluated closed-loop on a MuJoCo PickCube task. The project is staged deliberately: understand and fix closed-loop
-behaviour at small scale before scaling toward a ~40M MiniRDT.
+**A small vision-conditioned Diffusion Transformer policy for the SO-101 robot arm, and a careful study of why accurate offline
+action prediction does not automatically transfer to closed-loop manipulation.**
 
-```
-RGB (frozen or fine-tuned MobileNetV3-Small) + joint state → TinyRDT (cosine DDPM, x0-prediction, H=16 action chunk)
-  → DDIM-10 sampling → receding-horizon execution (execute K of 16 actions, replan) → SO-101 in MuJoCo
-```
+![python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)
+![pytorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
+![mujoco](https://img.shields.io/badge/MuJoCo-3.x-1f6feb)
+![params](https://img.shields.io/badge/TinyRDT-2.0M_params-6f42c1)
+![status](https://img.shields.io/badge/status-research_preview-orange)
 
-## Status (2026-09-19)
+<img src="docs/assets/rollout_success.gif" width="420" alt="TinyRDT picking up a cube in closed loop"/>
 
-| stage | result |
-|---|---|
-| Simulator, expert, 100-demo dataset | done (Phase 1, below) |
-| Offline overfit gate on 10 demos | **passes**: all-window MAE 0.0067, worst joint 0.016 rad (fixed: terminal-SNR/ε-param, cosine+x0, hold padding, EMA) |
-| Closed-loop on the 10 memorised cubes | **not yet reliable**: 28/40 over K ∈ {1,2,4,8}; ~90% at K ≥ 8 |
-| Corrective data (DAgger / perturbation) | does not improve robustness (`CORRECTIVE_DATA_REPORT.md`) |
-| Failure mechanism | arm placement in the first ~5–9 steps. The 10 demo paths overlap from the shared home pose, and misses point toward a neighbouring cube. The gripper is fine: expert arm + policy gripper 40/40 (`PHASE6_REPORT.md`) |
-| Spatial tokens, state dropout, image-only, 80-demo density, varied start poses | none fixes it (`OVERNIGHT_SUMMARY.md`) |
-| Phase 10: fine-tuned vision encoder | running. V1 offline 2× more precise (worst joint 0.0085 rad) |
+<em>TinyRDT (2.0M trainable parameters) controlling the simulated SO-101 closed loop from a 160×120 camera image and joint state.</em>
 
-The scaling phase (2M → 40M) has **not** started: closed-loop must be reliable first.
-
-## Reports (read in this order)
-1. `CLAUDE_HANDOFF_AUDIT.md`: repository state at takeover.
-2. `CLOSED_LOOP_DIAGNOSTIC_REPORT.md`: why offline accuracy did not transfer closed-loop, with grasp tolerance measurements.
-3. `CORRECTIVE_DATA_REPORT.md`: CLEAN vs PERTURB vs DAGGER ablation.
-4. `PHASE6_REPORT.md`: oracle split and the expert-prefix finding.
-5. `OVERNIGHT_SUMMARY.md`: all variants in one table, and the decisions pending.
-6. `CLAUDE_PROGRESS.md`: the full pre-registered experiment log, including corrections.
-
-Large artifacts (dataset, checkpoints, rollouts) are gitignored. `ARTIFACT_MANIFEST.json` lists every file with its sha256.
-
-## Code map
-- `simulation/`: MuJoCo scene, env, controllers, current expert. `legacy_expert.py` is the bit-exact expert that generated the dataset.
-- `data/`: dataset format and collection. `corrective.py` / `collect_corrective.py` produce counterfactual expert-label data;
-  `varied_start.py` / `collect_varied_start.py` produce varied-start data.
-- `models/tiny_rdt.py`: TinyRDT, with options for pooled or spatial vision tokens, state dropout, and frozen or trainable vision.
-- `training/`: `diffusion.py` (DDPM/DDIM, cosine schedule, x0/ε), `audit_overfit.py` (the controlled training runner), `policy.py`
-  (inference policies).
-- `evaluation/`: `closed_loop.py` (receding-horizon MuJoCo evaluator), `recovery.py` (perturbation recovery benchmark),
-  `oracle_ablation.py`, `grasp_sensitivity.py`, `closed_loop_analysis.py`, `phase5_analysis.py`, `annotate.py` (annotated GIFs),
-  `research_audit.py` / `gate_check.py` (offline gate).
-- `scripts/run_*.sh`: resumable experiment pipelines, one per phase.
-
-## Reproduce the core result
-```bash
-# train the gate-passing TinyRDT on the 10-demo subset
-.venv/bin/python -m training.audit_overfit --output artifacts/research_audit/cosine_x0_hold_ema --schedule cosine --prediction x0 \
-  --padding hold --steps 20000 --seed 17 --batch-size 8 --learning-rate 0.001 --device cuda --eval-interval 2000 --ema-decay 0.999
-# offline gate
-.venv/bin/python -m evaluation.research_audit --checkpoint artifacts/research_audit/cosine_x0_hold_ema/ema_last.pt --output /tmp/diag --device cuda
-.venv/bin/python -m evaluation.gate_check --diagnostics /tmp/diag/diagnostics.json --gate artifacts/research_audit/cosine_x0_hold_ema/gate_definition.json
-# closed-loop on the memorised cubes (software rendering is ~1 s/step)
-.venv/bin/python -m evaluation.closed_loop --checkpoint artifacts/research_audit/cosine_x0_hold_ema/ema_last.pt --k 1 2 4 8 --max-steps 150 --output artifacts/closed_loop_demo
-```
+</div>
 
 ---
 
-# Phase 1: simulator and dataset
+## Overview
+
+MiniRDT-SO101 is a scaled-down, RDT-inspired robot foundation-model pipeline, built stage by stage and validated at each step
+before scaling:
+
+<p align="center"><img src="docs/assets/pipeline.png" width="92%" alt="MiniRDT pipeline"/></p>
+
+- **Simulation:** SO-101 (official CAD-derived MJCF) in MuJoCo; a PickCube task with randomised cube positions; a deterministic
+  state-machine expert; a transparent, LeRobot-convertible episode format.
+- **Policy:** TinyRDT, a 4-layer Transformer (d=192, 6 heads) over visual, proprioceptive and diffusion-time tokens plus 16 noisy
+  action tokens. It predicts a 16-step (0.8 s) chunk of absolute joint targets.
+- **Diffusion:** cosine noise schedule, x0-prediction, hold-last-action padding, EMA weights, deterministic DDIM (10 steps).
+- **Control:** receding horizon: observe, predict 16 actions, execute K of them, re-observe.
+- **Evaluation:** deterministic closed-loop benchmarks with expert-replay controls, a perturbation recovery benchmark, oracle
+  ablations, and physical grasp-tolerance measurements.
+
+<p align="center"><img src="docs/assets/rollout_strip.png" width="100%" alt="Rollout keyframes"/></p>
+
+## Highlights
+
+| | |
+|---|---|
+| **Diffusion fix** | Found and fixed a terminal-SNR / ε-parameterisation failure. Sampled error on 10 memorised demos dropped **15×** (MAE 0.102 → 0.0067 rad); DDIM-5…100 and DDPM now agree (0.0045 vs 0.0046 rad). |
+| **Reconstructed expert** | Discovered that the dataset was produced by an earlier expert version, and reconstructed it **bit-exactly** (`simulation/legacy_expert.py`). This enables exact counterfactual expert labels from any simulator state. |
+| **Failure isolation** | Closed-loop failures are **early arm placement**, not the gripper or the sampler: the policy's gripper paired with the expert's arm succeeds 40/40, and 5–9 correct steps at the start make the unchanged policy succeed on every cube. |
+| **Negative results, reported** | Corrective data (DAgger / perturbations), spatial visual tokens, state dropout, image-only input, 80-demo density and varied start poses were each tested with pre-registered protocols. None makes the 2M policy fully reliable. |
+| **Practical lever** | Executing longer action chunks (K ≥ 8) is best in every model: ~91% on memorised cubes and 75% on held-out cubes (vs ~50% at K=1). |
+
+## Results
+
+<table>
+<tr>
+<td width="50%"><img src="docs/assets/diffusion_fix.png" alt="diffusion fix"/></td>
+<td width="50%"><img src="docs/assets/k_sweep.png" alt="success vs K"/></td>
+</tr>
+<tr>
+<td><img src="docs/assets/failure_isolation.png" alt="failure isolation"/></td>
+<td><img src="docs/assets/grasp_tolerance.png" alt="grasp tolerance"/></td>
+</tr>
+</table>
+
+Closed-loop PickCube on the 10 memorised cubes, all models ≈2.0M trainable parameters (successes out of 10 per K):
+
+| model | K=1 | K=2 | K=4 | K=8 | K=16 | recovery (80) |
+|---|---|---|---|---|---|---|
+| TinyRDT, 10 demos | 5 | 6 | 8 | 9 | 9 | 63 |
+| + DAgger corrective data | 7 | 5 | 7 | 9 | 9 | 51 |
+| + spatial visual tokens | 7 | 5 | 7 | **10** | **10** | 61 |
+| trained on 80 demos, **held-out** cubes | 3 | 5 | 5 | 7 | 8 | – |
+
+<details>
+<summary><b>Why does it fail?</b> An annotated failure: the policy follows a path offset toward a neighbouring cube.</summary>
+<p align="center"><img src="docs/assets/failure_annotated.gif" width="80%" alt="annotated failure"/></p>
+
+All demonstrations start from the same home pose, so the 10 memorised trajectories overlap for about 6 steps (within 0.008 rad),
+while the policy's tracking error there is 0.01–0.05 rad. Small early errors therefore land the arm nearer a *neighbouring* scene's
+path. Failing grasps are offset toward the nearest other cube (median cosine 0.92). The measured grasp envelope is only about 7 mm
+laterally. Details: [`docs/reports/03_failure_isolation.md`](docs/reports/03_failure_isolation.md).
+</details>
+
+## Installation
+
+```bash
+git clone https://github.com/Greninja44/mini-rdt-so101.git && cd mini-rdt-so101
+uv venv --python 3.12 && uv pip install --python .venv/bin/python -e '.[dev]'
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q
+```
+
+Headless rendering uses `MUJOCO_GL=egl`, selected automatically. On machines without GPU EGL (e.g. WSL) rendering falls back to
+software at about 0.75 s/frame, which dominates closed-loop evaluation time.
 
 ## Quick start
 
 ```bash
-cd /home/batman/mini-rdt-so101
-uv venv --python 3.12
-uv pip install --python .venv/bin/python -e '.[dev]'
-PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest
-.venv/bin/python -m simulation.demo --seed 123
-.venv/bin/python -m evaluation.expert_benchmark --episodes 100 --output artifacts/expert_benchmark.json
-.venv/bin/python -m data.collect --output dataset_phase1 --episodes 100 --seed 3000 --width 160 --height 120 --workers 4
-.venv/bin/python -m data.validate dataset_phase1
+# 1. Watch the expert (GUI if a display is available)
+.venv/bin/python -m simulation.demo --seed 3000 --gui
+
+# 2. Collect and validate demonstrations (120x160 RGB, 20 Hz)
+.venv/bin/python -m data.collect --output artifacts/pickcube_smoke100_rgb160 --episodes 100 --seed 3000 --width 160 --height 120 --workers 4
+.venv/bin/python -m data.validate artifacts/pickcube_smoke100_rgb160
+
+# 3. Train TinyRDT on the 10-demo subset (validated recipe: configs/tinyrdt_clean10.json)
+.venv/bin/python -m training.audit_overfit --output artifacts/tinyrdt_clean10 --schedule cosine --prediction x0 --padding hold \
+    --steps 20000 --seed 17 --batch-size 8 --learning-rate 0.001 --device cuda --eval-interval 2000 --ema-decay 0.999
+
+# 4. Offline gate (sampler comparison, timestep errors, conditioning ablations)
+.venv/bin/python -m evaluation.research_audit --checkpoint artifacts/tinyrdt_clean10/ema_last.pt --output artifacts/tinyrdt_clean10/diag --device cuda
+
+# 5. Closed-loop evaluation in MuJoCo (receding horizon; GIF + trajectory plot per rollout)
+.venv/bin/python -m evaluation.closed_loop --checkpoint artifacts/tinyrdt_clean10/ema_last.pt --k 8 --max-steps 150 --output artifacts/eval_k8
 ```
 
-`simulation.demo --seed 123 --gui` opens MuJoCo's passive viewer when a display is available and prints state transitions. `env.render()` always returns the fixed external RGB camera view. Under WSL/headless use `MUJOCO_GL=egl` (the simulation package selects it unless already set). To replay a benchmark/data seed, use that episode's recorded seed, for example `.venv/bin/python -m simulation.demo --seed 3023 --gui`.
+**Also available:**
+- `evaluation.recovery`: perturbation-recovery benchmark.
+- `evaluation.oracle_ablation`: arm / gripper oracle split.
+- `evaluation.grasp_sensitivity`: physical grasp tolerance.
+- `data.collect_corrective`: DAgger and perturbation data with counterfactual expert labels.
+- `evaluation.annotate`: annotated rollout GIFs.
+- `scripts/make_readme_assets.py`: regenerates every figure in this README.
 
-## Architecture
+## Repository layout
 
-`simulation/scene.py` assembles the table, cube, camera, fixed lighting and robot. `simulation/env.py` owns reset/step, state, camera and success logic. `simulation/controllers.py` contains the action conversion and DLS Cartesian-position IK. `simulation/expert.py` is the deterministic state machine. `data/` provides a transparent on-disk transition format and validator. `evaluation/` performs controlled regression benchmarks.
+```
+simulation/   MuJoCo scene, SO-101 env, IK controllers, experts (legacy_expert = dataset generator, bit-exact)
+data/         episode format, collection/validation, windowed ML dataset, corrective & varied-start data
+models/       TinyRDT (pooled/spatial vision tokens, state dropout, frozen/trainable encoder), BC baseline
+training/     diffusion process (DDPM/DDIM, cosine/linear, x0/ε), controlled training runner, inference policies
+evaluation/   closed-loop evaluator, recovery & oracle benchmarks, offline gate, analysis and plotting
+configs/      task config and the validated TinyRDT recipe
+scripts/      artifact manifest, README asset generation, experiments/ (resumable pipelines per phase)
+docs/         reports/ (findings), research/ (pre-registered log, handoff audit), diffusion.md, assets/
+tests/        diffusion oracle tests, env/dataset tests, bit-exact expert/counterfactual regression
+```
 
-## SO-101 source and conventions
+Datasets, checkpoints and rollouts are not versioned (`artifacts/`, about 800 MB). `docs/artifact_manifest.json` lists each file's
+size and sha256 for backup and verification.
 
-The model is vendored from [TheRobotStudio/SO-ARM100](https://github.com/TheRobotStudio/SO-ARM100/tree/main/Simulation/SO101), commit `eecbe3e0a9ebb23e25ad7b2759b03884c6660903` (Apache-2.0 license copied to `simulation/assets/SO_ARM100_LICENSE`). It is the CAD-derived **new calibration** MJCF and original STL assets, not hand-created approximate geometry. Its joint order and ranges are:
+## Documentation
+
+| report | question |
+|---|---|
+| [`00_summary`](docs/reports/00_summary.md) | all variants in one table, and decisions pending |
+| [`01_closed_loop_diagnostics`](docs/reports/01_closed_loop_diagnostics.md) | why offline accuracy did not transfer to closed loop |
+| [`02_corrective_data`](docs/reports/02_corrective_data.md) | does DAgger / perturbation data make the same 2M model robust? (no) |
+| [`03_failure_isolation`](docs/reports/03_failure_isolation.md) | oracle split, expert-prefix and mechanism |
+| [`research_log`](docs/research/research_log.md) | every experiment pre-registered before its result, including corrections |
+| [`diffusion.md`](docs/diffusion.md) | equations, schedule and parameterisation choices |
+
+## Roadmap
+
+- [x] SO-101 MuJoCo PickCube, expert, 100-demo dataset
+- [x] TinyRDT with a correct diffusion formulation; 10-demo offline overfit gate passes
+- [x] Closed-loop evaluation, recovery benchmark, failure isolation
+- [ ] Stronger visual conditioning (fine-tuned encoder), in progress
+- [ ] Reliable closed loop on memorised cubes, then an 80-demo held-out generalisation benchmark
+- [ ] Controlled capacity scaling: 2M → 5M → 10M → 20M → 40M (fixed data, seeds, recipe)
+- [ ] Rotations, sizes and shapes; multiple objects and tasks; language conditioning
+- [ ] External SO-100/101 datasets, sim-to-real on a physical SO-101
+
+## Acknowledgements
+
+- Robot model: [TheRobotStudio/SO-ARM100](https://github.com/TheRobotStudio/SO-ARM100) (Apache-2.0; licence in `simulation/assets/`).
+- Inspired by [RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://github.com/thu-ml/RoboticsDiffusionTransformer).
+- Built on [MuJoCo](https://mujoco.org), [PyTorch](https://pytorch.org) and torchvision's MobileNetV3.
+- Conventions follow [LeRobot](https://github.com/huggingface/lerobot).
+
+```bibtex
+@article{liu2024rdt,
+  title   = {RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation},
+  author  = {Liu, Songming and Wu, Lingxuan and Li, Bangguo and Tan, Hengkai and Chen, Huayu and Wang, Zhengyi and Xu, Ke and Su, Hang and Zhu, Jun},
+  journal = {arXiv preprint arXiv:2410.07864},
+  year    = {2024}
+}
+```
+
+<details>
+<summary><b>Simulator details (Phase 1)</b>: SO-101 conventions, API, expert, success criterion, dataset format</summary>
+
+### SO-101 source and conventions
+The model is vendored from [TheRobotStudio/SO-ARM100](https://github.com/TheRobotStudio/SO-ARM100/tree/main/Simulation/SO101), commit
+`eecbe3e0a9ebb23e25ad7b2759b03884c6660903`. It is the CAD-derived **new calibration** MJCF with the original STL assets. Joint order:
 
 | index | joint | MJCF radian range |
 |---:|---|---:|
@@ -93,58 +190,33 @@ The model is vendored from [TheRobotStudio/SO-ARM100](https://github.com/TheRobo
 | 4 | wrist_roll | [-2.743847, 2.841206] |
 | 5 | gripper hinge | [-0.174533, 1.745329] |
 
-The first six names/ordering match current LeRobot follower code: `shoulder_pan`, `shoulder_lift`, `elbow_flex`, `wrist_flex`, `wrist_roll`, `gripper`. LeRobot represents gripper opening as 0–100 (0 closed, 100 open); this environment maps that to 0–1 and explicitly converts it to the vendor MJCF hinge range. The model source notes that this mapping is not itself encoded in its MJCF.
+Names and ordering match LeRobot. The gripper is a normalised opening in [0, 1] (0 closed), converted to the MJCF hinge range.
+Coordinates are MuJoCo world frame in metres, +Z up, with the table top at Z=0.
 
-Coordinates are MuJoCo world coordinates in metres: right-handed, +Z up; table top is Z=0, the robot base rests at Z=0, cube free-joint pose is XYZ + WXYZ quaternion. `gripperframe` from the CAD MJCF is the end-effector reference site. The SO-101 arm has five arm DOF, therefore its IK controls Cartesian position only and does not claim full orientation control.
-
-## API
-
+### API
 ```python
 from simulation.env import SO101PickCubeEnv
 env = SO101PickCubeEnv()
-obs, info = env.reset(seed=123)
-obs, reward, terminated, truncated, info = env.step(action)
+obs, info = env.reset(seed=123)          # obs: rgb uint8[120,160,3], joint_pos float32[5], gripper float32[1]
+obs, reward, terminated, truncated, info = env.step(action)   # action: float32[6] absolute joint targets + opening
 ```
 
-Observation:
+### Expert and success
+The expert is a state machine: `HOME → MOVE_ABOVE_OBJECT → DESCEND → CLOSE_GRIPPER → LIFT → HOLD → SUCCESS`. It uses bounded
+damped-least-squares position IK.
 
-- `rgb`: `uint8[H,W,3]`, default `120×160×3`, fixed external camera.
-- `joint_pos`: `float32[5]`, five arm joint radians in the table order above.
-- `gripper`: `float32[1]`, normalized opening, 0 closed / 1 open.
+Success requires all of:
+- a two-pad physical pinch;
+- the cube lifted above 0.10 m;
+- both held for 5 control steps.
 
-Action is `float32[6]`: absolute targets `[five arm radians, gripper_open]`. Arm targets are clipped to the exact model limits; gripper is clipped to `[0,1]` and converted internally. `info` exposes requested/applied action, cube/EE pose, contact count, grasp status, and success. `reset(seed=...)` is deterministic; `reset(options={"cube_xy": [x,y]})` allows an in-workspace replay pose.
+Two convex fingertip pads, placed from the CAD fingertip transforms, provide contact. They never weld or teleport the cube.
 
-## Expert and success
+The 100-episode dataset was generated by an earlier expert version: state-feedback IK in every phase, approach target 0.10 m, joint
+margin 0.01. It is reconstructed bit-exactly in `simulation/legacy_expert.py`.
 
-The expert commands only the public six-value action vector. It uses bounded damped-least-squares position IK and transitions:
-
-`HOME → MOVE_ABOVE_OBJECT → DESCEND → CLOSE_GRIPPER → LIFT → HOLD → SUCCESS`.
-
-Every state has a timeout. Success requires a verified closed/proximate grasp, cube elevation above the configured 0.10 m threshold, and persistence for five control steps. It is not defined from end-effector pose alone.
-
-The IK command is clipped to exact actuator limits and kept 0.04 rad inside hard arm stops to absorb finite-stiffness servo settling. Failure categories are recorded as `HOME_TIMEOUT`, `APPROACH_TIMEOUT`, `DESCENT_TIMEOUT`, `GRASP_FAILED`, `LIFT_FAILED`, `OBJECT_DROPPED`, or `HOLD_TIMEOUT`.
-
-The CAD collision meshes stay visual because their non-convex fingertip contacts are unstable in this lightweight MuJoCo model. Two small convex collision pads, placed from the CAD fingertip transforms, provide the fixed and moving finger contacts. They are enabled only for a closing gripper command, use normal MuJoCo rigid-body contact, and never weld, teleport, or otherwise edit cube state. Success requires simultaneous contact with both pads plus a held physical lift. This is still a sim-to-real limitation requiring hardware calibration before transfer.
-
-## Dataset format
-
-The simple intermediate format is chosen over direct `LeRobotDataset` integration so Phase 1 has no unverified API/version dependency. It is intentionally direct to convert: each `episodes/episode_000000/` has equal-length `.npy` arrays (`rgb`, `joint_pos`, `gripper`, `action`, `cube_pose`, `end_effector_pose`, `timestamp`, `expert_state`, `success`) and `episode.json`. End-effector pose is XYZ plus row-major 3×3 rotation matrix. Metadata carries task/seed/outcome, control and simulation rates, camera configuration, action definition, units, and joint names/limits. This maps cleanly to LeRobot observation/action features plus task metadata in Phase 2.
-
-`.venv/bin/python -m data.validate DATASET` checks lengths, dimensions, finite values, action limits, timestamps, metadata and labels. `success[t]` labels the state reached *after* applying `action[t]`; the RGB/joint/gripper fields remain the pre-action `observation_t`.
-
-## Investigation record
-
-- Host: Ubuntu 26.04.1 LTS under WSL2; system Python 3.14.4; project targets available CPython 3.12.14 because the existing MuJoCo wheel/toolchain supports it.
-- MuJoCo 3.13.0, NumPy 2.5.3, SciPy 1.18.1 and imageio 2.37.4 were found in an existing local Python 3.12 environment. Gymnasium, LeRobot, Torch, h5py and pytest were absent from system Python at investigation time.
-- CUDA driver libraries are installed (`libcuda.so.1` through WSL), but this sandbox cannot query NVML (`GPU access blocked by the operating system`) and no `nvcc` toolkit binary is installed. That is a sandbox visibility finding, not a claim that the host lacks CUDA.
-- No local SO-101/LeRobot asset source was present. The downloaded official CAD-derived source above was selected rather than manually reconstructing geometry.
-- Current LeRobot source confirms STS3215 follower motor IDs 1–6 in the listed order, position control, body joints represented in degrees or calibrated ranges, and the gripper as `RANGE_0_100`. Its current kinematic processor also documents partial/soft orientation handling for the five-DOF SO-101.
-
-## Phase 1 limitations
-
-The camera is rendered for every stored demonstration. Under WSL, EGL rendering is software (llvmpipe, about 0.75 s/frame), so the
-100-episode *control benchmark* disables rendering; it measures expert/contact robustness only.
-
-**Note:** the 100-episode dataset was generated by an earlier version of the expert (state-feedback DLS IK in every phase, approach
-target 0.10 m, joint margin 0.01), not the current `simulation/expert.py`. That expert is reconstructed bit-exactly in
-`simulation/legacy_expert.py`, and all corrective-data labels use it.
+### Dataset format
+Each `episodes/episode_XXXXXX/` holds equal-length `.npy` arrays (`rgb`, `joint_pos`, `gripper`, `action`, `cube_pose`,
+`end_effector_pose`, `timestamp`, `expert_state`, `success`) and an `episode.json` with task, seed, rates, camera, action definition
+and joint limits. `observation_t → action_t` alignment is explicit. `python -m data.validate DATASET` checks integrity.
+</details>
