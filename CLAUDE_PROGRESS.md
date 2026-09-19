@@ -303,3 +303,23 @@ Evaluation:
 - (i) Standard HOME start, 10 seeds × K ∈ {1,2,4,8}: compared with A's 28/40. Prediction: > A, with ep0/ep7 improved and K=1 improved.
 - (ii) Unseen random starts (start seed 777) at K ∈ {4,8} for VS and A, with the legacy expert from the same start as the control.
   Prediction: VS ≫ A.
+
+### Phase 9 RESULT (2026-09-19 07:16 UTC): INCONCLUSIVE (underfit confound)
+- VS10: 48 episodes (38 new starts; 2 expert failures discarded), 2321 windows. 20k steps.
+- Offline 0.0151 / worst joint 0.0288 / start 0.0167. That is 2× worse than A and at the 0.03 rad grasp tolerance.
+- HOME start 14/40 (K 4/3/5/2) vs A 28/40. Unseen random starts (seed 777, K 4/8): VS 0/20, A 2/20; expert control 10/10.
+- The equal-step budget underfits 5× more data, so the start-pose hypothesis is NOT yet tested.
+
+### CORRECTION to earlier interpretation (applies to CLOSED_LOOP_DIAGNOSTIC_REPORT §10, PHASE6_REPORT, OVERNIGHT_SUMMARY)
+- The "state-dominant" label rested on wrong-state ablation MAE (~0.2) vs wrong-image (~0.02–0.05). Actions are ABSOLUTE joint targets
+  (≈ current state + a small delta), so a wrong state necessarily produces a large error. That ablation does not measure scene identification.
+- What remains valid: the wrong-image effect is small, so image changes move predictions only modestly. The expert-prefix result, the
+  oracle split, the shared-start trajectory overlap, and the neighbour-directed lateral errors are unaffected.
+- The corrected mechanism statement: early scene identification from the image is imprecise. During the shared start the trajectories
+  overlap, so the policy's early motion is only weakly scene-specific and drifts toward neighbours' paths. The "state identifies scene"
+  framing is not supported by the ablation.
+
+## 9b — VS trained to comparable precision (PRE-REGISTERED 07:20 UTC, before any 9b result)
+- The same VS10 data and config, with 60k steps (3×; D80 needed 40k for 8× data).
+- Proceed only if offline worst joint ≤ 0.02 rad. If not, report it and stop.
+- Evaluation identical to Phase 9: HOME start 10 seeds × K ∈ {1,2,4,8}, and unseen starts (seed 777) at K ∈ {4,8}.
