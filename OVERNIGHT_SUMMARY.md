@@ -73,3 +73,13 @@ My recommendation is B's last item (varied start poses) as the next single exper
 `scripts/run_closed_loop_diagnostics.sh`, `scripts/run_corrective_phase.sh`, `scripts/run_phase5_remaining.sh`, `scripts/run_phase6.sh`,
 `scripts/run_phase6c.sh`, `scripts/run_phase7a.sh`, `scripts/run_phase7b.sh`, `scripts/run_phase7c.sh`, `scripts/run_phase8.sh`,
 `scripts/run_phase8b.sh`. Then `.venv/bin/python -m evaluation.phase5_analysis`. Back up `artifacts/` (hashes in `ARTIFACT_MANIFEST.json`).
+
+## Update 2026-09-19 08:40 UTC — option B (varied start poses) done
+- VS10 data: CLEAN10 plus 38 legacy-expert demos from random start poses on the same 10 cubes.
+- At 20k steps the model underfit (worst joint 0.029): inconclusive.
+- At 60k steps (worst joint 0.0177): HOME start **24/40** (A 28/40); unseen random starts **3/20** (A 2/20; expert 10/10).
+- **Varied start poses do not fix it.**
+- The consistent signal across all variants is weak image influence: swapping the image changes predictions ~0.01–0.04 rad.
+- Next decision (yours): make the vision pathway stronger, i.e. fine-tune MobileNet or add a small trainable CNN encoder. This changes the
+  trainable parameter count and the "frozen encoder" design, so I did not start it.
+- Option A's key number already exists from Phase 8: D80 on held-out cubes, 15/20 at K ≥ 8.

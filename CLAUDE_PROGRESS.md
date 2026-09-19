@@ -323,3 +323,13 @@ Evaluation:
 - The same VS10 data and config, with 60k steps (3×; D80 needed 40k for 8× data).
 - Proceed only if offline worst joint ≤ 0.02 rad. If not, report it and stop.
 - Evaluation identical to Phase 9: HOME start 10 seeds × K ∈ {1,2,4,8}, and unseen starts (seed 777) at K ∈ {4,8}.
+
+### 9b RESULT (2026-09-19 08:36 UTC): varied start poses at comparable precision
+- VS60k offline: 0.0081 / worst joint 0.0177 / start 0.0115 (criterion ≤ 0.02 met).
+- HOME start **24/40** (K 5/7/4/8) vs A 28/40. Unseen random starts (seed 777): **3/20** vs A 2/20; expert control 10/10.
+- **Varied start poses (4 per seed) do not fix closed-loop reliability.** It also does not generalise to new starts on memorised cubes.
+- Across every variant except the forced image-only one, swapping the image changes predictions little (wrong-image MAE 0.02–0.05 vs
+  correct ~0.007). The start-decorrelation data did not raise image reliance (VS60k 0.020).
+- Current best-supported limitation: **weak visual conditioning.** With frozen, pooled ImageNet features at 160×120, the policy's
+  motion is only weakly scene-specific, which fits the neighbour-directed misses. Changing the vision encoder (fine-tuning or a trainable
+  CNN) is an architecture/parameter-count decision, so it is left for the user.

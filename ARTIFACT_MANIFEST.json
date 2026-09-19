@@ -18463,6 +18463,192 @@
    "purpose": "corrective-trained TinyRDTs (B, C, Bm, C40k) and Phase 6 spatial model"
   },
   {
+   "path": "artifacts/closed_loop_v3/A_start777/closed_loop_summary.json",
+   "bytes": 20782,
+   "sha256": "2a41833c5d6c8f96c7bfde042c6e5861f775ec91ace9b6017877d89176ee2db8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep000_expert_from_start.json",
+   "bytes": 245,
+   "sha256": "5b3afcec5de1eeab4a2b16543a89a211808bf63c0ad600d61aba8473b456b4b5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep000_k4.json",
+   "bytes": 718,
+   "sha256": "646d880f7373e2b8cd298c9a2639c8facd706ec84fa2a7a77ed7ab08dbdaefdf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep000_k8.json",
+   "bytes": 718,
+   "sha256": "3d8f84fb1f711cb03c53e5ffc2693bb657660375c068455364d6831253616322",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep002_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "a19f782d0d9ca98aba7c8a577f7e550a5e875eab704221beae823cddeb318692",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep002_k4.json",
+   "bytes": 723,
+   "sha256": "b0b2ef2e8e45bbbdfbab4bb860a72b7e4f70b723b49e163c7d4900d4686c0122",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep002_k8.json",
+   "bytes": 719,
+   "sha256": "420e927e3aed400454ee4590a018a8d2bf4ec1c3b65b056f8a7e6e99c0c0f071",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep003_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "44a6eeb1e8ee73c1b44548bfea132c92f3f1a229bf6e08dd0ff1926f067baa85",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep003_k4.json",
+   "bytes": 719,
+   "sha256": "97f4ade20ff45e5c35b7b4c52e9cef68479d2cad3be2817eed1c335517f2bbdc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep003_k8.json",
+   "bytes": 716,
+   "sha256": "d53dc95797c68768f07a89f41b10a56e69d98734b191b2bc7234275e700c830a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep004_expert_from_start.json",
+   "bytes": 246,
+   "sha256": "1d286a5596b8b772c08597d4b23328566aacc55a6df1b9ae5301023178442302",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep004_k4.json",
+   "bytes": 713,
+   "sha256": "b684fc4c9edda5b9e1b9f4d5f3eeaafefd80d580a46a8a0bb395d46156744623",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep004_k8.json",
+   "bytes": 714,
+   "sha256": "07ee6c5c15bf5dc67077ef68a637f6dd7fc6bc5c95d73a49221bdf6e466a6c6a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep005_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "d98f6a27c807a4349d6077a93feae4651d32dacf70b4df46b18e97b2816ec533",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep005_k4.json",
+   "bytes": 719,
+   "sha256": "db7d7ac8060799c9733785d83eb2f820f596f75cdda9a1d6785e0d733175bb94",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep005_k8.json",
+   "bytes": 718,
+   "sha256": "3a691f7727aba3db4b72d07270f6859bfc5830bddcb3c47103b75b9ddcff011d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep006_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "74afcf0e0a0a6715704bcb670ca95666ff85039ccee9781e7596d249700b3641",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep006_k4.json",
+   "bytes": 721,
+   "sha256": "83e4a757fbf2a62ef0eb90d3b2a75ab124ef0ace71fedd1ea01a4fd5e8e83f00",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep006_k8.json",
+   "bytes": 720,
+   "sha256": "4167284c9a78ea3b30ef8f0337c8f1927620b9d56e616154c612850fadb6d522",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep007_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "fec08050d378f159dca9577d27b91a6af99f7814e79f13cc4677a2223442401a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep007_k4.json",
+   "bytes": 720,
+   "sha256": "37842aa82d73c4635d57ed400f988b74e8b2e8ae944c6f4d7a6f5a5b4fd2fb6b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep007_k8.json",
+   "bytes": 720,
+   "sha256": "e468f093ecdc0e4f7835bf6f00911426c63d48de6a8bb80ef0246664591186c4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep008_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "ee5d30f1d50a003e2d8224a629a9cb754d69cb4e2c53c57a93c506c7b7de85cf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep008_k4.json",
+   "bytes": 718,
+   "sha256": "a8b9052516d6aed211399e3154aa462282e6202c1d14fcd9d62413af8cde7729",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep008_k8.json",
+   "bytes": 718,
+   "sha256": "f9f9dbebe17044cbb61fcacd22987e54a96703f8be8ab6f82c8923935f150210",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep009_expert_from_start.json",
+   "bytes": 246,
+   "sha256": "bc0ef078c2214fc3b53f96fc85c9e41db69fff923652f46f2d8e023832c332ec",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep009_k4.json",
+   "bytes": 716,
+   "sha256": "8a460ee86e5489469c63294ea0d1116e044c6179366ca3860299a4ad8a45de1e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep009_k8.json",
+   "bytes": 711,
+   "sha256": "bad78a983bb7de319d8f6c6c2ccead01bce2062094fe06122bb2b2477c35610b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep011_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "1ac3c8c372caa62cfda023644d1246aada4f91e354b91dfb781768ab129b204e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep011_k4.json",
+   "bytes": 718,
+   "sha256": "8a861a9266586432194271b0b941baffe62da46b0cb624ae38189208d757978b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/A_start777/ep011_k8.json",
+   "bytes": 721,
+   "sha256": "d62f9e4ca4077290f392789ca32cd358d8fea6ea29a9731b58e5c399c55540f7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
    "path": "artifacts/closed_loop_v3/B/closed_loop_summary.json",
    "bytes": 28535,
    "sha256": "6eaaf227f042da83d426bfd49c9e7cab86a21bb9df2105e94027f5a3412f42ad",
@@ -21064,6 +21250,870 @@
    "path": "artifacts/closed_loop_v3/SD/ep011_k8.json",
    "bytes": 587,
    "sha256": "4e2703d0149a4d582a382838c19b55ce13ce143d11ba74930b1e98bd6e6d91fe",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/closed_loop_summary.json",
+   "bytes": 29429,
+   "sha256": "ab25502d8fc77f7b90e71ff4c98328ed59511a3dd7afe101f6467e7860da7e33",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep000_k1.json",
+   "bytes": 605,
+   "sha256": "88b6fd8e711515dab71f26a6d985faa702f43f3a4421bdb3b782102c5c2b6c7e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep000_k2.json",
+   "bytes": 606,
+   "sha256": "38e2d3aba9288d706964de36a2a8bd5fec0489cdb1fb8e8e4247b41346a49479",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep000_k4.json",
+   "bytes": 602,
+   "sha256": "d25977196af45a450577ef9df86cc45e68d4336d3e70e8e351c7eee357809769",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep000_k8.json",
+   "bytes": 605,
+   "sha256": "6d8775c6b90d03e2eed8f435aa76104624d845ce0aee8ad2ed83e68ce85ea567",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep002_k1.json",
+   "bytes": 605,
+   "sha256": "94536e934297c506b9efebfaea545cf21b6c7d243be1f1e9a16f28b6bb884022",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep002_k2.json",
+   "bytes": 604,
+   "sha256": "85dc2a2200cf462a45041e4683fd177601e1528b0648101920de040c6826efef",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep002_k4.json",
+   "bytes": 607,
+   "sha256": "fa8d1ef2f285a386344a976609e056fa4cce86e458dd1781ec7c7a838c8967cd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep002_k8.json",
+   "bytes": 609,
+   "sha256": "50daef31fa71918256e72a1091c9129a021ed30a0fcacfd342ea3438300ffacf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep003_k1.json",
+   "bytes": 605,
+   "sha256": "837c1c9b3897eb98284e604d701b32728ecc7ca0598e39fabbcde077bc926cd4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep003_k2.json",
+   "bytes": 607,
+   "sha256": "f76ed7e4c5082b3adfe025dc82edad0d0b220c4184184a1e8d9a70ae1cf9ccdc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep003_k4.json",
+   "bytes": 606,
+   "sha256": "7e47b3d607a411eaf2602fe0a9ce5d6460e7a3e67442126ea5fa4a0cac3c431a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep003_k8.json",
+   "bytes": 603,
+   "sha256": "4cc934106c6d296cc80b8be7b73927089de7d28649b7b6e339ce8b7640288d6f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep004_k1.json",
+   "bytes": 605,
+   "sha256": "d594650b7ca6ca71afee1701b5efd9fb0a55afe34405d2e70f94dbce07a01242",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep004_k2.json",
+   "bytes": 609,
+   "sha256": "0bae90a9aef89fec8e36886a51b3c4b8ee9b274bda34cdbb522eb606727a0f14",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep004_k4.json",
+   "bytes": 604,
+   "sha256": "8eff88384b6e6866cb2aa85666b714b5bf4b8d7d1c6947709b223ea6d543318c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep004_k8.json",
+   "bytes": 607,
+   "sha256": "0a6fa824b7337ffbb70ca456b9bdd616d51a38882f5dfa2e9ca6b1ee3a1a3288",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep005_k1.json",
+   "bytes": 608,
+   "sha256": "3c6e4c9cb94e19e16ccb80deb92a9b5b60ff1021ea736c20fa9fbac220e446a8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep005_k2.json",
+   "bytes": 605,
+   "sha256": "c945fc6ff0d6dbc5a6b4e890ff7041026ee4fa7bb13080c3d5304a43fea86f26",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep005_k4.json",
+   "bytes": 605,
+   "sha256": "99fa5dc1a723d75ade0760bcda22251ccba59f49fae578da2346c487e2e16fd9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep005_k8.json",
+   "bytes": 608,
+   "sha256": "44a00fb2eb1aa468011cfbfc18dee78331b9a1a092360fe107f70fbcf9145b67",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep006_k1.json",
+   "bytes": 609,
+   "sha256": "1e629ad4382078389b3497c253fe6cc0081ec3a4174e9fb8c1bdaffbe7eee1e1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep006_k2.json",
+   "bytes": 607,
+   "sha256": "5bc8a070f47dbf89729c2246e26733424ee08698b776f56cc8b481ed4a36d090",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep006_k4.json",
+   "bytes": 607,
+   "sha256": "fea7731266c24418b66f104185b94da29473c47519b6d8ed6445c26f3ee4000e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep006_k8.json",
+   "bytes": 604,
+   "sha256": "80f16fee1d068201653a64e13d6e4843ce57c11a42ffb9eea83c5ae7327ba353",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep007_k1.json",
+   "bytes": 603,
+   "sha256": "304060e0124562a5ea6f9cbb5f876b4c6efa2fed60e5091aab4e002be1653cd1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep007_k2.json",
+   "bytes": 603,
+   "sha256": "fa8176a14f0ddb49f673fde876e4384ab93c3e6be5d946936463e8cde8124e15",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep007_k4.json",
+   "bytes": 605,
+   "sha256": "4407a9373baf78d3ab4b948a1cf58424e7220a17cf133c3e1c19893019431ad4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep007_k8.json",
+   "bytes": 607,
+   "sha256": "6c9a9a2799939684d80b62be04ca34d87fdb6031f11ec5853b6bc90bd8b7a0d8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep008_k1.json",
+   "bytes": 602,
+   "sha256": "1221bb745cce9612b0d7c53f3c3eb3b327de7ae3d7653f9479b4a42328a6f1b8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep008_k2.json",
+   "bytes": 603,
+   "sha256": "ce338572e571ca0fd7ed2808960bd2b1a91e5502f4d799582b737024fb6909f2",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep008_k4.json",
+   "bytes": 604,
+   "sha256": "ab2a9d0c8de65ef335a2a7b407c9fe989fd5a3dcffd65fad5811222319107899",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep008_k8.json",
+   "bytes": 604,
+   "sha256": "4f4012da122c24b765891f4e0883bcda29e5b6d39a9700cc18ef516ef8c31c77",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep009_k1.json",
+   "bytes": 604,
+   "sha256": "1f6a09a5127628bd8b12336ab497872c9baedee6b57d0b605d1ca8573ab62ed9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep009_k2.json",
+   "bytes": 604,
+   "sha256": "e1c8c11ac1202fa0c02fcfb855cc9292b2d86c661a8493de4ddaa5e0c61cb89d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep009_k4.json",
+   "bytes": 606,
+   "sha256": "23b1674dc13261a9726334df368e35f1335e4869ca8d877350a25937fd257e82",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep009_k8.json",
+   "bytes": 604,
+   "sha256": "aae0b62794121bc492889a4bf38ddd18823882ef986dd8fc051daecee08a09cc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep011_k1.json",
+   "bytes": 604,
+   "sha256": "ee7082a4a62760eb370531d309e6de8b8b696935b2cade9dd4a8f3543e3c9432",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep011_k2.json",
+   "bytes": 608,
+   "sha256": "1474a7c438866c1fe59462a0828b2611f4ae22157476468fe9ebd98d7b2b414e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep011_k4.json",
+   "bytes": 611,
+   "sha256": "3c33a989587e73633657a8edbe4239412bc25969aff97d258faad1dc2998b945",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS/ep011_k8.json",
+   "bytes": 606,
+   "sha256": "d26f208628a4edb11482e93de19c032007bd41ae2c653d4a7b29850af72aaede",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/closed_loop_summary.json",
+   "bytes": 29422,
+   "sha256": "945a8f923d57d70bf053fc5d31997a3b38cfb6a1c8b1f3eba7304bf3f49a4196",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep000_k1.json",
+   "bytes": 603,
+   "sha256": "2b99d9e822e5fb76b1981ea2f03a65c7b006e605fbc629289cb94c061b2950b9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep000_k2.json",
+   "bytes": 600,
+   "sha256": "e353ac76b0722fa96a4070a4f14a0adccebd9dff9b7d82630b807e82c681ad03",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep000_k4.json",
+   "bytes": 605,
+   "sha256": "7bd8024a547dc6df1ce3fa4485d038b9e962813ae9ad9ebf382f1cb0c4beefda",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep000_k8.json",
+   "bytes": 607,
+   "sha256": "7405038e5e2634d2317e16e7054749e1e4faf368996ce6ad0fbcbe9e4ff279b8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep002_k1.json",
+   "bytes": 605,
+   "sha256": "19a2aaba69c9bc47cc1b9ed2d75125d974aab079b3633b010cbbfa573ac66975",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep002_k2.json",
+   "bytes": 605,
+   "sha256": "618e66f2625287855b235478dff6e58a84e1635324df96d754d3388549734f83",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep002_k4.json",
+   "bytes": 609,
+   "sha256": "a0ddc50abe71ba0626fa146348660b32dd31998cc978532f84342d9a79d345a7",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep002_k8.json",
+   "bytes": 604,
+   "sha256": "341df1c72a2b3ce41e1300c6517d42cdbf6bf242fb2e7cca9ec95631ab8ba0d6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep003_k1.json",
+   "bytes": 606,
+   "sha256": "8db100b1ed2017df7be811fdd2251c8969be353c031475b95457240d00ac5b38",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep003_k2.json",
+   "bytes": 605,
+   "sha256": "91179fa60d4182e813bf759cfcbd46b281d16fff2fb494e6c2ca1a2f2e8cd9c4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep003_k4.json",
+   "bytes": 605,
+   "sha256": "7cbc328b8a1404c483a9c997cca343f62d8e043a21c4737206cc63eff3f22cb1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep003_k8.json",
+   "bytes": 603,
+   "sha256": "d58b389ca2b7796f79ab909262d8ca59e2f8214f56c245d987fce05cb874d613",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep004_k1.json",
+   "bytes": 604,
+   "sha256": "b248ff9226857229442c09c178b063085ff1a6165a030fab9c3e214f3d86c713",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep004_k2.json",
+   "bytes": 607,
+   "sha256": "5cee10e685639de4b134dae615e339e3b774b081dcf0f40d266931f157ad1f4d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep004_k4.json",
+   "bytes": 603,
+   "sha256": "687786002889e9d753f0e3ce1e1f9b3fb64e4e8c3f18e30170eace368da88b1b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep004_k8.json",
+   "bytes": 601,
+   "sha256": "de945ea9ed78b3f9caa02d59695f1c4ea57d33a3d1187217c12563d84d2ff913",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep005_k1.json",
+   "bytes": 609,
+   "sha256": "0f47802ce3f987f5ad813e7426e8f6b173f522843ad835d7b63e690ea8b869bd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep005_k2.json",
+   "bytes": 607,
+   "sha256": "7f685d6725315862ad0941672e6dde627b2bec3e325115daea2e3ddd03cb4569",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep005_k4.json",
+   "bytes": 606,
+   "sha256": "0d6c12eb862c446e69ccc55ce4c3d11f4e0f85359919a881913d7a8c61ecb18f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep005_k8.json",
+   "bytes": 606,
+   "sha256": "674271ba1e50faeacc971f2884de2d4cf3d2efb9579f94d2f27cbd61af643065",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep006_k1.json",
+   "bytes": 607,
+   "sha256": "25ec2e09f46d7917acf01021f080a442d0f0821903bf66858e6edfbccdfb6fb1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep006_k2.json",
+   "bytes": 608,
+   "sha256": "16f70c5282b6c1866c5934112b90db20376665eeeb0189bb0807d967582cf48a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep006_k4.json",
+   "bytes": 605,
+   "sha256": "3de18a68c093afc138ba70f3309073b389b95c20fd0bb05b7db44eec0f3131cd",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep006_k8.json",
+   "bytes": 607,
+   "sha256": "17a1c8c90faf5a32d9c4097d41e82287435785dceaad929c0151b4185901dd57",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep007_k1.json",
+   "bytes": 603,
+   "sha256": "f5833df52f8ca9a2e67ce8bc066d190f76a63875a6e747689caaed4f978641a1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep007_k2.json",
+   "bytes": 609,
+   "sha256": "67ef6388ceda494483f729ab0b6d3f0eab671ffe6ae58257831d01d12badd2b5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep007_k4.json",
+   "bytes": 609,
+   "sha256": "dfd6cc3953b9d52e888bf731175852f2c7dc208189eb0f83d5a18079d28d10dc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep007_k8.json",
+   "bytes": 602,
+   "sha256": "fcec765f02ff93ce15581bfa2c16f82f10cc33af20b5cd384caea11b0ee77784",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep008_k1.json",
+   "bytes": 602,
+   "sha256": "d05dbb94e9d4e4305218f346567111873dfe259d70ab3ff3a5e3ae8f0a2bc296",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep008_k2.json",
+   "bytes": 605,
+   "sha256": "a3fd05430d49a21cbc5aadbeba3e613d3c7292f4e43dea508a47ef7c07283d1e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep008_k4.json",
+   "bytes": 602,
+   "sha256": "64a180f594fdcd4b11d1d02c9a1901d839abefc87c63f080a34485dc332481d8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep008_k8.json",
+   "bytes": 604,
+   "sha256": "fec5209926d60494b39126fd84115426607a78a97a14ebfd0e0e4b0678860198",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep009_k1.json",
+   "bytes": 606,
+   "sha256": "005a1c5aed04a9e21aaa4c2c69b64dcf27076e2fae474367b0c70ece1daee183",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep009_k2.json",
+   "bytes": 607,
+   "sha256": "878f3b837e55b6895387737962da3ad2bce462d786035a01bb271733371d3478",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep009_k4.json",
+   "bytes": 604,
+   "sha256": "137b81648f350cdcf6a9c8104e883eccab03a1ff0193683df734732e7939a758",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep009_k8.json",
+   "bytes": 605,
+   "sha256": "48bf13fdad9e952ce055aae4001a4f9da9b950a17b4f057dc35caeba331a16cb",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep011_k1.json",
+   "bytes": 605,
+   "sha256": "4fac1e5752f7c839e37174513c12c1079ca9ed04d83e6654e58aaa57c9bddc09",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep011_k2.json",
+   "bytes": 609,
+   "sha256": "9df8265110f93f970e4537b36209bde00bed3e47a5f1734919a635b44fcf5ed0",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep011_k4.json",
+   "bytes": 606,
+   "sha256": "d3aed86cd87cc3b95ab7b643c2d0e923703d97ac1befcdf5c5d5245064dcf44b",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k/ep011_k8.json",
+   "bytes": 605,
+   "sha256": "6edcf91c79fb2b4d30019cf6a612f36e372aeffd51a54f069c2ead750c717ef4",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/closed_loop_summary.json",
+   "bytes": 20711,
+   "sha256": "db47f40abd1412c9882d156a26dc915b78dbb1eb38d4ac76dfc7fd205cfd839c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep000_expert_from_start.json",
+   "bytes": 245,
+   "sha256": "5b3afcec5de1eeab4a2b16543a89a211808bf63c0ad600d61aba8473b456b4b5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep000_k4.json",
+   "bytes": 711,
+   "sha256": "6876215562b28707d03490cdb6984743d548db910fb4c4828363973b344e2e29",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep000_k8.json",
+   "bytes": 716,
+   "sha256": "72e0ae0569a84ab6c76f4de83dbb32fc59971f920f80a7395d3312b50b2ba567",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep002_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "a19f782d0d9ca98aba7c8a577f7e550a5e875eab704221beae823cddeb318692",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep002_k4.json",
+   "bytes": 716,
+   "sha256": "9689d409ca31447f85980d7f24794de42261d3d81bc235e05f92de0527757c24",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep002_k8.json",
+   "bytes": 720,
+   "sha256": "90bfde78b9c21a832fd0b869081155f87e759a4363c6a8ab2d04b27a0514f4ea",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep003_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "44a6eeb1e8ee73c1b44548bfea132c92f3f1a229bf6e08dd0ff1926f067baa85",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep003_k4.json",
+   "bytes": 714,
+   "sha256": "702d0a72a48b5f1cfd237a17891857e4755572a7882651ae269af7fddb8842a9",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep003_k8.json",
+   "bytes": 716,
+   "sha256": "87b54bf02f977df9eb5eff96e4e062f1965e2534190bf694baf846beccada2b6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep004_expert_from_start.json",
+   "bytes": 246,
+   "sha256": "1d286a5596b8b772c08597d4b23328566aacc55a6df1b9ae5301023178442302",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep004_k4.json",
+   "bytes": 713,
+   "sha256": "1c7ac8fa175c90f529154b9fb624cb122e8225e0fee77f7c093bb96857c517f3",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep004_k8.json",
+   "bytes": 714,
+   "sha256": "e1143db5613d81aa77dfe1978e1caf7e57f055afecd4632b62d11f9d97491d2d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep005_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "d98f6a27c807a4349d6077a93feae4651d32dacf70b4df46b18e97b2816ec533",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep005_k4.json",
+   "bytes": 712,
+   "sha256": "19b89fd31e8ff664d1111d65bff089be28438ee9c491dc339792ccae448e72bc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep005_k8.json",
+   "bytes": 713,
+   "sha256": "1d6f98a017b5658d7e352ded0162563f9d9d2efba8116ea9c4ead83a076ec449",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep006_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "74afcf0e0a0a6715704bcb670ca95666ff85039ccee9781e7596d249700b3641",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep006_k4.json",
+   "bytes": 720,
+   "sha256": "2c46e90bd8586cbc835ce54ebe6203c62b0405a3c4eaefda3b3d28a073b00430",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep006_k8.json",
+   "bytes": 719,
+   "sha256": "9d3386a7bde036081b9fc504d12abc9fed305459ea4e3ba0f7c41dbb7d4cd761",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep007_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "fec08050d378f159dca9577d27b91a6af99f7814e79f13cc4677a2223442401a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep007_k4.json",
+   "bytes": 715,
+   "sha256": "4cab026801454c1407716b8ad1c6f6f922616c10920efd5342149d3bd26d6a27",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep007_k8.json",
+   "bytes": 714,
+   "sha256": "3e267d4c1bb1379f05eeb9ce3485ea74fad435cb179c60a191c84493326a62b6",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep008_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "ee5d30f1d50a003e2d8224a629a9cb754d69cb4e2c53c57a93c506c7b7de85cf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep008_k4.json",
+   "bytes": 716,
+   "sha256": "8bdf337a8f0d62727afffe4b74b13811099643f33ff7bd89c4604289c2150be1",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep008_k8.json",
+   "bytes": 714,
+   "sha256": "41351824c18b0e9a389fcd110b123da6783a3d0602bcc43c2d36a1c043d5486c",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep009_expert_from_start.json",
+   "bytes": 246,
+   "sha256": "bc0ef078c2214fc3b53f96fc85c9e41db69fff923652f46f2d8e023832c332ec",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep009_k4.json",
+   "bytes": 715,
+   "sha256": "eb055287ca18fd67b0f749a28d4a0661cf8ac74fc355f96cebab76f55bb6a8f8",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep009_k8.json",
+   "bytes": 713,
+   "sha256": "80154720d703d766bb2985ba7a7393a5cb111d9e228720201ea5ae61f2496f08",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep011_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "1ac3c8c372caa62cfda023644d1246aada4f91e354b91dfb781768ab129b204e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep011_k4.json",
+   "bytes": 720,
+   "sha256": "ea0a265c33f500f78444e3100acfa7618c8f6b90c7cfdb803ba154fb3d710a9a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS60k_start777/ep011_k8.json",
+   "bytes": 716,
+   "sha256": "b4ce15cacc231322bdb84018fffdddc8c0a8c86b42ed2a59d3753ec06266f4db",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/closed_loop_summary.json",
+   "bytes": 20730,
+   "sha256": "e78dc22a93c5cc8a1b5b163322bc27a174701bb0264b4a5d7288a6abb90bae9d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep000_expert_from_start.json",
+   "bytes": 245,
+   "sha256": "5b3afcec5de1eeab4a2b16543a89a211808bf63c0ad600d61aba8473b456b4b5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep000_k4.json",
+   "bytes": 716,
+   "sha256": "53c5d2c977c34faefb8cf63d57023da35935854d84cc153ad2ba25d15984034f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep000_k8.json",
+   "bytes": 716,
+   "sha256": "2c6d2a80e6ceff4d19ddeb2979ee31e7a8c19d15d7051ba15b3f53a658828908",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep002_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "a19f782d0d9ca98aba7c8a577f7e550a5e875eab704221beae823cddeb318692",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep002_k4.json",
+   "bytes": 717,
+   "sha256": "6821ebf1194d7281019389f7cd48f5a5765ae80a63fbf5804829cd0b50df4389",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep002_k8.json",
+   "bytes": 716,
+   "sha256": "428b64723ab02a7e62854a91a10b71c10896d74342390aa762b70644ef359fc5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep003_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "44a6eeb1e8ee73c1b44548bfea132c92f3f1a229bf6e08dd0ff1926f067baa85",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep003_k4.json",
+   "bytes": 715,
+   "sha256": "cd4b68ea7ee71e67a651a5e4ae56c9139e126856a9f7c79a47826b1ce7b2f011",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep003_k8.json",
+   "bytes": 716,
+   "sha256": "5b07a7133b9d5ba3cb6969376938f0cbb438aabe814216b2693ae2ddad55bc14",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep004_expert_from_start.json",
+   "bytes": 246,
+   "sha256": "1d286a5596b8b772c08597d4b23328566aacc55a6df1b9ae5301023178442302",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep004_k4.json",
+   "bytes": 712,
+   "sha256": "089abf61b635e32fda7b52d02ef6a5bccefe7524375420d225de60fc6fab61db",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep004_k8.json",
+   "bytes": 715,
+   "sha256": "0bef4914af2509d21e357b922a31573e192935a5240b26f1c5e6215e6162b200",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep005_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "d98f6a27c807a4349d6077a93feae4651d32dacf70b4df46b18e97b2816ec533",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep005_k4.json",
+   "bytes": 718,
+   "sha256": "cf2fc254296d98946350e8126bfebb376ddceb5a53c2c2299bd507662faeebcc",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep005_k8.json",
+   "bytes": 717,
+   "sha256": "5e1943ec8f9b8baca14f9bfd483759150bf78a27e567265700c95702a98e45b5",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep006_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "74afcf0e0a0a6715704bcb670ca95666ff85039ccee9781e7596d249700b3641",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep006_k4.json",
+   "bytes": 717,
+   "sha256": "68281b5a8712ee00574ad034dc09cf86f47ec16c7466de62a6e7602fec2a133d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep006_k8.json",
+   "bytes": 720,
+   "sha256": "67706f74c2e90de1d450b43a8751528a94ecdfa6f003c0a80e62d647d1d40553",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep007_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "fec08050d378f159dca9577d27b91a6af99f7814e79f13cc4677a2223442401a",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep007_k4.json",
+   "bytes": 719,
+   "sha256": "0deaed99e2c121d5a8de39904a23d7831a2ff689645f23fb45c3096e7dc6340d",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep007_k8.json",
+   "bytes": 716,
+   "sha256": "3ca0648aa6666aab1b82d44c3394b5e7c66866cc8b13450822ccc1bd0409db6e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep008_expert_from_start.json",
+   "bytes": 247,
+   "sha256": "ee5d30f1d50a003e2d8224a629a9cb754d69cb4e2c53c57a93c506c7b7de85cf",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep008_k4.json",
+   "bytes": 715,
+   "sha256": "73a3045fd89307921e6dd2ff81e30a40d8fb518845c42507dde8e00bd7f39b00",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep008_k8.json",
+   "bytes": 716,
+   "sha256": "228e31942937d17b0262dfb0d74f2c3caf68c41686cebe65ab0e1d41238d2903",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep009_expert_from_start.json",
+   "bytes": 246,
+   "sha256": "bc0ef078c2214fc3b53f96fc85c9e41db69fff923652f46f2d8e023832c332ec",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep009_k4.json",
+   "bytes": 716,
+   "sha256": "608f956dc7e0053bfa8ed77677e8e789966e6575922dfeeff38a1510893d7034",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep009_k8.json",
+   "bytes": 715,
+   "sha256": "cef4bc0df471f36fb0fc028a9f52836122947ea62954a2a83ae3564383f1630f",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep011_expert_from_start.json",
+   "bytes": 248,
+   "sha256": "1ac3c8c372caa62cfda023644d1246aada4f91e354b91dfb781768ab129b204e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep011_k4.json",
+   "bytes": 719,
+   "sha256": "ee0751b46040cf888531b2d9fd0a56e74dcd5472d05417c95871b99fef64a51e",
+   "purpose": "Phase 5/6 evaluation results"
+  },
+  {
+   "path": "artifacts/closed_loop_v3/VS_start777/ep011_k8.json",
+   "bytes": 719,
+   "sha256": "cfb810c7872a34820d01142e97da05fbc2fdb4647f2d8ea71c9038f7a45ac8da",
    "purpose": "Phase 5/6 evaluation results"
   },
   {
@@ -26743,8 +27793,8 @@
    "bytes": 95676144
   },
   "Phase 5/6 evaluation results": {
-   "files": 1240,
-   "bytes": 1281853
+   "files": 1415,
+   "bytes": 1501761
   },
   "closed-loop results and grasp sensitivity": {
    "files": 135,
