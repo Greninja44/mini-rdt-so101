@@ -55,6 +55,7 @@ class PickCubeConfig:
     # v2 validity tolerances (pre-registered in physics_v2_spec.md).
     v2_robot_table_penetration_tol: float = 0.001
     v2_cube_table_penetration_tol: float = 0.001
+    v2_pad_cube_penetration_tol: float = 0.0015  # spec amendment 1 (added check, measured ~0.9 mm at full squeeze)
     v2_side_normal_max_abs_z: float = 0.5       # contact normal within 30 deg of horizontal
     v2_opposing_normal_max_dot: float = -0.5    # the two pads' normals at least 120 deg apart
 
@@ -137,6 +138,10 @@ class SO101PickCubeEnv(_EnvBase):
     # physics-v2 contact bits: 1 = cube<->table, 2 = pad<->cube, 4 = robot/pad<->table.
     # A pair collides iff (contype_a & conaffinity_b) | (contype_b & conaffinity_a).
     V2_CONTACT_TIMECONST = 0.005
+    V2_GRASP_TIMECONST = 0.004
+    V2_GRASP_SOLIMP = (0.99, 0.999, 0.001, 0.5, 2.0)
+    V2_MOVING_PAD_POS = (-0.0103, -0.074, 0.019)   # jaw frame: pad face at x = -12.3 mm
+    V2_MOVING_PAD_HALF = (0.002, 0.006, 0.006)
     V2_TABLE_LINKS = ("shoulder", "upper_arm", "lower_arm", "wrist", "gripper", "moving_jaw_so101_v1")
 
     def _configure_collisions_v2(self) -> None:
@@ -151,6 +156,12 @@ class SO101PickCubeEnv(_EnvBase):
                 m.geom_contype[g] = 4; self._robot_collision_geoms.add(g)
         m.geom_contype[self._table_geom], m.geom_conaffinity[self._table_geom] = 1, 1 | 4
         m.geom_contype[self._cube_geom], m.geom_conaffinity[self._cube_geom] = 1, 1 | 2
+        # The v1 moving pad sat ~10 mm INSIDE the jaw, near its outer face (jaw-frame x in [-2, 2] mm), while
+        # the jaw's real fingertip inner face is flat at x = -12.3 mm (measured from the CAD collision mesh over
+        # y in [-82, -70], z in [15, 23] mm). So the jaw closed through the cube. v2 places the pad on that face.
+        # The fixed pad already matches its finger's inner face (-8.0 vs -7.9 mm).
+        mp = self._grasp_pad_ids[1]
+        m.geom_pos[mp] = self.V2_MOVING_PAD_POS; m.geom_size[mp] = self.V2_MOVING_PAD_HALF
         for g in self._grasp_pad_ids:  # always physical: cube (2) and table (4)
             m.geom_contype[g], m.geom_conaffinity[g] = 2 | 4, 2
             self._robot_collision_geoms.add(g)
@@ -159,11 +170,16 @@ class SO101PickCubeEnv(_EnvBase):
         # cube sink and < 0.6 mm under full actuator force (physics_v2_spec.md, measured).
         for g in list(self._robot_collision_geoms) + [self._table_geom, self._cube_geom]:
             m.geom_solref[g] = (self.V2_CONTACT_TIMECONST, 1.0)
+        # Grasp contacts: MuJoCo soft-contact stiffness is mass-normalised, so the 10 g cube squeezed by the
+        # force-limited gripper (±3.35) let the jaw close ~9 mm through it. The stiffest stable setting
+        # (timeconst = 2*dt, impedance 0.99-0.999) holds squeeze penetration to ~0.6 mm (evaluation/squeeze_test.py).
+        for g in list(self._grasp_pad_ids) + [self._cube_geom]:
+            m.geom_solref[g] = (self.V2_GRASP_TIMECONST, 1.0); m.geom_solimp[g] = self.V2_GRASP_SOLIMP
 
     def contact_diagnostics(self) -> dict[str, Any]:
         """Per-step physics-v2 contact classification from MuJoCo contacts (any physics version)."""
         m, d, cfg = self.model, self.data, self.config
-        pads = {g: [] for g in self._grasp_pad_ids}; robot_table = 0.0; cube_table = 0.0; robot_table_contacts = 0
+        pads = {g: [] for g in self._grasp_pad_ids}; robot_table = 0.0; cube_table = 0.0; robot_table_contacts = 0; pad_cube = 0.0
         robot_geoms = getattr(self, "_robot_collision_geoms", set(self._grasp_pad_ids))
         for i in range(d.ncon):
             c = d.contact[i]; g1, g2 = c.geom1, c.geom2; n = np.array(c.frame[:3])
@@ -174,6 +190,7 @@ class SO101PickCubeEnv(_EnvBase):
             elif self._cube_geom in (g1, g2) and (g1 in pads or g2 in pads):
                 pad = g1 if g1 in pads else g2
                 pads[pad].append(n if pad == g1 else -n)  # normal oriented pad -> cube
+                pad_cube = max(pad_cube, -c.dist)
         mean = [np.mean(v, axis=0) / max(np.linalg.norm(np.mean(v, axis=0)), 1e-9) if v else None for v in pads.values()]
         both = all(v is not None for v in mean)
         side = both and all(abs(v[2]) <= cfg.v2_side_normal_max_abs_z for v in mean)
@@ -181,7 +198,8 @@ class SO101PickCubeEnv(_EnvBase):
         vertical = any(abs(n[2]) > 0.7 for v in pads.values() for n in v)
         return {"pad_contact": [bool(v) for v in pads.values()], "pad_normals": [None if v is None else v.tolist() for v in mean],
                 "side_pinch": bool(side and opposing and not vertical), "vertical_pad_contact": bool(vertical),
-                "robot_table_contacts": robot_table_contacts, "robot_table_penetration": float(robot_table), "cube_table_penetration": float(cube_table)}
+                "robot_table_contacts": robot_table_contacts, "robot_table_penetration": float(robot_table), "cube_table_penetration": float(cube_table),
+                "pad_cube_penetration": float(pad_cube)}
 
     def seed(self, seed: int | None = None) -> list[int]:
         self._rng = np.random.default_rng(seed)
@@ -196,12 +214,13 @@ class SO101PickCubeEnv(_EnvBase):
         qa = self._cube_qposadr
         self.data.qpos[qa:qa + 7] = (xy[0], xy[1], self.config.cube_size / 2, 1, 0, 0, 0)
         self.data.ctrl[:] = action_to_ctrl(self.model, np.r_[self.home_joint_pos, 1.0])
-        self._set_grasp_pad_contacts(False)
+        if self.config.physics == "v1":
+            self._set_grasp_pad_contacts(False)  # v1 only: v2 pads are always physical
         mujoco.mj_forward(self.model, self.data)
         # Let the free object settle while keeping the robot at its home command.
         for _ in range(20): mujoco.mj_step(self.model, self.data)
         self._step_count = self._success_streak = 0; self._ever_grasped = False
-        self._max_robot_table_pen = self._max_cube_table_pen = 0.0; self._invalid_reason = None
+        self._max_robot_table_pen = self._max_cube_table_pen = self._max_pad_cube_pen = 0.0; self._invalid_reason = None
         obs = self._observation()
         return obs, self._info()
 
@@ -218,10 +237,12 @@ class SO101PickCubeEnv(_EnvBase):
         diag = self.contact_diagnostics()
         self._max_robot_table_pen = max(self._max_robot_table_pen, diag["robot_table_penetration"])
         self._max_cube_table_pen = max(self._max_cube_table_pen, diag["cube_table_penetration"])
+        self._max_pad_cube_pen = max(self._max_pad_cube_pen, diag["pad_cube_penetration"])
         if self.config.physics == "v2":
             if self._invalid_reason is None:
                 if self._max_robot_table_pen > self.config.v2_robot_table_penetration_tol: self._invalid_reason = "robot_table_penetration"
                 elif self._max_cube_table_pen > self.config.v2_cube_table_penetration_tol: self._invalid_reason = "cube_table_penetration"
+                elif self._max_pad_cube_pen > self.config.v2_pad_cube_penetration_tol: self._invalid_reason = "pad_cube_penetration"
             grasped = diag["side_pinch"]
             self._ever_grasped |= grasped
             # v2: the valid side pinch must hold DURING the lifted hold window, in a valid episode.
@@ -237,7 +258,8 @@ class SO101PickCubeEnv(_EnvBase):
         truncated = self._step_count >= self.config.max_episode_steps
         info = self._info(); info.update({"requested_action": requested.copy(), "applied_action": np.r_[ctrl[:5], (ctrl[5]-self._lo[5])/(self._hi[5]-self._lo[5])].astype(np.float32), "grasped": grasped, "elevated": elevated, "success": success,
                      "physics": self.config.physics, "contacts": diag, "invalid_reason": self._invalid_reason,
-                     "max_robot_table_penetration": self._max_robot_table_pen, "max_cube_table_penetration": self._max_cube_table_pen})
+                     "max_robot_table_penetration": self._max_robot_table_pen, "max_cube_table_penetration": self._max_cube_table_pen,
+                     "max_pad_cube_penetration": self._max_pad_cube_pen})
         return self._observation(), float(success), terminated, truncated, info
 
     def get_info(self) -> dict[str, Any]:

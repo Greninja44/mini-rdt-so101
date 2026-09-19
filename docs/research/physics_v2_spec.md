@@ -75,3 +75,22 @@ This fixes two v1 weaknesses. v1 counted *any* two-pad contact, including the sa
 3. Render representative task-camera and side-camera frames and inspect them manually.
 4. **The tolerances above are fixed.** Expert failures are investigated and fixed in the controller. They are never fixed by loosening
    physics, tolerances or the side-pinch test. The success rate is not forced to 100%.
+
+## Amendment 1 (2026-09-19, before the final expert validation). Adds checks; loosens nothing.
+A first validation pass (10/10, 99/100) exposed two physics defects, which were fixed:
+
+1. **The moving pad was on the wrong face.** The pad added in v1 sat ~10 mm inside the jaw, near its outer face. The jaw's real fingertip
+   inner face is flat at jaw-frame x = −12.3 mm (measured from the CAD collision mesh). The jaw therefore closed *through* the cube:
+   pads were 3–9 mm inside it and the jaw mesh 8.7 mm. v2 places the pad on that face (centre (−10.3, −74, 19) mm, half (2, 6, 6) mm).
+   The fixed pad already matched its finger (−8.0 vs −7.9 mm). v1 is unchanged.
+2. **The grasp contact was too soft.** MuJoCo soft-contact stiffness is mass-normalised, so the 10 g cube squeezed by the force-limited
+   gripper (±3.35) was penetrated ~9 mm. `evaluation/squeeze_test.py` compared settings; pad and cube now use solref (0.004, 1)
+   (= 2·dt, MuJoCo's stability limit) and solimp (0.99, 0.999, 0.001, 0.5, 2).
+   - Steady squeeze penetration is 0.6–0.7 mm (max 0.93 mm), and the jaw stops against the cube.
+   - Explicit stiffness 5e5 N/m was unstable (the cube was ejected); 2e4–1e5 N/m still gave 4–9 mm.
+   - The resting cube–table sink is now 0.020 mm.
+
+Added validity checks:
+- **pad ↔ cube penetration ≤ 1.5 mm** at every step, as an env-level invalid flag (measured ≤ 0.94 mm at full squeeze);
+- **finger-mesh ↔ cube interpenetration ≤ 2.0 mm**, a validation-level check, because links do not collide with the cube
+  (measured ≤ 1.32 mm).
