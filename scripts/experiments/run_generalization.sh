@@ -75,6 +75,18 @@ $PY -m evaluation.closed_loop --policy tinyrdt --checkpoint $(ckpt TRAIN80) --da
 $PY -c "
 import numpy as np; a=np.load('$G/closed_loop/TRAIN80/ep$(printf %03d $first)_k8.npz'); b=np.load('$G/determinism/ep$(printf %03d $first)_k8.npz')
 print('determinism: executed identical =', a['executed'].shape==b['executed'].shape and bool((a['executed']==b['executed']).all()))" | tee -a $G/pipeline.log
+# Diagnostic D (POST-HOC, added after tier 1; training scenes only, no test data): does TRAIN80 still solve the scenes it was trained on?
+cl_train() {  # model
+  local out=$G/diagnostic_train_scenes/$1; mkdir -p $out; local ids=$($PY -c "import json; print(*json.load(open('$SPLIT'))['train_subsets']['TRAIN20'])")
+  local e=$(echo $ids | tr ' ' '\n' | awk 'NR%2==1' | tr '\n' ' '); local o=$(echo $ids | tr ' ' '\n' | awk 'NR%2==0' | tr '\n' ' ')
+  local args="--policy tinyrdt --checkpoint $(ckpt $1) --dataset $DS --k 8 --max-steps 150 --skip-replay --no-media --output $out"
+  $PY -m evaluation.closed_loop $args --episodes $e >> $out/worker_a.log 2>&1 & local pa=$!
+  $PY -m evaluation.closed_loop $args --episodes $o >> $out/worker_b.log 2>&1; wait $pa; log "diagnostic D $1 on TRAIN20 training scenes done"
+}
+log "diagnostic D"; cl_train TRAIN80; cl_train TRAIN80_80k; log "diagnostic D complete"
+# Execution-order change (logged; no analysis change): diagnostic D showed TRAIN80@20k solves only 7/20 of its own training scenes,
+# TRAIN80@80k 18/20, so the pre-registered tier-4 80k arm runs first. Every tier still runs.
+log "tier 4 (80k arm moved first)"; cl TRAIN80_80k 8 0 --skip-replay --no-media
 log "tier 2"; cl TRAIN80 "1 2 4 16" 0 --skip-replay; log "tier 2 complete"
 log "tier 3"; for s in 1 2; do cl TRAIN80 8 $s --skip-replay --no-media; cl CLEAN10 8 $s --skip-replay --no-media; done; log "tier 3 complete"
 log "tier 4"; for m in TRAIN20 TRAIN40 TRAIN80_80k; do cl $m 8 0 --skip-replay --no-media; done; log "tier 4 complete"
