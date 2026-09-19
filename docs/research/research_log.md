@@ -369,3 +369,22 @@ If image reliance rises but success does not, visual conditioning is not the bot
   was changed. Recommended fix order: robot-table collision → valid side-pinch expert → stricter success criterion → regenerate the
   data → re-run the benchmarks.
 - Phase 10 (fine-tuned vision), still running, is subject to the same caveat.
+
+## PHYSICS-V2 (2026-09-19) → PHYSICS_V2_REPORT.md
+- **v1 frozen:** tag `physics-v1-invalid`, `docs/research/physics_v1_freeze.json`. Phase 10 was cancelled (manipulation metric invalid).
+- **Spec pre-registered** (`docs/research/physics_v2_spec.md`) with tolerances measured before any expert evaluation. Amendment 1 (pad
+  placement, grasp-contact stiffness, a pad-cube check) and amendment 2 (table stiffness) only added checks or stiffened contacts.
+- **Bugs found:**
+  - the moving pad sat ~10 mm inside the jaw;
+  - the mass-normalised soft contacts allowed a ~9 mm squeeze into the cube;
+  - the v1 reset silently disabled the v2 pads;
+  - the descent overshoot landed a pad on the cube's top (seed 4079).
+- **Expert v2 (side pinch):** 10/10 and 100/100, zero robot-table penetration. Dataset v2: 100/100, validator 0 errors.
+- **Same 2M TinyRDT on CLEAN10 v2:**
+  - offline gate PASS (0.0050 / 0.010 / 0.0051);
+  - closed loop 49/50 (K=1 9, K=2/4/8/16 10 each); expert replay 10/10;
+  - robot-table 0.00 mm, 0 early closes.
+  - The one failure: ep0 K=1 hovered with a pad on the cube's top and never closed.
+  - Two successes (ep7 K1/K2) tipped the cube before a valid side pinch.
+- **Answer:** MiniRDT learns a genuinely physical side grasp on memorised scenes. **STOPPED** here, per the phase instructions.
+  Next: v2 generalisation (80 demos → held-out cubes), then scaling.

@@ -12,7 +12,7 @@ import numpy as np
 def failure_phase(r, rec):
     if r["success"]: return "success"
     if r.get("invalid_reason"): return "invalid_" + r["invalid_reason"]
-    closed = rec["executed"][:, 5] < 0.5
+    closed = rec["executed"][:, 5] < 0.1  # the v2 expert approaches at opening 0.25 and closes to 0.0
     if not closed.any(): return "never_closed"
     if not r.get("ever_side_pinch"): return "closed_without_valid_side_pinch"
     z = rec["cube"][:, 2]
@@ -25,7 +25,7 @@ def main():
     a = p.parse_args(); rows = []
     for f in sorted(glob.glob(f"{a.rollouts}/ep*_k*.json")):
         r = json.loads(Path(f).read_text()); rec = np.load(f.replace(".json", ".npz")); ph = failure_phase(r, rec)
-        closed = np.where(rec["executed"][:, 5] < 0.5)[0]; t = int(closed[0]) if len(closed) else None
+        closed = np.where(rec["executed"][:, 5] < 0.1)[0]; t = int(closed[0]) if len(closed) else None
         close = None
         if t is not None:
             gc, cube = rec["grasp_center"][t], rec["cube"][t]

@@ -30,24 +30,60 @@ def style(ax):
 
 
 def rollout_media(art: Path, out: Path):
-    from simulation.env import SO101PickCubeEnv
-    rec = np.load(art / "closed_loop_v2/tinyrdt_ema/ep006_k8.npz")
-    env = SO101PickCubeEnv(); env.reset(seed=3006)
-    renderer = mujoco.Renderer(env.model, height=360, width=480); frames = []
+    """Physics-v2 TinyRDT success (CLEAN10 scene seed 3006, K=8): task camera + side view at table height."""
+    from simulation.env import PickCubeConfig, SO101PickCubeEnv
+    rec = np.load(art / "physics_v2/closed_loop/ep006_k8.npz")
+    env = SO101PickCubeEnv(PickCubeConfig(render_observations=False, physics="v2")); env.reset(seed=3006)
+    renderer = mujoco.Renderer(env.model, height=300, width=400); side = mujoco.MjvCamera(); side.type = mujoco.mjtCamera.mjCAMERA_FREE
     def shot():
-        renderer.update_scene(env.data, camera="external_rgb"); return renderer.render().copy()
-    frames.append(shot()); success = False
+        renderer.update_scene(env.data, camera="external_rgb"); task = renderer.render().copy()
+        c = env.cube_pose[:3]; side.lookat[:] = [c[0], c[1], max(0.03, c[2])]; side.distance = 0.20; side.azimuth = 90.0; side.elevation = -6.0
+        renderer.update_scene(env.data, camera=side); return np.concatenate((task, renderer.render()), axis=1)
+    frames = [shot()]; success = False; labels = ["start"]
     for a in rec["executed"]:
         _, _, terminated, _, info = env.step(a); frames.append(shot())
+        labels.append("side pinch" if info["contacts"]["side_pinch"] else ("closing" if a[5] < 0.1 else "approach"))
         if terminated: success = bool(info["success"]); break
-    frames += [frames[-1]] * 10
-    assert success, "replayed rollout must reproduce the recorded success"
-    imageio.mimsave(out / "rollout_success.gif", [np.asarray(Image.fromarray(f).resize((400, 300), Image.LANCZOS)) for f in frames], duration=60, loop=0)
-    keys = [(0, "start"), (18, "approach"), (27, "descend"), (33, "grasp"), (len(frames) - 11, "lift")]
+    assert success and info["invalid_reason"] is None, "replayed rollout must reproduce the recorded physics-v2 success"
+    frames += [frames[-1]] * 12
+    imageio.mimsave(out / "rollout_success.gif", [np.asarray(Image.fromarray(f).resize((640, 240), Image.LANCZOS)) for f in frames], duration=70, loop=0)
+    first_pinch = labels.index("side pinch"); n = len(labels) - 1
+    keys = [(0, "start"), (18, "approach"), (first_pinch - 6, "aligned above cube"), (first_pinch + 1, "side pinch"), (n, "lifted (success)")]
     fig, axes = plt.subplots(1, 5, figsize=(15, 2.6))
     for ax, (i, label) in zip(axes, keys):
-        ax.imshow(frames[i]); ax.set_axis_off(); ax.set_title(f"t = {i / 20:.2f} s · {label}", fontsize=10, color=INK)
+        ax.imshow(frames[i][:, 400:]); ax.set_axis_off(); ax.set_title(f"t = {i / 20:.2f} s · {label}", fontsize=10, color=INK)
     fig.tight_layout(); fig.savefig(out / "rollout_strip.png", dpi=110); plt.close(fig)
+
+
+def k_sweep_v2(art: Path, out: Path):
+    rows = [json.load(open(f)) for f in glob.glob(str(art / "physics_v2/closed_loop/ep*_k*.json"))]
+    ks = [1, 2, 4, 8, 16]; rate = [100 * np.mean([r["success"] for r in rows if r["k"] == k]) for k in ks]
+    replay = [json.load(open(f)) for f in glob.glob(str(art / "physics_v2/closed_loop/ep*_expert_replay.json"))]
+    fig, ax = plt.subplots(figsize=(7, 3.4))
+    ax.plot(ks, rate, marker="o", lw=2, ms=7, color=BLUE, label="TinyRDT 2.0M, 10 demos (physics-v2)")
+    ax.axhline(100 * np.mean([r["success"] for r in replay]), color=MUTED, lw=1.2, ls="--", label="expert replay")
+    for k, v in zip(ks, rate): ax.text(k, v - 9, f"{round(v / 10)}/10", ha="center", fontsize=9, color=INK)
+    ax.set_xscale("log", base=2); ax.set_xticks(ks, [str(k) for k in ks]); ax.set_ylim(0, 108)
+    ax.set_xlabel("K = actions executed per replan (chunk H = 16)"); ax.set_ylabel("valid side-grasp success (%)")
+    ax.set_title("Physics-v2 closed loop on the 10 memorised cubes", fontsize=10, color=INK); style(ax); ax.legend(frameon=False, fontsize=8.5, loc="lower right")
+    fig.tight_layout(); fig.savefig(out / "k_sweep_v2.png", dpi=120); plt.close(fig)
+
+
+def physics_fix(art: Path, out: Path):
+    audit = json.load(open(art.parent / "docs/audit/table_collision/audit.json")) if (art.parent / "docs/audit/table_collision/audit.json").exists() else None
+    v2 = json.load(open(art / "physics_v2/closed_loop_summary.json")); val = json.load(open(art / "physics_v2/expert_validation/validation.json"))
+    v1_pen = max(x["max_penetration_mm"] for x in audit["tinyrdt_rollouts"]) if audit else 100.3
+    v1_pad = max(x["pinch"]["pad_penetration_at_first_pinch_mm"] for x in audit["expert_demos"]) if audit else 9.9
+    v1_cube = max(x["pinch"]["cube_pushed_into_table_max_mm"] for x in audit["expert_demos"]) if audit else 5.6
+    rows = [("robot through table\n(max, mm)", v1_pen, max(v2["max_robot_table_penetration_mm"], val["random100"]["max_robot_table_penetration_mm"])),
+            ("pad inside table\nat pinch (mm)", v1_pad, 0.0),
+            ("cube pushed into\ntable (mm)", v1_cube, max(v2["max_cube_table_penetration_mm"], val["random100"]["max_cube_table_penetration_mm"]))]
+    fig, ax = plt.subplots(figsize=(7.5, 3.3)); x = np.arange(len(rows)); w = .36
+    b1 = ax.bar(x - w / 2, [r[1] for r in rows], w, color=ORANGE, label="physics-v1 (INVALID)"); b2 = ax.bar(x + w / 2, [r[2] for r in rows], w, color=AQUA, label="physics-v2")
+    for b in list(b1) + list(b2): ax.text(b.get_x() + b.get_width() / 2, b.get_height() * 1.15 + 0.02, f"{b.get_height():.2f}" if b.get_height() < 1 else f"{b.get_height():.1f}", ha="center", fontsize=9, color=INK)
+    ax.set_yscale("symlog", linthresh=1); ax.set_xticks(x, [r[0] for r in rows], fontsize=9); ax.set_ylabel("mm (symlog)")
+    ax.set_title("Collision audit fix: v1 grasps went through the table; v2 grasps do not", fontsize=10, color=INK); style(ax); ax.legend(frameon=False, fontsize=8.5)
+    fig.tight_layout(); fig.savefig(out / "physics_fix.png", dpi=120); plt.close(fig)
 
 
 def pipeline(out: Path):
@@ -136,8 +172,9 @@ def failure_gif(art: Path, out: Path):
 def main():
     p = argparse.ArgumentParser(); p.add_argument("--artifacts", default="artifacts"); p.add_argument("--output", default="docs/assets")
     a = p.parse_args(); art, out = Path(a.artifacts), Path(a.output); out.mkdir(parents=True, exist_ok=True)
-    for fn in (pipeline, lambda o: diffusion_fix(art, o), lambda o: k_sweep(art, o), lambda o: grasp_tolerance(art, o),
-               lambda o: isolation(art, o), lambda o: failure_gif(art, o), lambda o: rollout_media(art, o)):
+    # v1 manipulation figures (k_sweep, isolation, grasp_tolerance, failure_gif) are kept only as invalid history in
+    # docs/assets/physics_v1_invalid/ and are no longer regenerated.
+    for fn in (pipeline, lambda o: diffusion_fix(art, o), lambda o: k_sweep_v2(art, o), lambda o: physics_fix(art, o), lambda o: rollout_media(art, o)):
         fn(out)
     for f in sorted(out.iterdir()): print(f"{f.stat().st_size / 1e3:8.0f} kB  {f}")
 
