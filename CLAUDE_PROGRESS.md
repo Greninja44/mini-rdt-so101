@@ -246,3 +246,25 @@ identification as the failure origin, and the effect is concentrated in the firs
 - Prediction if state-based lock-on is the mechanism: ep0/ep7 improve and the per-seed pattern changes. Arm precision may degrade
   (frozen pooled features).
 - Evaluated with the offline gate, normal (40), recovery (80) and an expert prefix (N=9).
+
+### 7c RESULT (2026-09-19 01:55 UTC): image-only TinyRDT
+- Offline passes (0.0107 / 0.024 / 0.010). Closed-loop 18/40 (p=0.041 worse than A); recovery 39/80 (p=0.0001 worse); prefix 6/10.
+- Per-seed pattern changed as predicted: ep0 3/4 (A 1/4), ep7 1/4 (A 0/4). The other seeds got worse, because without proprioception the frozen pooled
+  image cannot place the arm precisely.
+- Conclusion: the shared-start lock-on is real. No model-side change tried at 2M on 10 sparse demos removes it: corrective data,
+  spatial tokens, state dropout and image-only all fail. A correct 5–9 step start does remove it.
+
+## Phase 8 — density diagnostic (PRE-REGISTERED 2026-09-19 02:00 UTC; a DIAGNOSTIC, not the generalisation phase)
+Hypothesis:
+- CLEAN10 cubes are sparse (nearest neighbours 5.5–32 mm; most 10–19 mm, beyond the ≈7 mm grasp envelope). Blending toward a
+  neighbour's trajectory is therefore a grasp miss.
+- With the 80 training demos, neighbours are much closer, and the same blending becomes interpolation toward the correct position.
+
+Change: the same TinyRDT (2,009,670) and A's config (cosine / x0 / hold / EMA), trained on all 80 training-split episodes (normalisation
+from those 80), 40k steps (the 8× larger dataset needs more than A's 20k; documented). Split seed 17; validation and test untouched in training.
+
+Evaluation:
+- (i) The 10 memorised CLEAN10 seeds × K ∈ {1,2,4,8}: directly comparable to A's 28/40.
+- (ii) The 10 validation seeds × K ∈ {1,2,4,8}: held-out, a first generalisation look, with expert replay as the control. The test split stays untouched.
+
+Prediction if density is the issue: (i) ≫ 28/40, especially ep0/ep7. If (i) ≈ 28/40, sparsity is not the explanation.
