@@ -37,6 +37,8 @@ def experiment(args):
     source,vision_model,_,_,_,_=load(args.encoder_checkpoint,device)
     vision_model.vision.spatial=args.vision_tokens=="spatial"  # same frozen weights; token layout only
     splits=make_episode_splits(args.dataset,args.seed);ids=episode_ids(args.dataset) if args.train_all else splits.train[:args.train_episodes]
+    if args.train_subset:  # spatial generalization split (data/generalization_split.py); held-out positions are never loaded
+        ids=json.loads(Path(args.split_file).read_text())["train_subsets"][args.train_subset]
     stats=compute_normalization(args.dataset,ids)
     ds,b=make_bank(args.dataset,ids,stats,vision_model,device,args.padding)
     cb=None;corrective_episodes=[]
@@ -166,6 +168,7 @@ def experiment(args):
                         ema_row=metrics(stats.denormalize_action(sample(ema,d,args.prediction,eb,seed=4100)),b["raw"],b["mask"])
                     log.write(json.dumps({"step":step,"ema_sampled":ema_row})+"\n");log.flush();print(json.dumps({"step":step,"ema_sampled":ema_row}),flush=True)
                     torch.save(ema_payload,out/"ema_last.pt")
+                    if args.snapshot_interval and step and step%args.snapshot_interval==0: torch.save(ema_payload,out/f"ema_step{step:06d}.pt")
     save_json(out/"result.json",{**row,"best_sampled_mse":best,"device":str(device),"train_episode_ids":ids,
                                 "policy_parameters":sum(p.numel() for p in model.parameters() if p.requires_grad),"peak_vram_bytes":torch.cuda.max_memory_allocated() if device.type=="cuda" else 0})
 
@@ -187,4 +190,7 @@ if __name__ == "__main__":
     p.add_argument("--corrective-fraction",type=float,default=.5)
     p.add_argument("--corrective-max-frames",type=int,help="size-matched ablation: whole episodes up to this many frames")
     p.add_argument("--ema-decay",type=float,default=0.,help="0 disables; EMA weights saved to ema_last.pt")
+    p.add_argument("--split-file",default="docs/research/physics_v2_generalization_split.json")
+    p.add_argument("--train-subset",choices=("CLEAN10","TRAIN20","TRAIN40","TRAIN80"),help="train on this spatial-split subset (overrides --train-episodes)")
+    p.add_argument("--snapshot-interval",type=int,default=0,help="also keep EMA snapshots every N steps (must be a multiple of --eval-interval)")
     experiment(p.parse_args())
