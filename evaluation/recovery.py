@@ -1,4 +1,4 @@
-"""Recovery benchmark (pre-registered, CLAUDE_PROGRESS.md Phase 5).
+"""Recovery benchmark (pre-registered, docs/research/research_log.md Phase 5).
 
 The data-generating (legacy) expert drives to step T0=6, a command offset delta
 is applied to one joint for 3 steps, then the policy takes over with

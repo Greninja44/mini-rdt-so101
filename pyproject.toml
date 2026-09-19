@@ -1,7 +1,7 @@
 [project]
 name = "mini-rdt-so101"
-version = "0.1.0"
-description = "Phase 1 MuJoCo PickCube environment for SO-101"
+version = "0.2.0"
+description = "MiniRDT-SO101: a small vision-conditioned diffusion transformer policy for the SO-101 arm (MuJoCo PickCube)"
 requires-python = ">=3.12,<3.15"
 dependencies = [
   "mujoco>=3.3,<4",
@@ -10,6 +10,8 @@ dependencies = [
   "imageio>=2.0",
   "torch>=2.0",
   "torchvision>=0.15",
+  "matplotlib>=3.7",
+  "pillow>=10.0",
 ]
 
 [project.optional-dependencies]

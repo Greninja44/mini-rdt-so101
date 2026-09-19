@@ -1,6 +1,6 @@
 """Hash critical gitignored artifacts so they can be backed up and verified.
 
-Writes ARTIFACT_MANIFEST.json (per-file path/size/sha256/purpose; committed to
+Writes docs/artifact_manifest.json (per-file path/size/sha256/purpose; committed to
 git) — the binaries themselves stay out of git and must be backed up externally.
 """
 from __future__ import annotations
@@ -38,7 +38,7 @@ def main():
                     seen.add(p); entries.append({"path": str(p.relative_to(root)), "bytes": p.stat().st_size, "sha256": sha256(p), "purpose": purpose})
     totals = {}
     for e in entries: totals.setdefault(e["purpose"], [0, 0]); totals[e["purpose"]][0] += 1; totals[e["purpose"]][1] += e["bytes"]
-    (root / "ARTIFACT_MANIFEST.json").write_text(json.dumps({"files": entries, "totals": {k: {"files": v[0], "bytes": v[1]} for k, v in totals.items()}}, indent=1) + "\n")
+    (root / "docs" / "artifact_manifest.json").write_text(json.dumps({"files": entries, "totals": {k: {"files": v[0], "bytes": v[1]} for k, v in totals.items()}}, indent=1) + "\n")
     for k, v in totals.items(): print(f"{v[0]:5d} files {v[1] / 1e6:9.1f} MB  {k}")
 
 

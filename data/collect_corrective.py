@@ -1,4 +1,4 @@
-"""Collect corrective datasets on the CLEAN10 seeds (see CLAUDE_PROGRESS.md, Phase 5).
+"""Collect corrective datasets on the CLEAN10 seeds (see docs/research/research_log.md, Phase 5).
 
   perturb: legacy expert; at t0 a command offset on one joint for 3 steps;
            the expert then continues from the ACTUAL state.

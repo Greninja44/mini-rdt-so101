@@ -1,12 +1,12 @@
 """Why does accurate offline prediction fail closed-loop? Post-hoc analysis.
 
-Reads the balanced sweep produced by scripts/run_closed_loop_diagnostics.sh.
+Reads the balanced sweep produced by scripts/experiments/run_closed_loop_diagnostics.sh.
 The expert reference is the physically replayed expert rollout (identical to
 the dataset, plus grasp-center / contact signals). Nothing is re-simulated
 except (a) frozen-encoder features of stored frames and (b) the expert's IK
 label at policy states, computed kinematically from stored joint positions.
 
-Definitions (fixed before looking at results; documented in CLAUDE_PROGRESS.md):
+Definitions (fixed before looking at results; documented in docs/research/research_log.md):
   policy phase per step, from the policy's own command and geometry:
     approach: gripper cmd >= 0.5 and grasp-center xy > 20 mm from cube
     descent : gripper cmd >= 0.5 and xy <= 20 mm

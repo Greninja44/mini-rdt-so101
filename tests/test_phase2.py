@@ -1,4 +1,6 @@
 from __future__ import annotations
+from pathlib import Path
+import pytest
 import torch
 
 from data.ml_dataset import ActionWindowDataset, compute_normalization, make_episode_splits
@@ -7,6 +9,8 @@ from models.tiny_bc import TinyActionBC
 from training.diffusion import ActionDiffusion
 
 DATASET = "artifacts/pickcube_smoke100_rgb160"
+# Datasets are not versioned (see docs/artifact_manifest.json); dataset tests skip in a fresh clone.
+needs_dataset = pytest.mark.skipif(not (Path(__file__).resolve().parents[1] / DATASET / "episodes").exists(), reason="dataset artifact not present")
 
 
 class _ZeroDenoiser(torch.nn.Module):
@@ -14,12 +18,14 @@ class _ZeroDenoiser(torch.nn.Module):
         return torch.zeros_like(noisy_actions)
 
 
+@needs_dataset
 def test_episode_splits_are_disjoint_and_deterministic():
     a = make_episode_splits(DATASET, seed=19); b = make_episode_splits(DATASET, seed=19)
     assert a == b and len(a.train) == 80 and len(a.validation) == len(a.test) == 10
     assert not (set(a.train) & set(a.validation) or set(a.train) & set(a.test) or set(a.validation) & set(a.test))
 
 
+@needs_dataset
 def test_windows_never_cross_episode_and_pad_with_mask():
     splits = make_episode_splits(DATASET); dataset = ActionWindowDataset(DATASET, splits.train[:1], horizon=16)
     last = dataset[len(dataset) - 1]
@@ -27,6 +33,7 @@ def test_windows_never_cross_episode_and_pad_with_mask():
     assert torch.all(last["actions"][1:] == 0)
 
 
+@needs_dataset
 def test_normalization_round_trip_and_action_contract():
     splits = make_episode_splits(DATASET); stats = compute_normalization(DATASET, splits.train[:2]); dataset = ActionWindowDataset(DATASET, splits.train[:1])
     state, action = dataset[0]["state"], dataset[0]["actions"]
