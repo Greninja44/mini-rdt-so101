@@ -12,7 +12,7 @@ def test_legacy_expert_and_counterfactual_chunks_reproduce_demo_exactly():
     from simulation.legacy_expert import LegacyPickCubeExpert
     from data.corrective import expert_chunk
     recorded = np.load(ROOT / "action.npy"); joints = np.load(ROOT / "joint_pos.npy")
-    env = SO101PickCubeEnv(PickCubeConfig(render_observations=False))
+    env = SO101PickCubeEnv(PickCubeConfig(render_observations=False, physics="v1"))  # v1 history
     obs, _ = env.reset(seed=3000); expert = LegacyPickCubeExpert(env); expert.reset(); t = 0
     while not expert.done:
         chunk, n, ok = expert_chunk(env, expert, 16)

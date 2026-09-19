@@ -47,6 +47,16 @@ class PickCubeConfig:
     # is the midpoint of the fixed/moving collision geometry at closed gripper,
     # measured directly from the supplied MJCF transforms (metres).
     grasp_center_local: tuple[float, float, float] = (0.0023, 0.0, -0.0378)
+    # Physics version. "v1" reproduces the original, INVALID benchmark (no
+    # robot-table collision; see TABLE_COLLISION_AUDIT.md). "v2" enables
+    # robot/pad-table collision and a side-pinch success criterion
+    # (docs/research/physics_v2_spec.md).
+    physics: str = "v2"
+    # v2 validity tolerances (pre-registered in physics_v2_spec.md).
+    v2_robot_table_penetration_tol: float = 0.001
+    v2_cube_table_penetration_tol: float = 0.001
+    v2_side_normal_max_abs_z: float = 0.5       # contact normal within 30 deg of horizontal
+    v2_opposing_normal_max_dot: float = -0.5    # the two pads' normals at least 120 deg apart
 
 
 class SO101PickCubeEnv(_EnvBase):
@@ -98,8 +108,22 @@ class SO101PickCubeEnv(_EnvBase):
             if self.model.geom_dataid[geom_id] >= 0
             and self.model.geom_bodyid[geom_id] in (self._gripper_body_id, self._moving_jaw_body_id)
         )
-        # Contact bits: table↔cube (1), pads↔cube (2); pads do not collide
-        # with the table, whose surface is below the fingertips at closure.
+        if self.config.physics not in ("v1", "v2"): raise ValueError(f"unknown physics version {self.config.physics}")
+        self._table_geom, self._cube_geom = table_geom, cube_geom
+        if self.config.physics == "v2":
+            self._configure_collisions_v2()
+        else:
+            self._configure_collisions_v1(table_geom, cube_geom)
+        if spaces:
+            self.action_space = spaces.Box(np.r_[self._lo[:5], 0.0].astype(np.float32), np.r_[self._hi[:5], 1.0].astype(np.float32), dtype=np.float32)
+            self.observation_space = spaces.Dict({
+                "rgb": spaces.Box(0, 255, (self.config.camera_height, self.config.camera_width, 3), dtype=np.uint8),
+                "joint_pos": spaces.Box(self._lo[:5].astype(np.float32), self._hi[:5].astype(np.float32), dtype=np.float32),
+                "gripper": spaces.Box(0.0, 1.0, (1,), dtype=np.float32),
+            })
+
+    def _configure_collisions_v1(self, table_geom, cube_geom) -> None:
+        """INVALID original benchmark: table<->cube (bit 1), pads<->cube (bit 2) only while closing."""
         self.model.geom_contype[table_geom] = self.model.geom_conaffinity[table_geom] = 1
         self.model.geom_contype[cube_geom] = 1
         self.model.geom_conaffinity[cube_geom] = 3
@@ -109,13 +133,55 @@ class SO101PickCubeEnv(_EnvBase):
                 self.model.geom_contype[geom_id] = 0
                 self.model.geom_conaffinity[geom_id] = 0
         self._set_grasp_pad_contacts(False)
-        if spaces:
-            self.action_space = spaces.Box(np.r_[self._lo[:5], 0.0].astype(np.float32), np.r_[self._hi[:5], 1.0].astype(np.float32), dtype=np.float32)
-            self.observation_space = spaces.Dict({
-                "rgb": spaces.Box(0, 255, (self.config.camera_height, self.config.camera_width, 3), dtype=np.uint8),
-                "joint_pos": spaces.Box(self._lo[:5].astype(np.float32), self._hi[:5].astype(np.float32), dtype=np.float32),
-                "gripper": spaces.Box(0.0, 1.0, (1,), dtype=np.float32),
-            })
+
+    # physics-v2 contact bits: 1 = cube<->table, 2 = pad<->cube, 4 = robot/pad<->table.
+    # A pair collides iff (contype_a & conaffinity_b) | (contype_b & conaffinity_a).
+    V2_CONTACT_TIMECONST = 0.005
+    V2_TABLE_LINKS = ("shoulder", "upper_arm", "lower_arm", "wrist", "gripper", "moving_jaw_so101_v1")
+
+    def _configure_collisions_v2(self) -> None:
+        m = self.model
+        self._robot_collision_geoms = set()
+        for g in range(m.ngeom):
+            m.geom_contype[g] = m.geom_conaffinity[g] = 0
+            body = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_BODY, m.geom_bodyid[g])
+            # Vendor collision-class meshes (group 3); MuJoCo collides their convex hulls.
+            # Against the flat tabletop a hull penetrates exactly as deep as its lowest vertex.
+            if m.geom_group[g] == 3 and m.geom_dataid[g] >= 0 and body in self.V2_TABLE_LINKS:
+                m.geom_contype[g] = 4; self._robot_collision_geoms.add(g)
+        m.geom_contype[self._table_geom], m.geom_conaffinity[self._table_geom] = 1, 1 | 4
+        m.geom_contype[self._cube_geom], m.geom_conaffinity[self._cube_geom] = 1, 1 | 2
+        for g in self._grasp_pad_ids:  # always physical: cube (2) and table (4)
+            m.geom_contype[g], m.geom_conaffinity[g] = 2 | 4, 2
+            self._robot_collision_geoms.add(g)
+        # Stiffer contacts than MuJoCo's default (timeconst 0.02 s): servo-driven fingertips
+        # sank ~7 mm into the table; 0.005 s (2.5x the 2 ms step) gives a 0.05 mm resting
+        # cube sink and < 0.6 mm under full actuator force (physics_v2_spec.md, measured).
+        for g in list(self._robot_collision_geoms) + [self._table_geom, self._cube_geom]:
+            m.geom_solref[g] = (self.V2_CONTACT_TIMECONST, 1.0)
+
+    def contact_diagnostics(self) -> dict[str, Any]:
+        """Per-step physics-v2 contact classification from MuJoCo contacts (any physics version)."""
+        m, d, cfg = self.model, self.data, self.config
+        pads = {g: [] for g in self._grasp_pad_ids}; robot_table = 0.0; cube_table = 0.0; robot_table_contacts = 0
+        robot_geoms = getattr(self, "_robot_collision_geoms", set(self._grasp_pad_ids))
+        for i in range(d.ncon):
+            c = d.contact[i]; g1, g2 = c.geom1, c.geom2; n = np.array(c.frame[:3])
+            if {g1, g2} == {self._table_geom, self._cube_geom}:
+                cube_table = max(cube_table, -c.dist)
+            elif self._table_geom in (g1, g2) and (g1 in robot_geoms or g2 in robot_geoms):
+                robot_table = max(robot_table, -c.dist); robot_table_contacts += 1
+            elif self._cube_geom in (g1, g2) and (g1 in pads or g2 in pads):
+                pad = g1 if g1 in pads else g2
+                pads[pad].append(n if pad == g1 else -n)  # normal oriented pad -> cube
+        mean = [np.mean(v, axis=0) / max(np.linalg.norm(np.mean(v, axis=0)), 1e-9) if v else None for v in pads.values()]
+        both = all(v is not None for v in mean)
+        side = both and all(abs(v[2]) <= cfg.v2_side_normal_max_abs_z for v in mean)
+        opposing = both and float(mean[0] @ mean[1]) <= cfg.v2_opposing_normal_max_dot
+        vertical = any(abs(n[2]) > 0.7 for v in pads.values() for n in v)
+        return {"pad_contact": [bool(v) for v in pads.values()], "pad_normals": [None if v is None else v.tolist() for v in mean],
+                "side_pinch": bool(side and opposing and not vertical), "vertical_pad_contact": bool(vertical),
+                "robot_table_contacts": robot_table_contacts, "robot_table_penetration": float(robot_table), "cube_table_penetration": float(cube_table)}
 
     def seed(self, seed: int | None = None) -> list[int]:
         self._rng = np.random.default_rng(seed)
@@ -135,26 +201,43 @@ class SO101PickCubeEnv(_EnvBase):
         # Let the free object settle while keeping the robot at its home command.
         for _ in range(20): mujoco.mj_step(self.model, self.data)
         self._step_count = self._success_streak = 0; self._ever_grasped = False
+        self._max_robot_table_pen = self._max_cube_table_pen = 0.0; self._invalid_reason = None
         obs = self._observation()
         return obs, self._info()
 
     def step(self, action: np.ndarray):
         requested = np.asarray(action, dtype=np.float32)
         ctrl = action_to_ctrl(self.model, requested)
-        self._set_grasp_pad_contacts(bool(requested[5] < self.config.closing_contact_threshold))
+        if self.config.physics == "v1":
+            self._set_grasp_pad_contacts(bool(requested[5] < self.config.closing_contact_threshold))
         self.data.ctrl[:] = ctrl
         for _ in range(self.n_substeps):
             mujoco.mj_step(self.model, self.data)
         self._step_count += 1
-        grasped = self._grasped()
-        self._ever_grasped |= grasped
         elevated = self.cube_pose[2] >= self.config.lift_success_height
-        if self._ever_grasped and elevated: self._success_streak += 1
-        else: self._success_streak = 0
+        diag = self.contact_diagnostics()
+        self._max_robot_table_pen = max(self._max_robot_table_pen, diag["robot_table_penetration"])
+        self._max_cube_table_pen = max(self._max_cube_table_pen, diag["cube_table_penetration"])
+        if self.config.physics == "v2":
+            if self._invalid_reason is None:
+                if self._max_robot_table_pen > self.config.v2_robot_table_penetration_tol: self._invalid_reason = "robot_table_penetration"
+                elif self._max_cube_table_pen > self.config.v2_cube_table_penetration_tol: self._invalid_reason = "cube_table_penetration"
+            grasped = diag["side_pinch"]
+            self._ever_grasped |= grasped
+            # v2: the valid side pinch must hold DURING the lifted hold window, in a valid episode.
+            if grasped and elevated and self._invalid_reason is None: self._success_streak += 1
+            else: self._success_streak = 0
+        else:
+            grasped = self._grasped()
+            self._ever_grasped |= grasped
+            if self._ever_grasped and elevated: self._success_streak += 1
+            else: self._success_streak = 0
         success = self._success_streak >= self.config.success_hold_steps
         terminated = bool(success)
         truncated = self._step_count >= self.config.max_episode_steps
-        info = self._info(); info.update({"requested_action": requested.copy(), "applied_action": np.r_[ctrl[:5], (ctrl[5]-self._lo[5])/(self._hi[5]-self._lo[5])].astype(np.float32), "grasped": grasped, "elevated": elevated, "success": success})
+        info = self._info(); info.update({"requested_action": requested.copy(), "applied_action": np.r_[ctrl[:5], (ctrl[5]-self._lo[5])/(self._hi[5]-self._lo[5])].astype(np.float32), "grasped": grasped, "elevated": elevated, "success": success,
+                     "physics": self.config.physics, "contacts": diag, "invalid_reason": self._invalid_reason,
+                     "max_robot_table_penetration": self._max_robot_table_pen, "max_cube_table_penetration": self._max_cube_table_pen})
         return self._observation(), float(success), terminated, truncated, info
 
     def get_info(self) -> dict[str, Any]:

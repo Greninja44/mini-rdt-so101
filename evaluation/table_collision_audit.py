@@ -112,7 +112,7 @@ def grasp_metrics(rows):
 def main():
     p = argparse.ArgumentParser(); p.add_argument("--artifacts", default="artifacts"); p.add_argument("--output", default="docs/audit/table_collision")
     a = p.parse_args(); art, out = Path(a.artifacts), Path(a.output); out.mkdir(parents=True, exist_ok=True)
-    env = SO101PickCubeEnv(PickCubeConfig(render_observations=False)); probe = Probe(env); report = {}
+    env = SO101PickCubeEnv(PickCubeConfig(render_observations=False, physics="v1")); probe = Probe(env)  # audits v1 history; report = {}
 
     # A. collision configuration (effective model after env init; pads toggled only while closing)
     m = env.model
