@@ -1,5 +1,11 @@
 # Phase 6: isolating the remaining closed-loop failure (2M TinyRDT, 10 memorised scenes)
 
+> **Correction (2026-09-19):** statements below that call the model "state-dominant" rest on the wrong-state ablation. Actions are absolute
+> joint targets (≈ current state + a small step), so a wrong state inflates the error regardless of how the scene is identified. That ablation
+> does not measure scene identification. The observational findings are unaffected: the expert prefix, the oracle split, the shared-start
+> trajectory overlap, and the neighbour-directed lateral errors. See the CORRECTION in CLAUDE_PROGRESS.md.
+
+
 Pre-registered in `CLAUDE_PROGRESS.md` (Phase 6) before any result. Evaluator, seeds, K values and analysis are identical to Phase 5
 (`evaluation/phase5_analysis.py`, output `artifacts/phase5_analysis/phase5.json`).
 

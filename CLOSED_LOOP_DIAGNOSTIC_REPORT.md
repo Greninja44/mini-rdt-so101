@@ -1,5 +1,11 @@
 # Closed-loop diagnostic report: why does offline-accurate TinyRDT fail closed-loop?
 
+> **Correction (2026-09-19):** statements below that call the model "state-dominant" rest on the wrong-state ablation. Actions are absolute
+> joint targets (≈ current state + a small step), so a wrong state inflates the error regardless of how the scene is identified. That ablation
+> does not measure scene identification. The observational findings are unaffected: the expert prefix, the oracle split, the shared-start
+> trajectory overlap, and the neighbour-directed lateral errors. See the CORRECTION in CLAUDE_PROGRESS.md.
+
+
 Date: 2026-09-18. Sweep: `artifacts/closed_loop_v2/` (130 rollouts). Analysis: `artifacts/closed_loop_v2/analysis/analysis.json`.
 Policies: TinyRDT EMA (`research_audit/cosine_x0_hold_ema/ema_last.pt`, offline all-window MAE 0.0067),
 BC image+state (`bc_rgb/best.pt`), BC privileged state + true cube pose (`bc_privileged/best.pt`).

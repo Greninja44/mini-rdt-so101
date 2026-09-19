@@ -1,5 +1,11 @@
 # Overnight summary (2026-09-18 → 2026-09-19): why the 2M TinyRDT fails closed-loop, and what helps
 
+> **Correction (2026-09-19):** statements below that call the model "state-dominant" rest on the wrong-state ablation. Actions are absolute
+> joint targets (≈ current state + a small step), so a wrong state inflates the error regardless of how the scene is identified. That ablation
+> does not measure scene identification. The observational findings are unaffected: the expert prefix, the oracle split, the shared-start
+> trajectory overlap, and the neighbour-directed lateral errors. See the CORRECTION in CLAUDE_PROGRESS.md.
+
+
 Model size never changed (≈2.01M trainable). Every experiment was pre-registered in `CLAUDE_PROGRESS.md` before its result. Detailed
 reports: `CLOSED_LOOP_DIAGNOSTIC_REPORT.md`, `CORRECTIVE_DATA_REPORT.md`, `PHASE6_REPORT.md`. Numbers are successes on identical seeds
 (10 memorised CLEAN10 cubes, or 10 held-out validation cubes); max 150 steps; software rendering.
