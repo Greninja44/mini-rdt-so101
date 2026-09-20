@@ -44,19 +44,26 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--output", default="artifacts/pickcube_physics_v2_rgb160")
     p.add_argument("--start", type=int, default=0); p.add_argument("--count", type=int, default=100); p.add_argument("--seed-base", type=int, default=3000)
+    p.add_argument("--positions", help="generalization split JSON (data/generalization_split.py): collect its --split rows at fixed cube_xy")
+    p.add_argument("--split", choices=("validation", "test")); p.add_argument("--dataset-version", default="pickcube-physics-v2-1")
+    p.add_argument("--workspace-margin", type=float, default=0.0, help="widen ONLY the reset bounds check (extrapolation positions); physics unchanged")
     a = p.parse_args(); out = Path(a.output); (out / "episodes").mkdir(parents=True, exist_ok=True)
-    env = SO101PickCubeEnv(PickCubeConfig(physics="v2")); fp = model_fingerprint(env)
+    rows = json.loads(Path(a.positions).read_text())[a.split] if a.positions else None
+    base = PickCubeConfig(physics="v2"); m = a.workspace_margin
+    env = SO101PickCubeEnv(PickCubeConfig(physics="v2", workspace_x=(base.workspace_x[0] - m, base.workspace_x[1] + m), workspace_y=(base.workspace_y[0] - m, base.workspace_y[1] + m)))
+    fp = model_fingerprint(env)
     commit = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
     failed = out / "failed.jsonl"
-    for index in range(a.start, a.start + a.count):
-        final = out / "episodes" / f"episode_{index:06d}"; seed = a.seed_base + index
+    for index in range(a.start, min(a.start + a.count, len(rows)) if rows else a.start + a.count):
+        final = out / "episodes" / f"episode_{index:06d}"; seed = rows[index]["seed"] if rows else a.seed_base + index
         if final.exists() or (failed.exists() and any(json.loads(l)["index"] == index for l in failed.read_text().splitlines())): continue
-        obs, info = env.reset(seed=seed); ex = PickCubeExpertV2(env); ex.reset()
+        obs, info = env.reset(seed=seed, options={"cube_xy": rows[index]["cube_xy"]} if rows else None); ex = PickCubeExpertV2(env); ex.reset()
         meta = make_episode_metadata(env, seed, ACTION_REPRESENTATION, expert=ex)
-        meta.update({"physics_version": "v2", "expert_version": EXPERT_V2_VERSION, "dataset_version": "pickcube-physics-v2-1", "git_commit": commit,
+        meta.update({"physics_version": "v2", "expert_version": EXPERT_V2_VERSION, "dataset_version": a.dataset_version, "git_commit": commit,
                      "model_fingerprint": fp, "success_definition": SUCCESS_DEFINITION,
                      "cube_randomization": {"workspace_x": list(env.config.workspace_x), "workspace_y": list(env.config.workspace_y), "yaw": 0.0, "size_m": env.config.cube_size},
                      "expert_plan": {"yaw": ex.plan.get("yaw"), "grasp_dz_m": ex.plan.get("grasp_dz"), "side_overlap_m": ex.plan.get("side_overlap")}})
+        if rows: meta.update({"cube_xy": rows[index]["cube_xy"], "generalization": rows[index], "split_file": a.positions, "split": a.split})
         tmp = out / f"tmp_{os.getpid()}"; shutil.rmtree(tmp, ignore_errors=True)
         rec = EpisodeRecorder(tmp, index, meta); diag = {k: [] for k in ("side_pinch", "robot_table_penetration", "cube_table_penetration", "pad_cube_penetration", "robot_table_contacts", "pad_normals")}
         while not ex.done and info["step"] < env.config.max_episode_steps:
@@ -71,12 +78,13 @@ def main():
             for k, v in diag.items(): np.save(ep_dir / f"contact_{k}.npy", np.asarray(v, dtype=np.float32 if k != "side_pinch" else bool))
             os.replace(ep_dir, final)
         else:
-            with failed.open("a") as f: f.write(json.dumps({"index": index, "seed": seed, "failure": ex.failure_category, "invalid_reason": info.get("invalid_reason")}) + "\n")
+            with failed.open("a") as f: f.write(json.dumps({"index": index, "seed": seed, "failure": ex.failure_category, "invalid_reason": info.get("invalid_reason"),
+                                                            "expert_state": ex.state.value, "cube_xy": rows[index]["cube_xy"] if rows else None}) + "\n")
         shutil.rmtree(tmp, ignore_errors=True)
-        print(json.dumps({"index": index, "seed": seed, "success": ok, "steps": info["step"], "max_cube_table_mm": 1000 * info["max_cube_table_penetration"]}), flush=True)
+        print(json.dumps({"index": index, "seed": seed, "success": ok, "steps": info.get("step", 0), "max_cube_table_mm": 1000 * info.get("max_cube_table_penetration", 0.0)}), flush=True)
     (out / "collection_summary.json").write_text(json.dumps({"physics_version": "v2", "expert_version": EXPERT_V2_VERSION, "model_fingerprint": fp,
         "episodes": len(list((out / "episodes").glob("episode_*"))), "failed": len(failed.read_text().splitlines()) if failed.exists() else 0,
-        "seed_base": a.seed_base, "success_definition": SUCCESS_DEFINITION}, indent=1) + "\n")
+        "seed_base": a.seed_base, "positions": a.positions, "split": a.split, "workspace_margin_m": a.workspace_margin, "success_definition": SUCCESS_DEFINITION}, indent=1) + "\n")
 
 
 if __name__ == "__main__":

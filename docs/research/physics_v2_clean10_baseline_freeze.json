@@ -1,0 +1,1314 @@
+{
+ "label": "physics-v2 CLEAN10 memorization baseline",
+ "frozen_at": "2026-09-19",
+ "git_commit_results": "d079d35 (physics-v2 branch; merged to main as 19c4771)",
+ "git_commit_dataset_collection": "e56b511c612585b1dd4362fdc6f78155e687b1cd",
+ "environment": {
+  "physics_version": "v2",
+  "effective_model_sha256": "ce8794577b46aef864ba9658a0c183a7b50f9acedaa15b96f0c5fd6888c391da",
+  "mujoco": "3.13.0",
+  "sources_sha256": {
+   "simulation/env.py": "bb39e985b97639cd650bbe37e073b0f3b24ae1b9f3ee1523546c19be8fb015be",
+   "simulation/scene.py": "981e55edc0803fe2b9af348cc396495deb1fe516177984da5ec1011e30a184d1",
+   "simulation/controllers.py": "d84ff70789cc06aeb394c04a56adbdb0fbd722a372151142e4a74487ecee2696",
+   "simulation/assets/so101_new_calib.xml": "b5bf9d5f36efdc1a18772b31b3142ee6a339b2c8542a30dfd077344b25ed5592"
+  },
+  "workspace_x": [
+   0.235,
+   0.28
+  ],
+  "workspace_y": [
+   -0.07,
+   0.07
+  ],
+  "cube_yaw": 0.0,
+  "cube_size_m": 0.02
+ },
+ "expert": {
+  "version": "expert-v2-sidepinch-3",
+  "sources_sha256": {
+   "simulation/expert_v2.py": "d351cbabdbbabbea9762e72dfb308da8359d26c9ffb5d18814ba4640aa413179",
+   "simulation/pose_ik.py": "29815615abeb5851e2b30e299d7989efd54b83390b6bb01957f588ffca66832c"
+  }
+ },
+ "dataset": {
+  "root": "artifacts/pickcube_physics_v2_rgb160",
+  "version": "pickcube-physics-v2-1",
+  "episodes": 100,
+  "files": 1601,
+  "aggregate_sha256": "546d20329b5200ace5622a5965eb4443431f76ff028020df5d7f368b45fa31a2",
+  "collection_seeds": "3000+index"
+ },
+ "camera": {
+  "name": "external_rgb",
+  "width": 160,
+  "height": 120,
+  "fixed": true,
+  "rgb_dtype": "uint8",
+  "rgb_range": [
+   0,
+   255
+  ]
+ },
+ "tinyrdt": {
+  "model_config": {
+   "horizon": 16,
+   "action_dim": 6,
+   "state_dim": 6,
+   "hidden_dim": 192,
+   "layers": 4,
+   "heads": 6,
+   "dropout": 0.0,
+   "pretrained_vision": false,
+   "vision_tokens": "pooled",
+   "vision_grid": [
+    4,
+    5
+   ],
+   "state_dropout": 0.0,
+   "train_vision": false
+  },
+  "diffusion_config": {
+   "timesteps": 100,
+   "schedule": "cosine",
+   "beta_start": 0.0001,
+   "beta_end": 0.02,
+   "prediction": "x0",
+   "sampling_steps": 10
+  },
+  "parameters": {
+   "total_state_dict_elements": 2948824,
+   "frozen_vision_encoder": 939154,
+   "policy_excluding_vision": 2009670
+  },
+  "run_config": {
+   "schedule": "cosine",
+   "prediction": "x0",
+   "padding": "hold",
+   "steps": 20000,
+   "batch_size": 8,
+   "learning_rate": 0.001,
+   "ema_decay": 0.999,
+   "seed": 17,
+   "vision_tokens": "pooled",
+   "train_vision": false,
+   "encoder_checkpoint": "artifacts/tiny_rdt_overfit10/tiny_rdt_best.pt",
+   "encoder_checkpoint_sha256": "c121b9dd6b4f4b45d71b48a85f4ad7ba294b7919b0caf08421373a30127dad82",
+   "windows": 544,
+   "train_episode_ids": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11
+   ]
+  },
+  "training_seed": 17
+ },
+ "checkpoints_sha256": {
+  "ema_last.pt": "f3009bce97122ec4ebf848258b9450e633bdf382f56523e51bc0ecd96bc06514",
+  "last.pt": "069a4bbe560457fa9e140f9bada35570a0e17d6c1e495dba9327993595412a0c",
+  "best.pt": "f4d5c7fb3cadfda9e47a1875530e301c6160199712db5f8292965c7201ab80e1"
+ },
+ "normalization": {
+  "state_mean": [
+   -0.08065024018287659,
+   0.36019203066825867,
+   -0.30158188939094543,
+   0.9131503701210022,
+   -0.04523904249072075,
+   0.2665732800960541
+  ],
+  "state_std": [
+   0.15466448664665222,
+   0.2696216106414795,
+   0.38477057218551636,
+   0.6572136282920837,
+   0.15186358988285065,
+   0.19035133719444275
+  ],
+  "action_mean": [
+   -0.08247533440589905,
+   0.3452451825141907,
+   -0.2915192246437073,
+   0.9432113766670227,
+   -0.046432506293058395,
+   0.1741727888584137
+  ],
+  "action_std": [
+   0.15638427436351776,
+   0.267666757106781,
+   0.3745846748352051,
+   0.6365890502929688,
+   0.1538950651884079,
+   0.11492187529802322
+  ]
+ },
+ "results": {
+  "offline_gate": {
+   "pass": true,
+   "per_seed": {
+    "4100": {
+     "all_window_mae": {
+      "value": 0.004932095762342215,
+      "limit": 0.02,
+      "pass": true
+     },
+     "worst_arm_joint_mae_rad": {
+      "value": 0.009969566948711872,
+      "limit": 0.03,
+      "pass": true
+     },
+     "gripper_mae": {
+      "value": 0.0025342204608023167,
+      "limit": 0.03,
+      "pass": true
+     },
+     "worst_quarter_mae": {
+      "value": 0.006782344076782465,
+      "limit": 0.025,
+      "pass": true
+     },
+     "episode_start_mae": {
+      "value": 0.0050913672894239426,
+      "limit": 0.025,
+      "pass": true
+     }
+    },
+    "4101": {
+     "all_window_mae": {
+      "value": 0.00499904016032815,
+      "limit": 0.02,
+      "pass": true
+     },
+     "worst_arm_joint_mae_rad": {
+      "value": 0.010002476163208485,
+      "limit": 0.03,
+      "pass": true
+     },
+     "gripper_mae": {
+      "value": 0.0028242480475455523,
+      "limit": 0.03,
+      "pass": true
+     },
+     "worst_quarter_mae": {
+      "value": 0.006827979348599911,
+      "limit": 0.025,
+      "pass": true
+     },
+     "episode_start_mae": {
+      "value": 0.00512119522318244,
+      "limit": 0.025,
+      "pass": true
+     }
+    },
+    "4102": {
+     "all_window_mae": {
+      "value": 0.005030201748013496,
+      "limit": 0.02,
+      "pass": true
+     },
+     "worst_arm_joint_mae_rad": {
+      "value": 0.010130386799573898,
+      "limit": 0.03,
+      "pass": true
+     },
+     "gripper_mae": {
+      "value": 0.0026757956948131323,
+      "limit": 0.03,
+      "pass": true
+     },
+     "worst_quarter_mae": {
+      "value": 0.007037307135760784,
+      "limit": 0.025,
+      "pass": true
+     },
+     "episode_start_mae": {
+      "value": 0.00513912970200181,
+      "limit": 0.025,
+      "pass": true
+     }
+    }
+   }
+  },
+  "closed_loop_by_K": {
+   "n": 50,
+   "success": 49,
+   "expert_replay": {
+    "n": 10,
+    "success": 10
+   },
+   "by_k": {
+    "1": {
+     "n": 10,
+     "success": 9,
+     "phases": {
+      "never_closed": 1,
+      "success": 9
+     }
+    },
+    "2": {
+     "n": 10,
+     "success": 10,
+     "phases": {
+      "success": 10
+     }
+    },
+    "4": {
+     "n": 10,
+     "success": 10,
+     "phases": {
+      "success": 10
+     }
+    },
+    "8": {
+     "n": 10,
+     "success": 10,
+     "phases": {
+      "success": 10
+     }
+    },
+    "16": {
+     "n": 10,
+     "success": 10,
+     "phases": {
+      "success": 10
+     }
+    }
+   },
+   "per_episode": {
+    "0": 4,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5,
+    "7": 5,
+    "8": 5,
+    "9": 5,
+    "11": 5
+   },
+   "all_successes_physically_valid": false,
+   "max_robot_table_penetration_mm": 0,
+   "max_cube_table_penetration_mm": 0.5698343368441098,
+   "max_pad_cube_penetration_mm": 1.1351009464732367,
+   "early_close": 0,
+   "vertical_pad_contact_rollouts": 3,
+   "close_lateral_offset_mm_median": {
+    "success": 1.951244525577911,
+    "failure": NaN
+   },
+   "rows": [
+    {
+     "episode": 0,
+     "k": 1,
+     "success": false,
+     "phase": "never_closed",
+     "early_close": false,
+     "close": null,
+     "any_vertical_pad_contact": true,
+     "ever_side_pinch": false,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.5549470700887279,
+     "max_pad_cube_penetration_mm": 0.5334816797472666,
+     "invalid_reason": null,
+     "steps": 150,
+     "replans": 150
+    },
+    {
+     "episode": 0,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 10.435219047497283,
+      "lateral_offset_mm": 0.24800935811649874
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.0027446756621087834,
+     "max_pad_cube_penetration_mm": 0.9005002918874434,
+     "invalid_reason": null,
+     "steps": 54,
+     "replans": 4
+    },
+    {
+     "episode": 0,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 9.187998358705157,
+      "lateral_offset_mm": 1.4849694286666484
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.08335979770897424,
+     "max_pad_cube_penetration_mm": 0.7007728891077787,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 27
+    },
+    {
+     "episode": 0,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.237594694738714,
+      "lateral_offset_mm": 2.867155569910008
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.03772443373669362,
+     "max_pad_cube_penetration_mm": 0.8512330247019443,
+     "invalid_reason": null,
+     "steps": 54,
+     "replans": 14
+    },
+    {
+     "episode": 0,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.523004550652532,
+      "lateral_offset_mm": 0.14920110800717643
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.0027446756621087834,
+     "max_pad_cube_penetration_mm": 0.9494845999695275,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 7
+    },
+    {
+     "episode": 2,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 35,
+      "grasp_center_height_above_cube_center_mm": 14.424597392959567,
+      "lateral_offset_mm": 0.47434105668959725
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.0027446756621086984,
+     "max_pad_cube_penetration_mm": 0.9192939114163823,
+     "invalid_reason": null,
+     "steps": 52,
+     "replans": 52
+    },
+    {
+     "episode": 2,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 36,
+      "grasp_center_height_above_cube_center_mm": 12.780889649784212,
+      "lateral_offset_mm": 1.1559574322696762
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.13622979241677247,
+     "max_pad_cube_penetration_mm": 0.964700620831789,
+     "invalid_reason": null,
+     "steps": 52,
+     "replans": 4
+    },
+    {
+     "episode": 2,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.413346021932492,
+      "lateral_offset_mm": 2.1481278448942853
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.10049246350823632,
+     "max_pad_cube_penetration_mm": 0.7971882317306527,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 27
+    },
+    {
+     "episode": 2,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 10.40255739280056,
+      "lateral_offset_mm": 1.3944773659603207
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.13963763433138807,
+     "max_pad_cube_penetration_mm": 0.9178730887190911,
+     "invalid_reason": null,
+     "steps": 55,
+     "replans": 14
+    },
+    {
+     "episode": 2,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 36,
+      "grasp_center_height_above_cube_center_mm": 12.075770630690634,
+      "lateral_offset_mm": 0.8556226468560059
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.008954369027586052,
+     "max_pad_cube_penetration_mm": 0.9502318825796683,
+     "invalid_reason": null,
+     "steps": 54,
+     "replans": 7
+    },
+    {
+     "episode": 3,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 35,
+      "grasp_center_height_above_cube_center_mm": 13.737623549357561,
+      "lateral_offset_mm": 5.913301431763312
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.23910169085978739,
+     "max_pad_cube_penetration_mm": 1.0795985071863878,
+     "invalid_reason": null,
+     "steps": 51,
+     "replans": 51
+    },
+    {
+     "episode": 3,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 10.037811521056133,
+      "lateral_offset_mm": 3.73045112111499
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.00274467566210908,
+     "max_pad_cube_penetration_mm": 0.9582551939533732,
+     "invalid_reason": null,
+     "steps": 54,
+     "replans": 4
+    },
+    {
+     "episode": 3,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.49160410350455,
+      "lateral_offset_mm": 5.274410486755483
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.17932041571642166,
+     "max_pad_cube_penetration_mm": 1.0776708162053255,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 27
+    },
+    {
+     "episode": 3,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.186195204597828,
+      "lateral_offset_mm": 5.712374719700412
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.00274467566210908,
+     "max_pad_cube_penetration_mm": 1.060921232963316,
+     "invalid_reason": null,
+     "steps": 54,
+     "replans": 14
+    },
+    {
+     "episode": 3,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.098441268745917,
+      "lateral_offset_mm": 6.185341194062639
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.05302410770996993,
+     "max_pad_cube_penetration_mm": 1.0126580274664139,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 7
+    },
+    {
+     "episode": 4,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 34,
+      "grasp_center_height_above_cube_center_mm": 13.58656616689908,
+      "lateral_offset_mm": 3.0546821049073327
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.4006475978909171,
+     "max_pad_cube_penetration_mm": 1.0515998944806382,
+     "invalid_reason": null,
+     "steps": 50,
+     "replans": 50
+    },
+    {
+     "episode": 4,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 11.708600728183761,
+      "lateral_offset_mm": 2.099653401348863
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.0027446756621088034,
+     "max_pad_cube_penetration_mm": 1.0171944424077797,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 4
+    },
+    {
+     "episode": 4,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 40,
+      "grasp_center_height_above_cube_center_mm": 10.479500697793465,
+      "lateral_offset_mm": 4.083147235120754
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.0027446756621088034,
+     "max_pad_cube_penetration_mm": 0.9730246827259288,
+     "invalid_reason": null,
+     "steps": 55,
+     "replans": 28
+    },
+    {
+     "episode": 4,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 40,
+      "grasp_center_height_above_cube_center_mm": 5.892802604245,
+      "lateral_offset_mm": 3.165498151102263
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.0027446756621088034,
+     "max_pad_cube_penetration_mm": 1.0715833553972338,
+     "invalid_reason": null,
+     "steps": 57,
+     "replans": 15
+    },
+    {
+     "episode": 4,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 13.084267780132842,
+      "lateral_offset_mm": 1.7388894177779068
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.13676276023901737,
+     "max_pad_cube_penetration_mm": 1.038834470129911,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 7
+    },
+    {
+     "episode": 5,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 33,
+      "grasp_center_height_above_cube_center_mm": 10.437361774733942,
+      "lateral_offset_mm": 2.5083266416401027
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.34463794384827684,
+     "max_pad_cube_penetration_mm": 0.9912267573067696,
+     "invalid_reason": null,
+     "steps": 49,
+     "replans": 49
+    },
+    {
+     "episode": 5,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 10.204300672475561,
+      "lateral_offset_mm": 2.7023003154978618
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.21289558941826703,
+     "max_pad_cube_penetration_mm": 0.9590668023891717,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 4
+    },
+    {
+     "episode": 5,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.60240840382428,
+      "lateral_offset_mm": 1.6225994907973391
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.5438916202993818,
+     "max_pad_cube_penetration_mm": 0.8658993044057639,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 27
+    },
+    {
+     "episode": 5,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 11.202921871001877,
+      "lateral_offset_mm": 1.494912860264103
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.09851591786251242,
+     "max_pad_cube_penetration_mm": 0.9976013234300339,
+     "invalid_reason": null,
+     "steps": 54,
+     "replans": 14
+    },
+    {
+     "episode": 5,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 9.836140791103343,
+      "lateral_offset_mm": 1.30983203648464
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.22713395413584994,
+     "max_pad_cube_penetration_mm": 0.9111395739101059,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 7
+    },
+    {
+     "episode": 6,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 34,
+      "grasp_center_height_above_cube_center_mm": 12.051015572640217,
+      "lateral_offset_mm": 0.5308929999320248
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.4571356251597227,
+     "max_pad_cube_penetration_mm": 0.8694067469026325,
+     "invalid_reason": null,
+     "steps": 49,
+     "replans": 49
+    },
+    {
+     "episode": 6,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 10.274714345945359,
+      "lateral_offset_mm": 0.15894973742291116
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.002744675662109072,
+     "max_pad_cube_penetration_mm": 0.9458589020341717,
+     "invalid_reason": null,
+     "steps": 54,
+     "replans": 4
+    },
+    {
+     "episode": 6,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 40,
+      "grasp_center_height_above_cube_center_mm": 11.210921092788391,
+      "lateral_offset_mm": 1.2062111465681093
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.002744675662109072,
+     "max_pad_cube_penetration_mm": 0.965044936088583,
+     "invalid_reason": null,
+     "steps": 55,
+     "replans": 28
+    },
+    {
+     "episode": 6,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 41,
+      "grasp_center_height_above_cube_center_mm": 9.474288510417514,
+      "lateral_offset_mm": 1.089752309915007
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.1897439078555854,
+     "max_pad_cube_penetration_mm": 0.9626713659828959,
+     "invalid_reason": null,
+     "steps": 58,
+     "replans": 15
+    },
+    {
+     "episode": 6,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 11.845133400858275,
+      "lateral_offset_mm": 0.2904272131153159
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.002744675662109072,
+     "max_pad_cube_penetration_mm": 0.9783760434446049,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 7
+    },
+    {
+     "episode": 7,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 45,
+      "grasp_center_height_above_cube_center_mm": 11.351401009275586,
+      "lateral_offset_mm": 4.969669753225346
+     },
+     "any_vertical_pad_contact": true,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.5697186545790828,
+     "max_pad_cube_penetration_mm": 0.9837836460336704,
+     "invalid_reason": null,
+     "steps": 61,
+     "replans": 61
+    },
+    {
+     "episode": 7,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 12.01056602573919,
+      "lateral_offset_mm": 3.8198020695157875
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.1568205670522702,
+     "max_pad_cube_penetration_mm": 0.8975612400411239,
+     "invalid_reason": null,
+     "steps": 54,
+     "replans": 4
+    },
+    {
+     "episode": 7,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 45,
+      "grasp_center_height_above_cube_center_mm": 8.717279247920173,
+      "lateral_offset_mm": 13.977617458010704
+     },
+     "any_vertical_pad_contact": true,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.5698343368441098,
+     "max_pad_cube_penetration_mm": 1.081252009509047,
+     "invalid_reason": null,
+     "steps": 60,
+     "replans": 30
+    },
+    {
+     "episode": 7,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 11.416067988112939,
+      "lateral_offset_mm": 11.72953892884922
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.16954018303192575,
+     "max_pad_cube_penetration_mm": 1.0484595884851797,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 14
+    },
+    {
+     "episode": 7,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 12.339337685077131,
+      "lateral_offset_mm": 4.521692663531806
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.24151142719788357,
+     "max_pad_cube_penetration_mm": 0.9047813852707511,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 7
+    },
+    {
+     "episode": 8,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 35,
+      "grasp_center_height_above_cube_center_mm": 14.11928262670425,
+      "lateral_offset_mm": 2.566840167038166
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.019129123229508743,
+     "max_pad_cube_penetration_mm": 0.949320112081888,
+     "invalid_reason": null,
+     "steps": 52,
+     "replans": 52
+    },
+    {
+     "episode": 8,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 39,
+      "grasp_center_height_above_cube_center_mm": 11.035457235413691,
+      "lateral_offset_mm": 2.785163418104884
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.13881096571667356,
+     "max_pad_cube_penetration_mm": 0.921553929758096,
+     "invalid_reason": null,
+     "steps": 56,
+     "replans": 4
+    },
+    {
+     "episode": 8,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 40,
+      "grasp_center_height_above_cube_center_mm": 10.596496163420955,
+      "lateral_offset_mm": 1.951244525577911
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.14230342495107537,
+     "max_pad_cube_penetration_mm": 0.8881365398550769,
+     "invalid_reason": null,
+     "steps": 55,
+     "replans": 28
+    },
+    {
+     "episode": 8,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 39,
+      "grasp_center_height_above_cube_center_mm": 12.052660802124375,
+      "lateral_offset_mm": 3.37023415706279
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.002744675662109403,
+     "max_pad_cube_penetration_mm": 1.1351009464732367,
+     "invalid_reason": null,
+     "steps": 57,
+     "replans": 15
+    },
+    {
+     "episode": 8,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 40,
+      "grasp_center_height_above_cube_center_mm": 11.595277248802512,
+      "lateral_offset_mm": 2.5549319831689252
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.04467437584421319,
+     "max_pad_cube_penetration_mm": 0.8345520768274372,
+     "invalid_reason": null,
+     "steps": 56,
+     "replans": 7
+    },
+    {
+     "episode": 9,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.657191670582131,
+      "lateral_offset_mm": 0.8672864054680953
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.16911152233510143,
+     "max_pad_cube_penetration_mm": 0.8978537321758691,
+     "invalid_reason": null,
+     "steps": 55,
+     "replans": 55
+    },
+    {
+     "episode": 9,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 38,
+      "grasp_center_height_above_cube_center_mm": 10.560356355866155,
+      "lateral_offset_mm": 0.21159457241368052
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.1745334765207327,
+     "max_pad_cube_penetration_mm": 0.8912244307540196,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 4
+    },
+    {
+     "episode": 9,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 39,
+      "grasp_center_height_above_cube_center_mm": 9.049165229814017,
+      "lateral_offset_mm": 2.9618210343514924
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.12142937495603105,
+     "max_pad_cube_penetration_mm": 0.9493692887051537,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 27
+    },
+    {
+     "episode": 9,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 10.583014703045757,
+      "lateral_offset_mm": 1.5381785068698892
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.26272351039381975,
+     "max_pad_cube_penetration_mm": 1.0539764822459023,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 14
+    },
+    {
+     "episode": 9,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 12.504150927713177,
+      "lateral_offset_mm": 1.003211842411498
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.14625080695011167,
+     "max_pad_cube_penetration_mm": 1.0124353056119808,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 7
+    },
+    {
+     "episode": 11,
+     "k": 1,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 35,
+      "grasp_center_height_above_cube_center_mm": 11.885968091927017,
+      "lateral_offset_mm": 1.5825312566649605
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.1695564088523165,
+     "max_pad_cube_penetration_mm": 0.9630209342306352,
+     "invalid_reason": null,
+     "steps": 51,
+     "replans": 51
+    },
+    {
+     "episode": 11,
+     "k": 16,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 36,
+      "grasp_center_height_above_cube_center_mm": 13.443300176572023,
+      "lateral_offset_mm": 0.939381848594767
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.12368886753495875,
+     "max_pad_cube_penetration_mm": 0.9448233265800849,
+     "invalid_reason": null,
+     "steps": 52,
+     "replans": 4
+    },
+    {
+     "episode": 11,
+     "k": 2,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 9.840802573187265,
+      "lateral_offset_mm": 1.540819911728767
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.059337778242181255,
+     "max_pad_cube_penetration_mm": 0.8966625648899218,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 27
+    },
+    {
+     "episode": 11,
+     "k": 4,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 34,
+      "grasp_center_height_above_cube_center_mm": 10.308476191270513,
+      "lateral_offset_mm": 3.5050500066581294
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.29932451783067704,
+     "max_pad_cube_penetration_mm": 0.9427706613127272,
+     "invalid_reason": null,
+     "steps": 49,
+     "replans": 13
+    },
+    {
+     "episode": 11,
+     "k": 8,
+     "success": true,
+     "phase": "success",
+     "early_close": false,
+     "close": {
+      "t": 37,
+      "grasp_center_height_above_cube_center_mm": 11.380310354017332,
+      "lateral_offset_mm": 0.9235045154622633
+     },
+     "any_vertical_pad_contact": false,
+     "ever_side_pinch": true,
+     "max_robot_table_penetration_mm": 0.0,
+     "max_cube_table_penetration_mm": 0.131733892900876,
+     "max_pad_cube_penetration_mm": 0.899141009102215,
+     "invalid_reason": null,
+     "steps": 53,
+     "replans": 7
+    }
+   ]
+  },
+  "closed_loop_total": "49/50",
+  "closed_loop_artifacts": "artifacts/physics_v2/closed_loop (sampler 10 DDIM steps, policy_seed 0, max_steps 150)",
+  "validity_note": "All 49 successes pass the pre-registered v2 success criterion (side pinch during hold, penetration within tolerance). 2 successes (ep7 K=1, K=2) had a transient pre-grasp vertical pad contact that tipped the cube; the stricter diagnostic flag all_successes_physically_valid is False only because of these (PHYSICS_V2_REPORT.md section 16)."
+ },
+ "do_not_overwrite": [
+  "artifacts/physics_v2/tinyrdt_clean10",
+  "artifacts/physics_v2/closed_loop",
+  "artifacts/pickcube_physics_v2_rgb160"
+ ]
+}

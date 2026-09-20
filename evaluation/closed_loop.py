@@ -42,8 +42,8 @@ def _physical(env, rec, grasped):
     rec["pad_contacts"].append(_pad_contacts(env))
 
 
-def rollout(env, seed, act, max_steps, recorded_first_rgb=None, start_q=None):
-    obs, info = env.reset(seed=seed)
+def rollout(env, seed, act, max_steps, recorded_first_rgb=None, start_q=None, options=None):
+    obs, info = env.reset(seed=seed, options=options)
     if start_q is not None:
         from data.varied_start import apply_start
         obs, info = apply_start(env, start_q); recorded_first_rgb = None
@@ -108,21 +108,24 @@ def main():
     p.add_argument("--physics", choices=("v1", "v2"), default="v2", help="v1 only to replay the INVALID historical benchmark")
     p.add_argument("--start-seed", type=int, help="randomised start pose per episode (data/varied_start.py); the control becomes the legacy expert from that start")
     p.add_argument("--no-media", action="store_true")
+    p.add_argument("--workspace-margin", type=float, default=0.0, help="widen ONLY the reset bounds check for fixed-cube_xy episodes (generalization test); physics unchanged")
+    p.add_argument("--tag", default="", help="suffix for rollout stems, e.g. _s1 for policy-seed repeats")
     a = p.parse_args()
     torch.set_num_threads(2)
     out = Path(a.output); out.mkdir(parents=True, exist_ok=True)
     ck = torch.load(a.checkpoint, map_location="cpu", weights_only=False)
-    ids = a.episodes or ck["train_episode_ids"]
+    ids = a.episodes or ck["train_episode_ids"]; ck_sha = sha256(a.checkpoint)
     if a.policy == "tinyrdt":
         policy = TinyRDTPolicy(a.checkpoint, sampling_steps=a.sampling_steps, seed=a.policy_seed); horizon = policy.model.config.horizon
     else:
         policy = BCPolicy(a.checkpoint); horizon = policy.horizon
     from simulation.env import PickCubeConfig
-    env = SO101PickCubeEnv(PickCubeConfig(physics=a.physics))
+    base = PickCubeConfig(physics=a.physics); m = a.workspace_margin
+    env = SO101PickCubeEnv(PickCubeConfig(physics=a.physics, workspace_x=(base.workspace_x[0] - m, base.workspace_x[1] + m), workspace_y=(base.workspace_y[0] - m, base.workspace_y[1] + m)))
     for ep in ids:
         root = Path(a.dataset) / "episodes" / f"episode_{ep:06d}"
         meta = json.loads((root / "episode.json").read_text()); expert = np.load(root / "action.npy"); first_rgb = np.load(root / "rgb.npy")[0]
-        start_q = None
+        start_q = None; options = {"cube_xy": meta["cube_xy"]} if "cube_xy" in meta else None  # fixed-position (generalization) datasets
         if a.start_seed is not None:
             from data.varied_start import start_for
             start_q = start_for(env, a.start_seed, ep, 0)
@@ -147,7 +150,7 @@ def main():
         elif not a.skip_replay:
             # Control: exact open-loop replay of the recorded expert actions.
             stem = out / f"ep{ep:03d}_expert_replay"
-            replay, rec = _run_one(stem, lambda: rollout(env, meta["seed"], lambda obs, step, rec: expert[step:step + 1] if step < len(expert) else expert[-1:], a.max_steps, first_rgb))
+            replay, rec = _run_one(stem, lambda: rollout(env, meta["seed"], lambda obs, step, rec: expert[step:step + 1] if step < len(expert) else expert[-1:], a.max_steps, first_rgb, options=options))
             if rec is not None:
                 replay.update({"episode": ep, "seed": meta["seed"], "mode": "expert_replay", "expert_length": len(expert)})
                 np.savez_compressed(stem.with_suffix(".npz"), **{k2: v for k2, v in rec.items() if k2 not in ("chunks", "chunk_steps")}, expert_actions=expert)
@@ -155,7 +158,7 @@ def main():
             print(json.dumps(replay), flush=True)
         for k in a.k:
             if not 1 <= k <= horizon: raise ValueError("K must lie in [1, H]")
-            stem = out / f"ep{ep:03d}_k{k}"
+            stem = out / f"ep{ep:03d}_k{k}{a.tag}"
             latency = []
             def act(obs, step, rec):
                 started = time.perf_counter()
@@ -165,11 +168,11 @@ def main():
                 rec["chunks"].append(chunk); rec["chunk_steps"].append(step)
                 return chunk[:k]
             def run():
-                policy.reset(); return rollout(env, meta["seed"], act, a.max_steps, first_rgb, start_q)
+                policy.reset(); return rollout(env, meta["seed"], act, a.max_steps, first_rgb, start_q, options)
             result, rec = _run_one(stem, run)
             if rec is not None:
                 n = min(len(expert), len(rec["executed"]))
-                result.update({"episode": ep, "seed": meta["seed"], "mode": f"policy_k{k}", "k": k, "policy": a.policy, "expert_length": len(expert),
+                result.update({"episode": ep, "seed": meta["seed"], "mode": f"policy_k{k}{a.tag}", "k": k, "policy_seed": a.policy_seed, "checkpoint_sha256": ck_sha, "policy": a.policy, "expert_length": len(expert),
                                "replans": len(rec["chunks"]), "mean_inference_ms": 1000 * float(np.mean(latency)),
                                "executed_vs_expert_mae_first_n": np.abs(rec["executed"][:n] - expert[:n]).mean(0).tolist(),
                                "cube_initial_xy": rec["cube"][0][:2].tolist(), "start_q": None if start_q is None else start_q.tolist()})
@@ -184,7 +187,7 @@ def main():
     for r in results:
         t = table.setdefault(r["mode"], {"n": 0, "success": 0, "steps": []}); t["n"] += 1; t["success"] += r["success"]
         if r["success"]: t["steps"].append(r["steps"])
-    summary = {"checkpoint": a.checkpoint, "checkpoint_sha256": sha256(a.checkpoint), "policy": a.policy, "sampling_steps": a.sampling_steps,
+    summary = {"checkpoint": a.checkpoint, "checkpoint_sha256": ck_sha, "policy": a.policy, "sampling_steps": a.sampling_steps,
                "policy_seed": a.policy_seed, "max_steps": a.max_steps, "results": results,
                "table": {m: {"success_rate": v["success"] / v["n"], "n": v["n"], "mean_success_steps": float(np.mean(v["steps"])) if v["steps"] else None} for m, v in table.items()}}
     save_json(out / "closed_loop_summary.json", summary)
