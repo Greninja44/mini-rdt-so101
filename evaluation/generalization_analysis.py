@@ -144,11 +144,12 @@ INK, MUTED = "#0b0b0b", "#52514e"
 def fig_maps(positions, rows, split, out):
     from data.generalization_split import dataset_positions
     xy = {int(k): v for k, v in dataset_positions(split["dataset"]).items()}
-    fig, axes = plt.subplots(1, 3, figsize=(12, 8.2), sharey=True)
+    fig, axes = plt.subplots(1, 4, figsize=(15.5, 8.2), sharey=True)
     W = 1000 * np.array([split["workspace_x_m"], split["workspace_y_m"]]); band = 1000 * np.array(split["rule"]["hole_band_y_m"])
-    for ax, (title, model) in zip(axes, (("nearest-TRAIN80 distance", None), ("TRAIN80, K=8 (seed 0)", "TRAIN80"), ("CLEAN10, K=8 (seed 0)", "CLEAN10"))):
+    panels = (("nearest-TRAIN80 distance", None), ("TRAIN80, 80k steps, K=8", "TRAIN80_80k"), ("TRAIN80, 20k steps, K=8", "TRAIN80"), ("CLEAN10, K=8", "CLEAN10"))
+    for ax, (title, model) in zip(axes, panels):
         ax.add_patch(plt.Rectangle((W[0, 0], W[1, 0]), np.ptp(W[0]), np.ptp(W[1]), fill=False, ls="--", color="0.6")); ax.axhspan(*band, color="C1", alpha=.08)
-        train = split["train_subsets"]["CLEAN10" if model == "CLEAN10" else "TRAIN80"]
+        train = split["train_subsets"]["CLEAN10" if model == "CLEAN10" else "TRAIN80"]  # 80k and 20k share TRAIN80
         t = 1000 * np.array([xy[i] for i in train]); ax.scatter(*t.T, s=10 if model != "CLEAN10" else 40, color="0.55", marker="o", label=f"{'CLEAN10' if model == 'CLEAN10' else 'TRAIN80'} training positions")
         if model is None:
             p = [positions[i] for i in sorted(positions)]; sc = ax.scatter([1000 * q["cube_xy"][0] for q in p], [1000 * q["cube_xy"][1] for q in p], c=[q["nn_train80_mm"] for q in p], cmap="viridis", s=55, edgecolor="k", lw=.4)
@@ -185,10 +186,10 @@ def fig_distance(rows, offline, out):
 def fig_scaling(summary, out):
     fig, axes = plt.subplots(1, 2, figsize=(11, 3.8))
     ax = axes[0]; ks = [1, 2, 4, 8, 16]
-    for model, col in (("TRAIN80", "C0"), ("CLEAN10", "C3")):
+    for model, col in (("TRAIN80_80k", "C2"), ("TRAIN80", "C0"), ("CLEAN10", "C3")):
         v = [summary["closed_loop"].get(model, {}).get("by_k_seed0", {}).get(str(k)) for k in ks]
         pts = [(k, r) for k, r in zip(ks, v) if r and r["n"]]
-        if pts: ax.errorbar([str(k) for k, _ in pts], [100 * r["rate"] for _, r in pts], yerr=np.array([[100 * (r["rate"] - r["wilson95"][0]), 100 * (r["wilson95"][1] - r["rate"])] for _, r in pts]).T, fmt="o-", capsize=3, color=col, label=model)
+        if pts: ax.errorbar([str(k) for k, _ in pts], [100 * r["rate"] for _, r in pts], yerr=np.array([[100 * (r["rate"] - r["wilson95"][0]), 100 * (r["wilson95"][1] - r["rate"])] for _, r in pts]).T, fmt="o-", capsize=3, color=col, label={"TRAIN80_80k": "TRAIN80, 80k steps", "TRAIN80": "TRAIN80, 20k steps", "CLEAN10": "CLEAN10, 20k steps"}[model])
     ax.set_xlabel("K (actions executed per replan)"); ax.set_ylabel("held-out success (%)"); ax.set_ylim(-5, 105); ax.grid(alpha=.3); ax.legend(fontsize=8); ax.set_title("held-out K sweep (seed 0)", fontsize=10)
     ax = axes[1]; sizes = [("CLEAN10", 10), ("TRAIN20", 20), ("TRAIN40", 40), ("TRAIN80", 80)]
     pts = [(n, summary["closed_loop"].get(m, {}).get("by_k_seed0", {}).get("8")) for m, n in sizes]; pts = [(n, r) for n, r in pts if r and r["n"]]
