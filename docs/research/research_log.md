@@ -388,3 +388,23 @@ If image reliance rises but success does not, visual conditioning is not the bot
   - Two successes (ep7 K1/K2) tipped the cube before a valid side pinch.
 - **Answer:** MiniRDT learns a genuinely physical side grasp on memorised scenes. **STOPPED** here, per the phase instructions.
   Next: v2 generalisation (80 demos → held-out cubes), then scaling.
+
+## PHYSICS-V2 SPATIAL GENERALIZATION (2026-09-20) → PHYSICS_V2_GENERALIZATION_REPORT.md
+- **Pre-registered** (`docs/research/physics_v2_generalization_spec.md`, commit c4b9559) before any held-out demo existed: split, budget rule,
+  primary K=8, statistics, failure taxonomy, evaluation tiers.
+- **Split:** deterministic and spatial. TRAIN80 (nested TRAIN40/20/CLEAN10) + VAL10 + TEST A/B/C, where B is a 30 mm hole band cut out of
+  training and C is 3–15 mm outside the workspace. Expert control: A 20/20, B 20/20, C 16/20 → **56 benchmark positions** (4 C positions are
+  an arm reach limit, marked outside the benchmark, never replaced). Expert replay 56/56; resets bit-exact; rollouts deterministic.
+- **Answer:** the same 2M TinyRDT generalizes **inside dense data coverage and nowhere else**. With matched exposure (80k steps):
+  A **20/20**, B 4/20, C 4/16 (28/56 at K=8; 28/30/27 across sampler seeds; 27 positions always succeed, 26 always fail).
+  Success vs distance to the nearest demo: 87% within 5 mm, 0/6 beyond 15 mm (logistic slope −2.87 per 10 mm).
+- **Two methodological findings:**
+  - **Offline error is blind to closed-loop skill.** TRAIN80 at 20k vs 80k steps: offline test MAE 0.0104 vs 0.0101, but 7/20 vs 18/20 on
+    its own *training* scenes. The pre-registered primary (20k) was therefore under-trained: 9/56, and highly sampler-seed sensitive (9/17/18).
+  - **At a fixed step budget more data does not help** (13/17/13/9 of 56 for 10/20/40/80 demos); budget must scale with the dataset.
+    So "80 demos beat 10" holds only at matched exposure (28 vs 13, McNemar p = 2.7e-4).
+- **Failure mode:** one dominant category, `wrong_lateral_alignment` — median 20.0 mm lateral miss at close vs 6.5 mm for successes
+  (expert 0.9–2.0 mm). A frozen-feature probe localizes the cube to 4.3/7.9/11.6 mm median (A/B/C), so the learned action mapping, not the
+  encoder alone, fails to interpolate across the gap.
+- 1,329 rollouts, zero invalid-physics successes; 1 rollout hit the cube–table tolerance and was correctly rejected.
+- **STOPPED** per the spec. Next: exposure-matched data scaling, then a density sweep; capacity scaling only after those.

@@ -80,7 +80,26 @@ MiniRDT-SO101 is a scaled-down, RDT-inspired robot-policy pipeline, built stage 
 | TinyRDT offline (10 demos) | all-window MAE 0.0050, worst joint 0.010 rad, episode start 0.0051; pre-registered gate **passes** |
 | TinyRDT closed loop (10 memorised cubes) | K=1 9/10 · K=2 10/10 · K=4 10/10 · K=8 10/10 · K=16 10/10 (**49/50**); expert replay 10/10 |
 
-**Not yet tested under physics-v2:** held-out cube positions (generalisation) and model scaling. The previous (v1) ablations are
+### Generalisation to unseen cube positions ([`PHYSICS_V2_GENERALIZATION_REPORT`](PHYSICS_V2_GENERALIZATION_REPORT.md))
+
+<img src="docs/assets/v2_gen_success_map.png" width="100%" alt="held-out success by cube position"/>
+
+Pre-registered spatial split (80 training demos; 56 expert-validated held-out positions in three categories), same 2M model:
+
+| held-out category | nearest training cube | TinyRDT (80 demos, matched budget) | TinyRDT (10 demos) |
+|---|---|---|---|
+| A interpolation, inside dense coverage | 4.3 mm median | **20/20** | 11/20 |
+| B sparse interpolation (30 mm hole cut out of training) | 10.5 mm median | 4/20 | 0/20 |
+| C extrapolation, 3–15 mm outside the workspace | 14.1 mm median | 4/16 | 2/16 |
+
+Success falls steeply with distance to the nearest demonstration (logistic slope −2.87 per 10 mm, 95% CI [−5.04, −1.63]): 87% within
+5 mm, 0/6 beyond 15 mm. Two results worth knowing before scaling anything:
+- **Offline error does not predict closed-loop skill.** The same recipe at 20k and 80k steps is offline-identical (test MAE 0.0104 vs
+  0.0101) but solves 7/20 vs 18/20 of its *own training* scenes in closed loop.
+- **At a fixed step budget, more demonstrations do not help** (13 → 17 → 13 → 9 of 56 for 10 → 20 → 40 → 80 demos). The optimisation
+  budget has to grow with the dataset.
+
+**Not yet tested under physics-v2:** exposure-matched data scaling, and model capacity scaling. The previous (v1) ablations are
 archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
 
 ## Installation
@@ -153,6 +172,8 @@ size and sha256 for backup and verification.
 | report | question |
 |---|---|
 | [`PHYSICS_V2_REPORT`](PHYSICS_V2_REPORT.md) | **physics-v2: can MiniRDT learn a genuinely physical side grasp? (yes, on memorised scenes)** |
+| [`PHYSICS_V2_GENERALIZATION_REPORT`](PHYSICS_V2_GENERALIZATION_REPORT.md) | **can the same 2M model pick cubes it never saw? (yes, inside dense data coverage)** |
+| [`physics_v2_generalization_spec`](docs/research/physics_v2_generalization_spec.md) | pre-registered generalisation protocol: split, budget, primary K, statistics, failure taxonomy |
 | [`TABLE_COLLISION_AUDIT`](TABLE_COLLISION_AUDIT.md) | the audit that invalidated physics-v1 |
 | [`physics_v2_spec`](docs/research/physics_v2_spec.md) | pre-registered validity spec, tolerances and amendments |
 | [`00_summary`](docs/reports/00_summary.md) | *(physics-v1, invalid)* all v1 variants in one table |
@@ -168,7 +189,8 @@ size and sha256 for backup and verification.
 - [x] TinyRDT with a correct diffusion formulation; 10-demo offline overfit gate passes
 - [x] Collision audit; physics-v2 benchmark (table collision, calibrated contacts, validated side-pinch expert, stricter success)
 - [x] Reliable closed loop on memorised cubes under physics-v2 (49/50)
-- [ ] Physics-v2 generalisation: 80 training demos → held-out cube positions, fixed K
+- [x] Physics-v2 generalisation: 80 training demos → 56 held-out cube positions (20/20 inside dense coverage; collapses beyond ~5 mm from data)
+- [ ] Exposure-matched data scaling (10/20/40/80 demos at equal epochs) — the confound the fixed-step budget introduced
 - [ ] Controlled capacity scaling: 2M → 5M → 10M → 20M → 40M (fixed data, seeds, recipe)
 - [ ] Rotations, sizes and shapes; multiple objects and tasks; language conditioning
 - [ ] External SO-100/101 datasets, sim-to-real on a physical SO-101

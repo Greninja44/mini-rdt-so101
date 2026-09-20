@@ -9,6 +9,9 @@ import json
 from pathlib import Path
 
 GROUPS = {
+    "physics-v2 generalization datasets (10 validation + 56 expert-validated held-out positions)": ["artifacts/pickcube_physics_v2_gen_val_rgb160/episodes/*/*", "artifacts/pickcube_physics_v2_gen_test_rgb160/episodes/*/*", "artifacts/pickcube_physics_v2_gen_*_rgb160/*.json*"],
+    "physics-v2 generalization models (TRAIN20/40/80, 80k arm)": ["artifacts/physics_v2_generalization/models/*/*.pt", "artifacts/physics_v2_generalization/models/*/*.json"],
+    "physics-v2 generalization results (1,329 rollouts, offline, diagnostics)": ["artifacts/physics_v2_generalization/closed_loop/*/*.json", "artifacts/physics_v2_generalization/diagnostic_train_scenes/*/*.json", "artifacts/physics_v2_generalization/offline/*.json", "artifacts/physics_v2_generalization/*.json", "artifacts/physics_v2_generalization/*.txt"],
     "physics-v2 dataset (100 side-pinch demos, contact diagnostics)": ["artifacts/pickcube_physics_v2_rgb160/episodes/*/*", "artifacts/pickcube_physics_v2_rgb160/*.json*"],
     "physics-v2 TinyRDT, expert validation and closed-loop results": ["artifacts/physics_v2/tinyrdt_clean10/*.pt", "artifacts/physics_v2/tinyrdt_clean10/*.json", "artifacts/physics_v2/tinyrdt_clean10/diagnostics_ema_last/diagnostics.json", "artifacts/physics_v2/expert_validation/validation.json", "artifacts/physics_v2/closed_loop/*.json", "artifacts/physics_v2/*.json"],
     "dataset: 100 PickCube demos (CLEAN10 = train ids [0,2,3,4,5,6,7,8,9,11], split seed 17)": ["artifacts/pickcube_smoke100_rgb160/episodes/*/*", "artifacts/pickcube_smoke100_rgb160/collection_summary*.json"],
