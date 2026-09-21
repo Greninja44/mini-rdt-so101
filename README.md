@@ -99,7 +99,25 @@ Success falls steeply with distance to the nearest demonstration (logistic slope
 - **At a fixed step budget, more demonstrations do not help** (13 → 17 → 13 → 9 of 56 for 10 → 20 → 40 → 80 demos). The optimisation
   budget has to grow with the dataset.
 
-**Not yet tested under physics-v2:** exposure-matched data scaling, and model capacity scaling. The previous (v1) ablations are
+### Exposure-matched data scaling ([`EXPOSURE_MATCHED_DATA_SCALING_REPORT`](EXPOSURE_MATCHED_DATA_SCALING_REPORT.md))
+
+<img src="docs/assets/v2_scaling_curve.png" width="100%" alt="exposure-matched data scaling"/>
+
+Same 2M model, same 56 held-out positions, optimisation **exposure held constant** at 147.87 passes over each subset's own windows
+(budgets derived from measured window counts: 10,055 / 20,037 / 40,018 / 80,000 steps):
+
+| demos | held out (K=8) | A | B | C | nearest demo (median) |
+|---|---|---|---|---|---|
+| 10 | 15/56 | 11/20 | 2/20 | 2/16 | 17.7 mm |
+| 20 | 17/56 | 12/20 | 2/20 | 3/16 | 11.4 mm |
+| 40 | 26/56 | 10/20 | 14/20 | 2/16 | 9.5 mm |
+| 80 | 28/56 | 20/20 | 4/20 | 4/16 | 7.2 mm |
+
+**More data helps only through coverage.** Doubling the dataset looks beneficial on its own (+0.37 logit per doubling), but conditioned on
+the distance to the nearest training cube the effect vanishes (−0.05, 95% CI [−0.35, +0.21]) while the distance effect stays (−1.97 per
+10 mm). Extrapolation never improves (2 → 3 → 2 → 4). The previous fixed-step curve (13 → 17 → 13 → 9) was an exposure artifact.
+
+**Not yet tested under physics-v2:** per-scale seed replication, the data-density sweep, and model capacity scaling. The previous (v1) ablations are
 archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
 
 ## Installation
@@ -174,6 +192,8 @@ size and sha256 for backup and verification.
 | [`PHYSICS_V2_REPORT`](PHYSICS_V2_REPORT.md) | **physics-v2: can MiniRDT learn a genuinely physical side grasp? (yes, on memorised scenes)** |
 | [`PHYSICS_V2_GENERALIZATION_REPORT`](PHYSICS_V2_GENERALIZATION_REPORT.md) | **can the same 2M model pick cubes it never saw? (yes, inside dense data coverage)** |
 | [`physics_v2_generalization_spec`](docs/research/physics_v2_generalization_spec.md) | pre-registered generalisation protocol: split, budget, primary K, statistics, failure taxonomy |
+| [`EXPOSURE_MATCHED_DATA_SCALING_REPORT`](EXPOSURE_MATCHED_DATA_SCALING_REPORT.md) | **does more data help, or just closer data? (coverage, not count)** |
+| [`exposure_matched_data_scaling_spec`](docs/research/exposure_matched_data_scaling_spec.md) | pre-registered exposure definition, derived budgets, distance bins, decision gate |
 | [`TABLE_COLLISION_AUDIT`](TABLE_COLLISION_AUDIT.md) | the audit that invalidated physics-v1 |
 | [`physics_v2_spec`](docs/research/physics_v2_spec.md) | pre-registered validity spec, tolerances and amendments |
 | [`00_summary`](docs/reports/00_summary.md) | *(physics-v1, invalid)* all v1 variants in one table |
@@ -190,7 +210,8 @@ size and sha256 for backup and verification.
 - [x] Collision audit; physics-v2 benchmark (table collision, calibrated contacts, validated side-pinch expert, stricter success)
 - [x] Reliable closed loop on memorised cubes under physics-v2 (49/50)
 - [x] Physics-v2 generalisation: 80 training demos → 56 held-out cube positions (20/20 inside dense coverage; collapses beyond ~5 mm from data)
-- [ ] Exposure-matched data scaling (10/20/40/80 demos at equal epochs) — the confound the fixed-step budget introduced
+- [x] Exposure-matched data scaling (10/20/40/80 demos at 147.87 passes each): 15 → 17 → 26 → 28 of 56, explained by local coverage, not count
+- [ ] Seed replication per data scale, then a data-density sweep that varies spacing at fixed dataset size
 - [ ] Controlled capacity scaling: 2M → 5M → 10M → 20M → 40M (fixed data, seeds, recipe)
 - [ ] Rotations, sizes and shapes; multiple objects and tasks; language conditioning
 - [ ] External SO-100/101 datasets, sim-to-real on a physical SO-101

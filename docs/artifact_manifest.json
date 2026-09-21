@@ -1,6 +1,3060 @@
 {
  "files": [
   {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/best.pt",
+   "bytes": 28024557,
+   "sha256": "0c687d57c94e4e6a3ad379d4c32135e7697e670edda0a6264edc23f01be39dfd",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/ema_last.pt",
+   "bytes": 11915342,
+   "sha256": "6a3bf87cd5387bfe3a35e47e36c4c2659f0e75d7fa81b38a667d44180103fc09",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/ema_step004000.pt",
+   "bytes": 11917244,
+   "sha256": "1ab066f0ec713b1cf014d3095e692b8137252f84c2abb78c904258bba8c20ab5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/ema_step008000.pt",
+   "bytes": 11917244,
+   "sha256": "8a8d3c90102f2ad089cd56d8fdb1cd20b500e337efea16ce93b3be0e716ffe51",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/last.pt",
+   "bytes": 28024557,
+   "sha256": "46c7802c3e10f4145916cf342a79706667b687db80833e302e1304a2f942574e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/best.pt",
+   "bytes": 28024557,
+   "sha256": "f366437c2966e6c3454e6fab691349f936bd6dbb1d8b6414395a1f824073b0bd",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/ema_last.pt",
+   "bytes": 11915342,
+   "sha256": "de9bfdbf0dde44dc5a273564606aea38b9b43eedeac52b71b227ce39c0277293",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/ema_step004000.pt",
+   "bytes": 11917244,
+   "sha256": "2626ec11613c671ac7d465c5aa8c7998b3c4fa6b32e76a17d88056da68b5c2c5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/ema_step008000.pt",
+   "bytes": 11917244,
+   "sha256": "f0218d537fd47f3144c9f0039157efee66f2a66a19c4716e1f6a20298765c53d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/ema_step012000.pt",
+   "bytes": 11917244,
+   "sha256": "7c7bb45321fc9e40162d8d9ea410e761aee951b8926831ae4d0e832778344b59",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/ema_step016000.pt",
+   "bytes": 11917244,
+   "sha256": "fa08d66bc440e43f03a084a35e1a9cf6a3649bc89582caf8335795e14e0c4d16",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/ema_step020000.pt",
+   "bytes": 11917244,
+   "sha256": "9674e0e450e320d01de8bce8139786b9f3795e551a7aab455efe55863840250e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/last.pt",
+   "bytes": 28024557,
+   "sha256": "4816867140ce7f24db69ee33c194cdb20d089e6c551c69d2ac53af244aa7e2bd",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/best.pt",
+   "bytes": 28024557,
+   "sha256": "b1e5a275c2d51b5a6aea0cbbd5833ca4349a1671b82e80b5401fe212a1360c1d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_last.pt",
+   "bytes": 11915406,
+   "sha256": "5b9ea7584ce49dc5113a89da757b460863fb83df578a21b3e6062812dc3163f9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step004000.pt",
+   "bytes": 11917308,
+   "sha256": "f0df5b891be639cb8b51a25538e4404d23fca7a25e815b3748fdf5468e5332e0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step008000.pt",
+   "bytes": 11917308,
+   "sha256": "eb1b77035bcf10a65432f6c355149b1fdba7fee187babd17fb2808911973cb8f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step012000.pt",
+   "bytes": 11917308,
+   "sha256": "bae346e47dcb0619a66544308d18b353cd1a59ed17b7abaae76b95bd92e60877",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step016000.pt",
+   "bytes": 11917308,
+   "sha256": "09b8672aaf2ea8f7f7b36584f148c06a40cd2e5924d21fecd71b8ba1744f1a20",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step020000.pt",
+   "bytes": 11917308,
+   "sha256": "f6f6128093277faa6efd2839ed1adf3e30d508a7457e29114043458d5ed10499",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step024000.pt",
+   "bytes": 11917308,
+   "sha256": "3eeef666b7e8508416c8175cbe5ded2de1fe3cd1cd0d5f5d92306ded3fe38e0a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step028000.pt",
+   "bytes": 11917308,
+   "sha256": "100f5a68f2fbf0e3bdcdcd545a2d60c3581eac8ea5fe3b9504ca2b72d110a0c3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step032000.pt",
+   "bytes": 11917308,
+   "sha256": "a4a4296b97176028a9e9e4e6646dd1f919d4392377391d645cd80fdb29b60ff1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step036000.pt",
+   "bytes": 11917308,
+   "sha256": "04e2f301d9bebe1e84c88e4abc8f99b71dd397de848a44d2e040f04827f0750f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/ema_step040000.pt",
+   "bytes": 11917308,
+   "sha256": "1a6e6e9dac26862bbd3cacaea2d6e373b8c8d4f427f3c6071901fad6112d7036",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/last.pt",
+   "bytes": 28024557,
+   "sha256": "bb2b5c6c8ce6da34e100752bffc66910853e15bd1706a5891a153eac2c883a68",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/config.json",
+   "bytes": 1168,
+   "sha256": "24bfb9a8105e3363bb89323b7ef3bd9da768c7fda56d3256ffc87ee5b300c14a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/normalization.json",
+   "bytes": 685,
+   "sha256": "2df021fd24f3b070a6f2bf5876a13491f9383b15579d1770b74dc4d748db82dc",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/provenance.json",
+   "bytes": 29577,
+   "sha256": "269ff6b648a87916b2cb3e31945e443761b9f52e33a012f68ce4227e6ed8c132",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/result.json",
+   "bytes": 1576,
+   "sha256": "798374a60070de757e2e7c3dc0aca0bf213201adaeef9455f97570fd56e0e4a9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e/splits.json",
+   "bytes": 862,
+   "sha256": "8a92c9e07eb0f5870c109ebb37ea9a97aa368c520b2db1b26586ec9117b6a63b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/config.json",
+   "bytes": 1249,
+   "sha256": "44a156a4507639b86a1e46d11cb12b644e4b8f46504578b89fec45226b99f3ec",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/normalization.json",
+   "bytes": 684,
+   "sha256": "81281e7291e494b1e4d02eb5cd34eec58357f4807a2d4b7f3c932f1242134b91",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/provenance.json",
+   "bytes": 54653,
+   "sha256": "99531308dd10958b475925859a60d7257b248715aba683b7df2b09c3f25dbb9b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/result.json",
+   "bytes": 1659,
+   "sha256": "0430aae1c5966a8f89c65d905358990c5929b04e86a7a5114950bc01d384481c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e/splits.json",
+   "bytes": 862,
+   "sha256": "8a92c9e07eb0f5870c109ebb37ea9a97aa368c520b2db1b26586ec9117b6a63b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/config.json",
+   "bytes": 1409,
+   "sha256": "921be3decc735a890de72419a950a8e6e53a5237083933b855e36a1b1f165a6f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/normalization.json",
+   "bytes": 683,
+   "sha256": "2616b47746374045d0fe0066196ee516ac0c117801f9c0504480aedfee06c4f9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/provenance.json",
+   "bytes": 104593,
+   "sha256": "7fb08aa45cf51686509fad8da8ea33b40dbb204fdadd126f9eee45d40306a5f8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/result.json",
+   "bytes": 1833,
+   "sha256": "cbd8ba9199bcc526c6e875387c8e8e8bce96df94cfa139cbbc720ba6b2bdc6ef",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e/splits.json",
+   "bytes": 862,
+   "sha256": "8a92c9e07eb0f5870c109ebb37ea9a97aa368c520b2db1b26586ec9117b6a63b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/closed_loop_summary.json",
+   "bytes": 148306,
+   "sha256": "8836ebe6a65d24c7edfd1883a65bbd79de401b37c564e93fd9afdff9fab28d9e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep000_k8.json",
+   "bytes": 973,
+   "sha256": "96bf04796d52016a6a65d5f705933b183f0ff4f646d8427079b774f64e2b44f8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep001_k8.json",
+   "bytes": 972,
+   "sha256": "6a6c402972f598297679437e710308cad3a4f69e253d5a379c2fd85b8750f1c0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep002_k8.json",
+   "bytes": 974,
+   "sha256": "62809e53aa5e9316b30deb6c2aa88ed10c068925fd737edcb0feb58a4b5a0e6c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep002_k8_s1.json",
+   "bytes": 971,
+   "sha256": "1a66bb0f9f9311766d3a933f53de7f65f1d604a5dd43481518acef354cbf7ef0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep002_k8_s2.json",
+   "bytes": 977,
+   "sha256": "1141a094df4201011708c8827afb9508f08a1f062c84deae03dcfc5bf584d28c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep003_k8.json",
+   "bytes": 965,
+   "sha256": "1c2436b5a44fb7149733aed99503c2e4e37dff727f7c8887860dab28479dc038",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep003_k8_s1.json",
+   "bytes": 965,
+   "sha256": "4974255e87dd610348a1bb044fb600bf22fcf6ece83c72a6730a8082f1b16597",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep003_k8_s2.json",
+   "bytes": 965,
+   "sha256": "dc87cdcda0ce5394944014569d3d4bd125c7c9ed1927bd743588d92e7ada3d7f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep004_k8.json",
+   "bytes": 975,
+   "sha256": "8b31ef2faac8a4ccee478d985c25daefc16a628be06bc690d4a34d9c41ea330f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep004_k8_s1.json",
+   "bytes": 970,
+   "sha256": "9c853d10076f77b1240b81206ca97d5226496a7bb33402c9db1e8e44bf7a2d23",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep004_k8_s2.json",
+   "bytes": 979,
+   "sha256": "0afcff58cd1fe2e3d404414707a540f9e312d89987d455343443142a8954452a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep005_k8.json",
+   "bytes": 970,
+   "sha256": "5726dacb6dee2f1cc04019741cf65581bd90c8b129fd3399c8cda570e3904c15",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep005_k8_s1.json",
+   "bytes": 973,
+   "sha256": "10479132ece0fb16295cbc694eb6ea97d67348a83f65e613b9c41d46a79f4c13",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep005_k8_s2.json",
+   "bytes": 973,
+   "sha256": "c4b1e8f614ef7ab27bfd162dc965d630e3a57c0fc925ccf4097106c99c189490",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep006_k8.json",
+   "bytes": 970,
+   "sha256": "1795e1d7126f24a86ca4e2bcb3a0a66cf287208d8cb31cb8b4873d38750714d3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep006_k8_s1.json",
+   "bytes": 978,
+   "sha256": "bc65fb533e53953737f3fb390216715b1d39dae35ce2dd3592cdefa0ffde6d5b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep006_k8_s2.json",
+   "bytes": 976,
+   "sha256": "9b4602c0eaf0a2a081f22dc22cabb0f8345e8ff50ef307b6778d57c27a139ca5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep007_k8.json",
+   "bytes": 967,
+   "sha256": "db10f3a233a891e0c531c8b586a0a6635094fd8cdeeae7cf59eebc2e2d561b96",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep007_k8_s1.json",
+   "bytes": 965,
+   "sha256": "64555519ca10e14da27e376436a0d427f473894db5f1b7c0d8b12aacb47ca299",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep007_k8_s2.json",
+   "bytes": 966,
+   "sha256": "107ad993ecaca9ca3682344a3d1d688c6a932fed7dc1188f944e6a33ab83967d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep008_k8.json",
+   "bytes": 963,
+   "sha256": "f9a9ad501bd86f7212bcf01da6760e52d74aa0109ba1fb0b7a485ce382d968f6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep008_k8_s1.json",
+   "bytes": 965,
+   "sha256": "073090cd53b500763f383edfefc4d0418a12551f354edb47d8c0636caf375628",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep008_k8_s2.json",
+   "bytes": 967,
+   "sha256": "5051c8cfd0376a06ce53faf38c080e0ce4c6e36fe46229c311816754ae236107",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep009_k8.json",
+   "bytes": 965,
+   "sha256": "49b71e888bd5f8dde42d4fbd36ea137db3fd0fefa00b81432f055e40aafa291a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep009_k8_s1.json",
+   "bytes": 970,
+   "sha256": "8ebda20af789436b4af9c78c041b0fa68bd09cc04a523db4d14442871cc37fc1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep009_k8_s2.json",
+   "bytes": 968,
+   "sha256": "4b1b4e25a97b878f808c2f447bb7a06067932491baf477917e03be22308431b1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep010_k8.json",
+   "bytes": 974,
+   "sha256": "8f04530e7a17b49ca3a074b5e5e917edcc3fac3d3e5dda03d19df23a6d6922b3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep010_k8_s1.json",
+   "bytes": 976,
+   "sha256": "5187ef90249f9c2259fef9ff6cc7a8866ffc6620f2112ccbe5b9e49d4b9f2694",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep010_k8_s2.json",
+   "bytes": 976,
+   "sha256": "17f4cf4f28f932a3fef8620d4bb03d4d5879c081b8f0911a9c78359988ff0b81",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep011_k8.json",
+   "bytes": 971,
+   "sha256": "9f069e6ceae8ff2478dd59910cc37de42ca06b1402f0d411ea89122eb784e7a0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep012_k8.json",
+   "bytes": 963,
+   "sha256": "df5b57252fa92715ecb70d246ff7a0dd4ac30b9b53394d9758b93d544504a521",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep012_k8_s1.json",
+   "bytes": 966,
+   "sha256": "5bbf53bf2f9c42b7abc1df5163c85ad3d43af1b3da4a9e3e723d069c7cf0f110",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep012_k8_s2.json",
+   "bytes": 963,
+   "sha256": "5f90ea45cfdd9992822d4c26fefa9e072ec09badea0fb8c06ab22fcba34c945c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep013_k8.json",
+   "bytes": 975,
+   "sha256": "8d1f9a563f055946bce13472503d74f128d78cda4f1779950032940776b38657",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep013_k8_s1.json",
+   "bytes": 977,
+   "sha256": "c0bf4c6f434f56511f84fc2fd6e6c2cca93eed546ee8c2419b2df3d10761f70c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep013_k8_s2.json",
+   "bytes": 977,
+   "sha256": "95f29088512d6f73c7e55a55aab0005c4f4be77ca4f4bee5316123a03b9a1f7b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep014_k8.json",
+   "bytes": 972,
+   "sha256": "38620977e6dbe765d6ee7cddd55f1c5e3c60b37a6dd4264ad656898c4a31061b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep014_k8_s1.json",
+   "bytes": 968,
+   "sha256": "0b452855f757d48169ab532d851fb9a386b534990b759e79cc00a05a347048ca",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep014_k8_s2.json",
+   "bytes": 976,
+   "sha256": "13b2b220a933a3279f14802a981c4c2eb5e2bf756014f20e1ae6de49029719da",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep015_k8.json",
+   "bytes": 959,
+   "sha256": "b08ec11a8a93a922bc679323afd2e2ed97215d08833fab35b79c70948d4b1049",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep015_k8_s1.json",
+   "bytes": 966,
+   "sha256": "1a3f0070115f9f21f6e5e52a69319ab78f82f2883d95b4cb91dbba0ead431e62",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep015_k8_s2.json",
+   "bytes": 964,
+   "sha256": "d0e5f37709019e1d621506381103efbbda7169db46af8a86665aaeba370f453e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep016_k8.json",
+   "bytes": 967,
+   "sha256": "8128f123ef818a49dda3dc3647ca980f9bf55d7dca3e140bf6828319813367ac",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep016_k8_s1.json",
+   "bytes": 975,
+   "sha256": "02c888aecc3e1f9d21fef397e506db9ef4d1eb950edbd3437fc1edcc48e2111d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep016_k8_s2.json",
+   "bytes": 959,
+   "sha256": "f1df11257fd9e6cb5e24a8e82a059bef479e54bd7b538a22fc39fc86896d636f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep017_k8.json",
+   "bytes": 972,
+   "sha256": "ca7839d9ecc6955820a8b2043ea4140e35fac150362ac60db0370c5cd0b3d060",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep017_k8_s1.json",
+   "bytes": 980,
+   "sha256": "694ec8977134038091f94d36c014c1902ea5d4e7b79af79d80348bbdc79e7f32",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep017_k8_s2.json",
+   "bytes": 975,
+   "sha256": "cfcf98ff709ce9784804007163456a676495f3100fa52db50a1be673d7223adb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep018_k8.json",
+   "bytes": 978,
+   "sha256": "05c27eefa27373cc90b3e98d35dfb9b10279e33f02539c444c802563e7da024d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep018_k8_s1.json",
+   "bytes": 976,
+   "sha256": "239fa388b0f8e36f57e61bc479d1eb3858ced565e9757c87ae58a7d9fe7f2e91",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep018_k8_s2.json",
+   "bytes": 981,
+   "sha256": "54c41389a0aaf97f46000a0d44a3f87bbd63cba0a080d557196ce473b5a490c3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep019_k8.json",
+   "bytes": 963,
+   "sha256": "fdfe49e375480e7b9cd3931846b940b83d224d0e3abca92ef6c8238748e5f1d6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep019_k8_s1.json",
+   "bytes": 966,
+   "sha256": "34a521297fb9ba7f37c42739f4a83ddf6de9a16c08517940512b74b45726c590",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep019_k8_s2.json",
+   "bytes": 965,
+   "sha256": "5773f5c0e9154036a352c6d1e679c28d840be460b956391271db4b7ddee56382",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep020_k8.json",
+   "bytes": 963,
+   "sha256": "f48bedda1dc8f616a711b32579e3a5397c640e12c16e1e3a1d60f4be06679c25",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep020_k8_s1.json",
+   "bytes": 969,
+   "sha256": "5b4fbc0b23550e25bec97ec9e16946b02a0c889fc72769051ad2dea0b38738d5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep020_k8_s2.json",
+   "bytes": 968,
+   "sha256": "189ed5910c9d5f3a8348d53bdbb23ed889ea41a4eba12d98ba7091e2b4519584",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep021_k8.json",
+   "bytes": 965,
+   "sha256": "2dbaef75fe6ab2c209fdcdaf6ea2186cd20ecd0ebc71014274a34229f8119cfa",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep021_k8_s1.json",
+   "bytes": 967,
+   "sha256": "137940ce19897e4bccd04c3e2a02a229df751ee02e6a84beac6fc63a78931edf",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep021_k8_s2.json",
+   "bytes": 968,
+   "sha256": "67bf57df2edf2859fe26a98c3c538713cab94899837f15922f2dff4f9df352cf",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep022_k8.json",
+   "bytes": 974,
+   "sha256": "9c507b73ab87079f531bcc64571a010f0adc7508db1ddc55b3e66fb07c6cfe11",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep022_k8_s1.json",
+   "bytes": 999,
+   "sha256": "3d3002cd1340757d12637035e86825be81ed7db3c5da18be3e85557f2029c604",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep022_k8_s2.json",
+   "bytes": 982,
+   "sha256": "f3dd30555627bf02c0446ef9e4b686999450bac505765321bf3db657085bb214",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep023_k8.json",
+   "bytes": 964,
+   "sha256": "dab533a3c7a316ab47ca0cf4b3ba3819a6982d89416aecaf972c1e4aa480609a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep023_k8_s1.json",
+   "bytes": 969,
+   "sha256": "33f3e8a82da55487a41d634c1e817c2bd75cb033efb9de3effa1c94acf8b1758",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep023_k8_s2.json",
+   "bytes": 964,
+   "sha256": "29666179b118df24d40e5b5359339c17c05ff5c6d704ce3653f03d96b8ee09e5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep024_k8.json",
+   "bytes": 981,
+   "sha256": "ae7a21d84b3eab9363517dafd9b149deedec49ab986a0b0b1bec00e20d616b30",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep024_k8_s1.json",
+   "bytes": 967,
+   "sha256": "5c71b7154aa78429635ca16429cc3fef720a05156c50540579ad8e8bde226094",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep024_k8_s2.json",
+   "bytes": 969,
+   "sha256": "6e481b3d1efcf80955de1b0f31dfcecfef0b9e6df71c1789654997a0fe3a6c5f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep025_k8.json",
+   "bytes": 963,
+   "sha256": "d4cb0aed41a962ca4254d9438da7c3f7fcc28971319969dba71a21e3d9da9209",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep025_k8_s1.json",
+   "bytes": 969,
+   "sha256": "7cdeaa829b12b28f381076cedd47c3bfa1216a260c2b2a1b3c63c0c66d8bc40c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep025_k8_s2.json",
+   "bytes": 968,
+   "sha256": "8e998b359e7f9f1015502c7d58c643e923e588ecd08bb5827dd1f8b30824af37",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep026_k8.json",
+   "bytes": 973,
+   "sha256": "f2c4e4913adf3629acdf49bdc77c187473a0b3ba5b03590e33e6b882ff774874",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep026_k8_s1.json",
+   "bytes": 978,
+   "sha256": "5026c5cf3f0642c5a95739169f3d37f377ed59ba56c9c1a01a654328eb8223da",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep026_k8_s2.json",
+   "bytes": 974,
+   "sha256": "6543858a67534e94005e465c97f6a9f9815ade3ea6ca6c0007a0d97fbd770658",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep027_k8.json",
+   "bytes": 966,
+   "sha256": "801582b3e94c31771552005d9de2dd33fe41923148354b74ee7dc0ca2794d5e5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep027_k8_s1.json",
+   "bytes": 965,
+   "sha256": "ba991e9b6314618e9f47b4636fe1c33b0b4fd7a524fe1308a31f8c8d8b0cedc8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep027_k8_s2.json",
+   "bytes": 970,
+   "sha256": "951aca452a719476682f553f72a399de67be8723c182c301bd2236c9eabe0536",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep028_k8.json",
+   "bytes": 969,
+   "sha256": "86a82ab4a499af22656fc812ac74c704d030fc4d2171b3622e1c2917a9a41a60",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep028_k8_s1.json",
+   "bytes": 970,
+   "sha256": "9e4290ce1e14129bc74d09889e41690535caeecf3f6fdb9c3f34faabf7890146",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep028_k8_s2.json",
+   "bytes": 967,
+   "sha256": "6cc7b5659510d57c1af8a65d2b6f3fdf201c345f91c8a33bd732aa35266e7296",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep029_k8.json",
+   "bytes": 965,
+   "sha256": "f5e2599b6a5094b6e70e63950b7852c6995159863e853a247e4387bec79b50ef",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep030_k8.json",
+   "bytes": 961,
+   "sha256": "84193641da10b4d66274f60bb66e9f4e349dfb5283c5fffb796826126abea639",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep030_k8_s1.json",
+   "bytes": 964,
+   "sha256": "be06d508878899759fb0082147e86acfb66a5d4dc6a2b33c93aaeb05af8ea644",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep030_k8_s2.json",
+   "bytes": 963,
+   "sha256": "c9529c90a90ef606cfbfa4217d7b38bd41cd45effff6f5ed0e102c5c6f00d519",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep031_k8.json",
+   "bytes": 961,
+   "sha256": "0cc2e8f8ab871ea430d9b3918c4c47a8bdc288d7aaabbc63e48612ba44fd4f65",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep032_k8.json",
+   "bytes": 963,
+   "sha256": "95776adc89d93ff3607d5b0fbab17ebed2c87e15b91f598f6fa8f09cc67942c6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep033_k8.json",
+   "bytes": 963,
+   "sha256": "e9e3209e61f963aac478ac42ecc6d0589f14d1d644869783089ec97f62574faf",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep033_k8_s1.json",
+   "bytes": 967,
+   "sha256": "50c7beb061a6df9627c421feffc2771558ba9010b185b9a7572abdb2652502d3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep033_k8_s2.json",
+   "bytes": 967,
+   "sha256": "9962736e268d6f05ef1c19815f04d1a3e6e9179ce97244f56dd500ac7a3789d5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep034_k8.json",
+   "bytes": 965,
+   "sha256": "ddd7003384008dc11051e0e7f0e0cf10ca66266e0657cec7abb99a9e0f976090",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep034_k8_s1.json",
+   "bytes": 967,
+   "sha256": "b944e231023d183a0932221d0129e2b8aa74ace26ec55e4864bff297cefba220",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep034_k8_s2.json",
+   "bytes": 964,
+   "sha256": "b26edd017c0f1a4f567f3658190c9bdeabec1d00802c0e6c8899eb021c6390a6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep035_k8.json",
+   "bytes": 963,
+   "sha256": "c228265ec41c02b165034719e27e0f3c4e2c6210cb35121fe053988e06cf7456",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep036_k8.json",
+   "bytes": 971,
+   "sha256": "644a9529b163a39a48196c9341ad227be1713579484ed8963c8ca9a2c332a9c2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep036_k8_s1.json",
+   "bytes": 976,
+   "sha256": "b16b4f6505d27893bab55c881ac07301ca2a5981fa6c94f68e17636d28202c71",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep036_k8_s2.json",
+   "bytes": 974,
+   "sha256": "9339f5b3522da4dc76d8c3a0fc8de68c83752aba0b25fa10a6308af21ab8ba70",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep037_k8.json",
+   "bytes": 961,
+   "sha256": "6833596892eea2f46db05a6864e87de38dc327e1285e45cfc8dba2c9505ab399",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep037_k8_s1.json",
+   "bytes": 962,
+   "sha256": "ef709242de3201729c3d6322224a3397825977ca5c4a919d26c6f42828f68f88",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep037_k8_s2.json",
+   "bytes": 966,
+   "sha256": "467dd4a3d3d229bc0f95f77516a4725681ba9a89e9ffaeb394feb2e5c3925d24",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep038_k8.json",
+   "bytes": 965,
+   "sha256": "df360f7aaa7bc403c5f470eec7cb3a45b57703bdab3dcaad1f324efc293e5722",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep038_k8_s1.json",
+   "bytes": 963,
+   "sha256": "ca3c20496022859db1f4dbab6fcc543cfbec0a8de55107c400ed51ea3b48c5ec",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep038_k8_s2.json",
+   "bytes": 967,
+   "sha256": "e279a8305e5f79a77e7316879ace5333b5932d9a1749b0332c645033c7fe04aa",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep039_k8.json",
+   "bytes": 964,
+   "sha256": "98624c57ffa4a19a60dcac4a607be4d4b1a4a05a2fad667f653bfbb585aea679",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep040_k8.json",
+   "bytes": 963,
+   "sha256": "8096618036a28a79430327eff1181a2dc8d8c9f2447bfc70e4c36b22a832e5f8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep040_k8_s1.json",
+   "bytes": 965,
+   "sha256": "dd83b2c0d7afff18da4a7a66ec0834b12abc288913cc248c779a43d76e317846",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep040_k8_s2.json",
+   "bytes": 966,
+   "sha256": "0920d601a2847725527ec8f3f9b1983cf2409316d76bf8b3961d47eeb7f99a63",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep041_k8.json",
+   "bytes": 961,
+   "sha256": "7ccd27c579a3ef3f582f6858eb263f3d21623a4f23c25a95d1aee3832cf3b5aa",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep041_k8_s1.json",
+   "bytes": 964,
+   "sha256": "1f1fb091d3924a89e49e51206bcbaba98462c66138a7baaae3cf3f2b40829aa6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep041_k8_s2.json",
+   "bytes": 967,
+   "sha256": "0321d3bb518471f400287d5620a69c0bf2a7c0add7668b4599022520fa11e003",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep044_k8.json",
+   "bytes": 961,
+   "sha256": "dbe85e994f0c633be6dd44284e8f95f2218d4b610225b6f470821eb1447933d2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep045_k8.json",
+   "bytes": 965,
+   "sha256": "a93c6b5487cf107b5f32bdc384df48fd802c5bf3040b9acff98d5fd18920b317",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep045_k8_s1.json",
+   "bytes": 968,
+   "sha256": "339cfd7bb98d4fb7a01cdbafe99f5fc772431bbc45cead8fbc1e89372b26c8a6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep045_k8_s2.json",
+   "bytes": 962,
+   "sha256": "bfdea9fe8ad60673157180b7fc2a9a0c52c3159718baec3197379d50499386b1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep046_k8.json",
+   "bytes": 971,
+   "sha256": "3c34a4bbb24723b7e4d9cd5f5b1ea4293e88d479deb284d06f11033bcd3dbb2d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep046_k8_s1.json",
+   "bytes": 980,
+   "sha256": "01bfeae119256ceca4d1f84832917dc5de2c36b13dfcc875c23ebdf5b3d492f8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep046_k8_s2.json",
+   "bytes": 976,
+   "sha256": "1366652c58948cb1450ed151f88acb20509ee6386f94158949ddb68e917f8be0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep047_k8.json",
+   "bytes": 973,
+   "sha256": "1d6949cb68f22fd5e64e6026c6aa3067caa0991339f360e87180141411a51d8d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep048_k8.json",
+   "bytes": 973,
+   "sha256": "e39deb541f3f88bacf517e648d0e5805eba2a0a7f825219670f606517bc9dfaf",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep049_k8.json",
+   "bytes": 974,
+   "sha256": "795c670420b46c7c3acd062e486293edbba13995d5aabbfb38ef692862dd7e37",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep050_k8.json",
+   "bytes": 970,
+   "sha256": "0e9c3f9b349c966671f856e5b77de01d9da230b813611887122ef14374434a0f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep050_k8_s1.json",
+   "bytes": 977,
+   "sha256": "e33f95d5ecffe432c62a4ca2fd3d04f8e69397a7b17060d376b73a87f3cc2e73",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep050_k8_s2.json",
+   "bytes": 993,
+   "sha256": "2324d12d931ce1d139a4ac1cc846f28bf1b3e6630fbcef4c3bef96e22911c26d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep051_k8.json",
+   "bytes": 966,
+   "sha256": "ece5e0aeadba27264df01226753a6fa322023a8ed1108d25eda9df4790728d4a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep052_k8.json",
+   "bytes": 979,
+   "sha256": "ee6149676f14c2978137d76764198cc2cd0fa4c7582892b38dc5a2e9d6ae5227",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep055_k8.json",
+   "bytes": 964,
+   "sha256": "36975f3abf5a52cf5e8ea4fcb70514cc75d0886864138a73fdd9181bc674336d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep056_k8.json",
+   "bytes": 977,
+   "sha256": "cad92232dca72874fa539b9e6b0ad91efe11ac528bad5835563080330e1c21a8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep057_k8.json",
+   "bytes": 981,
+   "sha256": "7988c93875050fd84a7149a96db4eb9eb8a37e470db3896fcb4055c0c88d61f9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep058_k8.json",
+   "bytes": 962,
+   "sha256": "08f61d45d6f9c535d3ba92d3a7b9e7fe55b4b9d66d5be19bbca910452f1a684a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep059_k8.json",
+   "bytes": 961,
+   "sha256": "58f433febd9540e4f2d2cd53b750d208a8c95980d613424557823afb5789682a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep059_k8_s1.json",
+   "bytes": 964,
+   "sha256": "52ffd454e921810257a8ee8c8437a2dda3df2513f051b1eea6093a8fbc15124b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN10_e/ep059_k8_s2.json",
+   "bytes": 966,
+   "sha256": "0fe1a43a3a59bab84fa94ded056838153cd2911a8c212f3f362c78c500e7d4f9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/closed_loop_summary.json",
+   "bytes": 148763,
+   "sha256": "0c33918a29f488c8379d0546eab94192a12375b798ddace56294112d9d1173f1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep000_k8.json",
+   "bytes": 969,
+   "sha256": "ea95e98f28cccbd1fd91d39a6fbbc9b201d5915c1f4f38445dd691796ed4b312",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep001_k8.json",
+   "bytes": 970,
+   "sha256": "4e422a8036f34f116b702520403a2712d149d76f393fc13fb230321cd3f01c43",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep002_k8.json",
+   "bytes": 974,
+   "sha256": "a13f3efd9ff6788be31cd393cec5173776a285345431370317f4212c0d21a088",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep002_k8_s1.json",
+   "bytes": 973,
+   "sha256": "bfc3216f8bcdd84a82f93f83f35c94f1c88f7e812f0e175f5d37ec72941a40d8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep002_k8_s2.json",
+   "bytes": 978,
+   "sha256": "303ff758ffa8f71a8def36fc224220a631c09ee3c4e37f17bd00f717431490d4",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep003_k8.json",
+   "bytes": 974,
+   "sha256": "64e0db14776bc6f29518efe1fe87de4d91599a659eb39b98be885a4cd4615d92",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep003_k8_s1.json",
+   "bytes": 977,
+   "sha256": "6059944db2170e6219b6cf14ae2e4fea825dee1106b1f0b46c6c7c1ff77aeacb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep003_k8_s2.json",
+   "bytes": 975,
+   "sha256": "cb395cec92de081b9ed0e2ef750a076f88a0cb78db36e75b4d9357a8147e57f2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep004_k8.json",
+   "bytes": 976,
+   "sha256": "4b14cb063567797c889ab261116d4f15814e45c1753e04a2903a52c4ff8f0960",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep004_k8_s1.json",
+   "bytes": 973,
+   "sha256": "283418b546068ff6a0948fd17a72c2a02e5354b9ecd5ad57e192425e0b85d63a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep004_k8_s2.json",
+   "bytes": 969,
+   "sha256": "be6405cdf0fb978d0563ff7bf975509c0b0d8a2e138634a84467d93d7bd0cdea",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep005_k8.json",
+   "bytes": 967,
+   "sha256": "e8694d8980047cf8b725e0ba17edc2938a6ec2a0567d3350ca42be394c4ae1e5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep005_k8_s1.json",
+   "bytes": 977,
+   "sha256": "172d6a16fa0d503ed7225203d3bb007794dc33704a5eca14616fee3c7e2440b9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep005_k8_s2.json",
+   "bytes": 977,
+   "sha256": "e17050b555e671716f495378114e7b3576d8e6d58f3b4f5cb30a28416f3def11",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep006_k8.json",
+   "bytes": 973,
+   "sha256": "da62335e257698835ee1ab7bc4a7892b60e97768f37c24ac5df7790beec007e3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep006_k8_s1.json",
+   "bytes": 975,
+   "sha256": "2f31011dcd7d6a7cc74a734a1c85acf1b71d8f38ed2285164cdfdbe8cfdb48c1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep006_k8_s2.json",
+   "bytes": 977,
+   "sha256": "8309a4bb8b64efaf80ab88dcc8cb97060b231116ffeb3e456bb507fcd9e0b124",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep007_k8.json",
+   "bytes": 978,
+   "sha256": "1136c80e7a8268a44cd039d968d1bedf3cc59e7884ca7ee6f7385e80a4b0941d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep007_k8_s1.json",
+   "bytes": 975,
+   "sha256": "84f971a5a2b35ee8fecee74f56450caf272bb53a19a17f8b322f3d336fd9e5c1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep007_k8_s2.json",
+   "bytes": 977,
+   "sha256": "8f00d479ee5f332a41ff390f661d8d5c32b2c47169e76689b0a5079bf0d9cf37",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep008_k8.json",
+   "bytes": 972,
+   "sha256": "ff2e7c9122bc138afcfc05236ae9cbc38c7458c2f5e50b6c736510da28621565",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep008_k8_s1.json",
+   "bytes": 976,
+   "sha256": "3759a7f3b45b13d26e13292b47febf20ce26e60b2ce67008c9d95dc78350fe0a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep008_k8_s2.json",
+   "bytes": 980,
+   "sha256": "7c6069570bb2368ac03ea95ba6fecfecfd475710a162beb27686cab82a80dc55",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep009_k8.json",
+   "bytes": 979,
+   "sha256": "1d96de62b2bc8d5abc93de134d021503f0041fe3517ed27f7ddbbdba888949a8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep009_k8_s1.json",
+   "bytes": 978,
+   "sha256": "48abe6903fbbd04b22e4f1438e3d0e1528655f165aa94f4d4004abc08adb20fb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep009_k8_s2.json",
+   "bytes": 979,
+   "sha256": "313ba55bc9e7039aca2db2a18ae29bb54c06ace5fa62c8bc80211f77709dd4c2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep010_k8.json",
+   "bytes": 964,
+   "sha256": "71b40a24885aa6229593bfb2a2298561ef5d529ae0f9b489dd474cbb3f6be7b3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep010_k8_s1.json",
+   "bytes": 968,
+   "sha256": "ddd0e8977de69f3a5c91719d8c1f9f46735c0d593524d2ea99bc0fc02cbb673f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep010_k8_s2.json",
+   "bytes": 966,
+   "sha256": "3e7aa6604389e875a8a263a21f525e1bf1caf613ab4a78256ec2e1eeb3dd3b5f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep011_k8.json",
+   "bytes": 971,
+   "sha256": "95321454b5d188ff2a36813b2f9ba5a0569836e343101b69e51faffccda029b9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep012_k8.json",
+   "bytes": 976,
+   "sha256": "2119f4656d5f8779ccea53ad45d15fe35b8fc58b5f404baca692afed60752297",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep012_k8_s1.json",
+   "bytes": 976,
+   "sha256": "fcacd9177d52c98b82ec6a2022cce1874aff9d6039bbbf211c1efbfda9bd93e6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep012_k8_s2.json",
+   "bytes": 976,
+   "sha256": "398d56f5e04b604d61dcf6174c089c93431c0ab3d713d34644ee491e36b83167",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep013_k8.json",
+   "bytes": 974,
+   "sha256": "0e9966453efb8275f0c6902a05518c3e43b994d91c9d37137378090092213528",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep013_k8_s1.json",
+   "bytes": 978,
+   "sha256": "e57bb49fd8a5b30ee46359c726cfe4a1457a08880e4b5414dc825bf5e228d627",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep013_k8_s2.json",
+   "bytes": 979,
+   "sha256": "753a5489b88b82bfc0ce4c8c6409d36a558c2a962e6cd340ae6ad9f3369fd133",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep014_k8.json",
+   "bytes": 978,
+   "sha256": "c8cc992c0047e1232be4bb6b134e6403bdc7a7d5405e45d8344a2f651b6430f5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep014_k8_s1.json",
+   "bytes": 981,
+   "sha256": "599b0dce66746eb1ef347560ffa7bff6ea3b7dcdf629947c89088c9477260f5b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep014_k8_s2.json",
+   "bytes": 978,
+   "sha256": "ba97e22c79d7f86f132826ae5bcf1a318aabda834a2f73920256e31277009479",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep015_k8.json",
+   "bytes": 975,
+   "sha256": "6c3796558e962071ef0656f0c4479913e239d0967990fb092e9c33b9baf0367a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep015_k8_s1.json",
+   "bytes": 977,
+   "sha256": "3a884ada734cb390614a30e6933c66f9ed2737be302e13a63be30eac398673be",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep015_k8_s2.json",
+   "bytes": 962,
+   "sha256": "35661a9027345deade8481074c8ebd494b8fa774baae679aa1d5caeb417b479a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep016_k8.json",
+   "bytes": 964,
+   "sha256": "5a8dd1a9239125acb9c0d31f2b917a103b234bd6b24c6d0c9a797caf16020df6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep016_k8_s1.json",
+   "bytes": 967,
+   "sha256": "40a215281c74eed4c98ad15b14df9913846ebc0b333c30f7e9ad8400f29e680b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep016_k8_s2.json",
+   "bytes": 981,
+   "sha256": "c3aac521da93647aa7d9728796dc0503d6c7f5f4834ec3bb112770c7ae72fd89",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep017_k8.json",
+   "bytes": 974,
+   "sha256": "f31d2826d00702747d922c9b4d0d88f64db02f2a0f8a1a6535298f82a3df4604",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep017_k8_s1.json",
+   "bytes": 977,
+   "sha256": "38eebf0b397bef5a538ec3bd9b79916ce7c840bfb909d7b9b921b02e54f68639",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep017_k8_s2.json",
+   "bytes": 996,
+   "sha256": "6a61cec20b8a6c0603272d1be5bc3b56b261277d00c668f52e38422976cb2acb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep018_k8.json",
+   "bytes": 980,
+   "sha256": "85fb84920c4936a64b2b936f183710ae8eb2504201472b4d4e3601964f2947e2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep018_k8_s1.json",
+   "bytes": 977,
+   "sha256": "72453d337d9c7031816666529777bd5c51380f31c3aa53714722da5fb38410c0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep018_k8_s2.json",
+   "bytes": 980,
+   "sha256": "cd2a55cc04f5a0147e2668f228f3d16db2e6511206bba2fe452819430ab886a1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep019_k8.json",
+   "bytes": 975,
+   "sha256": "3968cdc571bd81a550433e94a3428432a93a6c96bd4f8941e0eff4e47d539a8f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep019_k8_s1.json",
+   "bytes": 975,
+   "sha256": "58fc22c46f2f53bc3c194e7141ad2654d76fc95c6955ea7bd0609d793d196e6c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep019_k8_s2.json",
+   "bytes": 977,
+   "sha256": "2de36bdc440286cf4e08342f7f492b68757902625efff000ae6c56c23c7d8fd8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep020_k8.json",
+   "bytes": 975,
+   "sha256": "1a691aa3cb99310189be3cda021c5ec737a5b4658264a922bb76559ceea260ef",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep020_k8_s1.json",
+   "bytes": 974,
+   "sha256": "706f094132bcec19004969565b8e91e83aa2647c0e5ce234890f510bcf7c45fb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep020_k8_s2.json",
+   "bytes": 967,
+   "sha256": "493c802f77d14a4f85a4ea96fcbe34fbabf2540afb9190e439ad42356547d6a0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep021_k8.json",
+   "bytes": 976,
+   "sha256": "637787d37b53875635b08018a554851fe7222f377585dcfc76d19b5a9e4d8329",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep021_k8_s1.json",
+   "bytes": 964,
+   "sha256": "f8b82daefea260910536a428e7f42788d9db4f74ef9ac628b63ba06134ba9695",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep021_k8_s2.json",
+   "bytes": 966,
+   "sha256": "70434eb802daca8e3f15563c3103c41bb862cda588b01e8ff80ee197c53a7b48",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep022_k8.json",
+   "bytes": 969,
+   "sha256": "8626bfc8f02d07bb745ea864439f98e3e72314bc3048c593edeff7dabaec5e4e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep022_k8_s1.json",
+   "bytes": 977,
+   "sha256": "11640a30820ee68c951fd5b921448522c43f0d29b522398122d220e141ccbe6d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep022_k8_s2.json",
+   "bytes": 973,
+   "sha256": "32f0ced27f46f1f9ed34f9b81d590cfa4a677b0011f1d9a38c8c373ed85ffef1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep023_k8.json",
+   "bytes": 974,
+   "sha256": "84610e59c6cc2a9f39268f08fb3df33e998995eedbf74471a0e8e34fc5c9314e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep023_k8_s1.json",
+   "bytes": 964,
+   "sha256": "a1cfc0e346d32c51a0b1eac55ecb08eed66cf8421f4e6f04db4ebff28b7cf5c3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep023_k8_s2.json",
+   "bytes": 964,
+   "sha256": "e1a342c8bf4d3ba03715a55d9aea77f060d95354df64c430511a2e2236ff952d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep024_k8.json",
+   "bytes": 975,
+   "sha256": "e6a676d7838e95b567cfa45f0e1bd5531bedb5738f362f130bb3f28bb1e22c69",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep024_k8_s1.json",
+   "bytes": 967,
+   "sha256": "c451f958905acaa84768a8680aec32ac572b95387c29435d25c51db38c788ca9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep024_k8_s2.json",
+   "bytes": 968,
+   "sha256": "aade9f2ecb6441fefdd5de7f1344e541cf7223007708ddfb3fcdbc237cb0e62b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep025_k8.json",
+   "bytes": 980,
+   "sha256": "a390b57c4651aae2fb6a0d9a611b8769f000f935268ff8ad309799fe58f5ffbb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep025_k8_s1.json",
+   "bytes": 969,
+   "sha256": "fd5055b72aa4c2458bd1462404565239e0948ef5006eb09acef9d88c54151527",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep025_k8_s2.json",
+   "bytes": 971,
+   "sha256": "c645e847658abbda7c6360e6c5ec9b43b24b9064a7dd913db734cad4c6985b2d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep026_k8.json",
+   "bytes": 967,
+   "sha256": "208c1044d97576025733f79371077091cee1ab069ce7eb0053ac14eafaac4a1a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep026_k8_s1.json",
+   "bytes": 977,
+   "sha256": "429f78f427abe14b58233bae37c330ac2ab1e3214917f58dfdcc2fccf34a49ff",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep026_k8_s2.json",
+   "bytes": 977,
+   "sha256": "3e6873f0ce4888610f90e9e6f115e3baa72b1711c3e1199f4cbb1bd290656563",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep027_k8.json",
+   "bytes": 976,
+   "sha256": "2264a660d30cfe8cea56008ce84687d639068c88a53d825035931e203f7262c2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep027_k8_s1.json",
+   "bytes": 968,
+   "sha256": "c7528fd0cb64e137192b78c1fb2c96b50df50a3faa70e75ba571c27cb5cf7385",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep027_k8_s2.json",
+   "bytes": 967,
+   "sha256": "42355fb42365910e49e388bff6a4aa6f9b811492d4f7a1579412fb9a37f1ca6c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep028_k8.json",
+   "bytes": 976,
+   "sha256": "9fb0440f191814715758cdc55e9a4a0a04571c70f80e3c672a94ea57aa3b4fa0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep028_k8_s1.json",
+   "bytes": 981,
+   "sha256": "138724fdc6a5754c50ba9e75541aa55b6cc34d1135ce4d44b54b93d0ff5f5971",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep028_k8_s2.json",
+   "bytes": 968,
+   "sha256": "241dab6351aa6f81b7b05c6e258cfb4b308c63bec36c8c57f34d9a0f46d24118",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep029_k8.json",
+   "bytes": 965,
+   "sha256": "24b6dde7df9817d689e46313db71f9e70324b6bdd31ea7cb8222da647421cb3e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep030_k8.json",
+   "bytes": 965,
+   "sha256": "0a7d7528602001d09f6fc79868f50652c67d2370abfb2db62777b801b2be36d2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep030_k8_s1.json",
+   "bytes": 969,
+   "sha256": "3db8b790acad63c0a0f503d9a54462a90f3f74c3f69d3f747a0912bbc37d4628",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep030_k8_s2.json",
+   "bytes": 965,
+   "sha256": "174d434461fa95cae1cf48afe32317f7336d303d630d2a7acd2eef7bea663708",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep031_k8.json",
+   "bytes": 966,
+   "sha256": "5395f9cc13b8ed718868055007723002c7dfbd114132379039bec6cbca1f8da6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep032_k8.json",
+   "bytes": 962,
+   "sha256": "35dcbda5c9db8517020e758f95ef82538e79487b4ca427c1c0618d1b684a6784",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep033_k8.json",
+   "bytes": 976,
+   "sha256": "93b0f9d6559a173b20d15c89abab66e15a52205d81266920699fce1803b3eb2c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep033_k8_s1.json",
+   "bytes": 964,
+   "sha256": "9bcd55ba2ad93a6420de6f57ce39715b462bd7c9a4f2c8fc45a763a2309d7875",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep033_k8_s2.json",
+   "bytes": 966,
+   "sha256": "21a1555b46271777536f7bdeb066e2366a28301f20b1cb5a3679273c02b23fcc",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep034_k8.json",
+   "bytes": 976,
+   "sha256": "cf93ef81a59c512472cb6dce26a1e309e4af47f5742045c027621048bc04350a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep034_k8_s1.json",
+   "bytes": 969,
+   "sha256": "50b33d4716765ea220174ed2e0dc6eb7922db1e4bfa2610450f0abfd6bbb78c8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep034_k8_s2.json",
+   "bytes": 968,
+   "sha256": "256d884c836392812d61e7cf25eac37f5c61266d7acc989833f345bf7b37802d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep035_k8.json",
+   "bytes": 965,
+   "sha256": "1fe6f3fc44e721a6fec8804b2dc545588dbfcb36274a2296f5fa4d137b06180a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep036_k8.json",
+   "bytes": 975,
+   "sha256": "e405909f198bfa365223fe99f640aa98a4b906ef671e2c79d1b5adf7cbecca5a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep036_k8_s1.json",
+   "bytes": 978,
+   "sha256": "c0278f1c5b0bfd243300c08eede08fc3c0065d7b5935cfe627df754eb2f76c2f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep036_k8_s2.json",
+   "bytes": 971,
+   "sha256": "8a3650dc2d47ab8cd9406a576466e78589515aeb58e1befa089ee7068ddcadf9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep037_k8.json",
+   "bytes": 972,
+   "sha256": "963576e14302b3bf084ee69ded6eabd40c5c3ecc4dade5fbc1d221a31777b3f9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep037_k8_s1.json",
+   "bytes": 964,
+   "sha256": "bb0200f4ba7fcd8db1fb4c88a8bc86702aa646c863f16d3da91b064101695d64",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep037_k8_s2.json",
+   "bytes": 967,
+   "sha256": "dc894965db2fc4d2e4b309848a6696e7ce7cff93fb8d1d17405b09b501e0cecb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep038_k8.json",
+   "bytes": 977,
+   "sha256": "fc7290efa47bb98ed4fbcdd354a2f473fa8841da74e3711a870cc750881e4415",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep038_k8_s1.json",
+   "bytes": 976,
+   "sha256": "ca1aa4214fb473266d1bfe73e695e9169b2b95be0a479b881f55c58ccbbb50ee",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep038_k8_s2.json",
+   "bytes": 973,
+   "sha256": "67db87308ba8d727e522c53333e91876b1f21518f1d7bc02013933ec3e3b407a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep039_k8.json",
+   "bytes": 964,
+   "sha256": "a0f04f5d5c6f853bc043ed145a443cd12c91e6a3b84775090e2df283a580a3f6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep040_k8.json",
+   "bytes": 973,
+   "sha256": "128087dcdbcdd42ed887e2cfecbfda6a261fa8a756db49007678066174ad29e0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep040_k8_s1.json",
+   "bytes": 979,
+   "sha256": "6e5a744257a2d74f40e7a4ef2863b33c2419b5a96bcfbcb461655aa79815ade4",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep040_k8_s2.json",
+   "bytes": 981,
+   "sha256": "b4c9934df61051b73f9b2a3f206ab9053196bd611d88514bfe2247390209a8c2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep041_k8.json",
+   "bytes": 971,
+   "sha256": "2ff3ab02b46e3382c9b5ad5f628053f520b1efc2799a65c4ec1c3d6644649fd2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep041_k8_s1.json",
+   "bytes": 971,
+   "sha256": "466b0b8ef9aeb1c4150e8884b3fdd46889fcb7c8d2d91597d0de0d683b655447",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep041_k8_s2.json",
+   "bytes": 976,
+   "sha256": "1a1d2482e9522f1599f6f16a1f883f08f113909348981fd1abceec8d39330361",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep044_k8.json",
+   "bytes": 964,
+   "sha256": "6e2e711a2c61bd6da2c16c411582e64c167c352eafbbba3c9ac9849bc9391d6e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep045_k8.json",
+   "bytes": 967,
+   "sha256": "6ceb0969d5eb9f5516c0a257943ac2ddfe30038d51fa542fad8160884b560b9c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep045_k8_s1.json",
+   "bytes": 968,
+   "sha256": "b2637b8d0264b9d6ca24f0447772129251a295fd77d4716034c78d38e2762fba",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep045_k8_s2.json",
+   "bytes": 966,
+   "sha256": "bef31de84bb3011cde803629ca2cf2b2334b4edf14423a655cfcc901d24a2800",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep046_k8.json",
+   "bytes": 977,
+   "sha256": "a260a4c9f54378a2fb5d0b778ef0d6074b74f13f070e6e87cff50abb8bf9ef5d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep046_k8_s1.json",
+   "bytes": 978,
+   "sha256": "71f4ef539d0e4fa103ba11b1214440648899d1193653ddf23818cf7100e693b9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep046_k8_s2.json",
+   "bytes": 978,
+   "sha256": "d20c692786e92e4defbc26e058e3a1131413059a4ed1f9f8492647c9f55cdd1b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep047_k8.json",
+   "bytes": 974,
+   "sha256": "2bffe8c388e2ce86343ca6f93ce502638b9be286f724818ae6106ecf1bbaec1d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep048_k8.json",
+   "bytes": 977,
+   "sha256": "9550912107d0086c99ba0d3d2d05456aef58f863e16821287aafdf2d07ab9937",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep049_k8.json",
+   "bytes": 972,
+   "sha256": "56937c8c950a1b607a9f2f718c8721c28fbf10b049c562325733473d6eeef652",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep050_k8.json",
+   "bytes": 976,
+   "sha256": "95624806cec51df69ac39037a1a6ba8110938ddd700ea6210eb1c47fcc8292dd",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep050_k8_s1.json",
+   "bytes": 974,
+   "sha256": "bfd7a3375c55007a0319785423b31819e69631e6f3065ea78ea85360ca34f4e3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep050_k8_s2.json",
+   "bytes": 980,
+   "sha256": "a6a86c58bb0bb00fef30d99a9026ea98f9636b4c2dbbf1374621fc423eab35e2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep051_k8.json",
+   "bytes": 960,
+   "sha256": "90dc6e22c626fcdace6551704ffb8535ef06494bb525bbecd07e87ca3f5b8986",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep052_k8.json",
+   "bytes": 975,
+   "sha256": "a2dc532481b19b4f41ed5955ea2357ba51ded34ba684a7e78363044e93f9bf57",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep055_k8.json",
+   "bytes": 974,
+   "sha256": "d3b76fb51d96190b2e7b3de7e7c6514dd4801a286dc7af3a64531b88bda30670",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep056_k8.json",
+   "bytes": 973,
+   "sha256": "76697b7783854317e98d6eeff475ce9ce16e1ad94fb095200b9a03f84c9a6da8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep057_k8.json",
+   "bytes": 978,
+   "sha256": "29bdb747097c5c3f42647d1756477f2da363c5e536f84c40232f4323ea4ac74a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep058_k8.json",
+   "bytes": 976,
+   "sha256": "82cb2346d8c6ae6d5e1c7eebf478367d6ee5b963afdfbd11d0cd8ec3c8598c7d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep059_k8.json",
+   "bytes": 972,
+   "sha256": "5f2b85ab47a54fc3561ba658ea6d5db57e019d10a18aafc69f706ab7bf4a5ba5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep059_k8_s1.json",
+   "bytes": 978,
+   "sha256": "ee9b4a198086edbb027821ab5de5cdeaba8f7be3efd9318b1dfff7331046e00e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN20_e/ep059_k8_s2.json",
+   "bytes": 978,
+   "sha256": "f3c7bdaa92b0cf22f21d3429032e4fd6efa5c15276ec5be372cb3a0646d249ce",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/closed_loop_summary.json",
+   "bytes": 149177,
+   "sha256": "d986b884f7106798d9e10067b33135e4df6eecef019209d2fd3594eb5c5d41eb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep000_k8.json",
+   "bytes": 971,
+   "sha256": "91c514e6fe94d9ccf4713676d42c6349c00042061da4edcffb8c494d3c5820d0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep001_k8.json",
+   "bytes": 971,
+   "sha256": "5a14997db2a73cd8b50245a803314e9bb213d7e64d7bb2c1abef1c2a84de8a5c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep002_k8.json",
+   "bytes": 974,
+   "sha256": "f6a57d8a1d75b23db6c64c47e6ccde6c94e78d4f199efb5728d839c2b405d7c5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep002_k8_s1.json",
+   "bytes": 978,
+   "sha256": "39b283741394d81d76f04ee19e33566b9a99406fc33dba930c523586df096838",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep002_k8_s2.json",
+   "bytes": 975,
+   "sha256": "8354749bd78f71795f829d9f0a4072bea01205371adfad023f0cf91395992243",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep003_k8.json",
+   "bytes": 976,
+   "sha256": "7f5486df15e5537b7526b70bce2c7514ea91d6e8f39c7c0218e38b37950df3e7",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep003_k8_s1.json",
+   "bytes": 979,
+   "sha256": "3e39c6b2efca373452874a87f2b679258f4011e951a19ee038acd927d75ee1f6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep003_k8_s2.json",
+   "bytes": 979,
+   "sha256": "fd79e082e6c1e1226fc9ec8cd7788fedc10fe86225e3bcf4658a9e9d182b5155",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep004_k8.json",
+   "bytes": 976,
+   "sha256": "5cbb0ffefc32a583f46df9eb58d9bbdd2c2b7353838fa412471127ef4b7619d5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep004_k8_s1.json",
+   "bytes": 981,
+   "sha256": "f029a6ced4a0e640fe1f2c52f3e9369599d7e37a32f45c37d6cd66959509b294",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep004_k8_s2.json",
+   "bytes": 976,
+   "sha256": "e768c857e6bc6f90d633b11dd5744f09c9ceeb150030b5ec9d0b22ac08c47b08",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep005_k8.json",
+   "bytes": 974,
+   "sha256": "6577fc3b460bfe669a36b89bfb95fa725296f01ccda235471d9c5b15c2d9235b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep005_k8_s1.json",
+   "bytes": 976,
+   "sha256": "f361ad8ed795fa505c833e800b1200de31ccda25d85034057e101347f980bf58",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep005_k8_s2.json",
+   "bytes": 976,
+   "sha256": "951a369b03ee2f9d6e675fe954b736b513cb8179836a142b9cbbca763db92db7",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep006_k8.json",
+   "bytes": 975,
+   "sha256": "4480dada39ca2a605396e187cd3f0092a8339d55ac63560d06755e39ef9cc0bc",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep006_k8_s1.json",
+   "bytes": 979,
+   "sha256": "ef08102893b23dd4f9b40b8cc905c54045d0562126a9d582f0a9b3a219695dc4",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep006_k8_s2.json",
+   "bytes": 981,
+   "sha256": "2a90906a46f6712a7f151cff3ec5fe1a82670d28823e699cf8e55624ae2f6752",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep007_k8.json",
+   "bytes": 973,
+   "sha256": "dd80140bafc150c27614c481290ff26770f6d4b47be154a63940c270e3ea5121",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep007_k8_s1.json",
+   "bytes": 978,
+   "sha256": "25e23ba5fdf9420d9825cee1f389003dea77fdba49a613b2dbb97d7e7382b5d1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep007_k8_s2.json",
+   "bytes": 976,
+   "sha256": "e32d2cb670c0a0eb263faa08a04a8d68ca19441be523dd3d15e8aaa5f244f82f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep008_k8.json",
+   "bytes": 976,
+   "sha256": "6608c4a1d3ced169565302cfe5184429309e32c9fabf424879e2b59f704e4655",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep008_k8_s1.json",
+   "bytes": 977,
+   "sha256": "91e663d2fca86baffb3215b9c5395ce5c3f8eb433ccee08fffaec246751c2ad3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep008_k8_s2.json",
+   "bytes": 980,
+   "sha256": "30149842a3990be9c42dc42e21f2fa55c10c519f1602ac15dafd9b21038bd27b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep009_k8.json",
+   "bytes": 978,
+   "sha256": "c8f7068b6dfc05bbdd9d0981e13d65f09b4a39eb85833c3f946c428767466979",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep009_k8_s1.json",
+   "bytes": 983,
+   "sha256": "31e7ec35556021c33cbc0fe11aa9103a541a74ece48e1c80a13ec31f34d34805",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep009_k8_s2.json",
+   "bytes": 981,
+   "sha256": "9602e8e16f85210153ecc94858510862bd4f95318909af6f0c955c8368bf13c4",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep010_k8.json",
+   "bytes": 978,
+   "sha256": "fbe495836d21962f827c9bff88c2151ad86589ec39298590df310cc4e82fccf6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep010_k8_s1.json",
+   "bytes": 983,
+   "sha256": "6567c53003ed0bca122529eb483c916adf9aa965992fa2ec5afa6cb0ca830ba2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep010_k8_s2.json",
+   "bytes": 978,
+   "sha256": "d3d58e2a28b634996ca55a6c88f98d3863c93cada383b8134936e3e999b80afc",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep011_k8.json",
+   "bytes": 978,
+   "sha256": "98165885c75beb17390dabdefdc5279fdb0fe082d1a7aeb40052051a8db0d198",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep012_k8.json",
+   "bytes": 977,
+   "sha256": "e6bb42752b75f8970f73f86c46d4d6571098f4a49a82edaa02c0bb424dc61cfc",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep012_k8_s1.json",
+   "bytes": 979,
+   "sha256": "d197277a9636c444db45f47bf5a7f5387d5532d967c1688ef8d33db383da5564",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep012_k8_s2.json",
+   "bytes": 980,
+   "sha256": "965dafc38ce962c405ea2415a4fec3d251c94416377b13fff03ffef58c208974",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep013_k8.json",
+   "bytes": 974,
+   "sha256": "37e2b4e4d97087aea8f54d6385ed08fb87b0598dc68c86ac6b0d902463e1bd70",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep013_k8_s1.json",
+   "bytes": 977,
+   "sha256": "0a2bba07379b2119b5beeb031fda3b0c143ebf8c5ed86f20bbaeef555cc71a54",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep013_k8_s2.json",
+   "bytes": 977,
+   "sha256": "df29f68439aae140dd633963e503efb12ab0c0e2f94f16e8317ea6ae3ff46c53",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep014_k8.json",
+   "bytes": 979,
+   "sha256": "a86b0f6c5d457573b1d9fd289c0bf729e32e09e5fedcb4eef7c52eac2def289c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep014_k8_s1.json",
+   "bytes": 980,
+   "sha256": "3a6128751f30f0cc92e3fdc76bf1a4ab0c8c26d0d00250118efde95cb7138837",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep014_k8_s2.json",
+   "bytes": 979,
+   "sha256": "5296151d92f9d90c1496dd304ad39f26eeff9bad47ee4f1c5d74c91ad4d00b62",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep015_k8.json",
+   "bytes": 978,
+   "sha256": "b12f5d56b523e1c421d4f50385847c99187e6f93c6b36ab0adcf8bb666c09712",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep015_k8_s1.json",
+   "bytes": 978,
+   "sha256": "06e44d29ca949aa10cd0a0b935a2a6204801794bebcae3c4f0056f455cff91c4",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep015_k8_s2.json",
+   "bytes": 976,
+   "sha256": "9d1aeaf753eabcdfc44a685e6a09cb5cf3b4c4f201af94cedacfe0e63ec30bd7",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep016_k8.json",
+   "bytes": 974,
+   "sha256": "6da56a681b53c2264ab7984c730abf7e7ba83e20be00825e1df65d573c0382c5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep016_k8_s1.json",
+   "bytes": 976,
+   "sha256": "912a157010ce3952c47caf9d76150f569c7c2bbbee7a4016b7637ad71df4c8db",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep016_k8_s2.json",
+   "bytes": 975,
+   "sha256": "d3d43f049442d21f0d9489c90fddc99c4aaa4ee5c4a7e83a723779ed1db89931",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep017_k8.json",
+   "bytes": 978,
+   "sha256": "8315bc48c2a050538a7f02a783239f8c51b717ff887ceeb9ddef738c781cc416",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep017_k8_s1.json",
+   "bytes": 974,
+   "sha256": "eeb384d39e821f329c8b131fcfa8fe1780d2e15e0e24487d0e2b0f24205c85de",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep017_k8_s2.json",
+   "bytes": 979,
+   "sha256": "6f4e62a9e76cba1b09404eb404b60b5ded64af99c42efb365a9b27878eaa8880",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep018_k8.json",
+   "bytes": 981,
+   "sha256": "30c6d84b87387c22b60697d61f2ecfd9d8172afcf623517a895b7a5021a5f295",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep018_k8_s1.json",
+   "bytes": 979,
+   "sha256": "21460c850f2551c027f83da4e44bb2f87692260a12bc96e15fda5fa5be852d4b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep018_k8_s2.json",
+   "bytes": 976,
+   "sha256": "0cc6cafc3d9f73e2cc00b6957093672ce9ccadd712f1b26c861abbb2c4e35396",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep019_k8.json",
+   "bytes": 978,
+   "sha256": "129c3dc5ad585d58311f104e7be77c605878d1944094842e5852f966a23c1daf",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep019_k8_s1.json",
+   "bytes": 978,
+   "sha256": "195fd363e26f8470a5091c063f2f018299e06a6883217936a1e667c6273f89bd",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep019_k8_s2.json",
+   "bytes": 977,
+   "sha256": "91a55405833073d697e3d61a3775d4af62f1f878d2843f1f86154e5d6dd4c9d1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep020_k8.json",
+   "bytes": 968,
+   "sha256": "7e3ab886cedcc481da0633ad3481da2222ea078185058a1e750576a20c7e8182",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep020_k8_s1.json",
+   "bytes": 976,
+   "sha256": "737a2040ba316d274da6be6d787f444ad2c8bb6f501cbc964a0564a9d16c86fa",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep020_k8_s2.json",
+   "bytes": 980,
+   "sha256": "cb7ff329e95440db4b71bddffd57fb7affd50543b527f67c0e298993d2afd15e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep021_k8.json",
+   "bytes": 973,
+   "sha256": "ba7716d838480e275ea557510e0dfee1f2d7ed3d11ec4ac3ae3d47a96ed004d3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep021_k8_s1.json",
+   "bytes": 979,
+   "sha256": "54bc21810f60ba6f89ef7ed7fe273e0dbdd3aa6035e5387637d5aa3af51b9532",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep021_k8_s2.json",
+   "bytes": 977,
+   "sha256": "d0fa15cf69745cb6c893c4eda19cff624595e050827ab43985147aeeba21ec50",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep022_k8.json",
+   "bytes": 976,
+   "sha256": "015ede741db9ad7285046050e4ef8163cca232bcb26fc7b7c8e8607040e0f38a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep022_k8_s1.json",
+   "bytes": 977,
+   "sha256": "bc8d3df72d0cb681e9c8251563115aa65f11b737addb9d5ff08e0146f0a159f2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep022_k8_s2.json",
+   "bytes": 977,
+   "sha256": "22857b4a20f8d9b9cf61019fd28e215e1cc60666664427458674290e484729e1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep023_k8.json",
+   "bytes": 973,
+   "sha256": "224e33a03a9df4dc9ac197ac4f79f6f7797eaa6b0354978872868209a68808c0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep023_k8_s1.json",
+   "bytes": 975,
+   "sha256": "29bfc4adc424198f010cac6ebe05d02a14c3648a2f031af8503b283b8ff3e077",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep023_k8_s2.json",
+   "bytes": 974,
+   "sha256": "7e627ac47be146afc6fe17593b6ee396132cec4f0f5b4fab8db3a5c4e4d6dd45",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep024_k8.json",
+   "bytes": 973,
+   "sha256": "b2c86225e8901c520ddde0731b2af7e13a8d12d4aa0d66a4ef47da396e287485",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep024_k8_s1.json",
+   "bytes": 975,
+   "sha256": "7b6c077a9485495d8eb9fbd7cbae75aab797420a4720e1efea02ee19d8e4648d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep024_k8_s2.json",
+   "bytes": 975,
+   "sha256": "60dc74ce4fbcf6ebe28995485eea1dd1b37d17e3cd3c017aed1083cd18399ae2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep025_k8.json",
+   "bytes": 975,
+   "sha256": "e145945e79dfe0a1fc5c61ca304a0d6bc08b0de6e1fd2e81b6e826d1c039babd",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep025_k8_s1.json",
+   "bytes": 982,
+   "sha256": "63a802d41880738f10b60adf8317827186d6272227111e5e7d9ffeb132dc7039",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep025_k8_s2.json",
+   "bytes": 968,
+   "sha256": "ea847f5d32e4ee8f2d5608892b99216492d8b9e51fb24ad01e6dedc4fd219657",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep026_k8.json",
+   "bytes": 975,
+   "sha256": "9f3a74fd3dd96782c5d67e4837717c5cab9e05e608d73eefb45246bb4a0a23d2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep026_k8_s1.json",
+   "bytes": 974,
+   "sha256": "de41bafef66b8041ba1d9efa722a409e25481256d09677a9037b41d6531e1ef9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep026_k8_s2.json",
+   "bytes": 979,
+   "sha256": "d7772afdd3f8e5f568f45d11716629bc7bb53d786062143d9f1db0bbc9e5819e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep027_k8.json",
+   "bytes": 973,
+   "sha256": "ba9fc12206f61fd8923982cfa10887d0e9dc2bc575bb5dcb633702efb90dd03a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep027_k8_s1.json",
+   "bytes": 975,
+   "sha256": "201a443aebeb1a83f895e562c6d1f75acbeb8f3bcd3aa0ed7d9a0340e034f652",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep027_k8_s2.json",
+   "bytes": 975,
+   "sha256": "4ea9e2915701f71f0c45a942485544f564b3df3ef2c1de7ea1cc25e61fbca6f0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep028_k8.json",
+   "bytes": 974,
+   "sha256": "90924b4f4adee8527d04f835e9baeb83fe65519155227706ddd31fdc250c4295",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep028_k8_s1.json",
+   "bytes": 976,
+   "sha256": "bf6a73dd73b16e1ee44d41efcd57d79d817c890b737f6930a2836479556971bc",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep028_k8_s2.json",
+   "bytes": 976,
+   "sha256": "09ebb12d3b69f1cb56b917d42359a217bde85d558a243243546bdeb625855c8e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep029_k8.json",
+   "bytes": 965,
+   "sha256": "50a7d71dd1da0224364449618d73a429b6c2019e59cfab53c86f1decdfd94f01",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep030_k8.json",
+   "bytes": 971,
+   "sha256": "94d78332cfc0bd996f958e10a8fc51d43097caf72484f5aaca9a5e7f6d2644cb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep030_k8_s1.json",
+   "bytes": 978,
+   "sha256": "b689169cdc2e45c914a618a11c38dea13c37d88042ee789ee1796e50dfdb41a7",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep030_k8_s2.json",
+   "bytes": 979,
+   "sha256": "82faa541cc121a2ce29ea167dbbe648c40a3acca735f852ec0b0a6f5d9e7d501",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep031_k8.json",
+   "bytes": 963,
+   "sha256": "bd72b6c753313b14bad58c174f6ba965d24520c71aeb34bd2ace90fecdf7c2a9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep032_k8.json",
+   "bytes": 979,
+   "sha256": "b837c26604a480abbf51868e1beb45c655dc6f2e75d91f24d0d10b27ab9935ee",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep033_k8.json",
+   "bytes": 970,
+   "sha256": "66a7f442d9a368204aaea618415c178de65baa590107bc03a732b71fbc8fa82a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep033_k8_s1.json",
+   "bytes": 976,
+   "sha256": "8e8695517c39d329567043d41a14c2bdba5fa84f880a290fef9b417eb90988e7",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep033_k8_s2.json",
+   "bytes": 976,
+   "sha256": "027fc5e6a1b4abe4df7d03779d9e047957eb334dd85e56b6160dba7883e69206",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep034_k8.json",
+   "bytes": 975,
+   "sha256": "c5b76b6e7382cfc74c55d2c29e028fc360a77dd75de3a66e65c392d5c5430d03",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep034_k8_s1.json",
+   "bytes": 973,
+   "sha256": "b575d1ffe53a6f90865f9e6b6af383e7daf8a5f9de9d748539d44a2de886cf9a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep034_k8_s2.json",
+   "bytes": 976,
+   "sha256": "cc8c51eea462e1dc96d33c1cba7ecac155901e4291e6c59bd1956a1b307b8d1d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep035_k8.json",
+   "bytes": 961,
+   "sha256": "82a9c6eb63275a639414ce1367b131911350d665652fecbece9171bbfe6cb193",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep036_k8.json",
+   "bytes": 972,
+   "sha256": "543d0c914003a9f09534def9c31e2b85dc56750f6c4c0a9d4744ce17cb51cfe1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep036_k8_s1.json",
+   "bytes": 978,
+   "sha256": "fc3450644daddb1b615083314feb7812acf0178fcf3b4688a0f7ba0d2c341878",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep036_k8_s2.json",
+   "bytes": 977,
+   "sha256": "173ece21e23c789a6aba85eee591c183dc475bd91aeaeac16eed8a22df2432e1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep037_k8.json",
+   "bytes": 977,
+   "sha256": "155b59d0af3539207cf1dbc1d45c851831c5bad51343503d408eace9bec70d1f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep037_k8_s1.json",
+   "bytes": 967,
+   "sha256": "2eec5c2887a188bad559ca8454b6bd0b6996410082550f2cf67c9bd7a6a885a0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep037_k8_s2.json",
+   "bytes": 981,
+   "sha256": "b47a2454bb500e10e25ed2ad2a67c749808eaf69207aaba3c6c49cc5913b4f70",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep038_k8.json",
+   "bytes": 970,
+   "sha256": "06eb10fe83061f0e9b0ce2649edbe47b2c123d5f52ccddb86edc216b6020c395",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep038_k8_s1.json",
+   "bytes": 977,
+   "sha256": "f7759db14c1387c70f032100571b0e33bef84892b097d4c27d99ec229d3dbc99",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep038_k8_s2.json",
+   "bytes": 968,
+   "sha256": "db8c1e050194510ab0855465dd7a770f1d5139d1bb1bd1e9971d85ab2d6be368",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep039_k8.json",
+   "bytes": 963,
+   "sha256": "af72126b97048b73ece92295306901e9655c12d09c3580598b7b1c46b34ceb1a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep040_k8.json",
+   "bytes": 977,
+   "sha256": "a1232ba79db2029611063554e3dba085d200447935e0a1b4221e423d73f0a35b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep040_k8_s1.json",
+   "bytes": 982,
+   "sha256": "fe8aa300cae957129e3daa9555b0532e694cd8598d8ae10f0eff171261226ab9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep040_k8_s2.json",
+   "bytes": 980,
+   "sha256": "a5c405b5e9e5742bef10e09a04e290ab82546f44e28fa7f79b9a1c9012e4b0ce",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep041_k8.json",
+   "bytes": 976,
+   "sha256": "a151cc90a776426296b90b3ca08ca6267074442d3ff90d137f62f25075a5f15f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep041_k8_s1.json",
+   "bytes": 976,
+   "sha256": "99d3b36679fb3ae9db8f92e3fba4a9ad4d14b3de72439f8fd5f397a447ec8c68",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep041_k8_s2.json",
+   "bytes": 977,
+   "sha256": "295ebefe9e48ecc4e4acc92e8fbdd9c286cb573665f35687731a61119f9a180c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep044_k8.json",
+   "bytes": 979,
+   "sha256": "70822382e156199861c55f2d7695f64ad201a875b8e944871f660fcb0ba2233c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep045_k8.json",
+   "bytes": 971,
+   "sha256": "cb40b07ac755c6d4bd969b6ed70e3244f69c32752cc0ffd71abdc22f5ec4d8ce",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep045_k8_s1.json",
+   "bytes": 975,
+   "sha256": "f1151c6cb91659eb824b744be2f129a4fdfbe2dca197d19f0ce7de061108af07",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep045_k8_s2.json",
+   "bytes": 975,
+   "sha256": "a331e73cdfb9ecea45a292422129b32d543f155a6a09896e2f6e2c567e7a54fb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep046_k8.json",
+   "bytes": 977,
+   "sha256": "500a03e93cc4e79979381f1cf16742e118d2f8e37a55ed585a4bf3d1fe6f7bc7",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep046_k8_s1.json",
+   "bytes": 979,
+   "sha256": "f0669d8400a561639848cfc2ca37529e324a470692d63c127f492946422f64d3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep046_k8_s2.json",
+   "bytes": 979,
+   "sha256": "7fc4e713be3479c5a8d1f0e1979ff3576af24c2c24dfe67cc63aa68d0430fe0f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep047_k8.json",
+   "bytes": 976,
+   "sha256": "f5850fb7bc30b6b829cd44dcfa0df847d9b4fad45bf87a311c95e20bbe5194d9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep048_k8.json",
+   "bytes": 975,
+   "sha256": "393ef7ae67f3f6d7575dd1997bec7167aeccaa8e120369482075b11e79a450e1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep049_k8.json",
+   "bytes": 976,
+   "sha256": "b51025bfb3959b4b23a770ae040a2008a820ca067a702ff0d3527687f9b24e9b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep050_k8.json",
+   "bytes": 974,
+   "sha256": "407ade0916e5ff229911f3ee3fbf788b1be5d3291b342309ee56a55d83a45ba9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep050_k8_s1.json",
+   "bytes": 979,
+   "sha256": "d528514f87bdaba3823953b52c2d1dcb096899bfaa5e2bd1579d2ebe7bd585c1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep050_k8_s2.json",
+   "bytes": 976,
+   "sha256": "24c14aa85133c1850cd2d6d9694d5cdf44121a90eb6e36f9f6b7ddf90265ef6b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep051_k8.json",
+   "bytes": 977,
+   "sha256": "819e4caed2fbcf1a03ab5381b382588944c43ac0da8bcc7c6b163d62fc66011c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep052_k8.json",
+   "bytes": 976,
+   "sha256": "098efa6f7261d5b5aafb14553bc5e76307595255bbe38a9d2a3741d5905c34f8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep055_k8.json",
+   "bytes": 974,
+   "sha256": "2ef7888c4d3d1343fe06b9104a25ac4e21aedf67ed1b2c4467671aa313d99a4e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep056_k8.json",
+   "bytes": 974,
+   "sha256": "176222b20ccfb48915a31b36d621e934be2de7af8968749514997adac9bd6b94",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep057_k8.json",
+   "bytes": 978,
+   "sha256": "f1b748f63ddaee121afcbcf705d3e37b84a115b021dff6f9556d1eb58985a315",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep058_k8.json",
+   "bytes": 976,
+   "sha256": "eec73862bd6e7dc70e3eaa9275f1ac5e40b9dc631bb043059c983e8ec54bc4e6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep059_k8.json",
+   "bytes": 974,
+   "sha256": "084a9ce32f25c028e66bc00c76f4ca9cf38a7b1e098f7091e6b4d66d0218956f",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep059_k8_s1.json",
+   "bytes": 976,
+   "sha256": "b3deb5e1d2a55e30149c969cdd93c37fa18730578c87d5da0087c2b5fe174cda",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/closed_loop/TRAIN40_e/ep059_k8_s2.json",
+   "bytes": 975,
+   "sha256": "2d30007a752ee57da0f04b8518bfe820de1a1bd4eb7c1468b0fdc11ecde21cc8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/closed_loop_summary.json",
+   "bytes": 11649,
+   "sha256": "8bf3f10a4b3aa57196314dd800e6afcacc6287c07c35afb65a07168289fe9745",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep000_k8.json",
+   "bytes": 971,
+   "sha256": "f67a081ff3cf90773faf65a2c4cf9f0c339e13682f1e37c2c9adb1f9a7d2dbf2",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep002_k8.json",
+   "bytes": 980,
+   "sha256": "ae4f50c0a32ef6f04ff106d1af7f0c90df378804d6bc933dc8b4ad521f7717dd",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep003_k8.json",
+   "bytes": 970,
+   "sha256": "63b07d95454e2f9ece5e72db408d00894b58069eeebf33962d10fe265bec6af6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep004_k8.json",
+   "bytes": 974,
+   "sha256": "4384df75d73b54b2d2e7b18f6c5f635b4648b2b834f9249c173cfcfa0c6ba26b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep005_k8.json",
+   "bytes": 977,
+   "sha256": "9ca2a6773939926376483eab2a2de33019ffeae249595845b03fcc1bbc8fcd58",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep006_k8.json",
+   "bytes": 974,
+   "sha256": "3612dff0fda1c133a145897d73aa43bf185ac0c102c3e4baa40bdf438d405542",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep007_k8.json",
+   "bytes": 974,
+   "sha256": "05cdd429e29a277cc46c201619828f774032e4c995940771d5a6bf3e63ef9101",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep008_k8.json",
+   "bytes": 973,
+   "sha256": "3eebe6453c1c313f61bb39418bd53283d58ea31d5afbdf6ff9ecb703ed3a8725",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep009_k8.json",
+   "bytes": 974,
+   "sha256": "9438cf2ce24f0707f04f06c3e097f6e13846fa42b87026ea6b43743b4e483565",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN10_e/ep011_k8.json",
+   "bytes": 978,
+   "sha256": "3d75ca8a0fa86f6bdbbb6cb43cb97bbc543f8197ad773a7a5fc8f58ce23dbb0d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/closed_loop_summary.json",
+   "bytes": 22890,
+   "sha256": "5d4c108e692ede03b7963c883095a98e0427c3bb9f7b43023cca987d2548744b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep000_k8.json",
+   "bytes": 973,
+   "sha256": "6090a75d8831e1bff63795efad1ceac3554bd2ce43fe1194349caecf874607ba",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep002_k8.json",
+   "bytes": 976,
+   "sha256": "e4524ff775b8ffa03e2d2784dce8cd3394034da6b810d776b98c6f239dcd69a7",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep003_k8.json",
+   "bytes": 972,
+   "sha256": "6a678907ae04b036adb62bbd56934323be94103abe60c35d7390a2c9a83a72af",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep004_k8.json",
+   "bytes": 973,
+   "sha256": "255f309d1b1df74b0a02dc033660180f132faff429e2ed5f79ab959370f9f6c6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep005_k8.json",
+   "bytes": 974,
+   "sha256": "71216ed9530fcfa0fb055700f4bf614fbc3bcc972533e5092734cd2b951d5db5",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep006_k8.json",
+   "bytes": 976,
+   "sha256": "daf452a72e7a9089f1895afa18080a17fb97af20b46406d3581f60707be47175",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep007_k8.json",
+   "bytes": 974,
+   "sha256": "b4b64adcc859afd33eb65dadf57e3ea83312657f612d89adeda430a638d560ad",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep008_k8.json",
+   "bytes": 971,
+   "sha256": "b0eb3c795d31ad440c7d44a775db58a14bd6caf665ffa1e104e06510949f463c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep009_k8.json",
+   "bytes": 972,
+   "sha256": "e067f32e7d33764750177a67cf54a6a657c7a1aa47b2e9f1701b8750cb5384b4",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep011_k8.json",
+   "bytes": 974,
+   "sha256": "80255a95b5ab072dfdb4aeeaddc3929edcc79097defe0ec82fca705b4efe209c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep013_k8.json",
+   "bytes": 979,
+   "sha256": "0f1494d045b309ad246b78febd0c4bfb901548a8503c110219af28e336fa8149",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep016_k8.json",
+   "bytes": 977,
+   "sha256": "e175f673f9b9d445521c003ad1d9294376d60778449d7495fe3f1cc224e42e0b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep025_k8.json",
+   "bytes": 976,
+   "sha256": "56799bc15cd70d6f28213406e65b5c97de29eb2414db0a069bcaa50d1885986a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep052_k8.json",
+   "bytes": 973,
+   "sha256": "06cf5629d07289ffdfcdbd1864a4a567d2531f3b3bd01c605009691370a2cffb",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep083_k8.json",
+   "bytes": 976,
+   "sha256": "91c2940393d4b86b5658ef7428c3dfe3d5086ee8ad5c78a5e9b7ea31380d4df4",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep084_k8.json",
+   "bytes": 972,
+   "sha256": "2fa2cd23022b5fb49fe1d48960c38e353e0d727866d0ee607ea179b4e31fc3f9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep092_k8.json",
+   "bytes": 977,
+   "sha256": "0f9659b4c8f6eca55aeca8065ea5f2fc4e59d2fe76a72e29fdc1af333d21f42e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep094_k8.json",
+   "bytes": 977,
+   "sha256": "3cc2f47659f7182139bad4c52f6cb39631d58fe674d7f3df53f45117a808addc",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep095_k8.json",
+   "bytes": 978,
+   "sha256": "53fce1537f4fc9b8b19b1e23774a0407b1979f793c2106280d623ad92fd743b0",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN20_e/ep098_k8.json",
+   "bytes": 975,
+   "sha256": "2f147af66b10cb06d2be98a1e932f435e7a4054808bbd95c21e0e1621acd9583",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/closed_loop_summary.json",
+   "bytes": 22892,
+   "sha256": "dd47509876eac3a1f385435fcfa17bee70ea450d45e46bc6829473b8ce50566b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep000_k8.json",
+   "bytes": 976,
+   "sha256": "4a0fea79c53ac29519ca0578560c22b207d9b4e4d715a8218622928c27ceadd6",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep002_k8.json",
+   "bytes": 978,
+   "sha256": "07ffb26a27dfeb7ec221f7ce4802a6fae5b478bf39776d6a059d69c36fb09f93",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep003_k8.json",
+   "bytes": 976,
+   "sha256": "8c18b16f957541b38dbd0c0470f28c6d6d6f233c48db3eda7bb1458e35663a46",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep004_k8.json",
+   "bytes": 974,
+   "sha256": "7bbcf990cabf5b7839503d9b0e4c517a2a227bb7015c60686bef5eb740e56ed8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep005_k8.json",
+   "bytes": 974,
+   "sha256": "624f8d2d6c8d3d349a11876c9521c193af13a145278930214b267a654ea095fd",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep006_k8.json",
+   "bytes": 976,
+   "sha256": "8281301543f377d347bbdf6b25c7e33a8ff6befd03707caf25c6fed346a5a800",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep007_k8.json",
+   "bytes": 975,
+   "sha256": "80c058e0b2add54b4250ac33cf63ac77178c691459aa4a9390fffb5f3a7a80ec",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep008_k8.json",
+   "bytes": 970,
+   "sha256": "6f03400317a0dd40d86b6137113b133b5f443deb970dcab3bc1ea7dee8dee129",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep009_k8.json",
+   "bytes": 968,
+   "sha256": "97eaab803fe4576b5cc257a5569797841613e8dc7a3cd916844e6fd29a1f9ed8",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep011_k8.json",
+   "bytes": 977,
+   "sha256": "31a54377838fbbe9346337f7b1379a17f845e498f1e0f07c66f4d126937779a4",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep013_k8.json",
+   "bytes": 975,
+   "sha256": "629f1beca4c2b49c2e93dbb5ef0ccfdf4ce874b9a5380b6f10e4df5b7ecf9315",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep016_k8.json",
+   "bytes": 978,
+   "sha256": "f9c054a80168e0ee2b6b48def34a8fa9c87787f1e6643069b46f8d16722a8bcc",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep025_k8.json",
+   "bytes": 977,
+   "sha256": "4463aeb0e7e514239e65acc5c7268a45451678dc2d5ef52c53f83cd22d8daf10",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep052_k8.json",
+   "bytes": 979,
+   "sha256": "e5646789a20bf7f9ab4af7845f6e2c66582581cff7b55985803057a21a1327f3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep083_k8.json",
+   "bytes": 971,
+   "sha256": "2c1c6189b48f0986d5a32b10a8a2d00e6df06395dc27167fa57cd53978ef9ac1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep084_k8.json",
+   "bytes": 972,
+   "sha256": "925684c76952867b139bb68446ac0f612efa8b4d5384e8c252ce1ffb968267ca",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep092_k8.json",
+   "bytes": 974,
+   "sha256": "e54a5dd5e5fca40de9877451ac4ca3d92b511d989b7d5ea2d7a6a672d7e5db51",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep094_k8.json",
+   "bytes": 975,
+   "sha256": "d08aadb805de866499b3bdf7d43ca692fc0243d513a23fac05c501016ff7900d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep095_k8.json",
+   "bytes": 974,
+   "sha256": "d551b6fbf29221b77ac87dae3547a6195fd03650f36b311befeaf7de3ea45a7e",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/train_scenes/TRAIN40_e/ep098_k8.json",
+   "bytes": 978,
+   "sha256": "a5090770dcf4f87e91deffcbde4ee0b4aab6a8b35c2969502a3f90e8e1c2e00c",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN10_e_test.json",
+   "bytes": 18820,
+   "sha256": "4dec7db6e2829e3fb20128a43ff52856df7362d4ba3ef840e5eefd4cbaaca678",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN10_e_train.json",
+   "bytes": 10086,
+   "sha256": "4e6c79b9c2061db4a7f0547fc40f04031558425146869f8e67992084f7cd0b70",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN10_e_val.json",
+   "bytes": 9954,
+   "sha256": "1069126582f3a73e89b77ddec7227b18d759d6373d3c69e2d07b42c2b0ec67b1",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN20_e_test.json",
+   "bytes": 18992,
+   "sha256": "28c672ec99d2d9ff6335c0c638d29396673b488e9362e41d9fe0c744292f9d9a",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN20_e_train.json",
+   "bytes": 12057,
+   "sha256": "e6f4067e0809854a2f7fb3de77549a5414460a689eee2a6777b5fa87ffab00ca",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN20_e_val.json",
+   "bytes": 10084,
+   "sha256": "14e91ee03111ae8a1ab25c84e762d74032cd8fc12a5fbbebdfcffd395ddbf679",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN40_e_test.json",
+   "bytes": 19045,
+   "sha256": "1e67ef9efdfad9f97c8578daa06dc5bcd34901fa29f48270db1ca9f3374d4a9d",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN40_e_train.json",
+   "bytes": 15995,
+   "sha256": "9f91a2ce00362c06aab0334e9c8c085ebb618f6307f5f50dbc32b0a43af64fa9",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/offline/TRAIN40_e_val.json",
+   "bytes": 10104,
+   "sha256": "c6ff740ab482dc2f434057dce1dcb61bd54f198e66677da1b2c98093540f370b",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/analysis_stdout.json",
+   "bytes": 4001,
+   "sha256": "2533fb2e5abb5fa7fd70a3c5fd952d7997af80a8e861269e7943a1cbb1b9ed74",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/coverage.json",
+   "bytes": 11491,
+   "sha256": "3b20b250f1f26801f025257dff18229e3c5c6f37ac1ae924a014bc9962aac597",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/summary.json",
+   "bytes": 200454,
+   "sha256": "032a1e9bf30ee93368bad76837f8a374579085b169e91d64769b02e5674c4ba3",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
+   "path": "artifacts/exposure_matched_scaling/RESULTS_DIGEST.txt",
+   "bytes": 5663,
+   "sha256": "bdfef8d2b2e96b6c5de6cad00d1d6dc612ab98e67c3ea6237d8b203c564660ff",
+   "purpose": "exposure-matched data scaling (models, 452 rollouts, coverage, summary)"
+  },
+  {
    "path": "artifacts/pickcube_physics_v2_gen_val_rgb160/episodes/episode_000000/action.npy",
    "bytes": 1448,
    "sha256": "373b49bb0a268d51de7ce9a5acadd6e1bf59af6b634088bee1556fe8cd52779a",
@@ -54056,6 +57110,10 @@
   }
  ],
  "totals": {
+  "exposure-matched data scaling (models, 452 rollouts, coverage, summary)": {
+   "files": 509,
+   "bytes": 407974799
+  },
   "physics-v2 generalization datasets (10 validation + 56 expert-validated held-out positions)": {
    "files": 1059,
    "bytes": 206884859

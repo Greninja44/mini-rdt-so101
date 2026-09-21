@@ -1,0 +1,86 @@
+{
+ "label": "physics-v2 spatial generalization (PR #5)",
+ "frozen_at": "2026-09-20",
+ "git_commit": "db17d4f",
+ "held_out_benchmark": {
+  "root": "artifacts/pickcube_physics_v2_gen_test_rgb160",
+  "positions_in_benchmark": 56,
+  "outside_benchmark": [
+   42,
+   43,
+   53,
+   54
+  ],
+  "aggregate_sha256": "f27825c96452eb427bb1d67d5991dc72e9001126b8ce445451b089d68a97338c",
+  "split_file_sha256": "43d93078ad9e4c9b84d3866e621e765fc6d6b77540749411207feef570ac453d",
+  "primary_k": 8,
+  "policy_seed": 0,
+  "max_steps": 150,
+  "sampling_steps": 10
+ },
+ "train_dataset": {
+  "root": "artifacts/pickcube_physics_v2_rgb160",
+  "aggregate_sha256": "7fbf048f1b8997d198006d069b777141c05626161f9397dda035b21ac62434e4",
+  "subset_windows": {
+   "CLEAN10": 544,
+   "TRAIN20": 1084,
+   "TRAIN40": 2165,
+   "TRAIN80": 4328
+  }
+ },
+ "checkpoints_sha256": {
+  "TRAIN80_80k_ema": "e26f2f9ae8151f18c6dd4488df2e4514607823aaf56ee8a6c00e0592a338c747",
+  "TRAIN80_20k_ema": "cd64b616270b829ed3c4b8c2bed5c18451e7cd763cd7bb65f2cbc92fa7e37ba7",
+  "CLEAN10_ema": "f3009bce97122ec4ebf848258b9450e633bdf382f56523e51bc0ecd96bc06514",
+  "TRAIN20_20k_ema": "d4aefbc18e0634a0895e0080e62ae2759888d8e1fc5bcb80bc554e47367d86f0",
+  "TRAIN40_20k_ema": "130018bf24f145f13458e4c1a5a42e00a5b14b29eec767a7f96ffca7d1c311fd"
+ },
+ "model_config": {
+  "horizon": 16,
+  "action_dim": 6,
+  "state_dim": 6,
+  "hidden_dim": 192,
+  "layers": 4,
+  "heads": 6,
+  "dropout": 0.0,
+  "pretrained_vision": false,
+  "vision_tokens": "pooled",
+  "vision_grid": [
+   4,
+   5
+  ],
+  "state_dropout": 0.0,
+  "train_vision": false
+ },
+ "diffusion_config": {
+  "timesteps": 100,
+  "schedule": "cosine",
+  "beta_start": 0.0001,
+  "beta_end": 0.02,
+  "prediction": "x0",
+  "sampling_steps": 10
+ },
+ "optimizer": {
+  "AdamW": true,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "batch_size": 8,
+  "grad_clip": 1.0,
+  "ema_decay": 0.999,
+  "seed": 17,
+  "precision": "float32"
+ },
+ "normalization_methodology": "per-subset mean/std over that subset's own training windows (data.ml_dataset.compute_normalization)",
+ "results_k8_seed0": {
+  "TRAIN80_80k": "28/56 (A 20/20, B 4/20, C 4/16)",
+  "TRAIN80_20k": "9/56",
+  "CLEAN10": "13/56",
+  "TRAIN20_20k": "17/56",
+  "TRAIN40_20k": "13/56"
+ },
+ "do_not_overwrite": [
+  "artifacts/physics_v2_generalization",
+  "artifacts/pickcube_physics_v2_gen_test_rgb160",
+  "artifacts/pickcube_physics_v2_gen_val_rgb160"
+ ]
+}
