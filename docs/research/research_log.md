@@ -423,3 +423,22 @@ If image reliance rises but success does not, visual conditioning is not the bot
 - **Biggest limitation:** one training seed per scale, so the non-monotone category results cannot be attributed. Sampler seeds are NOT the
   cause (positions flipping across 3 seeds: 7/16/11/3).
 - 452 rollouts, zero invalid-physics successes. **STOPPED** per the spec: no density sweep, no capacity scaling.
+
+## PHYSICS-V2 TRAINING-SEED REPLICATION (2026-09-21) → TRAINING_SEED_REPLICATION_REPORT.md
+- **Pre-registered** (`docs/research/training_seed_replication_spec.md`, commit 147ca2a): 5 seeds (17,1,2,3,4) x 4 scales, frozen budgets,
+  fixed evaluation sampler seed, two-way cluster bootstrap, decision gate. Training verified bit-identical for a repeated seed.
+- **Held-out per seed (K=8):** 10 demos 15/10/9/11/8 (mean 10.6, SD 2.7); 20 demos 17/24/21/25/8 (19.0, SD **6.9**); 40 demos 26/23/25/28/27
+  (25.8, SD 1.9); 80 demos 28/28/31/33/28 (29.6, SD 2.3).
+- **CASE A:** the coverage result replicates with 1,120 rollouts — distance −2.51 logit/10 mm [−3.53, −1.79]; log2(demos) after conditioning
+  +0.06 [−0.22, +0.32]. Raw scale effect is real at the position level (paired permutation, all p ≤ 0.026) but runs through coverage.
+- **TRAIN40 B = 14/20 did NOT replicate** (14,3,3,7,5; only 3 of 20 B positions solved by all seeds) — a seed-specific outcome, kept in all
+  averages.
+- **80 demos: A = 20/20 in all five seeds (SD 0) and 10/10 training scenes in all five.** Only the 80-demo models reliably execute their own
+  training data, so matched exposure still does not equalise trainability.
+- **Position dominates seed:** 90–99% of explained variance is between positions; failures repeat the same mode across seeds 78.5% of the time.
+- **Correction to the offline-MAE finding:** across scales offline MAE correlates −0.83 with success, but that is a scale effect; *within*
+  a scale it is +0.15 [−0.21, +0.52] (sign flips per scale). Offline MAE ranks data scales, not training runs. The training-scene diagnostic
+  is better within scale (+0.44 [−0.18, +0.76]) but unproven at n=5.
+- **CASE E preserved:** all 46 extrapolation successes lie within 14.85 mm of a demonstration; >15 mm is 8/285 (2.8%).
+- Fitted curve: 75% success at 4.5 mm, 50% at 8.8 mm [7.2, 10.3], 10% at 17.4 mm — input for the density sweep. 0 invalid successes.
+- **STOPPED** per the spec: no density sweep, no capacity scaling.

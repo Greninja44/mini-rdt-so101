@@ -1,0 +1,214 @@
+{
+ "label": "physics-v2 exposure-matched data scaling (PR #6)",
+ "frozen_at": "2026-09-21",
+ "git_commit": "c2526f5",
+ "held_out_benchmark": {
+  "root": "artifacts/pickcube_physics_v2_gen_test_rgb160",
+  "positions_in_benchmark": 56,
+  "outside_benchmark": [
+   42,
+   43,
+   53,
+   54
+  ],
+  "aggregate_sha256": "f27825c96452eb427bb1d67d5991dc72e9001126b8ce445451b089d68a97338c",
+  "split_file_sha256": "43d93078ad9e4c9b84d3866e621e765fc6d6b77540749411207feef570ac453d",
+  "primary_k": 8,
+  "policy_seed": 0,
+  "max_steps": 150,
+  "sampling_steps": 10
+ },
+ "train_dataset": {
+  "root": "artifacts/pickcube_physics_v2_rgb160",
+  "aggregate_sha256": "7fbf048f1b8997d198006d069b777141c05626161f9397dda035b21ac62434e4",
+  "subset_windows": {
+   "CLEAN10": 544,
+   "TRAIN20": 1084,
+   "TRAIN40": 2165,
+   "TRAIN80": 4328
+  }
+ },
+ "budgets_steps": {
+  "TRAIN10": 10055,
+  "TRAIN20": 20037,
+  "TRAIN40": 40018,
+  "TRAIN80": 80000
+ },
+ "exposure_passes": 147.874,
+ "exposure_formula": "steps * batch_size / training_windows",
+ "model_config": {
+  "horizon": 16,
+  "action_dim": 6,
+  "state_dim": 6,
+  "hidden_dim": 192,
+  "layers": 4,
+  "heads": 6,
+  "dropout": 0.0,
+  "pretrained_vision": false,
+  "vision_tokens": "pooled",
+  "vision_grid": [
+   4,
+   5
+  ],
+  "state_dropout": 0.0,
+  "train_vision": false
+ },
+ "diffusion_config": {
+  "timesteps": 100,
+  "schedule": "cosine",
+  "beta_start": 0.0001,
+  "beta_end": 0.02,
+  "prediction": "x0",
+  "sampling_steps": 10
+ },
+ "optimizer": {
+  "AdamW": true,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "batch_size": 8,
+  "grad_clip": 1.0,
+  "ema_decay": 0.999,
+  "seed": 17,
+  "precision": "float32"
+ },
+ "normalization_methodology": "per-subset mean/std over that subset's own training windows (data.ml_dataset.compute_normalization)",
+ "evaluation": {
+  "k": 8,
+  "policy_seed": 0,
+  "sampling_steps": 10,
+  "max_steps": 150,
+  "workspace_margin_m": 0.015,
+  "train_scene_diagnostic": "the 10 CLEAN10 scenes (in every subset), K=8, policy seed 0"
+ },
+ "existing_seed17_models": {
+  "train10_seed17": {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN10_e",
+   "ema_sha256": "6a3bf87cd5387bfe3a35e47e36c4c2659f0e75d7fa81b38a667d44180103fc09",
+   "last_sha256": "46c7802c3e10f4145916cf342a79706667b687db80833e302e1304a2f942574e",
+   "steps": 10055,
+   "train_seed": 17
+  },
+  "train20_seed17": {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN20_e",
+   "ema_sha256": "de9bfdbf0dde44dc5a273564606aea38b9b43eedeac52b71b227ce39c0277293",
+   "last_sha256": "4816867140ce7f24db69ee33c194cdb20d089e6c551c69d2ac53af244aa7e2bd",
+   "steps": 20037,
+   "train_seed": 17
+  },
+  "train40_seed17": {
+   "path": "artifacts/exposure_matched_scaling/models/TRAIN40_e",
+   "ema_sha256": "5b9ea7584ce49dc5113a89da757b460863fb83df578a21b3e6062812dc3163f9",
+   "last_sha256": "bb2b5c6c8ce6da34e100752bffc66910853e15bd1706a5891a153eac2c883a68",
+   "steps": 40018,
+   "train_seed": 17
+  },
+  "train80_seed17": {
+   "path": "artifacts/physics_v2_generalization/models/TRAIN80_80k",
+   "ema_sha256": "e26f2f9ae8151f18c6dd4488df2e4514607823aaf56ee8a6c00e0592a338c747",
+   "last_sha256": "6c8108c3f85bfb9da66369e9cf701fe5f7f72445eaab9b38ae193547b67ce6a3",
+   "steps": 80000,
+   "train_seed": 17
+  }
+ },
+ "single_seed_results_k8": {
+  "TRAIN10_e": {
+   "total": "15/56",
+   "A": "11/20",
+   "B": "2/20",
+   "C": "2/16",
+   "train_scenes": "9/10"
+  },
+  "TRAIN20_e": {
+   "total": "17/56",
+   "A": "12/20",
+   "B": "2/20",
+   "C": "3/16",
+   "train_scenes": "7/10"
+  },
+  "TRAIN40_e": {
+   "total": "26/56",
+   "A": "10/20",
+   "B": "14/20",
+   "C": "2/16",
+   "train_scenes": "6/10"
+  },
+  "TRAIN80_e": {
+   "total": "28/56",
+   "A": "20/20",
+   "B": "4/20",
+   "C": "4/16",
+   "train_scenes": "10/10"
+  }
+ },
+ "coverage_aware_logistic": {
+  "distance_only": {
+   "intercept": {
+    "coef": 1.6505188806785236,
+    "bootstrap95": [
+     1.0346100533477705,
+     2.3199208688262507
+    ]
+   },
+   "nearest_demo_per_10mm": {
+    "coef": -1.929293352143726,
+    "bootstrap95": [
+     -2.554874755332419,
+     -1.3824262035530839
+    ]
+   },
+   "n_rollouts": 224,
+   "n_positions": 56,
+   "ridge": 0.001
+  },
+  "demos_only": {
+   "intercept": {
+    "coef": -1.0494407024841879,
+    "bootstrap95": [
+     -1.5332678770991444,
+     -0.6373718688474362
+    ]
+   },
+   "log2_demos_doubling": {
+    "coef": 0.37111435592784164,
+    "bootstrap95": [
+     0.20956685507541986,
+     0.5641934101059595
+    ]
+   },
+   "n_rollouts": 224,
+   "n_positions": 56,
+   "ridge": 0.001
+  },
+  "both": {
+   "intercept": {
+    "coef": 1.7799987852207306,
+    "bootstrap95": [
+     0.7749734426572265,
+     2.9682842197003705
+    ]
+   },
+   "nearest_demo_per_10mm": {
+    "coef": -1.9720885582509393,
+    "bootstrap95": [
+     -2.8515930610154925,
+     -1.3139152545496637
+    ]
+   },
+   "log2_demos_doubling": {
+    "coef": -0.05176273873183796,
+    "bootstrap95": [
+     -0.3464743518743975,
+     0.21317621403544945
+    ]
+   },
+   "n_rollouts": 224,
+   "n_positions": 56,
+   "ridge": 0.001
+  }
+ },
+ "do_not_overwrite": [
+  "artifacts/exposure_matched_scaling",
+  "artifacts/physics_v2_generalization",
+  "artifacts/physics_v2"
+ ]
+}
