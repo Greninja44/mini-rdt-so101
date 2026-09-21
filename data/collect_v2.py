@@ -45,7 +45,7 @@ def main():
     p.add_argument("--output", default="artifacts/pickcube_physics_v2_rgb160")
     p.add_argument("--start", type=int, default=0); p.add_argument("--count", type=int, default=100); p.add_argument("--seed-base", type=int, default=3000)
     p.add_argument("--positions", help="generalization split JSON (data/generalization_split.py): collect its --split rows at fixed cube_xy")
-    p.add_argument("--split", choices=("validation", "test")); p.add_argument("--dataset-version", default="pickcube-physics-v2-1")
+    p.add_argument("--split", choices=("validation", "test", "train", "eval")); p.add_argument("--dataset-version", default="pickcube-physics-v2-1")
     p.add_argument("--workspace-margin", type=float, default=0.0, help="widen ONLY the reset bounds check (extrapolation positions); physics unchanged")
     a = p.parse_args(); out = Path(a.output); (out / "episodes").mkdir(parents=True, exist_ok=True)
     rows = json.loads(Path(a.positions).read_text())[a.split] if a.positions else None
