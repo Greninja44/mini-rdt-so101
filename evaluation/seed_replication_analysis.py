@@ -283,7 +283,7 @@ def figures(out, freq, adir):
     ax = axes[0]; centers = [1.25, 3.75, 6.25, 8.75, 12.5, 18]
     ks = [out["distance_bins"][l] for l in BIN_LABELS]
     xs = [c for c, b in zip(centers, ks) if b["trials"]]; ys = [100 * b["rate"] for b in ks if b["trials"]]
-    err = np.array([[100 * (b["rate"] - b["wilson95_naive"][0]), 100 * (b["wilson95_naive"][1] - b["rate"])] for b in ks if b["trials"]]).T
+    err = np.clip(np.array([[100 * (b["rate"] - b["wilson95_naive"][0]), 100 * (b["wilson95_naive"][1] - b["rate"])] for b in ks if b["trials"]]).T, 0, None)
     ax.errorbar(xs, ys, yerr=err, fmt="o-", capsize=3, color="C0")
     for c, b in zip(centers, ks):
         if b["trials"]: ax.annotate(f"{b['successes']}/{b['trials']}", (c, 100 * b["rate"]), textcoords="offset points", xytext=(5, 4), fontsize=7)

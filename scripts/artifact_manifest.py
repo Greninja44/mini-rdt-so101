@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 
 GROUPS = {
+    "training-seed replication (16 models, 1,056 rollouts, summary)": ["artifacts/seed_replication/models/*/*.pt", "artifacts/seed_replication/models/*/*.json", "artifacts/seed_replication/closed_loop/*/*.json", "artifacts/seed_replication/train_scenes/*/*.json", "artifacts/seed_replication/offline/*.json", "artifacts/seed_replication/*.json", "artifacts/seed_replication/*.txt"],
     "exposure-matched data scaling (models, 452 rollouts, coverage, summary)": ["artifacts/exposure_matched_scaling/models/*/*.pt", "artifacts/exposure_matched_scaling/models/*/*.json", "artifacts/exposure_matched_scaling/closed_loop/*/*.json", "artifacts/exposure_matched_scaling/train_scenes/*/*.json", "artifacts/exposure_matched_scaling/offline/*.json", "artifacts/exposure_matched_scaling/*.json", "artifacts/exposure_matched_scaling/*.txt"],
     "physics-v2 generalization datasets (10 validation + 56 expert-validated held-out positions)": ["artifacts/pickcube_physics_v2_gen_val_rgb160/episodes/*/*", "artifacts/pickcube_physics_v2_gen_test_rgb160/episodes/*/*", "artifacts/pickcube_physics_v2_gen_*_rgb160/*.json*"],
     "physics-v2 generalization models (TRAIN20/40/80, 80k arm)": ["artifacts/physics_v2_generalization/models/*/*.pt", "artifacts/physics_v2_generalization/models/*/*.json"],

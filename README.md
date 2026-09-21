@@ -117,7 +117,28 @@ Same 2M model, same 56 held-out positions, optimisation **exposure held constant
 the distance to the nearest training cube the effect vanishes (−0.05, 95% CI [−0.35, +0.21]) while the distance effect stays (−1.97 per
 10 mm). Extrapolation never improves (2 → 3 → 2 → 4). The previous fixed-step curve (13 → 17 → 13 → 9) was an exposure artifact.
 
-**Not yet tested under physics-v2:** per-scale seed replication, the data-density sweep, and model capacity scaling. The previous (v1) ablations are
+### Training-seed replication ([`TRAINING_SEED_REPLICATION_REPORT`](TRAINING_SEED_REPLICATION_REPORT.md))
+
+<img src="docs/assets/v2_seed_variance.png" width="100%" alt="held-out success by data scale, every training seed visible"/>
+
+5 independent training seeds per scale (20 models, 1,120 held-out rollouts), everything else frozen:
+
+| demos | held out per seed | mean | SD | training scenes |
+|---|---|---|---|---|
+| 10 | 15, 10, 9, 11, 8 | 10.6/56 | 2.7 | 7–10 of 10 |
+| 20 | 17, 24, 21, 25, 8 | 19.0/56 | **6.9** | 5–9 of 10 |
+| 40 | 26, 23, 25, 28, 27 | 25.8/56 | 1.9 | 6–9 of 10 |
+| 80 | 28, 28, 31, 33, 28 | 29.6/56 | 2.3 | **10/10 every seed** |
+
+- **The coverage conclusion replicates.** Distance to the nearest demonstration: −2.51 logit per 10 mm [−3.53, −1.79]; dataset size after
+  conditioning on distance: **+0.06 [−0.22, +0.32]**.
+- **80 demos solve all 20 dense-interpolation positions in all five runs** (A = 20/20, SD 0).
+- **The TRAIN40 B = 14/20 result did not replicate** (14, 3, 3, 7, 5) — it was one lucky run.
+- **Position, not seed, decides outcomes:** 90–99% of explained variance is between positions, and independently trained policies fail the
+  same position the same way 78.5% of the time.
+- Fitted success probability vs nearest demonstration: 75% at 4.5 mm, 50% at 8.8 mm [7.2, 10.3], 10% at 17.4 mm.
+
+**Not yet tested under physics-v2:** the data-density sweep (spacing varied at fixed dataset size), and model capacity scaling. The previous (v1) ablations are
 archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
 
 ## Installation
@@ -194,6 +215,8 @@ size and sha256 for backup and verification.
 | [`physics_v2_generalization_spec`](docs/research/physics_v2_generalization_spec.md) | pre-registered generalisation protocol: split, budget, primary K, statistics, failure taxonomy |
 | [`EXPOSURE_MATCHED_DATA_SCALING_REPORT`](EXPOSURE_MATCHED_DATA_SCALING_REPORT.md) | **does more data help, or just closer data? (coverage, not count)** |
 | [`exposure_matched_data_scaling_spec`](docs/research/exposure_matched_data_scaling_spec.md) | pre-registered exposure definition, derived budgets, distance bins, decision gate |
+| [`TRAINING_SEED_REPLICATION_REPORT`](TRAINING_SEED_REPLICATION_REPORT.md) | **how much of the result is data geometry vs one training run? (mostly geometry)** |
+| [`training_seed_replication_spec`](docs/research/training_seed_replication_spec.md) | pre-registered seed matrix, variance statistics, decision gate |
 | [`TABLE_COLLISION_AUDIT`](TABLE_COLLISION_AUDIT.md) | the audit that invalidated physics-v1 |
 | [`physics_v2_spec`](docs/research/physics_v2_spec.md) | pre-registered validity spec, tolerances and amendments |
 | [`00_summary`](docs/reports/00_summary.md) | *(physics-v1, invalid)* all v1 variants in one table |
@@ -211,7 +234,8 @@ size and sha256 for backup and verification.
 - [x] Reliable closed loop on memorised cubes under physics-v2 (49/50)
 - [x] Physics-v2 generalisation: 80 training demos → 56 held-out cube positions (20/20 inside dense coverage; collapses beyond ~5 mm from data)
 - [x] Exposure-matched data scaling (10/20/40/80 demos at 147.87 passes each): 15 → 17 → 26 → 28 of 56, explained by local coverage, not count
-- [ ] Seed replication per data scale, then a data-density sweep that varies spacing at fixed dataset size
+- [x] Seed replication (5 seeds x 4 data scales): coverage conclusion replicates; 80 demos give A = 20/20 in every run
+- [ ] Data-density sweep: vary demonstration spacing at fixed dataset size, targeting the fitted 75%->25% transition (4.5-13 mm)
 - [ ] Controlled capacity scaling: 2M → 5M → 10M → 20M → 40M (fixed data, seeds, recipe)
 - [ ] Rotations, sizes and shapes; multiple objects and tasks; language conditioning
 - [ ] External SO-100/101 datasets, sim-to-real on a physical SO-101
