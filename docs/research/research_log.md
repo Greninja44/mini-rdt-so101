@@ -408,3 +408,18 @@ If image reliance rises but success does not, visual conditioning is not the bot
   encoder alone, fails to interpolate across the gap.
 - 1,329 rollouts, zero invalid-physics successes; 1 rollout hit the cube–table tolerance and was correctly rejected.
 - **STOPPED** per the spec. Next: exposure-matched data scaling, then a density sweep; capacity scaling only after those.
+
+## PHYSICS-V2 EXPOSURE-MATCHED DATA SCALING (2026-09-21) → EXPOSURE_MATCHED_DATA_SCALING_REPORT.md
+- **Pre-registered** (`docs/research/exposure_matched_data_scaling_spec.md`, commit 5836929) before training: exposure equation, derived
+  budgets, nested subsets, training-scene diagnostic, distance bins, statistics, decision gate.
+- **Exposure** = steps x batch / windows, anchored on the existing 80-demo/80k model → 147.87 passes. Budgets derived from *measured* window
+  counts (544/1084/2165/4328) → 10,055 / 20,037 / 40,018 / 80,000 steps. Only the anchor qualified for reuse; the old 20k models were retrained.
+- **Result (K=8, seed 0, the same frozen 56 positions):** 15 → 17 → 26 → 28 of 56. Only the 8x endpoint is significant (McNemar 14 vs 1,
+  p = 0.001); adjacent scales are not.
+- **CASE B:** conditioned on distance to the nearest training cube, the effect of doubling the dataset is −0.05 logit [−0.35, +0.21], while
+  distance keeps −1.97 per 10 mm. At matched distance, larger datasets show no systematic advantage. **CASE E:** extrapolation flat (2/3/2/4).
+  **Partial CASE D:** matched exposure did NOT equalise closed-loop trainability — training-scene success was 9/10, 7/10, 6/10, 10/10.
+- **Offline stays disconnected:** TRAIN40_e and TRAIN80_e have identical held-out MAE (0.0101) but A 10/20 vs 20/20 and B 14/20 vs 4/20.
+- **Biggest limitation:** one training seed per scale, so the non-monotone category results cannot be attributed. Sampler seeds are NOT the
+  cause (positions flipping across 3 seeds: 7/16/11/3).
+- 452 rollouts, zero invalid-physics successes. **STOPPED** per the spec: no density sweep, no capacity scaling.
