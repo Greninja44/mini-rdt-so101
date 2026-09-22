@@ -442,3 +442,18 @@ If image reliance rises but success does not, visual conditioning is not the bot
 - **CASE E preserved:** all 46 extrapolation successes lie within 14.85 mm of a demonstration; >15 mm is 8/285 (2.8%).
 - Fitted curve: 75% success at 4.5 mm, 50% at 8.8 mm [7.2, 10.3], 10% at 17.4 mm — input for the density sweep. 0 invalid successes.
 - **STOPPED** per the spec: no density sweep, no capacity scaling.
+
+## PHYSICS-V2 CONTROLLED DENSITY SWEEP (2026-09-22) → CONTROLLED_DENSITY_SWEEP_REPORT.md
+- **Pre-registered** (`docs/research/controlled_density_sweep_spec.md`, commit 99b4b5b) before collecting any density dataset.
+- **Design:** 7 separate 80-demo datasets; each evaluation position sits in a hole of radius r with a ring of demos at exactly r and filler
+  outside every hole. Count identical across conditions → density manipulated, not observed. Expert: 59/59 positions solvable, 0 exclusions.
+  Exposure matched at 147.87 passes from measured windows (4,339 → 80,222 steps). 3 seeds per condition = 21 models, 387 rollouts.
+- **Result (K=8):** 36/36 (2.5 mm), 34/36 (5), 28/30 (7.5), 18/24 (10), 7/12 (15), 3/9 (20). Monotone: **density is causal (CASE A)**.
+  Variance: position 66%, condition 34%, **training seed 0.26%**.
+- **CASE C is the new finding:** at identical d1 = 7.5 mm, surrounded 28/30 vs one-sided 17/30 (Fisher p = 0.0021; consistent across seeds).
+  Pooled: one-sided support −2.00 logit [−4.06, −0.20] ≈ 7.8 mm of equivalent distance. **Nearest-demo distance alone is not coverage.**
+- **CASE B rejected — informative disagreement:** the controlled curve has the SAME slope as the observational one (−2.56 vs −2.55 per 10 mm)
+  but sits ~7 mm right: d50 16.0 mm [11.9, 21.8] vs 8.8 mm. The observational curve predicts 58% at 7.5 mm, which is exactly the ONE-SIDED
+  result (57%), not the surrounded one (93%). The earlier curve was measuring a mixture dominated by one-sided support.
+- Failures stay `wrong_lateral_alignment` and scale with sparsity (0% → 56%); lateral error at close grows 3.0 → 9.9 mm. 0 invalid successes.
+- **STOPPED** per the spec. Next: capacity x density in the informative 10-20 mm band (plus the one-sided condition), reusing these datasets.
