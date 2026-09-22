@@ -138,7 +138,27 @@ the distance to the nearest training cube the effect vanishes (−0.05, 95% CI [
   same position the same way 78.5% of the time.
 - Fitted success probability vs nearest demonstration: 75% at 4.5 mm, 50% at 8.8 mm [7.2, 10.3], 10% at 17.4 mm.
 
-**Not yet tested under physics-v2:** the data-density sweep (spacing varied at fixed dataset size), and model capacity scaling. The previous (v1) ablations are
+### Controlled density sweep ([`CONTROLLED_DENSITY_SWEEP_REPORT`](CONTROLLED_DENSITY_SWEEP_REPORT.md))
+
+<img src="docs/assets/v2_density_response.png" width="100%" alt="controlled density response"/>
+
+Seven **80-demonstration** datasets differing only in local geometry: every evaluation position sits in a hole of radius r with a ring of
+demonstrations at exactly r. Demonstration count is identical, so density is manipulated rather than observed. 3 seeds per condition.
+
+| nearest demo | 2.5 mm | 5 mm | 7.5 mm | 10 mm | 15 mm | 20 mm | 7.5 mm **one-sided** |
+|---|---|---|---|---|---|---|---|
+| success | **36/36** | 34/36 | 28/30 | 18/24 | 7/12 | 3/9 | **17/30** |
+| rate | 100% | 94% | 93% | 75% | 58% | 33% | 57% |
+
+- **Density is causal:** success falls monotonically as the manipulated distance grows, with training seed accounting for 0.26% of explained
+  variance against 34% for the density condition.
+- **Support geometry matters as much as distance.** At an identical 7.5 mm, surrounded support gives 93% and one-sided 57%
+  (−2.00 logit, ≈ 7.8 mm equivalent, Fisher p = 0.002). **Nearest-demo distance alone is not coverage.**
+- **The earlier observational curve was pessimistic by ~7 mm:** same slope (−2.56 vs −2.55 logit per 10 mm), different offset. Estimated 50%
+  point 16.0 mm [11.9, 21.8] surrounded, versus 8.8 mm observationally — and the observational curve matches the *one-sided* result almost
+  exactly (predicts 58%, measured 57%).
+
+**Not yet tested under physics-v2:** model capacity, which should now be tested in the informative 10–20 mm band rather than guessed. The previous (v1) ablations are
 archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
 
 ## Installation
@@ -217,6 +237,8 @@ size and sha256 for backup and verification.
 | [`exposure_matched_data_scaling_spec`](docs/research/exposure_matched_data_scaling_spec.md) | pre-registered exposure definition, derived budgets, distance bins, decision gate |
 | [`TRAINING_SEED_REPLICATION_REPORT`](TRAINING_SEED_REPLICATION_REPORT.md) | **how much of the result is data geometry vs one training run? (mostly geometry)** |
 | [`training_seed_replication_spec`](docs/research/training_seed_replication_spec.md) | pre-registered seed matrix, variance statistics, decision gate |
+| [`CONTROLLED_DENSITY_SWEEP_REPORT`](CONTROLLED_DENSITY_SWEEP_REPORT.md) | **manipulating demonstration density: distance is causal, and support geometry matters as much** |
+| [`controlled_density_sweep_spec`](docs/research/controlled_density_sweep_spec.md) | pre-registered density manipulation, conditions, statistics, decision gate |
 | [`TABLE_COLLISION_AUDIT`](TABLE_COLLISION_AUDIT.md) | the audit that invalidated physics-v1 |
 | [`physics_v2_spec`](docs/research/physics_v2_spec.md) | pre-registered validity spec, tolerances and amendments |
 | [`00_summary`](docs/reports/00_summary.md) | *(physics-v1, invalid)* all v1 variants in one table |
@@ -235,7 +257,8 @@ size and sha256 for backup and verification.
 - [x] Physics-v2 generalisation: 80 training demos → 56 held-out cube positions (20/20 inside dense coverage; collapses beyond ~5 mm from data)
 - [x] Exposure-matched data scaling (10/20/40/80 demos at 147.87 passes each): 15 → 17 → 26 → 28 of 56, explained by local coverage, not count
 - [x] Seed replication (5 seeds x 4 data scales): coverage conclusion replicates; 80 demos give A = 20/20 in every run
-- [ ] Data-density sweep: vary demonstration spacing at fixed dataset size, targeting the fitted 75%->25% transition (4.5-13 mm)
+- [x] Controlled density sweep: density is causal; surrounded support tolerates ~2x the distance of one-sided support
+- [ ] Capacity x density: test 2M against larger models in the informative 10-20 mm band, reusing these density conditions unchanged
 - [ ] Controlled capacity scaling: 2M → 5M → 10M → 20M → 40M (fixed data, seeds, recipe)
 - [ ] Rotations, sizes and shapes; multiple objects and tasks; language conditioning
 - [ ] External SO-100/101 datasets, sim-to-real on a physical SO-101
