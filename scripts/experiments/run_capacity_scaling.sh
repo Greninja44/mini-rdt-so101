@@ -17,10 +17,15 @@ QUEUE=(); for z in $SIZES; do for c in $CONDS; do for s in $SEEDS; do QUEUE+=("$
 
 train_one() {  # size condition seed
   local z=$1 c=$2 s=$3 M=$C/models/${1}_${2}_seed${3}; [ -f $M/result.json ] && return
-  set -- $(arch $z); rm -rf $M; log "train ${z}_${c}_seed${s}: d=$1 L=$2 heads=$3, $STEPS steps"
+  set -- $(arch $z); mkdir -p "$M"
+  # An interrupted run is an infrastructure event, not permission to erase its
+  # checkpoints.  audit_overfit restores model, optimizer and RNG state exactly.
+  local resume=()
+  if [ -f "$M/last.pt" ]; then resume=(--resume "$M/last.pt"); fi
+  log "train ${z}_${c}_seed${s}: d=$1 L=$2 heads=$3, $STEPS steps${resume:+ (resuming)}"
   $PY -m training.audit_overfit --dataset $DS/${c}_train --output $M --train-all --schedule cosine --prediction x0 --padding hold \
       --steps $STEPS --seed $s --batch-size 8 --learning-rate 0.001 --device cuda --eval-interval 2000 --ema-decay 0.999 \
-      --hidden-dim $1 --layers $2 --heads $3 > $M.log 2>&1
+      --hidden-dim $1 --layers $2 --heads $3 "${resume[@]}" >> $M.log 2>&1
   [ -f $M/result.json ] && log "trained ${z}_${c}_seed${s}: $(python3 -c "import json;r=json.load(open('$M/result.json'));print('params',r['policy_parameters'],'wall %.0f min'%(r['elapsed_s']/60),'vram %.0f MB'%(r['peak_vram_bytes']/1e6),'loss %.4f'%r['loss'])")" \
                          || log "WARNING: ${z}_${c}_seed${s} produced no result.json (see $M.log)"
 }
@@ -50,7 +55,10 @@ evaluator() {
   done
   log "evaluation complete"
 }
-evaluator & E=$!
-wait $T0 $T1 $E
+# Keep the resource ceiling at two active workers.  Evaluation begins only
+# after both concurrent training workers finish; its own two simulation
+# workers then remain within the same ceiling.
+wait $T0 $T1
+evaluator
 $PY -m evaluation.latency_benchmark --output $C/latency.json >> $C/pipeline.log 2>&1; log "latency benchmark written"
 log "capacity scaling pipeline complete"
