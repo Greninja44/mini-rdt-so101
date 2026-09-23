@@ -4,7 +4,7 @@
 
 The original capacity pipeline (PID/PGID 21681) was already running. A later monitoring action misidentified its detached process as terminated and launched a second pipeline (PID/PGID 255224). Between 2026-09-22 19:25 UTC and 2026-09-23 02:22 UTC, both launchers entered the same resumable `m4.3_r7.5_seed2` and `m9.1_r10.0_seed0` directories. This temporarily violated the pre-registered maximum of two training workers.
 
-The duplicate process group was terminated at 2026-09-23 02:23 UTC. The original group continues with exactly two trainers. No historical density-sweep artifact was touched and no capacity artifact was deleted manually. The working launcher was previously amended to resume an interrupted run from `last.pt` rather than remove its directory (`29e0276`); the original already-running process retains its loaded script, while any future restart uses that safe version.
+The duplicate process group was terminated at 2026-09-23 02:23 UTC. A subsequent process audit found that the original launcher's eager evaluator had started two simulation workers while its two trainers remained active. At 2026-09-23 02:59 UTC that process group was stopped and the committed corrected launcher (`29e0276`) was started. It resumes both active training checkpoints exactly and defers evaluation until all training workers finish, keeping the total at two. No historical density-sweep artifact was touched and no capacity artifact was deleted manually.
 
 Scientific handling:
 
