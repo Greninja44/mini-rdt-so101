@@ -12,3 +12,7 @@ Scientific handling:
 - The involved runs are retained; they are not selectively restarted.
 - Before analysis, every raw/EMA checkpoint from these two runs will be loaded, its recorded configuration, seed, data manifest and final step checked, and its SHA-256 included in the capacity artifact manifest.
 - If either checkpoint fails integrity or configuration validation, the affected run is stopped and reported as an infrastructure failure rather than silently retrained. The pre-registration and hypotheses remain unchanged.
+
+## 2026-09-23 — WSL process interruption
+
+At 2026-09-23 16:33 UTC, following a WSL disconnect, the corrected detached launcher was no longer present. All 25 completed runs and their artifacts remained present. `m9.1_r7.5_onesided_seed1` and seed 2 had preserved `last.pt` checkpoints at steps 60,000 and 2,000, respectively; both were resumed in place at 16:34 UTC by the same corrected two-worker launcher. This is an infrastructure interruption only: no completed run, seed, dataset, model configuration, or evaluation setting was changed.
