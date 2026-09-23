@@ -48,7 +48,8 @@ def experiment(args):
         n_corrective=round(args.batch_size*args.corrective_fraction)
         if not 0<n_corrective<args.batch_size: raise ValueError("corrective fraction must leave clean and corrective samples in each batch")
     set_seed(args.seed)  # Encoder extraction does not consume training RNG.
-    config=TinyRDTConfig(pretrained_vision=False,vision_tokens=args.vision_tokens,state_dropout=args.state_dropout,train_vision=args.train_vision)
+    config=TinyRDTConfig(pretrained_vision=False,vision_tokens=args.vision_tokens,state_dropout=args.state_dropout,train_vision=args.train_vision,
+                         hidden_dim=args.hidden_dim,layers=args.layers,heads=args.heads)
     if args.train_vision and (args.corrective or args.baseline): raise ValueError("train-vision supports CLEAN diffusion training only")
     if args.baseline:
         if args.baseline=="rgb": inputs=torch.cat((b["features"],b["state"]),1)
@@ -190,6 +191,8 @@ if __name__ == "__main__":
     p.add_argument("--corrective-fraction",type=float,default=.5)
     p.add_argument("--corrective-max-frames",type=int,help="size-matched ablation: whole episodes up to this many frames")
     p.add_argument("--ema-decay",type=float,default=0.,help="0 disables; EMA weights saved to ema_last.pt")
+    p.add_argument("--hidden-dim",type=int,default=192,help="TinyRDT width (capacity scaling); default = the ~2M baseline")
+    p.add_argument("--layers",type=int,default=4); p.add_argument("--heads",type=int,default=6)
     p.add_argument("--split-file",default="docs/research/physics_v2_generalization_split.json")
     p.add_argument("--train-subset",choices=("CLEAN10","TRAIN20","TRAIN40","TRAIN80"),help="train on this spatial-split subset (overrides --train-episodes)")
     p.add_argument("--snapshot-interval",type=int,default=0,help="also keep EMA snapshots every N steps (must be a multiple of --eval-interval)")
