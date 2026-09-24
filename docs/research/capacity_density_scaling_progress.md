@@ -15,3 +15,10 @@ The exact configuration is `d=256`, 5 Transformer blocks, 8 heads, 4d MLP, with 
 | r7.5 surrounded control | 28/30 (93.3%) | 10, 9, 4 | 23/24 (95.8%) | 0 |
 
 The apparent improvement is directionally consistent on every currently completed primary condition, but it is **not a capacity-scaling conclusion**: the 9.1M and 19.5M members, their distance curves, interaction model, mechanistic diagnostics, cost measures and final clustered analysis are required before deciding whether capacity expands range or merely provides a small hard-condition gain.
+
+## Pause record — 2026-09-24
+
+At the user's instruction, no incomplete training run is resumed. At pause, 32 of the 45 pre-registered training runs had completed; only
+the 15 completed 4.3M runs had their full closed-loop/offline evaluation. The remaining finished checkpoints and partial checkpoints are
+preserved under `artifacts/capacity_scaling/`, but are intentionally not used to make an unregistered partial conclusion. The WIP PR and
+README describe the evaluated 4.3M slice only.
