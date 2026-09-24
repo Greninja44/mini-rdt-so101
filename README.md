@@ -158,8 +158,24 @@ demonstrations at exactly r. Demonstration count is identical, so density is man
   point 16.0 mm [11.9, 21.8] surrounded, versus 8.8 mm observationally — and the observational curve matches the *one-sided* result almost
   exactly (predicts 58%, measured 57%).
 
-**Not yet tested under physics-v2:** model capacity, which should now be tested in the informative 10–20 mm band rather than guessed. The previous (v1) ablations are
-archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
+### Interim policy-capacity result (incomplete; [`progress record`](docs/research/capacity_density_scaling_progress.md))
+
+The pre-registered capacity × density study reuses these exact controlled-density datasets, frozen MobileNet vision encoder, seeds 0/1/2,
+matched 80,222-step exposure, DDIM-10 sampler and physics-v2 K=8 evaluator. Its completed **4.3M** policy member (d=256, 5 blocks,
+8 heads; 4,304,902 trainable policy parameters) improves over the frozen 2M baseline in every completed primary aggregate, with no invalid
+physics rollouts:
+
+| condition | frozen 2M | 4.3M (seeds 0/1/2) | 4.3M aggregate |
+|---|---:|---:|---:|
+| r10 surrounded | 18/24 (75.0%) | 7, 7, 7 | **21/24 (87.5%)** |
+| r15 surrounded | 7/12 (58.3%) | 3, 3, 2 | **8/12 (66.7%)** |
+| r20 surrounded | 3/9 (33.3%) | 1, 1, 2 | **4/9 (44.4%)** |
+| r7.5 one-sided | 17/30 (56.7%) | 6, 8, 6 | **20/30 (66.7%)** |
+| r7.5 surrounded control | 28/30 (93.3%) | 10, 9, 4 | **23/24 (95.8%)** |
+
+This is directionally encouraging but **not a final capacity-scaling conclusion**: the larger-model matrix has been paused before its
+closed-loop evaluation, so there is no capacity-specific distance curve, d50 estimate, interaction analysis, or diminishing-returns claim.
+The prior v1 ablations remain archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
 
 ## Installation
 
@@ -258,8 +274,7 @@ size and sha256 for backup and verification.
 - [x] Exposure-matched data scaling (10/20/40/80 demos at 147.87 passes each): 15 → 17 → 26 → 28 of 56, explained by local coverage, not count
 - [x] Seed replication (5 seeds x 4 data scales): coverage conclusion replicates; 80 demos give A = 20/20 in every run
 - [x] Controlled density sweep: density is causal; surrounded support tolerates ~2x the distance of one-sided support
-- [ ] Capacity x density: test 2M against larger models in the informative 10-20 mm band, reusing these density conditions unchanged
-- [ ] Controlled capacity scaling: 2M → 5M → 10M → 20M → 40M (fixed data, seeds, recipe)
+- [~] Capacity × density: interim 4.3M result recorded; larger-model study paused before evaluation and final analysis
 - [ ] Rotations, sizes and shapes; multiple objects and tasks; language conditioning
 - [ ] External SO-100/101 datasets, sim-to-real on a physical SO-101
 
