@@ -16,9 +16,14 @@ The exact configuration is `d=256`, 5 Transformer blocks, 8 heads, 4d MLP, with 
 
 The apparent improvement is directionally consistent on every currently completed primary condition, but it is **not a capacity-scaling conclusion**: the 9.1M and 19.5M members, their distance curves, interaction model, mechanistic diagnostics, cost measures and final clustered analysis are required before deciding whether capacity expands range or merely provides a small hard-condition gain.
 
-## Pause record — 2026-09-24
+## Pause and continuation record
 
 At the user's instruction, no incomplete training run is resumed. At pause, 32 of the 45 pre-registered training runs had completed; only
 the 15 completed 4.3M runs had their full closed-loop/offline evaluation. The remaining finished checkpoints and partial checkpoints are
 preserved under `artifacts/capacity_scaling/`, but are intentionally not used to make an unregistered partial conclusion. The WIP PR and
 README describe the evaluated 4.3M slice only.
+
+On 2026-09-25, the user explicitly reauthorized continuation. The interrupted `m19.5_r10.0_seed2` and `m19.5_r15.0_seed0` runs resumed
+from their preserved checkpoints. The runner now executes as the enabled, lingered user-systemd service `mini-rdt-capacity.service`, using
+the versioned service entrypoint in `scripts/experiments/`. This survives ordinary terminal disconnects and restarts after process failure;
+a full WSL virtual-machine shutdown remains an external infrastructure interruption and is recorded if it occurs.

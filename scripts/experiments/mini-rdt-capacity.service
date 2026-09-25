@@ -1,0 +1,15 @@
+[Unit]
+Description=MiniRDT capacity x density scaling pipeline
+After=default.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/batman/mini-rdt-so101
+ExecStart=/bin/bash /home/batman/mini-rdt-so101/scripts/experiments/run_capacity_service.sh
+Restart=on-failure
+RestartSec=30
+KillMode=control-group
+TimeoutStopSec=120
+
+[Install]
+WantedBy=default.target

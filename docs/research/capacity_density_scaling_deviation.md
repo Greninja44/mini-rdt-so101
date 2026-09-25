@@ -20,3 +20,10 @@ At 2026-09-23 16:33 UTC, following a WSL disconnect, the corrected detached laun
 At 2026-09-24 04:05 UTC, a second WSL crash again stopped the launcher. Thirty completed runs remained intact. `m19.5_r10.0_seed0` and seed 1 were resumed in place from their saved step-0 and step-28,000 checkpoints at 04:06 UTC, again with exactly two workers and unchanged configuration.
 
 At 2026-09-24 14:58 UTC, a third WSL crash stopped the launcher after 32 completed runs. `m19.5_r15.0_seed0` and `m19.5_r10.0_seed2` were resumed in place from their saved step-36,000 and step-0 checkpoints. No completed result or fixed experimental setting changed.
+
+## 2026-09-25 — continuation under persistent user service
+
+The user explicitly reauthorized continuation. The two incomplete 19.5M runs resumed from their existing checkpoints under the enabled,
+lingered user-systemd service `mini-rdt-capacity.service`. Its two-worker runner is versioned in `scripts/experiments/`, exits without
+restarting after a completed pipeline, and resumes interrupted work in place. This changes process supervision only; it does not change
+the registered data, seeds, capacity configurations, training exposure, evaluation protocol or hypotheses.
