@@ -27,3 +27,16 @@ The user explicitly reauthorized continuation. The two incomplete 19.5M runs res
 lingered user-systemd service `mini-rdt-capacity.service`. Its two-worker runner is versioned in `scripts/experiments/`, exits without
 restarting after a completed pipeline, and resumes interrupted work in place. This changes process supervision only; it does not change
 the registered data, seeds, capacity configurations, training exposure, evaluation protocol or hypotheses.
+
+## 2026-09-29 — lower-memory execution
+
+At the user's request, continuation uses one training worker and one evaluation worker. Effective batch size remains 8, every run retains
+its pre-registered 80,222 steps and checkpoint/resume state, and no model, optimizer, dataset, seed, sampler or physics setting changes.
+This lowers concurrent RAM/VRAM use and increases wall time only.
+
+## 2026-09-29 — interrupted checkpoint write
+
+Pre-resume validation found `m19.5_r20.0_seed1/last.pt` truncated at zero bytes after a WSL interruption. Its earlier raw `best.pt` at
+step 34,000 remained readable and contains model, optimizer and RNG state; the run resumes from that preserved checkpoint, repeating only
+the lost post-34,000 segment. The corrupt file is retained. Checkpoint saves now use write-then-atomic-replace, with a regression test;
+this is an infrastructure repair, not a training-recipe change.

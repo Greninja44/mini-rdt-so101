@@ -9,6 +9,7 @@ import argparse
 import copy
 from dataclasses import asdict
 import json
+import os
 from pathlib import Path
 import random
 import time
@@ -22,6 +23,13 @@ from models.tiny_rdt import TinyRDT, TinyRDTConfig
 from training.diffusion import ActionDiffusion
 from training.trainer import masked_mse, set_seed
 from evaluation.research_audit import load, make_bank, make_corrective_bank, metrics, sample, denoise, save_json, sha256
+
+
+def atomic_torch_save(payload, path: Path) -> None:
+    """Write a checkpoint atomically so interruption cannot leave an empty file."""
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    torch.save(payload, temporary)
+    os.replace(temporary, path)
 
 
 def experiment(args):
@@ -158,8 +166,8 @@ def experiment(args):
                 if args.baseline:
                     payload.update({"baseline":args.baseline,"input_dim":inputs.shape[1],"policy_parameters":sum(p.numel() for p in model.parameters()),"vision":vision_model.vision.state_dict()})
                     if args.baseline=="privileged":payload.update(cube_mean=cube_mean,cube_std=cube_std)
-                torch.save(payload,out/"last.pt")
-                if improved:torch.save(payload,out/"best.pt")
+                atomic_torch_save(payload,out/"last.pt")
+                if improved:atomic_torch_save(payload,out/"best.pt")
                 if ema is not None:
                     ema_payload={k:v for k,v in payload.items() if k!="optimizer"};ema_payload["model"]=ema.state_dict()
                     ema_payload["ema_decay"]=args.ema_decay
@@ -168,8 +176,8 @@ def experiment(args):
                         if args.train_vision: eb={**b,"features":torch.cat([ema.vision(b["rgb"][i:i+64]) for i in range(0,len(b["rgb"]),64)])}
                         ema_row=metrics(stats.denormalize_action(sample(ema,d,args.prediction,eb,seed=4100)),b["raw"],b["mask"])
                     log.write(json.dumps({"step":step,"ema_sampled":ema_row})+"\n");log.flush();print(json.dumps({"step":step,"ema_sampled":ema_row}),flush=True)
-                    torch.save(ema_payload,out/"ema_last.pt")
-                    if args.snapshot_interval and step and step%args.snapshot_interval==0: torch.save(ema_payload,out/f"ema_step{step:06d}.pt")
+                    atomic_torch_save(ema_payload,out/"ema_last.pt")
+                    if args.snapshot_interval and step and step%args.snapshot_interval==0: atomic_torch_save(ema_payload,out/f"ema_step{step:06d}.pt")
     save_json(out/"result.json",{**row,"best_sampled_mse":best,"device":str(device),"train_episode_ids":ids,
                                 "policy_parameters":sum(p.numel() for p in model.parameters() if p.requires_grad),"peak_vram_bytes":torch.cuda.max_memory_allocated() if device.type=="cuda" else 0})
 

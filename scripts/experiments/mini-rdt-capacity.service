@@ -5,6 +5,8 @@ After=default.target
 [Service]
 Type=simple
 WorkingDirectory=/home/batman/mini-rdt-so101
+Environment=CAPACITY_WORKERS=1
+Environment=CAPACITY_EVAL_WORKERS=1
 ExecStart=/bin/bash /home/batman/mini-rdt-so101/scripts/experiments/run_capacity_service.sh
 Restart=on-failure
 RestartSec=30
