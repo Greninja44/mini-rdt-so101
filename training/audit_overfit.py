@@ -32,6 +32,19 @@ def atomic_torch_save(payload, path: Path) -> None:
     os.replace(temporary, path)
 
 
+def restore_ema(ema, checkpoint, decay):
+    """Require an EMA captured in the same transaction as the raw checkpoint.
+
+    Legacy raw-only files cannot establish an exact EMA continuation. Refuse
+    them rather than silently initialize a new average or use a different step.
+    """
+    if ema is None:
+        return
+    if "ema_model" not in checkpoint or checkpoint.get("ema_decay") != decay:
+        raise ValueError("Exact EMA resume unavailable: checkpoint lacks matching embedded EMA state")
+    ema.load_state_dict(checkpoint["ema_model"])
+
+
 def experiment(args):
     out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
     if (out/"last.pt").exists() and not args.resume:
@@ -95,6 +108,7 @@ def experiment(args):
         model.load_state_dict(initial["model"])
     if args.resume:
         ck=torch.load(args.resume,map_location=device,weights_only=False)
+        restore_ema(ema, ck, args.ema_decay)
         for key in ("baseline","schedule","prediction","batch_size","seed","learning_rate","padding"):
             if ck["run_config"].get(key,"masked" if key=="padding" else None)!=getattr(args,key):raise ValueError(f"resume mismatch: {key}")
         model.load_state_dict(ck["model"]);optimizer.load_state_dict(ck["optimizer"])
@@ -166,10 +180,12 @@ def experiment(args):
                 if args.baseline:
                     payload.update({"baseline":args.baseline,"input_dim":inputs.shape[1],"policy_parameters":sum(p.numel() for p in model.parameters()),"vision":vision_model.vision.state_dict()})
                     if args.baseline=="privileged":payload.update(cube_mean=cube_mean,cube_std=cube_std)
+                if ema is not None:
+                    payload.update(ema_model=ema.state_dict(), ema_decay=args.ema_decay)
                 atomic_torch_save(payload,out/"last.pt")
                 if improved:atomic_torch_save(payload,out/"best.pt")
                 if ema is not None:
-                    ema_payload={k:v for k,v in payload.items() if k!="optimizer"};ema_payload["model"]=ema.state_dict()
+                    ema_payload={k:v for k,v in payload.items() if k not in ("optimizer", "ema_model")};ema_payload["model"]=ema.state_dict()
                     ema_payload["ema_decay"]=args.ema_decay
                     with torch.no_grad():
                         eb=b

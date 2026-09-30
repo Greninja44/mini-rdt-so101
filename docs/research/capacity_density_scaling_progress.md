@@ -1,5 +1,9 @@
 # Capacity × density scaling: interim progress record
 
+**Superseded by the [full recorded-results report](../../CAPACITY_DENSITY_SCALING_REPORT.md).** The historical entry below incorrectly
+called the easy control complete: seed 2 had only four of ten rollouts, making 23/24 a partial count. The completed control is seeds
+[10, 9, 10], 29/30. All 45 models now have recorded evaluations; scientific interpretation is qualified by the EMA recovery audit.
+
 **Status at 2026-09-23 16:35 UTC:** all 15 4.3M-policy runs have trained and completed their pre-registered K=8 closed-loop evaluation. The 9.1M and 19.5M matrix is incomplete. This document is a progress record, not a changed hypothesis, a model-selection decision, or a final analysis.
 
 ## Completed 4.3M member

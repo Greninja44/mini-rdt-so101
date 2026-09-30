@@ -158,7 +158,7 @@ demonstrations at exactly r. Demonstration count is identical, so density is man
   point 16.0 mm [11.9, 21.8] surrounded, versus 8.8 mm observationally — and the observational curve matches the *one-sided* result almost
   exactly (predicts 58%, measured 57%).
 
-### Interim policy-capacity result (incomplete; [`progress record`](docs/research/capacity_density_scaling_progress.md))
+### Policy capacity: full recorded matrix, recovery audit caveat ([report](CAPACITY_DENSITY_SCALING_REPORT.md))
 
 The pre-registered capacity × density study reuses these exact controlled-density datasets, frozen MobileNet vision encoder, seeds 0/1/2,
 matched 80,222-step exposure, DDIM-10 sampler and physics-v2 K=8 evaluator. Its completed **4.3M** policy member (d=256, 5 blocks,
@@ -171,10 +171,16 @@ physics rollouts:
 | r15 surrounded | 7/12 (58.3%) | 3, 3, 2 | **8/12 (66.7%)** |
 | r20 surrounded | 3/9 (33.3%) | 1, 1, 2 | **4/9 (44.4%)** |
 | r7.5 one-sided | 17/30 (56.7%) | 6, 8, 6 | **20/30 (66.7%)** |
-| r7.5 surrounded control | 28/30 (93.3%) | 10, 9, 4 | **23/24 (95.8%)** |
+| r7.5 surrounded control | 28/30 (93.3%) | 10, 9, 10 | **29/30 (96.7%)** |
 
-This is directionally encouraging but **not a final capacity-scaling conclusion**: the larger-model matrix has been paused before its
-closed-loop evaluation, so there is no capacity-specific distance curve, d50 estimate, interaction analysis, or diminishing-returns claim.
+All 45 new training runs now have final checkpoints and evaluations. Primary-condition totals for 2M / 4.3M / 9.1M / 19.5M are
+**45/75 → 53/75 → 37/75 → 27/75**. However, an audit found that training resumes restored raw weights and optimizer state but omitted
+EMA restoration. Sixteen final run configurations record a resume, so the larger-model regressions cannot yet be attributed cleanly to
+capacity. The [report](CAPACITY_DENSITY_SCALING_REPORT.md) preserves raw results, uncertainty, mechanisms and compute measurements with
+this limitation. The trainer now stores EMA in its atomic checkpoint and rejects legacy resumes without it. **40M is not justified.**
+The earlier control count of 23/24 was partial; the complete 4.3M control count is 29/30.
+Two 4.3M control runs also have rollout hashes differing from the current final checkpoints. Their geometry-gap and distance-curve
+estimates remain qualified; the four primary 4.3M conditions have matching rollout hashes and no recorded resume.
 The prior v1 ablations remain archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
 
 ## Installation
@@ -274,7 +280,7 @@ size and sha256 for backup and verification.
 - [x] Exposure-matched data scaling (10/20/40/80 demos at 147.87 passes each): 15 → 17 → 26 → 28 of 56, explained by local coverage, not count
 - [x] Seed replication (5 seeds x 4 data scales): coverage conclusion replicates; 80 demos give A = 20/20 in every run
 - [x] Controlled density sweep: density is causal; surrounded support tolerates ~2x the distance of one-sided support
-- [~] Capacity × density: interim 4.3M result recorded; larger-model study paused before evaluation and final analysis
+- [ ] Capacity × density: 45 runs and evaluations recorded; scientific interpretation limited by the documented EMA recovery defect
 - [ ] Rotations, sizes and shapes; multiple objects and tasks; language conditioning
 - [ ] External SO-100/101 datasets, sim-to-real on a physical SO-101
 
