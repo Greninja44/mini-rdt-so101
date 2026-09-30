@@ -40,3 +40,8 @@ Pre-resume validation found `m19.5_r20.0_seed1/last.pt` truncated at zero bytes 
 step 34,000 remained readable and contains model, optimizer and RNG state; the run resumes from that preserved checkpoint, repeating only
 the lost post-34,000 segment. The corrupt file is retained. Checkpoint saves now use write-then-atomic-replace, with a regression test;
 this is an infrastructure repair, not a training-recipe change.
+
+## 2026-09-30 — restored two-worker execution
+
+At the user's request, the persistent runner returns to two training workers and two evaluation workers. Effective batch size, exposure,
+model configuration, datasets, seeds, sampler and physics remain unchanged; only concurrent resource use and wall time change.
