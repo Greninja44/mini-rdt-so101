@@ -1,5 +1,24 @@
 # Capacity × density scaling: infrastructure deviation log
 
+## 2026-09-30 — post-training EMA recovery audit
+
+Source review found that `training.audit_overfit` constructs EMA before checkpoint loading and restores only raw model, optimizer and RNG
+state. Therefore the earlier claims below of exact checkpoint continuation were incorrect for the evaluated EMA policies. Sixteen final
+run configurations record a resume (3 at 4.3M, 4 at 9.1M, 9 at 19.5M). All existing checkpoints and rollout outputs are retained; no
+seed was rerun during this audit. The earlier “capacity hurts” interpretation is withdrawn as a causal conclusion pending validation.
+
+Future raw checkpoints embed EMA and decay in the same atomic save. Resume fails closed when matching embedded EMA is unavailable;
+the deterministic regression test compares both raw and EMA weights after interrupted and uninterrupted optimizer steps. This fixes
+future recovery but cannot retroactively reconstruct missing historical averages. The pre-registration remains unchanged.
+
+The earlier r7.5 control claim of complete 4.3M evaluation was also incorrect: 23/24 was partial; final completion is 29/30. Recorded
+condition window counts differ from the universal 4,339 count stated in the specification. The existing interaction bootstrap shares
+seed IDs across capacities, whereas the specification calls for nesting them within capacity. The report labels inference exploratory.
+
+The completed integrity audit additionally found evaluation and training-scene checkpoint hash mismatches for `m4.3_r7.5_seed0` and
+`m4.3_r7.5_seed1`; all other new models match. All frozen baseline checkpoints/environment sources and 6,400 checked dataset files match
+their recorded hashes. This audit was read-only; it did not replace mismatched rollouts or checkpoints.
+
 ## 2026-09-23 — duplicate detached launcher
 
 The original capacity pipeline (PID/PGID 21681) was already running. A later monitoring action misidentified its detached process as terminated and launched a second pipeline (PID/PGID 255224). Between 2026-09-22 19:25 UTC and 2026-09-23 02:22 UTC, both launchers entered the same resumable `m4.3_r7.5_seed2` and `m9.1_r10.0_seed0` directories. This temporarily violated the pre-registered maximum of two training workers.
@@ -20,3 +39,28 @@ At 2026-09-23 16:33 UTC, following a WSL disconnect, the corrected detached laun
 At 2026-09-24 04:05 UTC, a second WSL crash again stopped the launcher. Thirty completed runs remained intact. `m19.5_r10.0_seed0` and seed 1 were resumed in place from their saved step-0 and step-28,000 checkpoints at 04:06 UTC, again with exactly two workers and unchanged configuration.
 
 At 2026-09-24 14:58 UTC, a third WSL crash stopped the launcher after 32 completed runs. `m19.5_r15.0_seed0` and `m19.5_r10.0_seed2` were resumed in place from their saved step-36,000 and step-0 checkpoints. No completed result or fixed experimental setting changed.
+
+## 2026-09-25 — continuation under persistent user service
+
+The user explicitly reauthorized continuation. The two incomplete 19.5M runs resumed from their existing checkpoints under the enabled,
+lingered user-systemd service `mini-rdt-capacity.service`. Its two-worker runner is versioned in `scripts/experiments/`, exits without
+restarting after a completed pipeline, and resumes interrupted work in place. This changes process supervision only; it does not change
+the registered data, seeds, capacity configurations, training exposure, evaluation protocol or hypotheses.
+
+## 2026-09-29 — lower-memory execution
+
+At the user's request, continuation uses one training worker and one evaluation worker. Effective batch size remains 8, every run retains
+its pre-registered 80,222 steps and checkpoint/resume state, and no model, optimizer, dataset, seed, sampler or physics setting changes.
+This lowers concurrent RAM/VRAM use and increases wall time only.
+
+## 2026-09-29 — interrupted checkpoint write
+
+Pre-resume validation found `m19.5_r20.0_seed1/last.pt` truncated at zero bytes after a WSL interruption. Its earlier raw `best.pt` at
+step 34,000 remained readable and contains model, optimizer and RNG state; the run resumes from that preserved checkpoint, repeating only
+the lost post-34,000 segment. The corrupt file is retained. Checkpoint saves now use write-then-atomic-replace, with a regression test;
+this is an infrastructure repair, not a training-recipe change.
+
+## 2026-09-30 — restored two-worker execution
+
+At the user's request, the persistent runner returns to two training workers and two evaluation workers. Effective batch size, exposure,
+model configuration, datasets, seeds, sampler and physics remain unchanged; only concurrent resource use and wall time change.
