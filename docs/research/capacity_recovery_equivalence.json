@@ -1,0 +1,119 @@
+{
+ "dataset": "artifacts/density_sweep/data/r20.0_train",
+ "steps": 400,
+ "interrupt_at": 200,
+ "architectures": {
+  "m4.3": {
+   "hidden_layers_heads": [
+    256,
+    5,
+    8
+   ],
+   "last_pt": {
+    "step_a": 399,
+    "step_b": 399,
+    "model": {
+     "identical": true,
+     "max_abs_diff": 0.0
+    },
+    "ema_model": {
+     "identical": true,
+     "max_abs_diff": 0.0
+    },
+    "optimizer": {
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "steps_match": true
+    },
+    "train_rng": {
+     "identical": true
+    },
+    "noise_rng": {
+     "identical": true
+    },
+    "torch_rng": {
+     "identical": true
+    },
+    "cuda_rng": {
+     "identical": true
+    },
+    "all_identical": true
+   }
+  },
+  "m9.1": {
+   "hidden_layers_heads": [
+    320,
+    7,
+    10
+   ],
+   "last_pt": {
+    "step_a": 399,
+    "step_b": 399,
+    "model": {
+     "identical": true,
+     "max_abs_diff": 0.0
+    },
+    "ema_model": {
+     "identical": true,
+     "max_abs_diff": 0.0
+    },
+    "optimizer": {
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "steps_match": true
+    },
+    "train_rng": {
+     "identical": true
+    },
+    "noise_rng": {
+     "identical": true
+    },
+    "torch_rng": {
+     "identical": true
+    },
+    "cuda_rng": {
+     "identical": true
+    },
+    "all_identical": true
+   }
+  },
+  "m19.5": {
+   "hidden_layers_heads": [
+    416,
+    9,
+    13
+   ],
+   "last_pt": {
+    "step_a": 399,
+    "step_b": 399,
+    "model": {
+     "identical": true,
+     "max_abs_diff": 0.0
+    },
+    "ema_model": {
+     "identical": true,
+     "max_abs_diff": 0.0
+    },
+    "optimizer": {
+     "identical": true,
+     "max_abs_diff": 0.0,
+     "steps_match": true
+    },
+    "train_rng": {
+     "identical": true
+    },
+    "noise_rng": {
+     "identical": true
+    },
+    "torch_rng": {
+     "identical": true
+    },
+    "cuda_rng": {
+     "identical": true
+    },
+    "all_identical": true
+   }
+  }
+ },
+ "gate_passed": true
+}
