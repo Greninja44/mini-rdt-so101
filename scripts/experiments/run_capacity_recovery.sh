@@ -26,11 +26,21 @@ trainer() {
   for run in "${RUNS[@]}"; do
     local M=$R/models/$run; [ -f $M/result.json ] && continue
     local size=${run%%_*} rest=${run#*_}; local cond=${rest%_seed*} seed=${run##*_seed}
-    set -- $(arch $size); rm -rf $M
-    log "train $run from scratch: d=$1 L=$2 heads=$3, $STEPS steps, seed $seed"
+    set -- $(arch $size)
+    # An interrupted RECOVERY run carries a same-transaction embedded EMA, so continuing it is exact (verified bit-exact by the
+    # equivalence gate). Anything else starts from the original seed; legacy raw-only checkpoints are never continued.
+    local resume=""
+    if [ -f $M/last.pt ] && $PY -c "
+import sys, torch
+ck = torch.load('$M/last.pt', map_location='cpu', weights_only=False)
+sys.exit(0 if 'ema_model' in ck and ck.get('ema_decay') == 0.999 else 1)" 2>/dev/null; then
+      resume="--resume $M/last.pt"; log "resume $run from its atomic checkpoint (embedded EMA)"
+    else
+      rm -rf $M; log "train $run from scratch: d=$1 L=$2 heads=$3, $STEPS steps, seed $seed"
+    fi
     $PY -m training.audit_overfit --dataset $DS/${cond}_train --output $M --train-all --schedule cosine --prediction x0 --padding hold \
         --steps $STEPS --seed $seed --batch-size 8 --learning-rate 0.001 --device cuda --eval-interval 2000 --ema-decay 0.999 \
-        --hidden-dim $1 --layers $2 --heads $3 > $M.log 2>&1
+        --hidden-dim $1 --layers $2 --heads $3 $resume > $M.log 2>&1
     if [ -f $M/result.json ]; then
       log "trained $run: $($PY -c "import json;r=json.load(open('$M/result.json'));print('params',r['policy_parameters'],'wall %.0f min'%(r['elapsed_s']/60),'vram %.0f MB'%(r['peak_vram_bytes']/1e6),'loss %.4f'%r['loss'])")"
     else
