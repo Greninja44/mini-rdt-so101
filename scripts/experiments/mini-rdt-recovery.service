@@ -5,6 +5,7 @@ After=default.target
 [Service]
 Type=simple
 WorkingDirectory=/home/batman/mini-rdt-so101
+Environment=TRAIN_WORKERS=2
 ExecStart=/bin/bash /home/batman/mini-rdt-so101/scripts/experiments/run_capacity_recovery.sh
 Restart=on-failure
 RestartSec=30

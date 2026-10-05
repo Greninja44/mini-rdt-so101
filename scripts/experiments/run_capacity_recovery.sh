@@ -10,6 +10,7 @@ set -uo pipefail
 cd "$(dirname "$0")/../.."
 export PYTHONWARNINGS=ignore; unset PYTHONPATH
 PY=.venv/bin/python; R=artifacts/capacity_recovery_v1; DS=artifacts/density_sweep/data; STEPS=80222
+TRAIN_WORKERS=${TRAIN_WORKERS:-1}   # concurrent GPU trainers; training is bit-deterministic, so this changes wall time only
 mkdir -p $R/models $R/closed_loop $R/train_scenes $R/offline
 log() { echo "[$(date -u +%FT%TZ)] $*" | tee -a $R/pipeline.log; }
 arch() { case $1 in m4.3) echo "256 5 8";; m9.1) echo "320 7 10";; m19.5) echo "416 9 13";; esac; }
@@ -22,8 +23,10 @@ sel = [k for k, v in a.items() if v.get('resume') or not v['closed_loop']['check
 print('\n'.join(sorted(sel)))")
 log "recovery selection: ${#RUNS[@]} runs -> ${RUNS[*]}"
 
-trainer() {
+trainer() {  # shard index: worker $1 of $TRAIN_WORKERS takes every Nth queued run
+  local shard=$1 i=0
   for run in "${RUNS[@]}"; do
+    i=$((i + 1)); [ $(((i - 1) % TRAIN_WORKERS)) -eq $shard ] || continue
     local M=$R/models/$run; [ -f $M/result.json ] && continue
     local size=${run%%_*} rest=${run#*_}; local cond=${rest%_seed*} seed=${run##*_seed}
     set -- $(arch $size)
@@ -47,7 +50,7 @@ sys.exit(0 if 'ema_model' in ck and ck.get('ema_decay') == 0.999 else 1)" 2>/dev
       log "WARNING: $run produced no result.json (see $M.log)"
     fi
   done
-  log "recovery training complete"
+  log "trainer shard $shard complete"
 }
 
 evaluator() {
@@ -68,9 +71,11 @@ evaluator() {
   log "recovery evaluation complete"
 }
 
-trainer & T=$!
+TPIDS=()
+for shard in $(seq 0 $((TRAIN_WORKERS - 1))); do trainer $shard & TPIDS+=($!); done
 evaluator & E=$!
-wait $T $E
+wait "${TPIDS[@]}"; log "recovery training complete"
+wait $E
 $PY -m scripts.capacity_integrity_audit --root $R --output docs/research/capacity_recovery_integrity_audit.json >> $R/pipeline.log 2>&1
 log "recovery integrity audit written"
 log "capacity recovery pipeline complete"

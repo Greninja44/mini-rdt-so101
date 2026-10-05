@@ -1,6 +1,2970 @@
 {
  "files": [
   {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/best.pt",
+   "bytes": 320168184,
+   "sha256": "0d2ae8c606fb113d6b93d843c7db619cfe60792a28747ff4642595747a7351af",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/ema_last.pt",
+   "bytes": 81968573,
+   "sha256": "c9e1fe749398dc1344334264f8a091f53530e6ac71c2ef8d3ec7dc2dd2f8e832",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/last.pt",
+   "bytes": 320168184,
+   "sha256": "a4c06182d0e2114321c8afa1d9c9898628ccc00ab2b0c2779fe5cc77098289cc",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/best.pt",
+   "bytes": 320168184,
+   "sha256": "2c3d496ce3c44f2d938fe9eb117d6df1c11d6ef0f0abdea4a01eef92cdabc91f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/ema_last.pt",
+   "bytes": 81968573,
+   "sha256": "c86c4803a5a76d4e0bbe7638a0734b59c1d08b116d9e05275a4df742b3339e2d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/last.pt",
+   "bytes": 320168184,
+   "sha256": "a1a22569bc69dccbe30519d472f5676075bec28b4036b5c1bff4f3828fc560b2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/best.pt",
+   "bytes": 320168184,
+   "sha256": "1bb3bcce86f7a86678bdbd614c93d982c9e2051e126dfd851fc61abbc9a00e20",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/ema_last.pt",
+   "bytes": 81968573,
+   "sha256": "ba7a6c1313b060f9e17bd82935ad517960d2b124a0892dfe876c17ccdd8a8e2a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/last.pt",
+   "bytes": 320168184,
+   "sha256": "84b7e9dbb5119b01995da66d387cf91204ad64df345c99e940a102189a4e8050",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/best.pt",
+   "bytes": 320168184,
+   "sha256": "13a0f937dc436a123fd00d54d57e24bfe2c732abd1f57b185e956388ff9f9141",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/ema_last.pt",
+   "bytes": 81968573,
+   "sha256": "ce3fa4297b38f4656a69d956c8bd81ad295b95794b77c9be4375f885fae69695",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/last.pt",
+   "bytes": 320168184,
+   "sha256": "8338c7d5f491b4a19ebbc54bae887e9eab5a985cfd96c8bd5bbad099e45242f4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/best.pt",
+   "bytes": 320168184,
+   "sha256": "5edf2d214b502b41053fb292fa6ef99d5d1f0019268812d1165bf0dcc4177206",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/ema_last.pt",
+   "bytes": 81968573,
+   "sha256": "9fc971abc5432743403c036c3a0fea8828f27d8a4cf44ab94f8b22c150bfda65",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/last.pt",
+   "bytes": 320168184,
+   "sha256": "0d57c6e92cd19ac2535be3163d0b0c24b557b472c2e972e9a22ba00c00885247",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/best.pt",
+   "bytes": 320168184,
+   "sha256": "45eb9183f20d1dff85fabe18a60e3327ae2e77ab3a8aa35eb997ced4e0b0eb25",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/ema_last.pt",
+   "bytes": 81968573,
+   "sha256": "09d3726ccc456d8644de1873529d5ed3303ff2178d967e39efa1da21e8bf5022",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/last.pt",
+   "bytes": 320168184,
+   "sha256": "a418bc9a9fee3a9f5c143fd4e6856e1052058b7c488e42202ef6c81734d2816f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/best.pt",
+   "bytes": 320168184,
+   "sha256": "5d05fb0368056b08dfd124c9474fdabeb84f0fa2c20ea69308cdea9216129025",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/ema_last.pt",
+   "bytes": 81968573,
+   "sha256": "25f33120a4a3ea90ae693c72bcd1effef90e7d0767e9bf9f534a923faabdd2f8",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/last.pt",
+   "bytes": 320168184,
+   "sha256": "301a885904bb3341c61cb6cd0c9cba999fa87823b72329501fd5be023393e2a8",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/best.pt",
+   "bytes": 320168184,
+   "sha256": "e0274252fd094577bd4f601387a8cc94956d4d1aa3c7d97e5caf761d50cbe107",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/ema_last.pt",
+   "bytes": 81968637,
+   "sha256": "bc5ab9415209a83cfa3faf3dc1bbeeffaf63715aa18df87af57e52a5f7c61f3c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/last.pt",
+   "bytes": 320168184,
+   "sha256": "be9dac5fad4104147e44561292ed8d729dd208ee029521560e36e90868a35843",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/best.pt",
+   "bytes": 320168184,
+   "sha256": "d73be954fc19e4fbab15df69204ed650cc993bda3c06c31ef86157799edb4a7a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/ema_last.pt",
+   "bytes": 81968573,
+   "sha256": "5e1882930663e58a1d7ba243f7180411dcd88b09b7a93748c00cb4b152dd5d62",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/last.pt",
+   "bytes": 320168184,
+   "sha256": "bf1cf4c44ac8476ffe73611ed0339f8cf759bd626ae9ae6833c7d115707173ac",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/best.pt",
+   "bytes": 76698401,
+   "sha256": "da2735811a1157ed27658b8aec1933b62cc3538d428a40517fc697cdfb3743b0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/ema_last.pt",
+   "bytes": 21102045,
+   "sha256": "1052e1b84c527de7c953efe4e97a269becebaf98817f2d372693f2aa4bee1635",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/last.pt",
+   "bytes": 76698401,
+   "sha256": "f4451688da6a024b10d4bc32f756a73f8cbc9cc2aa5e2eec5779c0e2d70650fc",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/best.pt",
+   "bytes": 76697505,
+   "sha256": "00955ea1a38099a11c61937737066e9be8519642e081f0fe099e69b582a39362",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/ema_last.pt",
+   "bytes": 21101917,
+   "sha256": "83d7eb303f689c9c24245210530ea669102f9d0ed9caaa39c09161bff4ae1ec2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/last.pt",
+   "bytes": 76697505,
+   "sha256": "1e178611f7ef32ab704acd2ca3fa6c57c8fab15900912aa7e2905b36d4475740",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/best.pt",
+   "bytes": 76697505,
+   "sha256": "ed7d04606ac90677b9187a3f8a8d86c3825e8a8cfb2e49b91a55c7b8bb9659a0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/ema_last.pt",
+   "bytes": 21101917,
+   "sha256": "efd9be10a5e8b66c5d8eece45bf9a53fbc63aeb54dc13f0ec5e2df4ff905016b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/last.pt",
+   "bytes": 76697505,
+   "sha256": "49858c3a115207e3c46d571fd62bb1fcd4fab2f88c5cd2be43147a35128adae3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/best.pt",
+   "bytes": 154053553,
+   "sha256": "0014610244136b2b651b20489566d1ce9ad56647d658d11e2ca53565cb97a381",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/ema_last.pt",
+   "bytes": 40440461,
+   "sha256": "288a2df4518c0e27ec2dd14f0b180ee4b6d62717c8d8c5d3f58572e177066d38",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/last.pt",
+   "bytes": 154053553,
+   "sha256": "e21698d36b1969a91b1a68b429fc1a1f0843ec0907b77cb1ce2ce5f4a12a4a17",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/best.pt",
+   "bytes": 154053553,
+   "sha256": "407133d85f8eb280ad2add8420499a00bb2172bb81916e5bbe6bda7f62af71ab",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/ema_last.pt",
+   "bytes": 40440461,
+   "sha256": "5fe5b075156729c1c3a33f67bda288e487884dc6501e8752e87f5134cbd9ab1b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/last.pt",
+   "bytes": 154053553,
+   "sha256": "4a5e670fdd8f915ab7f023fcd86e85f0c35190b28d8d00a6e3e32f0cd3a4356c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/best.pt",
+   "bytes": 154054833,
+   "sha256": "04d77c0eddea6c5fbc34d2b4d9b888b9c24525e3648f10cf8de5bee2cc7b9d3c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/ema_last.pt",
+   "bytes": 40440589,
+   "sha256": "5113d9189da9954f0b2ac466e9b2cdff4cb58fd074e4ad03432943c5916960d5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/last.pt",
+   "bytes": 154054833,
+   "sha256": "504bfe503a73ac2a5e2713b0a9f3aca88bc096377eebd55d1ef3434500cd53ca",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/best.pt",
+   "bytes": 154054833,
+   "sha256": "dec773387fd31949b2e68fa6135ea14e82dcd3f39da9845fc0b0dc121e6e3368",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/ema_last.pt",
+   "bytes": 40440589,
+   "sha256": "7952b480fc1b02bec49a9a412b66eea8e838c667b1f9c71858b11682eb11d1c9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/last.pt",
+   "bytes": 154054833,
+   "sha256": "cc5d9516a7b0312ae78552035c424a91027375065c22061b677ae6a82ec0211c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/config.json",
+   "bytes": 1777,
+   "sha256": "51d1efc5b2fe5a18a83e5719543f4c1a3928d14a421b3700801367ffbe2d543c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/normalization.json",
+   "bytes": 692,
+   "sha256": "4baeccb2731f4040b39f4e4cad9025e837512064c88365634162be42cf51a411",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/provenance.json",
+   "bytes": 210339,
+   "sha256": "7b9176e1599774a4b9c6fae708a2b3ab09e95797a5f796729136fa22cdf18953",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/result.json",
+   "bytes": 2129,
+   "sha256": "62261b052cafd5264d3779f4b96f0a53c65f40d01f93b70d3703ce1ad21f03ff",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed0/splits.json",
+   "bytes": 701,
+   "sha256": "49b545f4fc41f909c4b0c5eb03650d48635aece14444b169f717f5ac0e93b6f9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/config.json",
+   "bytes": 1777,
+   "sha256": "eabd6dcec82783a4bab597963e158abe9dcde1f50ba14ac2db0d147ecc664375",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/normalization.json",
+   "bytes": 692,
+   "sha256": "4baeccb2731f4040b39f4e4cad9025e837512064c88365634162be42cf51a411",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/provenance.json",
+   "bytes": 210339,
+   "sha256": "7b9176e1599774a4b9c6fae708a2b3ab09e95797a5f796729136fa22cdf18953",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/result.json",
+   "bytes": 2131,
+   "sha256": "0f9926b9852aa05347d396ad9732b5db30183e519c61573a20dc8178dc77a9d5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed1/splits.json",
+   "bytes": 701,
+   "sha256": "d259956a6a923dac0b7307811f847267ab3d706ac2401311be4f10e0d6187207",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/config.json",
+   "bytes": 1777,
+   "sha256": "7e408b09b0db5ce7caf54830d30e813e2f51ed5603f4b278c7b51cfff81af31a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/normalization.json",
+   "bytes": 692,
+   "sha256": "4baeccb2731f4040b39f4e4cad9025e837512064c88365634162be42cf51a411",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/provenance.json",
+   "bytes": 210339,
+   "sha256": "7b9176e1599774a4b9c6fae708a2b3ab09e95797a5f796729136fa22cdf18953",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/result.json",
+   "bytes": 2143,
+   "sha256": "baa090e0a83a7eda6b6ce1cd536151135f7c6d225ee7af8357099810b0e1d0f5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r10.0_seed2/splits.json",
+   "bytes": 701,
+   "sha256": "6aa01ff18e1e27d2ee8dfbdd3ac47c2580097d50805198f0c3eb10e796787e69",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/config.json",
+   "bytes": 1777,
+   "sha256": "ffd38cea5d375c17164f39e2ff41181a550bf3a85c21abd2363d993f8e919b16",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/normalization.json",
+   "bytes": 687,
+   "sha256": "620725e2b3e6e5573efcfd9ef83c672d527103ad5f0e1743c0e94001d2f7f586",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/provenance.json",
+   "bytes": 210339,
+   "sha256": "350326ff5d4ee7eb96027add09ee50b93ba972fb396d580a1b115914abebd615",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/result.json",
+   "bytes": 2131,
+   "sha256": "9bf6fb94ca7bf269892bbd002edd72c0d142469671f4778a8e1b38539ccaf545",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed0/splits.json",
+   "bytes": 701,
+   "sha256": "49b545f4fc41f909c4b0c5eb03650d48635aece14444b169f717f5ac0e93b6f9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/config.json",
+   "bytes": 1777,
+   "sha256": "79cd7247f2758cf4982a8ab529b264ef1a98e4edec094ea9fbce6fca7679ad02",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/normalization.json",
+   "bytes": 687,
+   "sha256": "620725e2b3e6e5573efcfd9ef83c672d527103ad5f0e1743c0e94001d2f7f586",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/provenance.json",
+   "bytes": 210339,
+   "sha256": "350326ff5d4ee7eb96027add09ee50b93ba972fb396d580a1b115914abebd615",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/result.json",
+   "bytes": 2137,
+   "sha256": "01287fba03912121f635344c96cbcaf679cbc96f7ff9fe1905a905884120619c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r15.0_seed1/splits.json",
+   "bytes": 701,
+   "sha256": "d259956a6a923dac0b7307811f847267ab3d706ac2401311be4f10e0d6187207",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/config.json",
+   "bytes": 1777,
+   "sha256": "dabd2b07e311ce9ec1532c6d83b5fca3af2dc21f15fca107a5628b1a293116ad",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/normalization.json",
+   "bytes": 685,
+   "sha256": "998d762e6bcea0b0d830c57e89e5a2057eb671c400dfef4e704838f6d09a6113",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/provenance.json",
+   "bytes": 210339,
+   "sha256": "775e4d1ac4b3be88b5b9a419a11a4b19d9cf648f9a0f78b2025d43dc3cd87a6c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/result.json",
+   "bytes": 2138,
+   "sha256": "fbb5da144c408b1f7898c9ab0305e964bdb52531fe7c1c0aace939b4960c25f8",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed0/splits.json",
+   "bytes": 701,
+   "sha256": "49b545f4fc41f909c4b0c5eb03650d48635aece14444b169f717f5ac0e93b6f9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/config.json",
+   "bytes": 1777,
+   "sha256": "f1ea3d6d28ba503361304b57b333b8e3059324139f844e689c7c560427c7ad4f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/normalization.json",
+   "bytes": 685,
+   "sha256": "998d762e6bcea0b0d830c57e89e5a2057eb671c400dfef4e704838f6d09a6113",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/provenance.json",
+   "bytes": 210339,
+   "sha256": "775e4d1ac4b3be88b5b9a419a11a4b19d9cf648f9a0f78b2025d43dc3cd87a6c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/result.json",
+   "bytes": 2137,
+   "sha256": "952e467df854f32b590103a3c6ba8612002b21bad48e596b8361b99d69127864",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r20.0_seed1/splits.json",
+   "bytes": 701,
+   "sha256": "d259956a6a923dac0b7307811f847267ab3d706ac2401311be4f10e0d6187207",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/config.json",
+   "bytes": 1793,
+   "sha256": "753fc2c6c7a4c3fc37c383b4a266d02ef3470b19aba098930fbf87154910e945",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/normalization.json",
+   "bytes": 687,
+   "sha256": "60fa7514429118726ff5557d47c486189e723f5c9a4a50ef43967434663e41ff",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/provenance.json",
+   "bytes": 220579,
+   "sha256": "b1f61cdd8358f34f7a0012650fcdbb803408df9c2ed262c64971e71c020536ce",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/result.json",
+   "bytes": 2138,
+   "sha256": "4fda6675200201746f1267b9d9dd977fea5c8d4ea4cc98a4999f6e5ad307a5ea",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_onesided_seed0/splits.json",
+   "bytes": 701,
+   "sha256": "49b545f4fc41f909c4b0c5eb03650d48635aece14444b169f717f5ac0e93b6f9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/config.json",
+   "bytes": 1775,
+   "sha256": "cb5da8ea35d9d323449783ccc12d96fae0fd3c21b9f57eb956e4a4ddf50dbb7e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/normalization.json",
+   "bytes": 686,
+   "sha256": "075abd60cfabed3fa0e5d9714ffcc3c45723d6f44e1c591685d7c4dc0ec6635c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/provenance.json",
+   "bytes": 209059,
+   "sha256": "8f303351e47dadbdf052b98f04865007fc2902058f423536dc6b09eb5d6a3c64",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/result.json",
+   "bytes": 2138,
+   "sha256": "a03e47492c5220eefbcc6510bfacdd9f82d8a0028dcc98932f13ed80c8b19f8d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m19.5_r7.5_seed2/splits.json",
+   "bytes": 701,
+   "sha256": "6aa01ff18e1e27d2ee8dfbdd3ac47c2580097d50805198f0c3eb10e796787e69",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/config.json",
+   "bytes": 1832,
+   "sha256": "1fbe674397e9ac5b0796744b60f0ecc7f770fd60eff261304a2c7f4dd01e076f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/normalization.json",
+   "bytes": 686,
+   "sha256": "075abd60cfabed3fa0e5d9714ffcc3c45723d6f44e1c591685d7c4dc0ec6635c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/provenance.json",
+   "bytes": 209059,
+   "sha256": "8f303351e47dadbdf052b98f04865007fc2902058f423536dc6b09eb5d6a3c64",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/result.json",
+   "bytes": 2143,
+   "sha256": "beebe5e7a7bd36e7115ca03ba158a9405b851959acc36e27ceb2a10efd576238",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed0/splits.json",
+   "bytes": 701,
+   "sha256": "49b545f4fc41f909c4b0c5eb03650d48635aece14444b169f717f5ac0e93b6f9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/config.json",
+   "bytes": 1773,
+   "sha256": "a3f4b335fa3ff12ec41f6e638e6afff05761f9c8cc2353f554c81f781b6c3f48",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/normalization.json",
+   "bytes": 686,
+   "sha256": "075abd60cfabed3fa0e5d9714ffcc3c45723d6f44e1c591685d7c4dc0ec6635c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/provenance.json",
+   "bytes": 209283,
+   "sha256": "71d4320ca3d73b464ccb7304be770a532da72138f367e6c6a63bc14b24ca5a95",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/result.json",
+   "bytes": 2144,
+   "sha256": "49f1ad1ad7969bf34477b90dbd84a0472a6b330d378485b21f9539493a2cc10a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed1/splits.json",
+   "bytes": 701,
+   "sha256": "d259956a6a923dac0b7307811f847267ab3d706ac2401311be4f10e0d6187207",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/config.json",
+   "bytes": 1773,
+   "sha256": "02a5eb2d60a9b1aab7827753e804aaf12fb438b93521c61d3814d60a5d8a81ef",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/normalization.json",
+   "bytes": 686,
+   "sha256": "075abd60cfabed3fa0e5d9714ffcc3c45723d6f44e1c591685d7c4dc0ec6635c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/provenance.json",
+   "bytes": 209283,
+   "sha256": "71d4320ca3d73b464ccb7304be770a532da72138f367e6c6a63bc14b24ca5a95",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/result.json",
+   "bytes": 2148,
+   "sha256": "6a242525adbad1a8590aba0cc319e97a37cbc1803f5fb995934a04446d2554e6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m4.3_r7.5_seed2/splits.json",
+   "bytes": 701,
+   "sha256": "6aa01ff18e1e27d2ee8dfbdd3ac47c2580097d50805198f0c3eb10e796787e69",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/config.json",
+   "bytes": 1776,
+   "sha256": "484e5fa97388ead12211215c7ae64bca2835b2f3edb235639425160ec0eda0d8",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/normalization.json",
+   "bytes": 692,
+   "sha256": "4baeccb2731f4040b39f4e4cad9025e837512064c88365634162be42cf51a411",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/provenance.json",
+   "bytes": 210563,
+   "sha256": "ea06f62228e6739645c18a6269d35fbe2e6168fe6fe1ad38b8ab4aff052b7af9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/result.json",
+   "bytes": 2150,
+   "sha256": "5049e1a902b206350a3dec4cf346c1acd52037a92143aefd350ace4dcd4023f0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed0/splits.json",
+   "bytes": 701,
+   "sha256": "49b545f4fc41f909c4b0c5eb03650d48635aece14444b169f717f5ac0e93b6f9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/config.json",
+   "bytes": 1776,
+   "sha256": "f61e31323274361335e388f04a419da3e54f8b89b58723d1a061f4438939e711",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/normalization.json",
+   "bytes": 692,
+   "sha256": "4baeccb2731f4040b39f4e4cad9025e837512064c88365634162be42cf51a411",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/provenance.json",
+   "bytes": 210563,
+   "sha256": "ea06f62228e6739645c18a6269d35fbe2e6168fe6fe1ad38b8ab4aff052b7af9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/result.json",
+   "bytes": 2130,
+   "sha256": "60fa0503c284e7e2bbe2f9ef86707b92a362dd9d84345ae312ed93375f8a8fbd",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r10.0_seed1/splits.json",
+   "bytes": 701,
+   "sha256": "d259956a6a923dac0b7307811f847267ab3d706ac2401311be4f10e0d6187207",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/config.json",
+   "bytes": 1860,
+   "sha256": "fd80d6a01c457b42e8a3758de3b119d1931a2e637b25098f92fe1ff797a5981f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/normalization.json",
+   "bytes": 687,
+   "sha256": "60fa7514429118726ff5557d47c486189e723f5c9a4a50ef43967434663e41ff",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/provenance.json",
+   "bytes": 220803,
+   "sha256": "ade585f35df01bde896b4daf5e5ed1d880bfcba41e117664fe4b4ccb0a53c9a7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/result.json",
+   "bytes": 2139,
+   "sha256": "d8d2cee2ab0a1b47840c5ef49861c6c4902dd8e2b0c599fcdbef6604156eab66",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed1/splits.json",
+   "bytes": 701,
+   "sha256": "d259956a6a923dac0b7307811f847267ab3d706ac2401311be4f10e0d6187207",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/config.json",
+   "bytes": 1860,
+   "sha256": "500ade02fd457a0bdc077e5dba0cb62aa590ea13e1db2b6ffb21f00cfb700d3c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/gate_definition.json",
+   "bytes": 285,
+   "sha256": "71375a88dd25ac541e0fa9cad76faaa386f85e25d66fa0ad4f3b3c977be9a70b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/normalization.json",
+   "bytes": 687,
+   "sha256": "60fa7514429118726ff5557d47c486189e723f5c9a4a50ef43967434663e41ff",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/provenance.json",
+   "bytes": 220803,
+   "sha256": "ade585f35df01bde896b4daf5e5ed1d880bfcba41e117664fe4b4ccb0a53c9a7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/result.json",
+   "bytes": 2144,
+   "sha256": "0b94892cf0c281eef25ed35db8a0d1b3bcf3ab4905db686a69bf0f62d3fefeeb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/models/m9.1_r7.5_onesided_seed2/splits.json",
+   "bytes": 701,
+   "sha256": "6aa01ff18e1e27d2ee8dfbdd3ac47c2580097d50805198f0c3eb10e796787e69",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/closed_loop_summary.json",
+   "bytes": 9314,
+   "sha256": "922d1317421ac9eba5c297a54767e12d05c3ae4cb5230d425ece64189bdf352e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/ep000_k8.json",
+   "bytes": 965,
+   "sha256": "bcfac83cb52a89f04f43507c1ad6f9587593e479610088cd27a1c459e70144e1",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/ep001_k8.json",
+   "bytes": 961,
+   "sha256": "c86985eacf6dc6a0e66432e89dd657344a3fd0f0899651841e746f00afd3aa0e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/ep002_k8.json",
+   "bytes": 967,
+   "sha256": "0cbd030001b1cf38e0924bdfb89556fe9b2c02497c3031e68c60e469fcd956b3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/ep003_k8.json",
+   "bytes": 960,
+   "sha256": "a01e366a242425680d54f4d4015e3d8459dc754677c80da98022d7f967f1b592",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/ep004_k8.json",
+   "bytes": 964,
+   "sha256": "99b5b6e2368b1856c78021a7e46d0214202598362c041700cd0dcff2fec9d83a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/ep005_k8.json",
+   "bytes": 963,
+   "sha256": "5d1060eaa9f34cac3bfafcc591789de9aab155afc90892dc77563fc34a5cd155",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/ep006_k8.json",
+   "bytes": 968,
+   "sha256": "bea657e26c57d419094bd7cf1df00bb85dcc380168a199ecd134dc10d22366f4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed0/ep007_k8.json",
+   "bytes": 968,
+   "sha256": "ea3c272e25cb5c04ae516bf9f4dd291f0d21a937e506392da99e22f7b29ef854",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/closed_loop_summary.json",
+   "bytes": 9285,
+   "sha256": "7d9dd2ebf3b77968da56027f055e2c643912318fb92b1ea8c7ab8c0d3b93a5ab",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/ep000_k8.json",
+   "bytes": 964,
+   "sha256": "7329234fdad2450f2a6783e0eb66b9ec32674d4af9da2b968c464ad6c20a9b41",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/ep001_k8.json",
+   "bytes": 959,
+   "sha256": "a0672ba3010f86fd1f3e891ada393b471d2e0641825a6dbb4c1f2181c474b857",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/ep002_k8.json",
+   "bytes": 965,
+   "sha256": "350a85e1e78eb984393d7cab63c56c10d4ea2b60465f4906b14c229d5f7f68b4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/ep003_k8.json",
+   "bytes": 961,
+   "sha256": "87471d7878295b447d4901090c6183307258df9ba9a22b639b15e4bb8f2f05d7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/ep004_k8.json",
+   "bytes": 962,
+   "sha256": "671e62ad8dc43e8d4c2f5f27b7449fb504f8970fd7f084846f8a85df1be81325",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/ep005_k8.json",
+   "bytes": 960,
+   "sha256": "76ff304d336dcc732c32a7db2ef97a8f8d7ea1a9d9bcb154678aac0a63e181e7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/ep006_k8.json",
+   "bytes": 952,
+   "sha256": "dfdcae864e0ec0ad9645b360884bc85b2d8a7fa2a2853f42fd72046d418b6ada",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed1/ep007_k8.json",
+   "bytes": 964,
+   "sha256": "57bd80a98de93ead8962f17a768202a920e42d0533e66a705e0dd3cee518c316",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/closed_loop_summary.json",
+   "bytes": 9293,
+   "sha256": "7317b856dc826b35f783b90dd99aa69c284520d11e17923cdc17a258af40945c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/ep000_k8.json",
+   "bytes": 963,
+   "sha256": "6afb68fbbbb7fd641d56f1737a16b752726e5ea6a95ada662d115ec679a2a032",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/ep001_k8.json",
+   "bytes": 961,
+   "sha256": "a420ba22bd00c8ead0a750a8aff5e9336824880d133b7b3d83053cbcd2e69d82",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/ep002_k8.json",
+   "bytes": 962,
+   "sha256": "e09ed064f5a537f01a572fdf754ef0148d64696b8ff0e141e25787d85a3f4fa7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/ep003_k8.json",
+   "bytes": 962,
+   "sha256": "658cddf34642a596977edacb7ed9d48ddd9b400b0ccd16c97d7c25b01eec06fe",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/ep004_k8.json",
+   "bytes": 965,
+   "sha256": "0d10f5146c50034a9af7007547bb6b4eca37d7c0042a96f074d11b72a8ac84d7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/ep005_k8.json",
+   "bytes": 963,
+   "sha256": "f4573844dec65ac5ee3e3ce986bbfb1bc4f99ab187aa2ee5e0c95a50ba21dff3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/ep006_k8.json",
+   "bytes": 955,
+   "sha256": "35db4fb1c9ca5c1c309ead05bfdcd1cd3459dceb560ace49dbf90f653ffdd16d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r10.0_seed2/ep007_k8.json",
+   "bytes": 966,
+   "sha256": "573f5ac4c4678533f10fde39b44904072fe35dbe56e0c3b227fec8245ffcdbab",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed0/closed_loop_summary.json",
+   "bytes": 4845,
+   "sha256": "8d513a42ecdc42179cd06dd4fcdc6c4546c8e4609902d45eab4ded30b79d9300",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed0/ep000_k8.json",
+   "bytes": 960,
+   "sha256": "eaf6cba6e00f396acab2fbe56d3264f03fe33531d56b40c33967dc46febfc213",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed0/ep001_k8.json",
+   "bytes": 963,
+   "sha256": "b2a2c22f5b6b2e71021adfb9193e575a6d5c5e5f3d5fa18d845563bc28ab3365",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed0/ep002_k8.json",
+   "bytes": 962,
+   "sha256": "031fdcad9b6674599b90e39a1e3ffe9df33e35a28eba1176e06e84355d72649c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed0/ep003_k8.json",
+   "bytes": 959,
+   "sha256": "889cbf8949103327b7aaf45d7106925bee7026e39c1e486196ebb00c5cbc396a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed1/closed_loop_summary.json",
+   "bytes": 4849,
+   "sha256": "df18b94b428a3c9c3296a645d96549e536a692f7585ed5f5c10aee417f72f13c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed1/ep000_k8.json",
+   "bytes": 957,
+   "sha256": "14a3ac7baa5153f81841562f5ea519b5454d0f7bc3d10a47a0f171f9df8444cb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed1/ep001_k8.json",
+   "bytes": 969,
+   "sha256": "ad48b0a8d968a0fcac7d2722d28843e62696b8bab8501ffc18b136335c22ab14",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed1/ep002_k8.json",
+   "bytes": 962,
+   "sha256": "91ea8afd6158918622ce39b0fb693e0d133f607b1836b04b8f2e690308a02f12",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r15.0_seed1/ep003_k8.json",
+   "bytes": 961,
+   "sha256": "5804cf95a66dc6803a08fa6e996c23146015077202d720c9a1a0f3e67a68f435",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r20.0_seed0/closed_loop_summary.json",
+   "bytes": 3749,
+   "sha256": "5fbccb8a148b2c0fa908419476ec3a64762076d3bd159e62b75e3bb488305b66",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r20.0_seed0/ep000_k8.json",
+   "bytes": 961,
+   "sha256": "5d92850c7fedf3504c7a85f5e090d22d8010eeebf3ba210e0c722b7c901b426d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r20.0_seed0/ep001_k8.json",
+   "bytes": 967,
+   "sha256": "918c3296087b7e693649479e01ba91dbf551f89744baedebf30652d6a1d93fc3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r20.0_seed0/ep002_k8.json",
+   "bytes": 955,
+   "sha256": "5a8020b285581112f5feaa353fbdc5f1bcbcde416cf56da6950b572f1e684540",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r20.0_seed1/closed_loop_summary.json",
+   "bytes": 3743,
+   "sha256": "cbff8c2d2e1220c7d46062659bd1a60291be4d61e2551dd42dd45fc997f0ec6c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r20.0_seed1/ep000_k8.json",
+   "bytes": 961,
+   "sha256": "53b67c45553e61070470f0d3e58844da253c934cdca0c58cc10a7c6997fbbe6e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r20.0_seed1/ep001_k8.json",
+   "bytes": 966,
+   "sha256": "558d94b5b9e2ad49594efa4bd8e6ffec436a6fc65b69cd1bcb2a4a0f5249ecec",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r20.0_seed1/ep002_k8.json",
+   "bytes": 965,
+   "sha256": "73c23138322caa64eea337732fb105a91f17395f3cedb637f4fed653936a6e75",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/closed_loop_summary.json",
+   "bytes": 11501,
+   "sha256": "7efc67b62a566254a64f941c6a83a608c1af2d87c6ceb0382286ac5fd7b18591",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep000_k8.json",
+   "bytes": 964,
+   "sha256": "b26eba29a785cfaccac320d5975698c86a7f625b1a87dda0bcc3e41bc4e4c7c1",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep001_k8.json",
+   "bytes": 953,
+   "sha256": "c6912e575e949571aa8ca8f0522599a1b5b753e9328b7e09e246e3ad93bf815e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep002_k8.json",
+   "bytes": 966,
+   "sha256": "d65f0b7d62cb4c28e4cbe787a6c5231e28d8e34c4e962cac0a77631a11084b8f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep003_k8.json",
+   "bytes": 964,
+   "sha256": "027e4056410d38a46513e6848e2afe0b7c66e089005fb281456f8149dd707564",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep004_k8.json",
+   "bytes": 963,
+   "sha256": "bb10e7cf144232a0c528f356d205cebdc7d62ccc7a44798dd6baffd6534f832a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep005_k8.json",
+   "bytes": 954,
+   "sha256": "f78a818d6f52d6993308703a99d353c5ff2be9ae490d16f231b6eb97a8f322d5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep006_k8.json",
+   "bytes": 957,
+   "sha256": "bac42b90a1705e742f758549e47f76b2b89457cf374dd6c8c04530b7cba37453",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep007_k8.json",
+   "bytes": 961,
+   "sha256": "4cee30828dec38aa77dea3d225b1dca9f107eb41eda29ea82e265b58169fc087",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep008_k8.json",
+   "bytes": 953,
+   "sha256": "6507b948768631cb06244b4104167f225bd6f38b19b990bc60f04d21999083d3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_onesided_seed0/ep009_k8.json",
+   "bytes": 963,
+   "sha256": "a9704b5422435c1f64c99bca53bec6d671c886c5e7e6ce6e47827f73f71b681b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/closed_loop_summary.json",
+   "bytes": 11487,
+   "sha256": "bb1a8e8b422b950ded0e95f83c5e2ed2524d023f5c693b7dcaf8a99864ffe567",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep000_k8.json",
+   "bytes": 966,
+   "sha256": "bc8d6015a7199505543f671fb0ca6978fc23b5317984ccbbf7aaa9ee133319ae",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep001_k8.json",
+   "bytes": 958,
+   "sha256": "9f4d923bbd86ca89dc661e5240b238b21d83a927ec8c01c52b149be3cc1a9226",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep002_k8.json",
+   "bytes": 948,
+   "sha256": "fdff19f1e54bff9f789c49ae8a5516c50d24673643a3f26cc5f53adfc23c29c3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep003_k8.json",
+   "bytes": 952,
+   "sha256": "9bedee3c4f0291e448f3e4d21c0c646bf46bdcc4e87cdfffcc374a567bf9baba",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep004_k8.json",
+   "bytes": 962,
+   "sha256": "6ced56dd393cfcf2b9c4573765fc5ef415a9f0f67a2fce4b0e69bdfd4703a50a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep005_k8.json",
+   "bytes": 952,
+   "sha256": "591d7d0e887abb81ed24549fead0134f280b7a0e9da670fa2de1d4a6ece7bac0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep006_k8.json",
+   "bytes": 949,
+   "sha256": "77c329eafb2b0f2d58512fc1aacf5b4cff90b3f164d961f87200904257f10842",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep007_k8.json",
+   "bytes": 964,
+   "sha256": "3301e91c5caa9cb9fdb894c49357e63d08e913d34b2eae1be135fbf3dc60f506",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep008_k8.json",
+   "bytes": 967,
+   "sha256": "d8de766ac9a08ce8479760c45459076cdc9ce83d64ba0a56c60e8574045083c3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m19.5_r7.5_seed2/ep009_k8.json",
+   "bytes": 961,
+   "sha256": "689900ec665b39cfc327fc797c081ef7a9831e7c6e3390a645f3555bcb1923a6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/closed_loop_summary.json",
+   "bytes": 11542,
+   "sha256": "68ab0ad2287b262ad6f0f32251998e555706f8e0f28ccd45dd042c4a3ddc82a4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep000_k8.json",
+   "bytes": 969,
+   "sha256": "e01da1e97e994155502e4e7807ccc58cdd3f68873367d0bb5ab14c16325d9674",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep001_k8.json",
+   "bytes": 967,
+   "sha256": "622d38c101ac4137b88da1bdeab7a3ee836745b54c538679fd46c9daf71f90e8",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep002_k8.json",
+   "bytes": 963,
+   "sha256": "ce495985ccfe8b75c209eb08874f485588149eb08baac430e7c568756deb93a7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep003_k8.json",
+   "bytes": 962,
+   "sha256": "c03e89c73f9c66e67ee7c01cf970691a17dddcc85e65dd4dee5e1126ac56cc15",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep004_k8.json",
+   "bytes": 964,
+   "sha256": "1a6143825f9ad37e660b59fb0fb0ff1629456ea4f613658ba481d0b7980d0be3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep005_k8.json",
+   "bytes": 964,
+   "sha256": "730cba9aefef4b743a639887ef01d9bf07306e3521eae396ff75700a72e9c0ea",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep006_k8.json",
+   "bytes": 961,
+   "sha256": "4966db73dcfccd9999d028ba16c5dafc9b54370f67ff7c5da6c030de680853b7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep007_k8.json",
+   "bytes": 970,
+   "sha256": "65fe8695491c8965e3ed90141746a9d8501c825eb8b1aee3e66d7577c7a8fa66",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep008_k8.json",
+   "bytes": 964,
+   "sha256": "8c31579565346058fb27157040d2a0851f0e093ad93b673714bfeab4e81b2a66",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed0/ep009_k8.json",
+   "bytes": 965,
+   "sha256": "56b3d0d9223768bd7d681317a18c9af9f6ba2a80aa1704e5141038f5f9712b64",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/closed_loop_summary.json",
+   "bytes": 11524,
+   "sha256": "4b20177d4a1fc744323404f5c2852fc91cfaebff1f4d03912d1df95815b2f160",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep000_k8.json",
+   "bytes": 965,
+   "sha256": "7d0c67dfe7783d6cab2c9e4aacc9f56130fad4e367b2fd7020999305cf1a6098",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep001_k8.json",
+   "bytes": 966,
+   "sha256": "749bf0dcfb5860ffc030748b832944313ec5771162c898c5f85cf0e9cc97e565",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep002_k8.json",
+   "bytes": 965,
+   "sha256": "15e2c6302e68ea2e8c236467c91d1a5d86f50fae3f02674ae5eaf38f6cf3e14c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep003_k8.json",
+   "bytes": 962,
+   "sha256": "defd92fd611aa39c6beb51db1f4bd7c2646dbcc2da635d09f2b3a367419726d6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep004_k8.json",
+   "bytes": 962,
+   "sha256": "90f64878ed9f0566151ae94c8d308623124b8b01afa15fd0d8dbe440f62f9bb5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep005_k8.json",
+   "bytes": 961,
+   "sha256": "ac8032466b2c683aeebbe1462e0e775799ab4789d736a701cdd3ded19aa7358f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep006_k8.json",
+   "bytes": 962,
+   "sha256": "210a87ab3ecde254a45d7ead3bd52985135da5e0e7d5de19b9038f7bd9f7348c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep007_k8.json",
+   "bytes": 963,
+   "sha256": "5ce11245219f61a726a129ed8936603d41feda63b900ad7fbffffbba8f0dfaae",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep008_k8.json",
+   "bytes": 962,
+   "sha256": "5faea544ec0b3498b93f8c23b987763ef4643be1ddd6c7d1d7f81b382151fe22",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed1/ep009_k8.json",
+   "bytes": 963,
+   "sha256": "0ef5975e6768cc9d11591f75d92b1af282de7f6049d0c4e3a3c8d6d47760b8ac",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/closed_loop_summary.json",
+   "bytes": 11531,
+   "sha256": "52cbb80645aae47c27255fd77c6f98ea0546b81114edc9f7232123c4a1ad0a91",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep000_k8.json",
+   "bytes": 967,
+   "sha256": "f13b5bdd2e491392eb1f3dd474db0cb2a94f599347cff70ba693703e2bf58683",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep001_k8.json",
+   "bytes": 966,
+   "sha256": "860695d44521d9ae910e4145a1b64062e539df8da098aacecf57fd103708f443",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep002_k8.json",
+   "bytes": 959,
+   "sha256": "a372eaf3b77e8383a37512602e23508b71a668928d26c7b6c21fbeed1354b952",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep003_k8.json",
+   "bytes": 963,
+   "sha256": "165a53aaea42f21fac8584fc856e1fe10afc3e38bb46531e0408cfd2a0017372",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep004_k8.json",
+   "bytes": 962,
+   "sha256": "aac102f21cb3b562c4845668df3beb1eda99339e24a8247e94fc9a1c4d8b018a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep005_k8.json",
+   "bytes": 966,
+   "sha256": "11b1142473e84ea87ffe693b03fd59de263a157fd1f45d48d777d6b72ea7719a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep006_k8.json",
+   "bytes": 961,
+   "sha256": "604286e554666b05071d8a1781a2ea3522e0cd02cfe14ba93910cc778ef2f07b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep007_k8.json",
+   "bytes": 965,
+   "sha256": "69cb49aeb7b8df9fbb8fd7f73a4a582bc7e21491b4a190c2662b083f6f30c9b0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep008_k8.json",
+   "bytes": 964,
+   "sha256": "a7ae01d3aa09848186b1a3e4adf7787406b3ab67dc615afd4a8c946d61efee9a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m4.3_r7.5_seed2/ep009_k8.json",
+   "bytes": 965,
+   "sha256": "4ce59609c00ca1627a1e17de98516bc587a7c97f6a2dea9782729938346bf331",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/closed_loop_summary.json",
+   "bytes": 9326,
+   "sha256": "ad4b5ace30497eaf8468466865ee5d39a242d57bcf99c73a827cd5225aed7192",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/ep000_k8.json",
+   "bytes": 962,
+   "sha256": "8e126a4ac0803dae12891925eeff28064c62d0fbffa39b08fcd8dc87d0726844",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/ep001_k8.json",
+   "bytes": 966,
+   "sha256": "0871d810ecc4aa5d060ba8d3e33d23c6cb2f3c8d7b0c536f966913544842a259",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/ep002_k8.json",
+   "bytes": 967,
+   "sha256": "b20d5d393c32f538324cd76142626d47c79d8fcdefcc7c0652453fade607ab89",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/ep003_k8.json",
+   "bytes": 963,
+   "sha256": "8078f633eaf1015745fc03ba83dbcc97c85e6514aee7b06845aaeb47b2cb3feb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/ep004_k8.json",
+   "bytes": 962,
+   "sha256": "dbc4483e432d23bce72f28aa479a893c29b8a529459fa4bd6a6c7f1d36d4871a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/ep005_k8.json",
+   "bytes": 962,
+   "sha256": "c2957c9c6e972e4b1e27b01df36e3175b4365645353a94096afbf5ee8e2fc807",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/ep006_k8.json",
+   "bytes": 965,
+   "sha256": "ce0f686b965a04a108ec34a16a4dbf18aef26daf728a192253f6805fe910adc4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed0/ep007_k8.json",
+   "bytes": 968,
+   "sha256": "6f87366368cc1f6c2bff40c1be1bed9174f75232c2929adb69e466a5581b742c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/closed_loop_summary.json",
+   "bytes": 9325,
+   "sha256": "e6a7c3b421bac55c1c4e0c81d5be411f2db1ef48fdb4355479cc7f3421d48296",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/ep000_k8.json",
+   "bytes": 984,
+   "sha256": "5085f461658f42ca88252b671ac353a5a4b1dfe46374c0773811f03fadd08aa2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/ep001_k8.json",
+   "bytes": 959,
+   "sha256": "ce5f0e21e5f46ae5896f24edda6b4ad6b36b85851bce0b4d02b7b8c5a762e212",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/ep002_k8.json",
+   "bytes": 970,
+   "sha256": "8ae22ee3cb702eb285514941038b1f69d6f9c9b3394af283bf5aa054878610cc",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/ep003_k8.json",
+   "bytes": 964,
+   "sha256": "ac155b93129fac6651a592f12245c81d3ca85a6ded2a4b611b406545451fc05a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/ep004_k8.json",
+   "bytes": 960,
+   "sha256": "51e915010e2c103b84177e6cbdc0b69c57ad3c81cdcd3b82a0411748c917b8ca",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/ep005_k8.json",
+   "bytes": 962,
+   "sha256": "3ca6adcbe82b0a4e822d939a31e57cf56b29255c5438cd448de63eeb5004b73c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/ep006_k8.json",
+   "bytes": 961,
+   "sha256": "2e5579c4a7d40134f8e60616b5cb4ca05b9a57bcad3dde4adc76fd2c377d2e66",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r10.0_seed1/ep007_k8.json",
+   "bytes": 968,
+   "sha256": "b4488bcc72a5cd48c1a5e9e81d2c538569e9bd1c2e5ceb477e110cdf94b4840d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/closed_loop_summary.json",
+   "bytes": 11499,
+   "sha256": "cfef04575478a7cc8409925a590495f34d7cb0c29a91f044b7cf24b22bea88f2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep000_k8.json",
+   "bytes": 961,
+   "sha256": "25ae621f1e951ca2ac739f8c2acfeec069b95b64674c57a5ff37a917f75641e0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep001_k8.json",
+   "bytes": 966,
+   "sha256": "f042de906e982736a7da0aa663b867e1a093081c76e3f577d11d417fb7b2345d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep002_k8.json",
+   "bytes": 963,
+   "sha256": "f71f3fcc7544e2200a11b0b6007a3ccf6f667fc0f861b25b3ec8d95e1ab600b0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep003_k8.json",
+   "bytes": 951,
+   "sha256": "8aa4d354a8a5bfceb105627e5202436ba42eb392385feaeb18e9ba1c4cfff337",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep004_k8.json",
+   "bytes": 958,
+   "sha256": "ee2f876d76b94b8d10bcbb47fa2c71adea4b4b5153a5445bcc4b0b7452584aa0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep005_k8.json",
+   "bytes": 964,
+   "sha256": "c2953035bac64a93ff4edee0a7591dccb2d5e38f9efb7ac88dc08f23958f9666",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep006_k8.json",
+   "bytes": 959,
+   "sha256": "72f3de5a61a750cd752c705ca7530e09db5a08387cf245a9f287eefb9209a6ef",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep007_k8.json",
+   "bytes": 955,
+   "sha256": "bcbc6f35de0eb53b14df474eea62e21eae60bba8c16d934b6afe2e2f295bfd4e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep008_k8.json",
+   "bytes": 963,
+   "sha256": "5596fe715060f8c1509b669c7808b692eda133faf89e421fbfbc1a0f50638256",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed1/ep009_k8.json",
+   "bytes": 957,
+   "sha256": "90a021911312d885419cb47d579631c2d44d3ebe2bf1953467b05749a171fefb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/closed_loop_summary.json",
+   "bytes": 11530,
+   "sha256": "3e9ed6fe7a010f942160297c07ef5de20b4996794e59c33aa9e6be5fd92be102",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep000_k8.json",
+   "bytes": 961,
+   "sha256": "20d48a61f967d27bdbc6e849663b3ea0d48445c36077f04b93f7f8d84ed7b06b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep001_k8.json",
+   "bytes": 963,
+   "sha256": "1cc3d9996d1cf0a72113f1f7dbca6d16fcc267c7de11ffb4ec88f15324126aae",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep002_k8.json",
+   "bytes": 960,
+   "sha256": "b4494a1a6d4e2b27a530ca08c446de2ad5cd29ac2ff0aceecfb729a662b9c194",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep003_k8.json",
+   "bytes": 964,
+   "sha256": "a20e65f21eb7ab7ef7161e5b5ee9b99471da7c5be6af3854fad32d0fa9562195",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep004_k8.json",
+   "bytes": 961,
+   "sha256": "bb36f2b1bbdc227b1f618338084c6defd4bb31d5471439435df0a13e24e1d0ee",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep005_k8.json",
+   "bytes": 953,
+   "sha256": "aebc360d054e9ba5550eacd5dedfcd882a94f65cd85e388a34ef2257a4828a68",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep006_k8.json",
+   "bytes": 962,
+   "sha256": "89373e07f4774cf5c0690d32c1310a6e2c356da5b826ed19d91ae633ecdec042",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep007_k8.json",
+   "bytes": 966,
+   "sha256": "e5bd032ec69a72c8665bf51c0c3e82587d930c923d977d09e899449a63a96d9d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep008_k8.json",
+   "bytes": 963,
+   "sha256": "1e11ec6ed047703b1e444156ec592f6d740ccd89b41bdc9ff2237df51056d6ee",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/closed_loop/m9.1_r7.5_onesided_seed2/ep009_k8.json",
+   "bytes": 961,
+   "sha256": "c53bcdd53476d64e2c68dca3e98c8216a3d4f4a03c60fbc2c79d0bfb54986274",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/closed_loop_summary.json",
+   "bytes": 11510,
+   "sha256": "9b2f2cbb87e5d050da7c8823fedfdcd323883492db284c041bcf8dcb1229cf8b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep000_k8.json",
+   "bytes": 959,
+   "sha256": "4c6e11d353d000b5f53539f21124fda4c31ba9bb217418d1dbbb47364523d23d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep001_k8.json",
+   "bytes": 965,
+   "sha256": "9ccf410400dfcedac721e15d4af9ebbbe9232dbbc8533f17341d2df8c5626f90",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep002_k8.json",
+   "bytes": 961,
+   "sha256": "0866d7f72db9d59d16ebd235ce4cc819b4e78b9e2db84e3ddec58b94873b6ed3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep003_k8.json",
+   "bytes": 952,
+   "sha256": "d5fda274e36c4ab3570a86f3adb7ac8a6ab11b555f76281738cfc0a6b5faf5a6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep004_k8.json",
+   "bytes": 963,
+   "sha256": "40b2d079ca5c0229c0257e521d77a0a1c6b01f6268d33c0c58ee69c21989059a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep005_k8.json",
+   "bytes": 960,
+   "sha256": "cfed4ab674097689fc3611a5a49b1df1aa3a050cfed26f86ff373d9ddbbd32a5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep006_k8.json",
+   "bytes": 962,
+   "sha256": "23db076f3e5e8ba390e5b3126f268611947ca283decaec9a37df9858785abed6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep007_k8.json",
+   "bytes": 968,
+   "sha256": "32cbc0810b923650f8ac47a3adf29a953853711fb01010dbcb13aa4da7b5b92c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep008_k8.json",
+   "bytes": 963,
+   "sha256": "956610399ef0bae77459071f760f4856abe339dfc51ec2a8e5d193830be8ff01",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed0/ep009_k8.json",
+   "bytes": 962,
+   "sha256": "da65fc26cf87d54fc7a57554a7affd28c7e76f3a5ae3972293aec339a3542a70",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/closed_loop_summary.json",
+   "bytes": 11519,
+   "sha256": "3a0a46e3faca922b34e6b6ef207089064703b7c875da0845b501ca9058994fd3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep000_k8.json",
+   "bytes": 959,
+   "sha256": "904c2424d8ecf80321dde94a212c19cfcd1d535ddc42cc010000d854638d66b7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep001_k8.json",
+   "bytes": 965,
+   "sha256": "e134aa002ac017f524f2f066d41a2ade3b07e84ec13d6b1cdcd5c496a640b638",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep002_k8.json",
+   "bytes": 962,
+   "sha256": "01fab56d0f420ff3e28c37a1d461ba906be05bdc93e2f74a80504e343f170d23",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep003_k8.json",
+   "bytes": 962,
+   "sha256": "8af9cb442c8868981c940e4cdf82090569a74663ad0e69f6bd090e1cae885921",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep004_k8.json",
+   "bytes": 966,
+   "sha256": "9c5930c37a08dbadee40960102c994d3b2fe8be086abc3c9647c533749e0ea0a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep005_k8.json",
+   "bytes": 958,
+   "sha256": "a54b3dc09d6904c66d501046b8be240dbaf6209426d976fdb4b20ec0920cdc49",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep006_k8.json",
+   "bytes": 963,
+   "sha256": "ef0de476f29cb942dacf9ad8b47a51246e3427bd88af39eee0b8b1c62423ffda",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep007_k8.json",
+   "bytes": 962,
+   "sha256": "89c312e0d6756acb1fcb03c9a769b6ae29d15916c97224b3f2a33367236a0ed9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep008_k8.json",
+   "bytes": 966,
+   "sha256": "4442d23038c6218f84083de08d79eb8496bb55f17aef7b30eca592c0e858a9e1",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed1/ep009_k8.json",
+   "bytes": 961,
+   "sha256": "da10f6f584bdb29208a95b9980a71d498e42668e0d28c02f93e77fb0d8c669bf",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/closed_loop_summary.json",
+   "bytes": 11520,
+   "sha256": "415891f2fb03f5e3cf65b6c7d74887b6594f985d7fe61475a5a1234cbe2e01f7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep000_k8.json",
+   "bytes": 963,
+   "sha256": "dde0ed178740283146ecc13b4e877ca0d14c6e619cd0a1cc6025cc75c3e947c6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep001_k8.json",
+   "bytes": 958,
+   "sha256": "6f031c778c3b0974edcb8ffd75e32b17cc1f8076459a302886160e54c3db6d93",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep002_k8.json",
+   "bytes": 960,
+   "sha256": "04d0c727ffa63de5020b29f260115fb613d7743f95a1f867be0b07bb45eefa77",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep003_k8.json",
+   "bytes": 961,
+   "sha256": "5a3d30be43191fff7dfab0d24a027a1888c4cb3b911a69fb5a1b9abc59ad7343",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep004_k8.json",
+   "bytes": 964,
+   "sha256": "8c5b7f4785e136be0e7943d8b1b5f26cab3ff9cb8d3d2fdf0541399418d17415",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep005_k8.json",
+   "bytes": 963,
+   "sha256": "e9235163f477245abf9a2f3a70ed188382276b4df3f05b7899215477a38e3bb6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep006_k8.json",
+   "bytes": 960,
+   "sha256": "a32ef60ccdd9f8855435e53bb23df6a660086f9a9615a85d9528edd8753f0625",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep007_k8.json",
+   "bytes": 961,
+   "sha256": "e171c457bb2f02acf8418ab26a3b043f58e69c65b051458de074a138c012a404",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep008_k8.json",
+   "bytes": 962,
+   "sha256": "ffd2c80ac6d17e950b80afe7f9ac1bd4f8ffe74c79550b256d7c1f9aa3d55a93",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r10.0_seed2/ep009_k8.json",
+   "bytes": 960,
+   "sha256": "5662d68582726f5609c77c4c00e91d39c91b01c622f508f7a3a61758e2d7f82e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/closed_loop_summary.json",
+   "bytes": 11508,
+   "sha256": "72cb07ec92fbd6631faa242ce023429fea24209b10d5cb7261d2f30e4306ed7a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep000_k8.json",
+   "bytes": 957,
+   "sha256": "caea8c7644498f102aa538f93a12c9fe4b755ef89e0e2464f41f9f8beb7b6230",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep001_k8.json",
+   "bytes": 961,
+   "sha256": "42e13f977c947ee33939eded8c7a5d1e4a418e05180ac26d02846991befd826d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep002_k8.json",
+   "bytes": 966,
+   "sha256": "e4436d447a65b07664438f0a9076a1d441aed4c3229dd402fb7e3bbbec0a3a37",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep003_k8.json",
+   "bytes": 954,
+   "sha256": "bbb848f75a09ca815d9f9d64c6894c5d18c4d687d99030ac1753873cf27252f6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep004_k8.json",
+   "bytes": 961,
+   "sha256": "d2de6433dd0eda4165b62582b022386767b963a0fecb67dfe129668bf3aee85a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep005_k8.json",
+   "bytes": 962,
+   "sha256": "1b44258039bb7997efeddf786b92d7c327d24e34cf420a593d7d3bf88f19604b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep006_k8.json",
+   "bytes": 957,
+   "sha256": "469b92eb3d0c21426c4f398d19aa11934d9df494e478b3ddb63c14efe557f77b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep007_k8.json",
+   "bytes": 966,
+   "sha256": "83e3a1f9aa1ca7e1cc1341e3a2dabba308421968021f70e9a36ada63b242c874",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep008_k8.json",
+   "bytes": 964,
+   "sha256": "77e732ba9b2942eb770716e07fc0520705f5fd918e314896175c3a5670a536c4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed0/ep009_k8.json",
+   "bytes": 964,
+   "sha256": "1251469ab371563e0f38e6bf63ceaad63aef537c9e9df7deebabd503df5aaecb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/closed_loop_summary.json",
+   "bytes": 11519,
+   "sha256": "8dc99385932f15e82335ee27f1a2191dc5d9ee09a10e9ccad2d5910504c36576",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep000_k8.json",
+   "bytes": 960,
+   "sha256": "add58c1f9d67e063d5539fc7f0659e973c673e4a4e227ea86bfa3530e83c2ecb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep001_k8.json",
+   "bytes": 961,
+   "sha256": "79ca84973b9ce839a7e71e4c22080727b157914adcb089d9f26166fcad80b1fc",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep002_k8.json",
+   "bytes": 964,
+   "sha256": "a1e305002045e857a98f9caf8c4e5fb18935cb8d19db7f424b2cc66f2eb77c56",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep003_k8.json",
+   "bytes": 960,
+   "sha256": "fbc927b6ef554fefefce78da01ea27022ff418ba330385ed684f302fdcc96ee9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep004_k8.json",
+   "bytes": 963,
+   "sha256": "f404c61a01cb576c92a219955d80c38d40200a70555763ce65bdece2050c5704",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep005_k8.json",
+   "bytes": 962,
+   "sha256": "ab06831737feba4d4aba0fb44a865cfd1486d257f0d7ce63f327860565c9fac2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep006_k8.json",
+   "bytes": 965,
+   "sha256": "f3b6f1780888219b5a5f2f50f6691ab731cf2bc4e0998382be6d49dc98cdf35a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep007_k8.json",
+   "bytes": 961,
+   "sha256": "38150c64f29a32f82a14bcd36b01a181ebae53be5499767a4cf362d26dc65c95",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep008_k8.json",
+   "bytes": 967,
+   "sha256": "84239f71b0be5c607d26be75ccf04caf9f619a62be377ff06ecd3e2ae71869d8",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r15.0_seed1/ep009_k8.json",
+   "bytes": 961,
+   "sha256": "f22ef0419cb58a25315f226b88c2c8fcbcd297495381bc58e22f963af2b6939a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/closed_loop_summary.json",
+   "bytes": 11544,
+   "sha256": "9dcddaacf872a52cd0baaf79dc859ed09b94636c2ed27e4a43377f70943e9ad6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep000_k8.json",
+   "bytes": 961,
+   "sha256": "6db437de83b4321765caa1d98d53f4ed8fe8e931f5f8cb575a520e05777200d4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep001_k8.json",
+   "bytes": 961,
+   "sha256": "13fa28ef17b03950c09deb15b29ff668ef6a76605576ab9743d9e8cd06eef4e3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep002_k8.json",
+   "bytes": 963,
+   "sha256": "ee098d30c018e8ab4375117deeda13643a29158139006e29a8f6faedb8d88f53",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep003_k8.json",
+   "bytes": 974,
+   "sha256": "65e221d2b5c17df5f2c28346723ef274592ae637579a2b7c6782c5877fcd8070",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep004_k8.json",
+   "bytes": 960,
+   "sha256": "8b3fc9f69e00f1ee80a502a8a62dc3d4c03503d869216d49f829b9b66ec65849",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep005_k8.json",
+   "bytes": 962,
+   "sha256": "9f92f1e65ab2ad43670550bb2e03ce37784481df9fde4947644d48e3ddb8f8af",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep006_k8.json",
+   "bytes": 963,
+   "sha256": "2684300517384bd1226c17910ff074bf7a1bce39af1a59223646cae49e40f7f7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep007_k8.json",
+   "bytes": 962,
+   "sha256": "00d33469178a72e20a7058562d4ce6b42ce21c0383a10823525da3b0a78430e7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep008_k8.json",
+   "bytes": 965,
+   "sha256": "68a8d919cc1ba53233b1319a855940757b3552b53d0dbdd86a49ac1eb964979a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed0/ep009_k8.json",
+   "bytes": 978,
+   "sha256": "abd253105a58dfafc463119e1669b31285aa94bf7ff9ac46b5056bdc022a0abd",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/closed_loop_summary.json",
+   "bytes": 11516,
+   "sha256": "8b02b39e986ade08e56581b1404930b139472e5affcdc410228038be9352cbb5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep000_k8.json",
+   "bytes": 962,
+   "sha256": "0f3c2b78d15a37890124f2b8895de05bacbf30de4e816ed62f10497b05f5c341",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep001_k8.json",
+   "bytes": 963,
+   "sha256": "e9acee3d6a9374e06ab1fd4decd8e896e2c3986531cd8d3aababdca36848bdaf",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep002_k8.json",
+   "bytes": 962,
+   "sha256": "2d4b93f97a855d39230ea3b75075945a4933ca6cc4cf325304a7d8ef5adc5db3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep003_k8.json",
+   "bytes": 961,
+   "sha256": "e450ef67935fff8e41e9499622dcd76d029c24dd4d7b4876bbd0f7c9bec17984",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep004_k8.json",
+   "bytes": 966,
+   "sha256": "1af19c493e5b54f46471829eb454f92d88314f56dca318f7074eecd4c6a93f7a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep005_k8.json",
+   "bytes": 958,
+   "sha256": "7d54100fb3fe269389e5d85638c4433cd9d43c36d8ffaf5b176db976a9ff94f4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep006_k8.json",
+   "bytes": 962,
+   "sha256": "037921992a6dc7fe8476bc593603f8197c2ee0c8ee26eeb5ea04fbb7115be59f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep007_k8.json",
+   "bytes": 959,
+   "sha256": "771d4aa295a320eaf65b958cb7319ab3a920410a25e2231a9475a1e3c38906b5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep008_k8.json",
+   "bytes": 962,
+   "sha256": "f3dd07c67cb327d15415504cb00acb077abf8930bd4fc37649e9efad8d3b8088",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r20.0_seed1/ep009_k8.json",
+   "bytes": 966,
+   "sha256": "21d3fee415872e26768049fcada0758cb228c61ff8d3caff5adc47c7d16ef62a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/closed_loop_summary.json",
+   "bytes": 11594,
+   "sha256": "8486fb6c22a13afe8e60f417f7e45e44c57bd0b2d08f92b0006a01dd00f1efef",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep000_k8.json",
+   "bytes": 970,
+   "sha256": "06d77c9d44facc1f4797c8e4b258cbed04610ee1345964b23135f2a4d2fe4d13",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep001_k8.json",
+   "bytes": 971,
+   "sha256": "c40343db71fc1f8aaa29edc1d673ddd13db7b68002e0548847dadf28255ec08b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep002_k8.json",
+   "bytes": 972,
+   "sha256": "130a656ebf716e47644d9f75a7b370522b572b6a852d9de9863c52398cfd07db",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep003_k8.json",
+   "bytes": 975,
+   "sha256": "dc36cbf5a9247bcc0cacffc7f0f8d7598d44be84fe844a1c1e448e3731cf6da6",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep004_k8.json",
+   "bytes": 962,
+   "sha256": "f76f47c580d67e3bec6be140c2f030ae9c2718a6b15cdc1805cae0d6dd05a0e2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep005_k8.json",
+   "bytes": 959,
+   "sha256": "9a97f59e8e3a00006fcba31bad98f44966fd66429a07b1104215e7e73eef8cc2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep006_k8.json",
+   "bytes": 964,
+   "sha256": "62f678a7026142aa793f6ebed2bdb02b8db1fdd8c9e7b6bcc7fcf3d841a76394",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep007_k8.json",
+   "bytes": 962,
+   "sha256": "0047a6a882f9c1b1c8da43d13d82fe5d0c71f511373e36f20d7ff859e3943a78",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep008_k8.json",
+   "bytes": 978,
+   "sha256": "4d5cbf61731c13b1143b56b7e39c6464a8923bc96a869eeff0e01ccc332b2f85",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_onesided_seed0/ep009_k8.json",
+   "bytes": 978,
+   "sha256": "f4f5937ddd713efa39b444fc5416003627d5e40936c68e29c01eaca258015ee9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/closed_loop_summary.json",
+   "bytes": 11598,
+   "sha256": "0ff51a1e0816aaab068b0a3b9dd2270b57401df991ddd24c1a7e740149f006eb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep000_k8.json",
+   "bytes": 963,
+   "sha256": "76c6b7f621f20c401cf585d069f18b687ffa526f8a95dfef9cf4f1238be726ec",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep001_k8.json",
+   "bytes": 982,
+   "sha256": "f16489862336966ee9004c167c37d7033c8e684313ac25f1a825dfbd453647d2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep002_k8.json",
+   "bytes": 978,
+   "sha256": "f5d04c08dcba0e1acec93fab1704fe6a0c409ba91e6b4477aab7de5158c627e3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep003_k8.json",
+   "bytes": 962,
+   "sha256": "7e4e7b216078f260a951a9b0949786dcf17d2fedee84cb6606f7f76caf121f7d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep004_k8.json",
+   "bytes": 973,
+   "sha256": "189148a5ce17fb572d15b34ad46eaba6f67a4be7f76ef058c84446e463002222",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep005_k8.json",
+   "bytes": 979,
+   "sha256": "357fbcccc5d734c282e44b32d5ed09e68900744d799b2862eb0a5d74699eecca",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep006_k8.json",
+   "bytes": 963,
+   "sha256": "6f11daaa6929865fd7705ecccd90aac6d28a93575a4daf6aebc1bdf0679fb872",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep007_k8.json",
+   "bytes": 973,
+   "sha256": "e118c09a80296ec5c003de153d76ed34db6db983a3f18f72e33124aa82762b05",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep008_k8.json",
+   "bytes": 955,
+   "sha256": "7f2859800988f96ec8131d0d724a34cb1bc30088d4697b92f4f2f902b9ae9d97",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m19.5_r7.5_seed2/ep009_k8.json",
+   "bytes": 962,
+   "sha256": "fa2620974bbe955eccc80fc9fe23c80f12fa158f72930e274d93e7c1d6df7277",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/closed_loop_summary.json",
+   "bytes": 11595,
+   "sha256": "7b2d5ae026d34555a9f25d4bc8e3b767eca02b979c78cbf8c2042255b9c17be2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep000_k8.json",
+   "bytes": 962,
+   "sha256": "df3d9b4dd0930873d02e8500491fddf5ddb0d3c955c89e526f0b5af9f1e2d03c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep001_k8.json",
+   "bytes": 985,
+   "sha256": "a502590eaaa1cc52f0ce9bb3eb28d7596623a681baae8d881249ad614c4650c7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep002_k8.json",
+   "bytes": 980,
+   "sha256": "bbc2320de2aa517c9487f64cef2e47257409351ac97daf391d432bbb1d473bf7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep003_k8.json",
+   "bytes": 960,
+   "sha256": "7ff57ba3e2d2c9857ebdecee604e943e5655e4568f94bd342d259f5342c51b94",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep004_k8.json",
+   "bytes": 977,
+   "sha256": "9793444a48ace442913e2728ffd6420fed4d0ff2d236f649fd1bbcecb44758da",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep005_k8.json",
+   "bytes": 978,
+   "sha256": "95fec90f93b3abb1347a7f099dd65234e1884a1e50a5114eccb13622fd3b54e9",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep006_k8.json",
+   "bytes": 962,
+   "sha256": "4af0c2a031809992353f5311d4dae0befb14d2c9cc1d3d4b309148183e45a4bf",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep007_k8.json",
+   "bytes": 976,
+   "sha256": "88c3641eea3d65ca966252db2df32b2d5f55b4febbd5d3bd3087c0e008ff0097",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep008_k8.json",
+   "bytes": 959,
+   "sha256": "ac7f02a03b414491b5f95efdb1a43015270a08149b2c18b2af7e38088735730e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed0/ep009_k8.json",
+   "bytes": 963,
+   "sha256": "0b4a92e22937d53fadce408e47787b8cfe0d0a979d0c198b523d09e4dd8254cf",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/closed_loop_summary.json",
+   "bytes": 11612,
+   "sha256": "cebb10717a597a44a41885d2b9e85b7cfa6cfa3933d287f66e73f4ab4b1f0fff",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep000_k8.json",
+   "bytes": 963,
+   "sha256": "b25f135b0ce7de8123c8ca7d873dd68036c96f65bc8b83ff737c85fb656f0eef",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep001_k8.json",
+   "bytes": 983,
+   "sha256": "7c7dd9b78b66af769494f5e5362b0650e818f4bdee4aeacfcbec1540f6ce7d8d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep002_k8.json",
+   "bytes": 979,
+   "sha256": "7ff6161188128241ad842238cf9dc7309cdbac80759e7d7400aca5e93e7dc115",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep003_k8.json",
+   "bytes": 966,
+   "sha256": "d5bdb0378ed1cb9784b54e46d5cc46cfe6322585a13c9754928b4494af5f80e5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep004_k8.json",
+   "bytes": 976,
+   "sha256": "a0e044e0ce514df3bf8c4067213a3a0706a056640f475509c02196802ab89796",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep005_k8.json",
+   "bytes": 978,
+   "sha256": "686a7ccbed9f488380d5d6000243a3fda713510b72d43e4450afcc685eed2b68",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep006_k8.json",
+   "bytes": 963,
+   "sha256": "53ce1e83d86428e9acf75f17b348017d08468ee1722d148c6a964a36c6fa73a0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep007_k8.json",
+   "bytes": 974,
+   "sha256": "70c295d83c2b46d051c7b9b6b078ffdd91113771e45316ed3e05a57d169378c3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep008_k8.json",
+   "bytes": 963,
+   "sha256": "1a1f9b8c4573ac78de9b05d189b73e0326b1660bb50e6eccd83b34cd713e4e10",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed1/ep009_k8.json",
+   "bytes": 961,
+   "sha256": "286f1fc3a42196a40f75a8a183ee9699cd230f0c248271acd07307a6e277ba1f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/closed_loop_summary.json",
+   "bytes": 11598,
+   "sha256": "a61ddd40baaba48ec4b450581084f21638400ef7ef4109a84e5e54d19ac7b496",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep000_k8.json",
+   "bytes": 965,
+   "sha256": "16db40080caa085f0250fac8d04427f56d51edc2fcc025a314ee32eaf4afdce5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep001_k8.json",
+   "bytes": 979,
+   "sha256": "126e44faee2085703dab5bc6af62f32baddd79e3518553b82a55f19ab5df2f25",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep002_k8.json",
+   "bytes": 976,
+   "sha256": "8e034a1c41b0c0156630868383c5dd1a3d59c4dc8425dbc95c23322101abbb63",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep003_k8.json",
+   "bytes": 959,
+   "sha256": "2c85de5b4ec266329a2c838d3f295fde3911c5d2a8f2db5e1f87dc02dfa2d8da",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep004_k8.json",
+   "bytes": 979,
+   "sha256": "c806c89966d335a7d969c68c38d4d66270b3b26262e62bf377579fe96e4124c7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep005_k8.json",
+   "bytes": 977,
+   "sha256": "b7d0665d3dfdfaa01262170563f47df002233568199b35560068f1adf67ae72d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep006_k8.json",
+   "bytes": 963,
+   "sha256": "0a79aaefade551ce6dc0ef3ca1b1a7f4f95ff2abf0f1245c04ad308eab837705",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep007_k8.json",
+   "bytes": 973,
+   "sha256": "6ea663c696be234f3957d0bade7c4de99223b5cbccf0f37f21222a1e20617574",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep008_k8.json",
+   "bytes": 961,
+   "sha256": "2ca19167499f1ddfffd552180c6f7a1ace5fbda42084aace7f2d1e036158468c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m4.3_r7.5_seed2/ep009_k8.json",
+   "bytes": 960,
+   "sha256": "5e772e06966259ccdf367d100f727b39364d4c6d27287f994dbdb6ff75a5ef42",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/closed_loop_summary.json",
+   "bytes": 11524,
+   "sha256": "a25a3afb62c34b160b7495e15570a2d5feebbada496755a133b6963207e0b38e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep000_k8.json",
+   "bytes": 964,
+   "sha256": "4447479fc5ca248cc75ae9216306055464870b97ff3388e0406b60e37bf46d18",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep001_k8.json",
+   "bytes": 961,
+   "sha256": "eb2cf9edf915975bb4f97f3c47f183f094f4b60017d66dd032f8e6f8af228d31",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep002_k8.json",
+   "bytes": 960,
+   "sha256": "df312079ece0e318e09975a7870ab2434c33b67384949ee5a5729fe7750f1996",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep003_k8.json",
+   "bytes": 963,
+   "sha256": "9e32a2d9dee1e272d0d8e33bbea6f3ec9d3e5b22f5c7071b69dc0f36b0644f88",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep004_k8.json",
+   "bytes": 962,
+   "sha256": "7acff930a1107cd918efa591fdb7ccbc398041acfeb8f8c135697e57f0906720",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep005_k8.json",
+   "bytes": 962,
+   "sha256": "f1a9d2b2270caec966891ca0755ba7426e4180fb70354f65c2ccfe7e71192daa",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep006_k8.json",
+   "bytes": 964,
+   "sha256": "71e16672e4ab7f4fc7a0b2e34b77ceca4731a3abc453d06f876892e10f0a7cdb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep007_k8.json",
+   "bytes": 964,
+   "sha256": "1dce0cc8890fc8c55738aa57bce2dfca168a122221c02a1d26318472fe44605b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep008_k8.json",
+   "bytes": 965,
+   "sha256": "2cc075ae61c12b6e2dd4eb7940fc283ec6d6574833da39cc58469ba1238e5e43",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed0/ep009_k8.json",
+   "bytes": 965,
+   "sha256": "7785de7d3aea6c86c047b0b780ab10b1351bd7fbb80d7442da309a362798bcdf",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/closed_loop_summary.json",
+   "bytes": 11497,
+   "sha256": "b45882b3193dd6b6f80023fbc6c55cc71189d9a876bd850e51d9253f8a36c751",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep000_k8.json",
+   "bytes": 953,
+   "sha256": "07ee982b23323d39f47adf6a943b9e3bd3ff7287f076ffa948945eb2d3b90950",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep001_k8.json",
+   "bytes": 953,
+   "sha256": "526e2520a319d606c3511c45e542f0f4720e17e50553c15cb06cc0112a312694",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep002_k8.json",
+   "bytes": 965,
+   "sha256": "be07b8f57130609fa210127e0e56c895ca6abc7b19c3434c3b6d1c270277f4b2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep003_k8.json",
+   "bytes": 963,
+   "sha256": "ba19b26aa9fe08afa723d6bf70ba83d33a5c5573d32aca75e53270e018a4a145",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep004_k8.json",
+   "bytes": 961,
+   "sha256": "31de0e86f03db4fb43f3c336a619727fad58b1e17f3e9007845170d05aad1aa5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep005_k8.json",
+   "bytes": 960,
+   "sha256": "e1122874aed296e739ab752bb60e5048e5501bf2c7f5167aa7a6ef2bdf27a7d7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep006_k8.json",
+   "bytes": 958,
+   "sha256": "9cf82c39ad90f4c3a60821436b55472f883acd2cb27cb89e9b25d7f43540fa0c",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep007_k8.json",
+   "bytes": 964,
+   "sha256": "9533a0b66146ba18e20962a1c30d45bc19713e397c9e6da4b973bb1b16b3c8ba",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep008_k8.json",
+   "bytes": 963,
+   "sha256": "57792327b4b13cc9037800a62abcb9362a8c3a5d0f0676615805ea7afab7f344",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r10.0_seed1/ep009_k8.json",
+   "bytes": 963,
+   "sha256": "4e5ff4dd1c26b63fab189b4c976892db12c4fb43fe9bb5498aedaceaeb6913db",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/closed_loop_summary.json",
+   "bytes": 11672,
+   "sha256": "1b96d161009efab91d7d5324bdbf6143b0561fb7b4b61b58fc7c911dabe9f880",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep000_k8.json",
+   "bytes": 977,
+   "sha256": "c82e8f6c84e471166197a009717a1d81f139b41dc30704edf4af18d2ed13c421",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep001_k8.json",
+   "bytes": 981,
+   "sha256": "a2dcabbd41de3a29af7db06b2e9ca0f8d843277905cf4bdff27c88f2651a7b2e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep002_k8.json",
+   "bytes": 978,
+   "sha256": "57983b0e236ec6e203c398c4b847fa5ed5a7512cfc007155a6e90f6468949bc2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep003_k8.json",
+   "bytes": 975,
+   "sha256": "f28584e4c08d030cd4468909b9720c531caa91504e60feb413fe122be6bba12a",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep004_k8.json",
+   "bytes": 975,
+   "sha256": "9ae0f6c630b424e8115f6fc872ddfb6d210dc25d15e19f0f0bae4a28150718cd",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep005_k8.json",
+   "bytes": 975,
+   "sha256": "a5667f7562181bfe6107648bedd7fbc52282fd86919b69a3caa376a091fc65d4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep006_k8.json",
+   "bytes": 974,
+   "sha256": "071476024d6c7b4a01b13a0c3247ab6f8f628567650356ea29c2ad75367ebdcb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep007_k8.json",
+   "bytes": 972,
+   "sha256": "7ff30735412d37b54a9223c29bf51f18820db80e2f5bbb05f471cd73408f03fe",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep008_k8.json",
+   "bytes": 976,
+   "sha256": "0bf36f45ecfa62e7b58f7d35a6a02d6e64061657b42dc8a4ff12846db26d2179",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed1/ep009_k8.json",
+   "bytes": 974,
+   "sha256": "dcf0df32d2aec4747ffc6f6458b8f389ae941b4af98d7bf260816a28908c13aa",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/closed_loop_summary.json",
+   "bytes": 11656,
+   "sha256": "15511cf4d9b884399ffef8a97863866226d543edc6664f6c1f4b6827f2c3fb25",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep000_k8.json",
+   "bytes": 975,
+   "sha256": "ee9d8cc498be4fa4533f9b8d7d1ba7fedb88cb6cd80c9fbc4d4bbb7c0c29c5f3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep001_k8.json",
+   "bytes": 972,
+   "sha256": "c10dda2db44fb5245a84cf5157b5fe04889d265ce54f844febe11ff6b805fa09",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep002_k8.json",
+   "bytes": 974,
+   "sha256": "de328c0ef96f1649c2e4d0cc3e48b63e2bd427a8db201c0035e3b05e46f970d3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep003_k8.json",
+   "bytes": 977,
+   "sha256": "08dbbd4dfa129fbb6655d2e97ce05e4753eec9cf07e199f95f09cacd12e9e974",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep004_k8.json",
+   "bytes": 979,
+   "sha256": "024efe0747d79de46165b0c13376163bc358a1146303a2ccb8d3a0d2e0f9fbad",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep005_k8.json",
+   "bytes": 972,
+   "sha256": "87f7a9e0820d090739bb243f42fa814b333f21ef37a491724ad1d9b83756111b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep006_k8.json",
+   "bytes": 973,
+   "sha256": "39bd7ce15f48eaa4d77f3819963beba06195e0ea7c585b478a6aefa7eeea63cf",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep007_k8.json",
+   "bytes": 970,
+   "sha256": "b72a8b0a4175aa4e33f2bff08c98794a09e1820771ad6a2314eed1bb2bfc535f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep008_k8.json",
+   "bytes": 973,
+   "sha256": "73f56baa079e683792d1b445008d1403dcf267a8b55806ab119a275eabf067a2",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/train_scenes/m9.1_r7.5_onesided_seed2/ep009_k8.json",
+   "bytes": 975,
+   "sha256": "3b252c88893a39f014a6f41630c55c91949109511fffe4d4096492f0029ad6c7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r10.0_seed0_eval.json",
+   "bytes": 9695,
+   "sha256": "e3fafe8adc1a2be9929476039147fed7b8f483407442c7cd36bf335ed37ad744",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r10.0_seed0_train.json",
+   "bytes": 23661,
+   "sha256": "5be6bbafe54e72f92da04fe09ac2ba3844fe44d75864752399fe0f83d5cbe7da",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r10.0_seed1_eval.json",
+   "bytes": 9673,
+   "sha256": "540e21ac201dd3925d1e8fee6073740d7a1b1428f8410e3b16374a3005ab0e58",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r10.0_seed1_train.json",
+   "bytes": 23684,
+   "sha256": "6c0bf95ac8a3701c56cfd27ed9dec649ac363cdb4330dc1f8a19a232d9c27e8b",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r10.0_seed2_eval.json",
+   "bytes": 9700,
+   "sha256": "c1cf64e2de86fe2a7a2d5c3d6c6bb957b7c7861b70364190cc3c0ed7d4a1f969",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r10.0_seed2_train.json",
+   "bytes": 23696,
+   "sha256": "c8706c52671d4597e40177b20865f10c6fea1e0b2d4fc4367df54cf448156056",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r15.0_seed0_eval.json",
+   "bytes": 8913,
+   "sha256": "3f630907310d7bb0e82f6dc978f1bfe30e311a214ea28fc19bee31276363ddb4",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r15.0_seed0_train.json",
+   "bytes": 23696,
+   "sha256": "26aff2d8ac611027e3197cf18e8d43de55007ede93e8ead5e2cc8629e0b1908e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r15.0_seed1_eval.json",
+   "bytes": 8902,
+   "sha256": "32fded9e8325a54987860f444d4ca960ca1ec19810f5afcaa0aa2454d1fa2653",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r15.0_seed1_train.json",
+   "bytes": 23673,
+   "sha256": "adaf488faae346b1645d0362207d8c505695398bb432529e0119e9874eaa45a0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r20.0_seed0_eval.json",
+   "bytes": 8701,
+   "sha256": "5aaadaf0aae2333025b18ef01cd605d6a7e8bf4ae11a3b046749468cfa8aa59f",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r20.0_seed0_train.json",
+   "bytes": 23699,
+   "sha256": "a7c8fdfe6eb52d7d9ee006861bfe03160bafbeebe79d6d3aa4ff5b1fd67f3ea5",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r20.0_seed1_eval.json",
+   "bytes": 8701,
+   "sha256": "c5b7f153379b41a42e8cd0bb6a6abe1e8458d375ce5224b5f9af9121a3670df0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r20.0_seed1_train.json",
+   "bytes": 23673,
+   "sha256": "b1895544de89e0c4d4d320e26593acc1a6862be47dee3f649156f692ad2b4ce3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r7.5_onesided_seed0_eval.json",
+   "bytes": 10058,
+   "sha256": "3934b46c90493b0c4e4ac22bb4744e0f21c71283dbdb45fa3888ff59ba07660d",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r7.5_onesided_seed0_train.json",
+   "bytes": 23719,
+   "sha256": "2f1c59d807a9e9e85a6225c94185e0b2433e5a5ab184218ab0c83631882854b3",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r7.5_seed2_eval.json",
+   "bytes": 10076,
+   "sha256": "3057406b80e3f94465af1b486461914e8037a9f8a6faf4148d4bba110d66c2bf",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m19.5_r7.5_seed2_train.json",
+   "bytes": 23654,
+   "sha256": "40646b6aa322bf1eb1e773158d4f04ef810824a4c74c000447058d88ba35ae58",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m4.3_r7.5_seed0_eval.json",
+   "bytes": 10106,
+   "sha256": "a26d3d55409d1e9b20b8a637cc41d9533efd6cdf3a8d836cce5714a650673d72",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m4.3_r7.5_seed0_train.json",
+   "bytes": 23810,
+   "sha256": "1f453facad723afe7965d235271e2f04b552544f32704e9097266f2b2da25989",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m4.3_r7.5_seed1_eval.json",
+   "bytes": 10117,
+   "sha256": "3e8f11aeef9f39a039359d7af7980c229c5762c0ac5c95a0202cc146272b7fcb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m4.3_r7.5_seed1_train.json",
+   "bytes": 23805,
+   "sha256": "75e83e90639d39f7f7975f9ace998a9847427e3f4146b5ad53f16837eb7b8d44",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m4.3_r7.5_seed2_eval.json",
+   "bytes": 10113,
+   "sha256": "9961ed5a46a339b61a8cdd8fbdc5eba3cd93d7a7a731546138db3a2b9d8a912e",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m4.3_r7.5_seed2_train.json",
+   "bytes": 23842,
+   "sha256": "1551c52b7add90951f4311de8458373590801c861615f3176c0c22e946c614cb",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m9.1_r10.0_seed0_eval.json",
+   "bytes": 9711,
+   "sha256": "026a8bbf328e878b248e85fe28e127a897068c5fd0fee6633941d8ff351e40d7",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m9.1_r10.0_seed0_train.json",
+   "bytes": 23796,
+   "sha256": "61843a566ca14570a7366468f8136571f1f612b2cb993d8b799d08d93ba1c779",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m9.1_r10.0_seed1_eval.json",
+   "bytes": 9729,
+   "sha256": "b9e65d0512a94d85fe999e28c2fe2f753da2e65ca7880abe746c7720fbb55e30",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m9.1_r10.0_seed1_train.json",
+   "bytes": 23798,
+   "sha256": "9337ee24c56a32badf074773903b14e9a2a5695f194142daa785959bb4291b15",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m9.1_r7.5_onesided_seed1_eval.json",
+   "bytes": 10092,
+   "sha256": "02e3c73bda64d7f8b2256b967a8f62e98f1dd61ed144c5b5eb9f7e3e49dfd7b0",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m9.1_r7.5_onesided_seed1_train.json",
+   "bytes": 23775,
+   "sha256": "3be14b2068550442ad368e061cfe64856b452938b101965118727c95c83fb912",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m9.1_r7.5_onesided_seed2_eval.json",
+   "bytes": 10099,
+   "sha256": "4b7a08819a260bf91ec6d113117ac9ed559f47dfdf12debf9359a908ff051dda",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/offline/m9.1_r7.5_onesided_seed2_train.json",
+   "bytes": 23740,
+   "sha256": "f2420c8679b2810897e8dda68ba18877cc2952a7bcde4e829cb71b88291bd4de",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/analysis_stdout.json",
+   "bytes": 4501,
+   "sha256": "60af85716c9aa5c34b92b4c254a27e4c137348e6fbabd6e9369637a77611b0af",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
+   "path": "artifacts/capacity_recovery_v1/summary.json",
+   "bytes": 423445,
+   "sha256": "8a16400369b0e56d1f08a8f922358c5d46b0b11e767492bbdf082e5b19eed467",
+   "purpose": "capacity-density recovery (16 retrained runs, rollouts, integrity records)"
+  },
+  {
    "path": "artifacts/density_sweep/data/r10.0_eval/episodes/episode_000000/action.npy",
    "bytes": 1424,
    "sha256": "1949677054094e628c2482f72310863ffc1a318c58107b7f8ad8ec28e7a66786",
@@ -128216,6 +131180,10 @@
   }
  ],
  "totals": {
+  "capacity-density recovery (16 retrained runs, rollouts, integrity records)": {
+   "files": 494,
+   "bytes": 8423480171
+  },
   "controlled density sweep (7 datasets, 21 models, 387 rollouts)": {
    "files": 10568,
    "bytes": 3375779642
