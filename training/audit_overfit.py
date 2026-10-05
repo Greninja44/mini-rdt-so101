@@ -9,6 +9,7 @@ import argparse
 import copy
 from dataclasses import asdict
 import json
+import math
 import os
 from pathlib import Path
 import random
@@ -43,6 +44,20 @@ def restore_ema(ema, checkpoint, decay):
     if "ema_model" not in checkpoint or checkpoint.get("ema_decay") != decay:
         raise ValueError("Exact EMA resume unavailable: checkpoint lacks matching embedded EMA state")
     ema.load_state_dict(checkpoint["ema_model"])
+
+
+def lr_multiplier(step, total, warmup, schedule, final_fraction):
+    """Learning-rate multiplier for an update index.
+
+    The historical recipe is warmup=0 and schedule="constant", which returns exactly 1.0 at every step, so default runs are unchanged.
+    The multiplier is a pure function of the step, so a resumed run recomputes it and no scheduler state has to be checkpointed.
+    """
+    if warmup and step < warmup:
+        return (step + 1) / warmup
+    if schedule == "cosine":
+        progress = 0.0 if total <= warmup else min(1.0, max(0.0, (step - warmup) / (total - warmup)))
+        return final_fraction + (1 - final_fraction) * 0.5 * (1 + math.cos(math.pi * progress))
+    return 1.0
 
 
 def experiment(args):
@@ -88,9 +103,10 @@ def experiment(args):
         vision_params=list(model.vision.parameters()); ids_v={id(p) for p in vision_params}
         groups=[{"params":[p for p in model.parameters() if p.requires_grad and id(p) not in ids_v],"lr":args.learning_rate},
                 {"params":[p for p in vision_params if p.requires_grad],"lr":args.vision_learning_rate}]
-        optimizer=torch.optim.AdamW(groups,weight_decay=1e-4)
+        optimizer=torch.optim.AdamW(groups,weight_decay=args.weight_decay)
     else:
-        optimizer=torch.optim.AdamW((p for p in model.parameters() if p.requires_grad),lr=args.learning_rate,weight_decay=1e-4)
+        optimizer=torch.optim.AdamW((p for p in model.parameters() if p.requires_grad),lr=args.learning_rate,weight_decay=args.weight_decay)
+    base_lrs=[group["lr"] for group in optimizer.param_groups]
     # EMA consumes no RNG, so raw weights follow exactly the non-EMA trajectory.
     ema=copy.deepcopy(model).eval().requires_grad_(False) if args.ema_decay else None
     train_rng=torch.Generator(device=device).manual_seed(args.seed+100)
@@ -148,13 +164,17 @@ def experiment(args):
                 drop=(torch.rand(args.batch_size,device=device,generator=drop_rng)<args.state_dropout) if args.state_dropout>0 else None
                 prediction=model(None,batch["state"],x,t,batch["model_mask"],batch["features"],drop)
                 loss=masked_mse(prediction,target,batch["model_mask"])
-            loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),1.);optimizer.step()
+            scale=lr_multiplier(step,args.steps,args.warmup_steps,args.lr_schedule,args.lr_final_fraction)
+            for group,base in zip(optimizer.param_groups,base_lrs): group["lr"]=base*scale
+            loss.backward();grad_norm=torch.nn.utils.clip_grad_norm_(model.parameters(),args.grad_clip);optimizer.step()
+            if args.grad_log_interval and step%args.grad_log_interval==0:
+                log.write(json.dumps({"step":step,"grad_norm":float(grad_norm),"lr":float(optimizer.param_groups[0]["lr"]),"train_loss":float(loss)})+"\n");log.flush()
             if ema is not None:
                 with torch.no_grad():
                     for e,p in zip(ema.state_dict().values(),model.state_dict().values()):
                         if e.dtype.is_floating_point: e.lerp_(p,1-args.ema_decay)
                         else: e.copy_(p)
-            if step % args.eval_interval == 0 or step == args.steps-1:
+            if step % args.eval_interval == 0 or step == args.steps-1 or (args.stop_after and step+1 == args.stop_after):
                 model.eval()
                 if args.train_vision:  # cached features are stale once the encoder trains
                     with torch.no_grad(): b["features"]=torch.cat([model.vision(b["rgb"][i:i+64]) for i in range(0,len(b["rgb"]),64)])
@@ -194,6 +214,9 @@ def experiment(args):
                     log.write(json.dumps({"step":step,"ema_sampled":ema_row})+"\n");log.flush();print(json.dumps({"step":step,"ema_sampled":ema_row}),flush=True)
                     atomic_torch_save(ema_payload,out/"ema_last.pt")
                     if args.snapshot_interval and step and step%args.snapshot_interval==0: atomic_torch_save(ema_payload,out/f"ema_step{step:06d}.pt")
+            if args.stop_after and step+1 >= args.stop_after:
+                print(json.dumps({"stopped_after":step+1,"schedule_horizon":args.steps}),flush=True)
+                return
     save_json(out/"result.json",{**row,"best_sampled_mse":best,"device":str(device),"train_episode_ids":ids,
                                 "policy_parameters":sum(p.numel() for p in model.parameters() if p.requires_grad),"peak_vram_bytes":torch.cuda.max_memory_allocated() if device.type=="cuda" else 0})
 
@@ -215,6 +238,13 @@ if __name__ == "__main__":
     p.add_argument("--corrective-fraction",type=float,default=.5)
     p.add_argument("--corrective-max-frames",type=int,help="size-matched ablation: whole episodes up to this many frames")
     p.add_argument("--ema-decay",type=float,default=0.,help="0 disables; EMA weights saved to ema_last.pt")
+    p.add_argument("--weight-decay",type=float,default=1e-4,help="AdamW weight decay (historical recipe: 1e-4)")
+    p.add_argument("--grad-clip",type=float,default=1.0,help="gradient-norm clip (historical recipe: 1.0)")
+    p.add_argument("--warmup-steps",type=int,default=0,help="linear warmup from 0 to --learning-rate (historical recipe: 0)")
+    p.add_argument("--lr-schedule",choices=("constant","cosine"),default="constant",help="after warmup (historical recipe: constant)")
+    p.add_argument("--lr-final-fraction",type=float,default=0.1,help="cosine floor as a fraction of --learning-rate")
+    p.add_argument("--grad-log-interval",type=int,default=0,help="log the pre-clip gradient norm every N steps (0 = off)")
+    p.add_argument("--stop-after",type=int,default=0,help="checkpoint and exit after N updates while keeping --steps as the schedule horizon; emulates an interruption exactly (0 = off)")
     p.add_argument("--hidden-dim",type=int,default=192,help="TinyRDT width (capacity scaling); default = the ~2M baseline")
     p.add_argument("--layers",type=int,default=4); p.add_argument("--heads",type=int,default=6)
     p.add_argument("--split-file",default="docs/research/physics_v2_generalization_split.json")
