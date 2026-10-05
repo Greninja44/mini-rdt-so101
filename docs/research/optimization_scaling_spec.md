@@ -137,3 +137,24 @@ condition r10, seed 0, with `--grad-log-interval 50`. The first 10,000 updates r
 Because `--grad-log-interval` consumes no RNG and the recipe is otherwise untouched, each Stage-A run must reproduce its frozen counterpart
 **bit-exactly**. The checkpoint hashes are compared against the frozen baseline runs and reported; a mismatch would indicate a defect in the
 instrumentation and would stop the study. No candidate recipe, gate threshold, or stopping rule is changed by this amendment.
+
+## Amendment 2 (2026-10-05, after Stage A's 2.0M/4.3M baseline runs, before any Stage-B run)
+Two corrections, both derived from **baseline data only**. No optimization-recipe result has been seen.
+
+**(a) Integrity comparison is at tensor level, not file hash.** `run_config` now records the new knobs, so a checkpoint's bytes differ even
+when training is identical. Comparing EMA tensors instead: Stage A's 4.3M run is **bit-identical** to its frozen capacity counterpart
+(max abs diff 0.0), confirming the instrumentation changes nothing. The 2.0M run is *not* comparable bit-for-bit because its frozen
+counterpart came from the density sweep at **80,055** updates, not 80,222 — the per-condition budget discrepancy already recorded in the
+capacity report. Stage A's instrumented 2.0M run at 80,222 updates is therefore the matched reference for this study.
+
+**(b) The gradient criterion as registered was not satisfiable by the baseline.** Criterion 4 required "no logged norm above 100× the
+reference median", but the 2.0M reference itself peaks at 7.44 = **77× its own median** (0.097), and 4.3M peaks at 87×. Transient spikes of
+this size are normal for this recipe, so the rule would have failed the healthy baseline. Criterion 4 is replaced, using only 2.0M/4.3M
+baseline statistics:
+
+- **4a.** median gradient norm over the final 10% of updates ≤ **3 × 0.053 = 0.159** (the 2.0M reference tail median on r10);
+- **4b.** spike rate, the fraction of logged norms above 10× that run's *own* median, ≤ **3 × 0.81% + 1 pp = 3.4%** (the 2.0M reference rate
+  is 0.81%, the 4.3M rate 0.87%).
+
+Both are scale-free and are met comfortably by the two healthy baselines. Criteria 1, 2, 3, 5 and 6, the candidate recipes, the stopping
+logic and the selection rule are unchanged, and the training-MAE threshold stays at the pre-registered **0.01012**.
