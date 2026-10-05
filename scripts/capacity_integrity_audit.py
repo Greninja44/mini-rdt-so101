@@ -11,11 +11,12 @@ from scripts.artifact_manifest import sha256
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--output', required=True)
+    p.add_argument('--root', default='artifacts/capacity_scaling')
     args = p.parse_args()
     output = Path(args.output)
     if output.exists():
         raise FileExistsError(output)
-    root = Path('artifacts/capacity_scaling')
+    root = Path(args.root)
     report = {'runs': {}, 'files': [], 'baseline_checks': {}, 'data_checks': {}}
     frozen = json.loads(Path('docs/research/density_sweep_freeze.json').read_text())
     for name, expected in frozen['baseline_2M']['checkpoints_sha256'].items():

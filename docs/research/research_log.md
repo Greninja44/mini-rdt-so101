@@ -457,3 +457,20 @@ If image reliance rises but success does not, visual conditioning is not the bot
   result (57%), not the surrounded one (93%). The earlier curve was measuring a mixture dominated by one-sided support.
 - Failures stay `wrong_lateral_alignment` and scale with sparsity (0% → 56%); lateral error at close grows 3.0 → 9.9 mm. 0 invalid successes.
 - **STOPPED** per the spec. Next: capacity x density in the informative 10-20 mm band (plus the one-sided condition), reusing these datasets.
+
+## CAPACITY x DENSITY RECOVERY (2026-10-05) → CAPACITY_DENSITY_RECOVERY_REPORT.md
+- **Why:** an audit found interrupted training resumed WITHOUT restoring EMA state; evaluation uses EMA weights, so 16 of 45 capacity runs
+  (3 at 4.3M, 4 at 9.1M, 9 at 19.5M) did not produce the specified model. Selection was by audit flag only, never by outcome.
+- **Gate:** on the real trainer, for all three recovery architectures, interrupted+resumed training is now bit-identical to uninterrupted
+  training (weights, EMA, optimizer, all four RNG streams; max abs diff 0.0). Passed before any recovery training.
+- **Result:** 16/16 recovered EMA checkpoints differ from the originals, but only **2/16 outcomes changed** (both upward). Training MAE is
+  identical in all 16, because resume restored the raw weights correctly and only the average was lost. EMA memory at decay 0.999 is ~1,000
+  updates, so early interruptions re-converge.
+- **Corrected 45-run matrix (+15 reused 2M baseline cells):** 2.0M 45/75 primary, 4.3M 53/75, 9.1M 37/75, 19.5M 29/75. Only two cells moved.
+- **CASE D dominates:** 9.1M and 19.5M still fail to fit their own training data (training scenes 120/150 and 70/150; train MAE 1.3x and 2.0x
+  the baseline). The capacity comparison is optimization-confounded and is NOT evidence that capacity hurts generalization.
+- **CASE E:** support-geometry gap not solved by capacity (one-sided coefficient -0.31 [-0.90, +0.16]); the apparent shrinkage at 19.5M is
+  surrounded collapse. Lateral aiming error grows with capacity (3.7 -> 19.0 mm at the easy control).
+- Clustering defect fixed: positions condition-stratified and shared across capacities, seeds independent within capacity, 4,000 replicates,
+  fixed RNG seed, with 5 regression tests. 420 rollouts, 0 invalid successes.
+- **40M not trained and not justified.** Next: a separately pre-registered optimisation study at fixed capacity.

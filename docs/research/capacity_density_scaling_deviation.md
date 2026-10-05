@@ -64,3 +64,25 @@ this is an infrastructure repair, not a training-recipe change.
 
 At the user's request, the persistent runner returns to two training workers and two evaluation workers. Effective batch size, exposure,
 model configuration, datasets, seeds, sampler and physics remain unchanged; only concurrent resource use and wall time change.
+
+## 2026-10-02 — recovery gate on the real trainer
+
+The recovery protocol requires an interrupted/uninterrupted equivalence test on the actual TinyRDT trainer, not only the unit tests covering
+the checkpoint mechanism. `scripts/capacity_recovery_equivalence.py` trains each recovery architecture (d256/L5, d320/L7, d416/L9) to the
+same final update twice: once uninterrupted, once interrupted at step 200 and resumed. Raw weights, EMA weights, optimizer state and all
+four random streams are bit-identical (max abs diff 0.0). Result stored in `docs/research/capacity_recovery_equivalence.json`. The gate
+passed before any recovery training started.
+
+## 2026-10-03 — fourth WSL interruption during recovery
+
+The WSL virtual machine shut down at approximately 05:35 UTC. Nine of the sixteen recovery runs (all nine 19.5M members) had completed
+training and evaluation. `m4.3_r7.5_seed0` was interrupted at step 34,000 of 80,222. Unlike the historical interruptions, its atomic
+checkpoint carries the EMA in the same transaction, so the run was continued exactly rather than restarted; the equivalence gate above
+establishes that this continuation is bit-identical to an uninterrupted run. No scientific parameter changed.
+
+## 2026-10-04 — recovery runner moved to a user service
+
+The recovery pipeline now runs as the enabled user service `mini-rdt-recovery.service` (linger already enabled), so a further virtual-machine
+shutdown resumes the queue automatically instead of leaving it stopped for a day. The runner continues an interrupted recovery run only when
+its checkpoint contains a matching same-transaction EMA, and otherwise retrains from the original seed; legacy raw-only checkpoints are never
+continued. Worker ceiling is unchanged at one training and one evaluation worker. The superseded capacity service remains disabled.

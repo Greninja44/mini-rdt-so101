@@ -248,6 +248,25 @@ tests/        diffusion oracle tests, env/dataset tests, bit-exact expert/counte
 Datasets, checkpoints and rollouts are not versioned (`artifacts/`, about 800 MB). `docs/artifact_manifest.json` lists each file's
 size and sha256 for backup and verification.
 
+### Capacity × density, after recovery ([`CAPACITY_DENSITY_RECOVERY_REPORT`](CAPACITY_DENSITY_RECOVERY_REPORT.md))
+
+An integrity audit found that interrupted training had resumed without restoring EMA state, affecting 16 of 45 capacity runs and
+concentrated in the largest models. All 16 were retrained from their original seeds, selected by the audit rather than by outcome, after a
+real-trainer gate proved that resumed training is now **bit-identical** to uninterrupted training (max abs diff 0.0 in weights, EMA,
+optimizer and every RNG stream).
+
+| capacity | r10 | r15 | r20 | one-sided | r7.5 control | training scenes |
+|---|---|---|---|---|---|---|
+| 2.0M | 18/24 | 7/12 | 3/9 | 17/30 | 28/30 | 139/150 |
+| **4.3M** | **21/24** | **8/12** | **4/9** | **20/30** | **30/30** | **146/150** |
+| 9.1M | 18/24 | 3/12 | 3/9 | 13/30 | 18/30 | 120/150 |
+| 19.5M | 12/24 | 3/12 | 3/9 | 11/30 | 9/30 | **70/150** |
+
+**The defect was real but not the explanation:** 16/16 EMA checkpoints changed, yet only 2/16 outcomes did, and the corrected matrix matches
+the qualified one. **9.1M and 19.5M still cannot fit their own training data** under this recipe (47% of training scenes at 19.5M), so the
+capacity comparison is **optimization-confounded** and must not be read as "capacity hurts". 40M was not trained and is not justified until a
+larger model can fit its training set.
+
 ## Documentation
 
 | report | question |
@@ -261,6 +280,8 @@ size and sha256 for backup and verification.
 | [`training_seed_replication_spec`](docs/research/training_seed_replication_spec.md) | pre-registered seed matrix, variance statistics, decision gate |
 | [`CONTROLLED_DENSITY_SWEEP_REPORT`](CONTROLLED_DENSITY_SWEEP_REPORT.md) | **manipulating demonstration density: distance is causal, and support geometry matters as much** |
 | [`controlled_density_sweep_spec`](docs/research/controlled_density_sweep_spec.md) | pre-registered density manipulation, conditions, statistics, decision gate |
+| [`CAPACITY_DENSITY_RECOVERY_REPORT`](CAPACITY_DENSITY_RECOVERY_REPORT.md) | **EMA-resume defect, bit-exact recovery, and the corrected capacity matrix** |
+| [`capacity_density_recovery_spec`](docs/research/capacity_density_recovery_spec.md) | recovery protocol: outcome-independent selection, gates, analysis rules |
 | [`TABLE_COLLISION_AUDIT`](TABLE_COLLISION_AUDIT.md) | the audit that invalidated physics-v1 |
 | [`physics_v2_spec`](docs/research/physics_v2_spec.md) | pre-registered validity spec, tolerances and amendments |
 | [`00_summary`](docs/reports/00_summary.md) | *(physics-v1, invalid)* all v1 variants in one table |
