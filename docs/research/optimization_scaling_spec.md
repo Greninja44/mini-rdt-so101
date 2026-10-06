@@ -158,3 +158,24 @@ baseline statistics:
 
 Both are scale-free and are met comfortably by the two healthy baselines. Criteria 1, 2, 3, 5 and 6, the candidate recipes, the stopping
 logic and the selection rule are unchanged, and the training-MAE threshold stays at the pre-registered **0.01012**.
+
+## Amendment 3 (2026-10-06, after Stage A diagnostics, before any Stage-B run)
+Stage A reproduces the frozen capacity runs exactly where the budgets match (9.1M r10 seed 0: train MAE 0.00745, identical to the frozen
+value) and adds the gradient reference the gate needs. Two consequences require recording **before** any candidate recipe is trained.
+
+**(a) The 9.1M screening cell is its healthiest, so its screen is weak.** The frozen 9.1M r10 per-seed training-scene results are 10, 7 and
+7 of 10; the pre-registered screen uses **seed 0**, the passing one. At that cell the *baseline* recipe already satisfies the gate
+(train MAE 0.00745, 10/10 scenes, spike rate 2.74% within the 3.4% bound). The 9.1M screen can therefore only show whether a candidate
+*breaks* a healthy cell, and 9.1M is genuinely decided in Stage F across three seeds and five conditions. The 19.5M screen is unaffected:
+its seed-0 r10 cell fails plainly (train MAE 0.0131, 4/10 scenes). The screening cell is **not** changed, because choosing a different seed
+after seeing which seeds fail would select by outcome.
+
+**(b) Selection among several passing candidates.** The registered rule reports ties but does not bound Stage F, which could reach 45 runs
+at one capacity. Among the recipes that pass the screen, exactly one per capacity advances, ranked by: (1) highest training-scene success on
+the screening cell, then (2) lowest final training MAE, then (3) the lower learning rate. All three are training-health quantities or a
+fixed deterministic tie-break; held-out results are not consulted. Every screened recipe is reported whether or not it advances, and the
+frozen baseline recipe is carried into Stage F as the comparison.
+
+**(c) Gradient reading so far.** 9.1M shows *intermittent* spikes (2.74% of updates above 10× its own median, peak 145× median) without an
+elevated median (0.074 against the 2.0M reference 0.097). This is instability, not systematic gradient explosion, and it is within the
+Amendment-2 bound; whether Stage E runs still depends on the 19.5M trace and on Stages B–D leaving a capacity failing.
