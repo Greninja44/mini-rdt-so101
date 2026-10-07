@@ -43,6 +43,29 @@ def flags(recipe_chain):
     return " ".join(out + ["--grad-log-interval", "50"])
 
 
+ART = ROOT / "artifacts/optimization_scaling_v1"
+
+
+def is_complete(run):
+    """True when this run is trained and its required evaluations are already on disk.
+
+    Completed runs are dropped from the plan so a finished stage stops being re-proposed: otherwise
+    the next-stage filename would keep repeating and the service loop's anti-loop guard would halt
+    the study while another capacity still had screening left.
+    """
+    if not (ART / "models" / run["name"] / "result.json").exists():
+        return False
+    if run["eval_train_scenes"]:
+        if len(list((ART / "train_scenes" / run["name"]).glob("ep*_k8.json"))) < 10:
+            return False
+    if run["eval_heldout"]:
+        log = ART / "pipeline.log"
+        done = log.exists() and f"held-out evaluation {run['name']} done" in log.read_text()
+        if not done:
+            return False
+    return True
+
+
 def rank_key(run):
     scene = run["train_scene"]
     rate = scene[0] / scene[1] if scene and scene[1] else 0.0
@@ -104,10 +127,12 @@ def main():
                              "steps": STEPS, "extra": flags(chain),
                              "eval_train_scenes": True, "eval_heldout": False})
 
-    print(json.dumps({"decisions": decisions, "runs": len(plan)}, indent=1))
+    done = [r["name"] for r in plan if is_complete(r)]
+    plan = [r for r in plan if not is_complete(r)]
+    print(json.dumps({"decisions": decisions, "runs": len(plan), "already_complete": len(done)}, indent=1))
     if a.write and plan:
-        stage = plan[0]["name"].split("_")[0]
-        out = ROOT / a.out_dir / f"optimization_{stage.lower()}_manifest.json"
+        stages = sorted({r["name"].split("_")[0].lower() for r in plan})
+        out = ROOT / a.out_dir / f"optimization_{'_'.join(stages)}_manifest.json"
         out.write_text(json.dumps(plan, indent=1) + "\n")
         print(f"wrote {out.relative_to(ROOT)} ({len(plan)} runs)")
     for r in plan:
