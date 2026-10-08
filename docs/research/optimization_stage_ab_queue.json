@@ -1,0 +1,122 @@
+[
+ {
+  "name": "stageA_m2.0_r10.0_seed0",
+  "hidden": 192,
+  "layers": 4,
+  "heads": 6,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageA_m4.3_r10.0_seed0",
+  "hidden": 256,
+  "layers": 5,
+  "heads": 8,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageA_m9.1_r10.0_seed0",
+  "hidden": 320,
+  "layers": 7,
+  "heads": 10,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageA_m19.5_r10.0_seed0",
+  "hidden": 416,
+  "layers": 9,
+  "heads": 13,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageB_m9.1_lr0.25x_r10.0_seed0",
+  "hidden": 320,
+  "layers": 7,
+  "heads": 10,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--learning-rate 0.00025 --grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageB_m9.1_lr0.5x_r10.0_seed0",
+  "hidden": 320,
+  "layers": 7,
+  "heads": 10,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--learning-rate 0.0005 --grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageB_m9.1_lr2x_r10.0_seed0",
+  "hidden": 320,
+  "layers": 7,
+  "heads": 10,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--learning-rate 0.002 --grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageB_m19.5_lr0.25x_r10.0_seed0",
+  "hidden": 416,
+  "layers": 9,
+  "heads": 13,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--learning-rate 0.00025 --grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageB_m19.5_lr0.5x_r10.0_seed0",
+  "hidden": 416,
+  "layers": 9,
+  "heads": 13,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--learning-rate 0.0005 --grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ },
+ {
+  "name": "stageB_m19.5_lr2x_r10.0_seed0",
+  "hidden": 416,
+  "layers": 9,
+  "heads": 13,
+  "condition": "r10.0",
+  "seed": 0,
+  "steps": 80222,
+  "extra": "--learning-rate 0.002 --grad-log-interval 50",
+  "eval_train_scenes": true,
+  "eval_heldout": false
+ }
+]
