@@ -183,6 +183,31 @@ Two 4.3M control runs also have rollout hashes differing from the current final 
 estimates remain qualified; the four primary 4.3M conditions have matching rollout hashes and no recorded resume.
 The prior v1 ablations remain archived in `docs/reports/` and `docs/assets/physics_v1_invalid/`, clearly marked invalid.
 
+### Optimization scaling: the largest model was mis-stepped, not capacity-limited ([interim report](docs/research/OPTIMIZATION_SCALING_REPORT.md))
+
+The capacity comparison above was confounded: every capacity was trained with one recipe tuned at 2.0M. A
+[pre-registered optimization study](docs/research/optimization_scaling_spec.md) varied **only** optimizer
+variables, selecting on training health alone and never on held-out success. At the screening cell (r10, seed 0,
+80,222 updates) the fixed 1e-3 rate fails at 19.5M; halving it fixes training:
+
+| 19.5M recipe | train MAE | final loss | training scenes | lateral error at close | health gate |
+|---|---:|---:|---:|---:|---|
+| 2x (2e-3) | 0.01623 | 0.01323 | 3/10 | 16.79 mm | fail |
+| 1x baseline (1e-3) | 0.01310 | 0.00933 | 4/10 | 14.11 mm | fail |
+| 0.25x (2.5e-4) | 0.00732 | 0.00116 | 8/10 | 4.58 mm | fail (scenes) |
+| **0.5x (5e-4)** | 0.00789 | 0.00117 | **9/10** | 4.41 mm | **pass** |
+
+Properly stepped, 19.5M fits better than the 4.3M baseline (0.00973) — it was never short of capacity here. The
+selected 0.5x matches the a-priori width-scaling prediction (~0.46x for width 416) registered before the runs, and
+the same manipulation reproduces the failure downward: 9.1M at 2x gives 6/10 scenes and 13.05 mm lateral error,
+closely mirroring 19.5M's baseline. No gradients explode in any failing run; the failures are underfitting.
+
+Caveats stated in full in the report: this is one cell, one seed, ten scenes — Fisher's exact on 4/10 vs 9/10 gives
+**p = 0.057**, so the scene counts alone are underpowered and the evidence rests on the continuous measures. The
+9.1M arm is close to a null. Whether better training converts into better **generalization** is Stage F, in progress.
+**40M is still not trained and not justified.**
+
+
 ## Installation
 
 ```bash

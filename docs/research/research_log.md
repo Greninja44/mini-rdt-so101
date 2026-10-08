@@ -474,3 +474,17 @@ If image reliance rises but success does not, visual conditioning is not the bot
 - Clustering defect fixed: positions condition-stratified and shared across capacities, seeds independent within capacity, 4,000 replicates,
   fixed RNG seed, with 5 regression tests. 420 rollouts, 0 invalid successes.
 - **40M not trained and not justified.** Next: a separately pre-registered optimisation study at fixed capacity.
+
+## Optimization scaling study (2026-10-05 → in progress)
+Pre-registered at `5073d57` before any run; see `optimization_scaling_spec.md` and the deviation log. Only optimizer
+variables changed; selection on training health only, never on held-out success.
+- Stage A (baseline recipe, 4 capacities, full 80,222 updates, gradients logged): 2.0M/4.3M/9.1M pass the health gate;
+  **19.5M fails** (train MAE 0.01310 > 0.01012, 4/10 training scenes, 14.11 mm lateral error) with no gradient explosion.
+- Stage B (learning rate): 19.5M **0.5× passes** (9/10 scenes, MAE 0.00789, loss 0.00117, 4.41 mm) — the a-priori
+  width-scaling prediction. 0.25× restores the continuous measures but reaches only 8/10. 2× is worse than baseline at
+  both capacities, and at 9.1M it reproduces the 19.5M failure signature (6/10, 13.05 mm).
+- 9.1M's screen is near-null: its baseline already passed, and 0.25× improves MAE only 0.00745 → 0.00697.
+- Stages C/D/E not run: the stopping rule retires a capacity once a recipe passes, and both passed in Stage B.
+- Underpowered at n=10: Fisher exact 4/10 vs 9/10 gives p = 0.057. Evidence rests on MAE, loss and lateral error.
+- **Decision A confirmed at 19.5M**: the capacity comparison was optimization-confounded there. B/C open pending Stage F
+  (30 runs, 3 seeds × 5 conditions, the only stage touching held-out positions). **40M not trained.**

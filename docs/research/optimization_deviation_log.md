@@ -30,3 +30,11 @@ training scenes, spike rate 2.74% within the 3.4% bound), so the stopping rule w
 without screening. Stage B is still run at 9.1M exactly as registered, because Amendment 3(a) recorded this
 situation in advance: the 9.1M screen's purpose is to show whether a candidate *breaks* a healthy cell, and
 dropping it after seeing Stage A would be an outcome-dependent change to the design. No run is added or removed.
+
+## I3 — 2026-10-07/08, Stage F: ~4-hour host sleep froze the VM
+The Windows host slept at about 23:41Z, roughly a minute after Stage F launched, and woke at 03:43Z. The
+WSL VM's monotonic clock froze with it, so `ps` reports the trainer's start time as 03:43 although its PID
+belongs to the 23:40 batch and the service never restarted. The run accumulated 13 minutes of compute
+across 258 minutes of wall clock and then continued normally from where it was. Nothing was lost and no
+run was restarted; the study simply paused. Recorded because wall-clock timings in the logs cannot be read
+as compute time across this window.
